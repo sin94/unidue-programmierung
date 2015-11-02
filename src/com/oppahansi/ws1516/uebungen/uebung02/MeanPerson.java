@@ -104,7 +104,7 @@ public class MeanPerson {
     * (HINWEIS: Die letzte Bedingung taucht woanders schon auf!)
     */
    public boolean isEnvious() {
-      return false;
+      return true;
    }
 
    /*
@@ -182,11 +182,43 @@ public class MeanPerson {
    }
 
    // Testen Sie hier ob ihre Methoden wie gewuenscht funktionieren!
+
+   /**
+    * Main-Methode angepasst von Oppahansi.
+    */
    public static void main(String[] args) {
       MeanPerson person = new MeanPerson();
       MeanPerson friend = new MeanPerson();
-      Car car1 = new Car();
-      Car car2 = new Car();
+      Car personsCar = new Car();
+      Car friendsCar = new Car();
+      Car newCar = new Car();
+
+      personsCar.setManufacturer("Audi");
+      personsCar.setModel("A3");
+      personsCar.setValue(15000);
+
+      newCar.setValue(25000);
+
+      person.setOwnedCar(personsCar);
+      person.setFavouriteCar(personsCar);
+      friend.setOwnedCar(friendsCar);
+      friend.setFavouriteCar(friendsCar);
+      person.setFriend(friend);
+
+      System.out.println("Person hat das Auto: " + person.ownedCar() + "  (Richtig: Audi A3)");
+      System.out.println("Person ist gluecklich: " + person.isHappy() + " (Richtig: true)");
+      System.out.println("Person ist eifersuechtig: " + person.isEnvious() + " (Richtig: false)");
+      System.out.println("Person lacht ueber Freund: " + person.secretlyLaughsOverFriendsCar() + " (Richtig: true)\n");
+      person.getOwnedCar().crash();
+
+      System.out.println("Persons Auto hatte einen Crash.");
+      System.out.println("Auto wird repariert.\nKontostand vor Reparatur: " + person.getMoney() + " (Richtig: 10000)");
+      person.repairCar();
+      System.out.println("Kontostang nach Reparatur: " + person.getMoney() + " (Richtig: 2500)\n");
+
+      System.out.println("Person moechte ein neues Auto. Kosten 25000");
+      person.buyNewCar(newCar);
+      System.out.println("Autokauf moeglich: " + person.getOwnedCar().getManufacturer().contains("Ludolf") + " (Richtig: false)");
    }
 
 }
