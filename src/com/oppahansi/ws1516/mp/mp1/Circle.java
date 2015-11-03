@@ -60,11 +60,7 @@ public class Circle {
    }
 
    public boolean containsPoint(Point point) {
-      return  getDistance(point) < getRadius();
-   }
-
-   private double getDistance(Point point) {
-      return Math.sqrt(Math.pow(point.getX() - getLocation().getX(), 2) + (Math.pow(point.getY() - getLocation().getY(), 2)));
+      return getLocation().getDistance(point) < getRadius();
    }
 
    public static Circle fromPoints(Point center, Point p) {
@@ -73,7 +69,7 @@ public class Circle {
       // An dieser Stelle das circle-Objekt bearbeiten
 
       circle.setLocation(center);
-      circle.setRadius(Math.sqrt(Math.pow(p.getX() - center.getX(), 2) + (Math.pow(p.getY() - center.getY(), 2))));
+      circle.setRadius(center.getDistance(p));
 
       return circle;
    }

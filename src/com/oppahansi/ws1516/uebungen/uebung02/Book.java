@@ -27,29 +27,32 @@ public class Book {
 
    public void setTitle(String name) {
       // Diese Methode muss von euch veraendert werden.
+      this.title = name;
    }
 
    public String getTitle() {
       // Diese Methode muss von euch veraendert werden.
-      return "Hier mu� eine sinnvolle Rueckgabe hin!";
+      return title;
    }
 
    public void setAuthor(String name) {
       // Diese Methode muss von euch veraendert werden.
+      this.author = name;
    }
 
    public String getAuthor() {
       // Diese Methode muss von euch veraendert werden.
-      return "Hier mu� eine sinnvolle Rueckgabe hin!";
+      return author;
    }
 
    public void setYearOfPublication(int year) {
       // Diese Methode muss von euch veraendert werden.
+      this.yearOfPublication = year;
    }
 
    public int getYearOfPublication() {
       // Diese Methode muss von euch veraendert werden.
-      return 0;
+      return yearOfPublication;
    }
 
    // Programmtest

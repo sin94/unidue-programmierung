@@ -53,18 +53,18 @@ public class MeanPerson {
     * Sie auch weitere Initialisierungen im Konstruktor vornehmen.
     */
    public MeanPerson() {
-
+      this.money = 10000;
    }
 
    /*
-    *  Diese Methode soll einen String zuruegeben, der Hersteller und Modell
-    *  des eigenen Autos in der folgenden Form zurueck gibt:
-    *               "Hersteller Modell"
+    * Diese Methode soll einen String zuruegeben, der Hersteller und Modell
+    * des eigenen Autos in der folgenden Form zurueck gibt:
+    * "Hersteller Modell"
     * Ist zB der Hersteller "Ludolf" und das Modell "Rostlaube 500" so soll die
     * Ausgabe "Ludolf Rostlaube 500" sein.
     */
    public String ownedCar() {
-      return null;
+      return ownedCar.getManufacturer() + " " + ownedCar.getModel();
    }
 
    /*
@@ -72,7 +72,7 @@ public class MeanPerson {
     * zurueckgeben, der Hersteller und Namen des Lieblingsautos enthaelt.
     */
    public String favouriteCar() {
-      return null;
+      return favouriteCar.getManufacturer() + " " + favouriteCar.getModel();
    }
 
    /*
@@ -81,7 +81,7 @@ public class MeanPerson {
     * Freundes enthaelt.
     */
    public String friendsCar() {
-      return null;
+      return friend.getOwnedCar().getManufacturer() + " " + friend.getOwnedCar().getModel();
    }
 
    /*
@@ -91,7 +91,7 @@ public class MeanPerson {
     * und dieses nicht beschaedigt ist.
     */
    public boolean isHappy() {
-      return false;
+      return ownedCar.equals(favouriteCar) && !ownedCar.isDamaged();
    }
 
    /*
@@ -104,7 +104,7 @@ public class MeanPerson {
     * (HINWEIS: Die letzte Bedingung taucht woanders schon auf!)
     */
    public boolean isEnvious() {
-      return true;
+      return !isHappy() && !(ownedCar.getValue() > friend.getOwnedCar().getValue());
    }
 
    /*
@@ -118,7 +118,7 @@ public class MeanPerson {
     * "java string compareto", falls Sie die Methode nicht schon kennen
     */
    public boolean secretlyLaughsOverFriendsCar() {
-      return false;
+      return friend.getOwnedCar().isDamaged() || friend.getOwnedCar().getManufacturer().contains("Ludolf");
    }
 
    /*
@@ -126,7 +126,7 @@ public class MeanPerson {
     * Die Kosten der Reparatur sollen vom Geld der Person abgezogen werden.
     */
    public void repairCar() {
-
+      setMoney(money - ownedCar.repair());
    }
 
    /*
@@ -138,7 +138,23 @@ public class MeanPerson {
     * Parameter uebergebene Auto das neue ownedCar sein.
     */
    public void buyNewCar(Car newCar) {
+      if (isCarAffordable(newCar)) {
+         setOwnedCar(newCar);
+         setMoney(money - newCar.getValue());
+      }
+   }
 
+   /**
+    * By Oppahansi
+    * Private Methode, um heraus zu finden, ob ein Autokauf moeglich ist.
+    */
+   private boolean isCarAffordable(Car newCar) {
+      if (ownedCar != null) {
+         return money + ownedCar.getValue() > newCar.getValue();
+      }
+      else {
+         return money > newCar.getValue();
+      }
    }
 	
 	/*
@@ -211,7 +227,8 @@ public class MeanPerson {
       System.out.println("Person lacht ueber Freund: " + person.secretlyLaughsOverFriendsCar() + " (Richtig: true)\n");
       person.getOwnedCar().crash();
 
-      System.out.println("Persons Auto hatte einen Crash.");
+      System.out.println("Persons Auto hatte einen Crash.\nAuto beschaedigt: " + person.getOwnedCar().isDamaged() + " (Richtig:"
+         + " true)\n");
       System.out.println("Auto wird repariert.\nKontostand vor Reparatur: " + person.getMoney() + " (Richtig: 10000)");
       person.repairCar();
       System.out.println("Kontostang nach Reparatur: " + person.getMoney() + " (Richtig: 2500)\n");
