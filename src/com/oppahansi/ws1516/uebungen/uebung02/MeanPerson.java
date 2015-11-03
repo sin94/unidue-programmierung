@@ -147,7 +147,6 @@ public class MeanPerson {
    /**
     * By Oppahansi
     * Private Methode, um heraus zu finden, ob ein Autokauf moeglich ist.
-    * Befolgung des "Single Responsibility Principle".
     */
    private boolean isCarAffordable(Car newCar) {
       if (ownedCar != null) {
