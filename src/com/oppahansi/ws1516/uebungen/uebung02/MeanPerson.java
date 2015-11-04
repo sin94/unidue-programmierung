@@ -118,7 +118,7 @@ public class MeanPerson {
     * "java string compareto", falls Sie die Methode nicht schon kennen
     */
    public boolean secretlyLaughsOverFriendsCar() {
-      return friend.getOwnedCar().isDamaged() || friend.getOwnedCar().getManufacturer().contains("Ludolf");
+      return friend.getOwnedCar().isDamaged() || friend.getOwnedCar().getManufacturer().compareTo("Ludolf") == 0;
    }
 
    /*
