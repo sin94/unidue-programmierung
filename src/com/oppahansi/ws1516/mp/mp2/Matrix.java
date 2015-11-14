@@ -16,45 +16,6 @@ public class Matrix {
 
    private int[][] values;
 
-   public Matrix(int[][] initialValues) {
-
-   }
-
-   public void scalarMultiplication(int c) {
-
-   }
-
-   public void add(Matrix m) {
-
-   }
-
-   public int[] getColumnVector(int col) {
-      return null;
-   }
-
-   public boolean isEqualTo(Matrix m) {
-      return false;
-   }
-
-   public void transpose() {
-
-   }
-
-   // --------------------------------------------------------------
-
-   private void print() {
-      if (values == null) {
-         System.out.println("null");
-      }
-      else {
-         System.out.printf("%dx%x:%n", values.length, values[0].length);
-
-         for (int[] row : values) {
-            System.out.println(Arrays.toString(row));
-         }
-      }
-   }
-
    public static void main(String[] args) {
       Matrix m = new Matrix(new int[][]{{2, 4, 5}, {3, 7, 2},
          {-2, 0, 1}, {5, 1, 1}});
@@ -162,4 +123,82 @@ public class Matrix {
       // [6, -1, 0, 0]
       o.print();
    }
+
+   // --------------------------------------------------------------
+
+   public Matrix(int[][] initialValues) {
+      this.values = initialValues;
+   }
+
+   public void scalarMultiplication(int c) {
+      for (int i = 0; i < values.length; i++) {
+         for (int j = 0; j < values[i].length; j++) {
+            values[i][j] *= c;
+         }
+      }
+   }
+
+   public void add(Matrix m) {
+      for (int i = 0; i < values.length; i++) {
+         for (int j = 0; j < values[i].length; j++) {
+            values[i][j] += m.values[i][j];
+         }
+      }
+   }
+
+   public int[] getColumnVector(int col) {
+      int[] colVector = new int[values.length];
+
+      for (int i = 0; i < values.length; i++) {
+         colVector[i] = values[i][col];
+      }
+
+      return colVector;
+   }
+
+   public boolean isEqualTo(Matrix m) {
+      if (values.length == m.values.length && values[0].length == m.values[0].length) {
+
+         for (int i = 0; i < values.length; i++) {
+            for (int j = 0; j < values[0].length; j++) {
+               if (values[i][j] != m.values[i][j]) {
+                  return false;
+               }
+            }
+         }
+
+         return true;
+
+      } else {
+         return false;
+      }
+   }
+
+   public void transpose() {
+      int[][] transMatrix = new int[values[0].length][values.length];
+
+      for (int i = 0; i < values[0].length; i++) {
+         for (int j = 0; j < values.length; j++) {
+            transMatrix[i][j] = values[j][i];
+         }
+      }
+
+      this.values = transMatrix;
+   }
+
+   // --------------------------------------------------------------
+
+   private void print() {
+      if (values == null) {
+         System.out.println("null");
+      }
+      else {
+         System.out.printf("%dx%x:%n", values.length, values[0].length);
+
+         for (int[] row : values) {
+            System.out.println(Arrays.toString(row));
+         }
+      }
+   }
+
 }

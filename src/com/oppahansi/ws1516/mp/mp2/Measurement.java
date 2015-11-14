@@ -16,32 +16,6 @@ public class Measurement {
 
    private int[] data;
 
-   public Measurement() {
-
-   }
-
-   public void addValue(int value) {
-
-   }
-
-   public void addValues(int[] values) {
-
-   }
-
-   public int getMinimumValue() {
-      return -1;
-   }
-
-   public int[] getValuesAboveThreshold(int threshold) {
-      return null;
-   }
-
-   // --------------------------------------------------------------
-
-   public void printData() {
-      System.out.println(Arrays.toString(data));
-   }
-
    public static void main(String[] args) {
       Measurement m = new Measurement();
       System.out.println("Neues Measurement-Objekt m erzeugt. m:");
@@ -87,6 +61,88 @@ public class Measurement {
       // Erwartete Ausgabe:
       // []
       System.out.println(Arrays.toString(valuesAbove93));
+   }
+
+   // --------------------------------------------------------------
+
+   public Measurement() {
+      this.data = new int[0];
+   }
+
+   public void addValue(int value) {
+      setData(copyOldArrayInLargerArray(data, value));
+   }
+
+   public void addValues(int[] values) {
+      setData(copyOldArrayInLargerArray(data, values));
+   }
+
+   public int getMinimumValue() {
+      int result = data[0];
+
+      for (Integer currentValue : data) {
+         if (result > currentValue) {
+            result = currentValue;
+         }
+      }
+
+      return result;
+   }
+
+   public int[] getValuesAboveThreshold(int threshold) {
+      int[] result = new int[0];
+
+      for (Integer currentValue : data) {
+         if (currentValue > threshold) {
+            result = copyOldArrayInLargerArray(result, currentValue);
+         }
+      }
+
+      return result;
+   }
+
+   // --------------------------------------------------------------
+
+   public void printData() {
+      System.out.println(Arrays.toString(data));
+   }
+
+   // Hilfsmethoden von Oppahansi
+
+   private int[] copyOldArrayInLargerArray(int[] data, int value) {
+      int[] result = new int[data.length + 1];
+
+      for (int i = 0; i < data.length; i++) {
+         result[i] = data[i];
+      }
+
+//      System.arraycopy(data, 0, result, 0, data.length);        // besser
+
+      result[result.length - 1] = value;
+
+      return result;
+   }
+
+   private int[] copyOldArrayInLargerArray(int[] data, int[] values) {
+      int[] result = new int[data.length + values.length];
+
+      for (int i = 0; i < data.length; i++) {
+         result[i] = data[i];
+      }
+
+//      System.arraycopy(data, 0, result, 0, data.length);                 // besser
+
+      for (int i = data.length, j = 0; i < result.length; i++, j++) {
+         result[i] = values[j];
+      }
+
+//      System.arraycopy(values, 0, result, data.length, values.length);   // besser
+
+      return result;
+   }
+
+   private void setData(int[] data) {
+      this.data = data;
    }
 
 }
