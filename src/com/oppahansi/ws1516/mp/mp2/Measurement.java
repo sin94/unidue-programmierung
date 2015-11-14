@@ -60,15 +60,11 @@ public class Measurement {
    }
 
    public void addValue(int value) {
-      int[] newData = copyOldArrayInLargerArray(data, value);
-
-      setData(newData);
+      setData(copyOldArrayInLargerArray(data, value));
    }
 
    public void addValues(int[] values) {
-      int[] newData = copyOldArrayInLargerArray(data, values);
-
-      setData(newData);
+      setData(copyOldArrayInLargerArray(data, values));
    }
 
    public int getMinimumValue() {
