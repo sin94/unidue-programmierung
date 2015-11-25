@@ -124,7 +124,7 @@ public class CarList {
     System.out.println("1. Auto entfernt: ");
     printCarList(list);
     System.out.println();
-    System.out.println("5. Auto bevorzugen: ");
+    System.out.println("3. Auto bevorzugen: ");
     list.prioritizeCar(3);
     printCarList(list);
     System.out.println();
