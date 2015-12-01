@@ -8,11 +8,11 @@ public class Train {
     private Waggon head;
 
     public int getSize() {
-        if (this.head == null) {
+        if (head == null) {
             return 0;
         } else {
             int counter = 0;
-            Waggon node = this.head;
+            Waggon node = head;
             while (node != null) {
                 counter++;
                 node = node.getNext();
@@ -22,11 +22,11 @@ public class Train {
     }
 
     public int getPassengerCount() {
-        if (this.head == null) {
+        if (head == null) {
             return 0;
         } else {
             int counter = 0;
-            Waggon node = this.head;
+            Waggon node = head;
             while (node != null) {
                 counter += node.getPassengers();
                 node = node.getNext();
@@ -36,11 +36,11 @@ public class Train {
     }
 
     public int getCapacity() {
-        if (this.head == null) {
+        if (head == null) {
             return 0;
         } else {
             int counter = 0;
-            Waggon node = this.head;
+            Waggon node = head;
             while (node != null) {
                 counter += node.getCapacity();
                 node = node.getNext();
@@ -50,12 +50,12 @@ public class Train {
     }
 
     public void appendWaggon(Waggon waggon) {
-        if (this.head == null || waggon == null || this.getSize() == 0) {
-            this.head = waggon;
+        if (head == null || waggon == null || getSize() == 0) {
+            head = waggon;
 
         } else {
-            Waggon node = this.head;
-            int size = this.getSize();
+            Waggon node = head;
+            int size = getSize();
             for (int i = 1; i < size; i++) {
                 node = node.getNext();
             }
@@ -64,7 +64,7 @@ public class Train {
     }
 
     public void boardPassengers(int numberOfPassengers) {
-        Waggon node = this.head;
+        Waggon node = head;
         int passengersTo = numberOfPassengers;
         while (node != null) {
             int capacity = node.getCapacity();
@@ -88,11 +88,11 @@ public class Train {
     }
 
     public Train uncoupleWaggons(int index) {
-        if (index < 0 || index > this.getSize()) {
+        if (index < 0 || index > getSize()) {
             return null;
         } else {
             Train newTrain = new Train();    //neuen Zug erstellen
-            Waggon node = this.getWaggonAt(index - 1);    //Waggon an der Stelle index -1 den letzten vom zug
+            Waggon node = getWaggonAt(index - 1);    //Waggon an der Stelle index -1 den letzten vom zug
             Waggon next = node.getNext();
             node.setNext(null);
             newTrain.head = next;
@@ -105,42 +105,42 @@ public class Train {
 
         } else if (index == 0)        //falls index 0 ist, der neue Waggon muss an die erste Stelle
         {
-            Waggon next = this.head;
-            this.head = waggon;
+            Waggon next = head;
+            head = waggon;
             head.setNext(next);
 
-        } else if (index >= this.getSize()) {
-            Waggon node = this.getWaggonAt(this.getSize() - 1);
+        } else if (index >= getSize()) {
+            Waggon node = getWaggonAt(getSize() - 1);
             node.setNext(waggon);
 
         } else {
-            Waggon previous = this.getWaggonAt(index - 1);
-            Waggon next = this.getWaggonAt(index);
+            Waggon previous = getWaggonAt(index - 1);
+            Waggon next = getWaggonAt(index);
             previous.setNext(waggon);
             waggon.setNext(next);
         }
     }
 
     public void turnOver() {
-        Waggon newHead = this.getWaggonAt(this.getSize() - 1);    //letzte Stelle des aktuellen Zuges
+        Waggon newHead = getWaggonAt(getSize() - 1);    //letzte Stelle des aktuellen Zuges
         Train newTrain = new Train();
-        while (this.getSize() > 0) {
-            newHead = this.getWaggonAt(this.getSize() - 1);
+        while (getSize() > 0) {
+            newHead = getWaggonAt(getSize() - 1);
             newTrain.appendWaggon(newHead);
-            this.removeWaggon(newHead);
+            removeWaggon(newHead);
         }
-        this.head = newTrain.getWaggonAt(0);
+        head = newTrain.getWaggonAt(0);
     }
 
     public void removeWaggon(Waggon waggon) {
         if (waggon == null) {
 
         } else {
-            if (this.head == waggon) {
-                this.head = this.head.getNext();
+            if (head == waggon) {
+                head = head.getNext();
 
             } else {
-                Waggon node = this.head;
+                Waggon node = head;
                 while (node != null && node.getNext() != waggon) {
                     node = node.getNext();
                 }
@@ -153,11 +153,11 @@ public class Train {
     }
 
     public Waggon getWaggonAt(int index) {
-        if (index < 0 || index > this.getSize()) {
+        if (index < 0 || index > getSize()) {
             return null;
 
         } else {
-            Waggon node = this.head;
+            Waggon node = head;
             for (int i = 0; i < index; i++) {
                 node = node.getNext();
             }

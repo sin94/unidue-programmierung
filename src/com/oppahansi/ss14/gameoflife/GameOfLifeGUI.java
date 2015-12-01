@@ -1,5 +1,7 @@
 package com.oppahansi.ss14.gameoflife;
 
+import com.oppahansi.ws1516.uebungen.gameoflife.GameOfLife;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;

@@ -85,18 +85,30 @@ public class Train {
          setHead(waggon);
       }
       else {
-         getLastWaggon().setNext(waggon);
+         if (getSize() == 1) {
+            getHead().setNext(waggon);
+         }
+         else {
+            if (getSize() > 1) {
+               getLastWaggon().setNext(waggon);
+            }
+         }
       }
    }
 
    private Waggon getLastWaggon() {
-      Waggon currentWagon = getHead();
-
-      while (currentWagon.getNext() != null) {
-         currentWagon = currentWagon.getNext();
+      if (getSize() == 1) {
+         return getHead();
       }
+      else {
+         Waggon currentWagon = getHead();
 
-      return currentWagon;
+         while (currentWagon.getNext() != null) {
+            currentWagon = currentWagon.getNext();
+         }
+
+         return currentWagon;
+      }
    }
 
    public void boardPassengers(int numberOfPassengers) {
@@ -108,11 +120,11 @@ public class Train {
                int freeSlots = currentWaggon.getCapacity() - currentWaggon.getPassengers();
 
                if (freeSlots >= numberOfPassengers) {
-                  currentWaggon.setCapacity(currentWaggon.getCapacity() + numberOfPassengers);
+                  currentWaggon.setPassengers(currentWaggon.getPassengers() + numberOfPassengers);
                   break;
                }
                else {
-                  currentWaggon.setCapacity(currentWaggon.getCapacity());
+                  currentWaggon.setPassengers(currentWaggon.getCapacity());
                   numberOfPassengers -= freeSlots;
                }
             }
@@ -140,20 +152,121 @@ public class Train {
    }
 
    public Train uncoupleWaggons(int index) {
-      return new Train();
+      if (index > 0 && index < getSize()) {
+         Train newTrain = new Train();
+         Waggon lastWaggonInTrain = getWaggonAt(index - 1);
+
+         newTrain.setHead(lastWaggonInTrain.getNext());
+         lastWaggonInTrain.setNext(null);
+
+         return newTrain;
+      }
+      else {
+         return null;
+      }
    }
 
    public void insertWaggon(Waggon waggon, int index) {
+      if (index >= getSize()) {
+         appendWaggon(waggon);
+      }
+      else if (index >= 0 && index <= getSize() - 1){
+         if (index == 0) {
+            Waggon next = getHead();
+            setHead(waggon);
+            getHead().setNext(next);
+         }
+         else {
+            Waggon next = getWaggonAt(index - 1);
+            waggon.setNext(next.getNext());
+            next.setNext(waggon);
+         }
+      }
    }
 
    public void turnOver() {
+      Train turnedOverTrain = new Train();
+
+      for (int i = getSize() - 1; i >= 0; i--) {
+         turnedOverTrain.appendWaggon(getLastWaggon());
+         removeWaggon(getLastWaggon());
+      }
+
+      setHead(turnedOverTrain.getHead());
    }
 
    public void removeWaggon(Waggon waggon) {
+      if (waggon != null && getSize() > 0) {
+         int waggonsPosition = getIndexByWaggon(waggon);
+
+         if (waggonsPosition != -1) {
+            if (waggonsPosition == 0) {
+               setHead(getHead().getNext());
+            }
+            else if (waggonsPosition == getSize() - 1 && getSize() == 2) {
+               getHead().setNext(null);
+            }
+            else {
+               Waggon prev = getWaggonAt(waggonsPosition - 1);
+               Waggon next = getWaggonAt(waggonsPosition + 1);
+               prev.setNext(next);
+            }
+         }
+      }
+   }
+
+   private int getIndexByWaggon(Waggon waggon) {
+      if (waggon != null) {
+         if (waggon.equals(getHead())){
+            return 0;
+         }
+         else if (waggon.equals(getLastWaggon())) {
+            return getSize() - 1;
+         }
+         else {
+            Waggon currentWaggon = getHead().getNext();
+            int position = 1;
+
+            while (currentWaggon != null) {
+               if (currentWaggon.equals(waggon)) {
+                  return position;
+               }
+
+               position++;
+               currentWaggon = currentWaggon.getNext();
+            }
+
+            return -1;
+         }
+      }
+      else {
+         return -1;
+      }
    }
 
    public Waggon getWaggonAt(int index) {
-      return null;
+      if (index < 0 && index >= getSize()) {
+         return null;
+      }
+      else {
+         if (index == 0) {
+            return getHead();
+         }
+         else if (index == getSize() - 1) {
+            return getLastWaggon();
+         }
+         else {
+            Waggon currentWagon = getHead();
+            int position = 0;
+
+            while (position != index && currentWagon != null) {
+               position++;
+               currentWagon = currentWagon.getNext();
+            }
+
+            return currentWagon;
+         }
+      }
    }
 
    @Override

@@ -91,15 +91,17 @@ public class Miniprojekt3 {
 
       // Neue Wagen werden eingefügt
 
+      System.out.println("Zwei neue Waggons werden zu Zug 2 hinzugefügt");
       final Waggon waggon5 = new Waggon("Waggon-5", 60);
       final Waggon waggon6 = new Waggon("Waggon-6", 35);
       train2.insertWaggon(waggon5, 0);
       train2.insertWaggon(waggon6, 2);
 
-      printWaggonDetails(train2);
+      System.out.println(train2.toString());
 
       // Zug 2 wird umgedreht
 
+      System.out.println("Zug 2 wird umgedreht");
       train2.turnOver();
       System.out.println(train2.toString());
 
