@@ -1,4 +1,16 @@
-package com.oppahansi.ws1516.uebungen.uebung05;/*
+/**
+ * Created by:
+ * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ * <p>
+ * For learning purpose only.
+ * <p>
+ * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
+ * solve these tasks.
+ */
+
+package com.oppahansi.ws1516.uebungen.uebung05;
+
+/*
  * Sinn dieser Uebung ist es, den Umgang mit dem Konzept der Liste zu lernen.
  * In der Liste sollen mit Hilfe der vorgegebenen Klasse SchlumpfNode Schluempfe
  * (Klasse Schlumpf) verwaltet werden. Die Schluempfe in der Schlumpfliste
