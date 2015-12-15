@@ -159,31 +159,59 @@ public class Koenigreich {
       if (name != null && spitze != null) {
          Person[] volk = volkszaehlung();
          toetePerson(volk, name);
-         loeschNachbarn(volk);
-
-         for (int i = 1; i < volk.length; i++) {
-            if (volk[i] != null) {
-               geburt(volk[i]);
-            }
-         }
       }
    }
 
    private void toetePerson(Person[] volk, String name) {
       for (int i = 1; i < volk.length; i++) {
          if (volk[i].getName().compareTo(name) == 0) {
-            volk[i] = null;
+            Person vorgaenger = getVorgaenger(volk, volk[i]);
+
+            if (vorgaenger.getRechts().equals(volk[i])) {
+               if (volk[i].getLinks() != null && volk[i].getRechts() == null) {
+                  vorgaenger.setRechts(volk[i].getLinks());
+               }
+               else if (volk[i].getLinks() == null && volk[i].getRechts() != null) {
+                  vorgaenger.setRechts(volk[i].getRechts());
+               }
+               else if (volk[i].getLinks() != null && volk[i].getRechts() != null) {
+                  vorgaenger.setRechts(volk[i].getRechts());
+                  vorgaenger.getRechts().setLinks(volk[i].getLinks());
+               }
+               else if (volk[i].getLinks() == null && volk[i].getRechts() == null) {
+                  vorgaenger.setRechts(null);
+               }
+            }
+            else if (vorgaenger.getLinks().equals(volk[i])) {
+               if (volk[i].getLinks() != null && volk[i].getRechts() == null) {
+                  vorgaenger.setLinks(volk[i].getLinks());
+               }
+               else if (volk[i].getLinks() == null && volk[i].getRechts() != null) {
+                  vorgaenger.setLinks(volk[i].getRechts());
+               }
+               else if (volk[i].getLinks() != null && volk[i].getRechts() != null) {
+                  vorgaenger.setLinks(volk[i].getRechts());
+                  vorgaenger.getLinks().setLinks(volk[i].getLinks());
+               }
+               else if (volk[i].getLinks() == null && volk[i].getRechts() == null) {
+                  vorgaenger.setLinks(null);
+               }
+            }
+
+            break;
          }
       }
    }
 
-   private void loeschNachbarn(Person[] volk) {
+   private Person getVorgaenger(Person[] volk, Person geloescht) {
       for (Person currentPerson : volk) {
-         if (currentPerson != null) {
-            currentPerson.setLinks(null);
-            currentPerson.setRechts(null);
+         if (currentPerson.getLinks() != null && currentPerson.getLinks().equals(geloescht) ||
+            currentPerson.getRechts() != null && currentPerson.getRechts().equals(geloescht)) {
+            return currentPerson;
          }
       }
+
+      return geloescht;
    }
 
    //Aufgabe 6
@@ -198,6 +226,15 @@ public class Koenigreich {
             if (volk[i] != null) {
                revolutionsGeburt(volk[i]);
             }
+         }
+      }
+   }
+
+   private void loeschNachbarn(Person[] volk) {
+      for (Person currentPerson : volk) {
+         if (currentPerson != null) {
+            currentPerson.setLinks(null);
+            currentPerson.setRechts(null);
          }
       }
    }
