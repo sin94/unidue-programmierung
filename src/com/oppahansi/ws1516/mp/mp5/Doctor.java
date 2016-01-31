@@ -10,11 +10,13 @@
 
 package com.oppahansi.ws1516.mp.mp5;
 
-public class Doctor {
+public class Doctor extends Person {
 
    private String phdTopic;
 
    public Doctor(String firstName, String lastName, int yearOfBirth) {
+     super(firstName, lastName, yearOfBirth);
+     this.phdTopic = "Dr.";
    }
 
    public String getPhdTopic() {
@@ -26,6 +28,6 @@ public class Doctor {
    }
 
    public String getName() {
-      return "";
+      return phdTopic + " " + super.getName();
    }
 }

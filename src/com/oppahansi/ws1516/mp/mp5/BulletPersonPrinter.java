@@ -10,6 +10,12 @@
 
 package com.oppahansi.ws1516.mp.mp5;
 
-public class BulletPersonPrinter {
+public class BulletPersonPrinter extends PersonPrinter {
 
+  @Override
+  public void printNames(final Person[] items) {
+    for (Person currentPerson : items) {
+      System.out.println("* " + currentPerson.getName());
+    }
+  }
 }
