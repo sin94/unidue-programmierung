@@ -7,10 +7,10 @@ package com.oppahansi.ss14.woche3;
 
 public class ArrayReadAndWrite {
 
-    // Die Methode addElementsOfArray erwartet ein IntegerArray mit zwei
-    // Elementen. Rueckgabewert soll die Summe der beiden Arrayelemente sein.
-    public static int addElementsOfArray(int[] numbers) {
-        return numbers[0] + numbers[1];
+  // Die Methode addElementsOfArray erwartet ein IntegerArray mit zwei
+  // Elementen. Rueckgabewert soll die Summe der beiden Arrayelemente sein.
+  public static int addElementsOfArray(int[] numbers) {
+    return numbers[0] + numbers[1];
 
 		/* 2. Möglichkeit
          *
@@ -18,16 +18,16 @@ public class ArrayReadAndWrite {
 		 * return summe;
 		 * 
 		 * */
-    }
+  }
 
-    // Diese Methode soll auf eine Eingabe hin ein IntegerArray erzeugen und
-    // zurueckgeben. Die Eingabe ist eine ganze Zahl n und das Array soll die
-    // zwei Elemente enthalten. Das erste Element soll n-1 sein, das zweite n+1.
-    public static int[] neighbourNumbers(int number) {
-        int[] newArray = {number - 1, number + 1};
+  // Diese Methode soll auf eine Eingabe hin ein IntegerArray erzeugen und
+  // zurueckgeben. Die Eingabe ist eine ganze Zahl n und das Array soll die
+  // zwei Elemente enthalten. Das erste Element soll n-1 sein, das zweite n+1.
+  public static int[] neighbourNumbers(int number) {
+    int[] newArray = {number - 1, number + 1};
 
-        return newArray;
-		
+    return newArray;
+
 		/* 2. Möglichkeit
 		 * 
 		 * int[] newArray2 = new int[2];
@@ -36,19 +36,18 @@ public class ArrayReadAndWrite {
 		 * 
 		 * return newArray2;
 		 * */
-    }
+  }
 
-
-    // Testausgabe. Hier k�nnt ihr eure Methoden testen.
-    public static void main(String[] args) {
-        int zahlenArray[] = new int[]{5, 17};
-        System.out.println("Summe der Arrayelemente: "
-                + addElementsOfArray(zahlenArray));
-        int zahl = 3;
-        int ergebnisArray[] = neighbourNumbers(zahl);
-        System.out.println("Kleiner Nachbar der Zahl " + zahl +
-                ": " + ergebnisArray[0] +
-                "\nGrosserNachbar der Zahl " + zahl +
-                ": " + ergebnisArray[1]);
-    }
+  // Testausgabe. Hier k�nnt ihr eure Methoden testen.
+  public static void main(String[] args) {
+    int zahlenArray[] = new int[]{5, 17};
+    System.out.println("Summe der Arrayelemente: "
+      + addElementsOfArray(zahlenArray));
+    int zahl = 3;
+    int ergebnisArray[] = neighbourNumbers(zahl);
+    System.out.println("Kleiner Nachbar der Zahl " + zahl +
+      ": " + ergebnisArray[0] +
+      "\nGrosserNachbar der Zahl " + zahl +
+      ": " + ergebnisArray[1]);
+  }
 }

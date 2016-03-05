@@ -2,9 +2,9 @@
  * Created by:
  * Institute for Computer Science and Business Information Systems
  * University Duisburg-Essen
- *
+ * <p>
  * For learning purpose only.
- *
+ * <p>
  * Loesungen zu Aufgaben implementiert von Mark Kunze (c)
  */
 

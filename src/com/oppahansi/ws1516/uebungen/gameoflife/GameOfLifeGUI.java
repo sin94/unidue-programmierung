@@ -1,9 +1,9 @@
 /**
  * Created by:
  * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * 
+ * <p>
  * For learning purpose only.
- *
+ * <p>
  * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
  * solve these tasks.
  */
@@ -37,6 +37,20 @@ public class GameOfLifeGUI extends JFrame {
     super("Game Of Life");
 
     initialize();
+  }
+
+  public static void main(String[] args) {
+    try {
+      UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+    }
+    catch (ClassNotFoundException | InstantiationException
+      | IllegalAccessException | UnsupportedLookAndFeelException e) {
+
+      System.err
+        .println("System Look-And-Feel konnte nicht gesetzt werden. Dies hat jedoch nur optische Auswirkungen.");
+    }
+
+    new GameOfLifeGUI();
   }
 
   private void initialize() {
@@ -131,12 +145,9 @@ public class GameOfLifeGUI extends JFrame {
   private static class GamePanel extends JPanel {
 
     private static final long serialVersionUID = -1790824421232430438L;
-
-    private GameOfLife game;
-
-    private boolean showNeighbours;
-
     private static final int FIELD_SIZE = 20;
+    private GameOfLife game;
+    private boolean showNeighbours;
 
     public GamePanel(final GameOfLife game) {
       super();
@@ -200,19 +211,5 @@ public class GameOfLifeGUI extends JFrame {
       this.showNeighbours = showNeighbours;
     }
 
-  }
-
-  public static void main(String[] args) {
-    try {
-      UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-    }
-    catch (ClassNotFoundException | InstantiationException
-      | IllegalAccessException | UnsupportedLookAndFeelException e) {
-
-      System.err
-        .println("System Look-And-Feel konnte nicht gesetzt werden. Dies hat jedoch nur optische Auswirkungen.");
-    }
-
-    new GameOfLifeGUI();
   }
 }

@@ -1,9 +1,9 @@
 /**
  * Created by:
  * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- *
+ * <p>
  * For learning purpose only.
- *
+ * <p>
  * Implementation by Oppa Hansi. Possible solution - there are other ways to
  * solve these tasks.
  */
@@ -61,7 +61,7 @@ public class Uebungsblatt1 {
     ergebnisText = "" + (a / b * (b * b * b));
     System.out.print(ergebnisText + " ist das dritte Ergebnis, ");
     // d)
-    ergebnisText = "" + (Integer.parseInt(c) / (a + 655535) * (65535+b));
+    ergebnisText = "" + (Integer.parseInt(c) / (a + 655535) * (65535 + b));
     System.out.print(ergebnisText + " ist das vierte Ergebnis.");
   }
 }

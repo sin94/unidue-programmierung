@@ -23,7 +23,7 @@ package com.oppahansi.ws1516.uebungen.uebung06;
  */
 public class RecursiveWordList {
 
-   private WordNode head;
+  private WordNode head;
 
 	/*
     * Die folgenden drei Methoden sind von Ihnen nicht zu bearbeiten.
@@ -31,51 +31,96 @@ public class RecursiveWordList {
 	 * mit rekursiven Methoden realisieren muessen.
 	 */
 
-   // Rueckgabe des Inhalts der gesamten Liste als zusammenhaengender String
-   public String toStringIterative() {
-      String sentence = "";
+  public static void main(String[] args) {
+    System.out.println("Die folgenden Ausgaben zeigen die Ergebnisse der "
+      + "vorgegebenen iterativen Methoden, gefolgt von den "
+      + "Ergebnissen Ihrer Methoden.\nSollten die Ergebnisse Ihrer "
+      + "Methoden abweichen, verbirgt sich noch ein Fehler in ihnen."
+      + "\n");
+
+    // Testfall fuer appendWord(String word)
+    RecursiveWordList rwlIter = new RecursiveWordList();
+    RecursiveWordList rwlRec = new RecursiveWordList();
+    rwlIter.appendWordIterative("Rekursion");
+    rwlRec.appendWordIterative("Rekursion");
+    rwlIter.appendWordIterative("ist");
+    rwlRec.appendWordIterative("ist");
+    System.out.println("Test 1: appendWord(String word)\n"
+      + "===============================");
+    System.out.println("AusgangsListe:\n"
+      + "--------------");
+    System.out.println(rwlIter.toStringIterative());
+
+    rwlIter.appendWordIterative("toll");
+    rwlRec.appendWord("toll");
+    System.out.println("\nAufruf von appendWord(\"toll\") auf der Liste.\n"
+      + "Sollzustand gefolgt vom durch Ihre Methode erzeugten Zustand:");
+    System.out.println("----------------------");
+    System.out.println(rwlIter.toStringIterative());
+    System.out.println(rwlRec.toStringIterative());
+    System.out.println("\n");
+
+    //Testfall fuer toString()
+    rwlIter = new RecursiveWordList();
+    rwlIter.appendWordIterative("Rekursion");
+    rwlIter.appendWordIterative("ist");
+    rwlIter.appendWordIterative("toll");
+    System.out.println("Test 2: appendWord\n"
+      + "==================");
+    System.out.println("AusgangsListe:\n"
+      + "--------------");
+    System.out.println(rwlIter.toStringIterative());
+
+    System.out.println("\nRueckgabe von toString() auf der Liste:");
+    System.out.println(rwlIter.toString());
+    System.out.println("\n");
+
+    //Testfall fuer getWordAt(int index)
+    rwlIter = new RecursiveWordList();
+    rwlIter.appendWordIterative("Rekursion");
+    rwlIter.appendWordIterative("ist");
+    rwlIter.appendWordIterative("toll");
+    System.out.println("Test 3: getWordAt(index)\n"
+      + "========================");
+    System.out.println("AusgangsListe:\n"
+      + "--------------");
+    System.out.println(rwlIter.toStringIterative());
+
+    System.out.println("\nRueckgabe von getWordAt(1) auf der Liste.\n"
+      + "Sollrueckgabe gefolgt von der Rueckgabe Ihrer Methode:");
+    System.out.println("----------------");
+    System.out.println(rwlIter.getWordAtIterative(1));
+    System.out.println(rwlIter.getWordAt(1));
+  }
+
+  // Rueckgabe des Inhalts der gesamten Liste als zusammenhaengender String
+  public String toStringIterative() {
+    String sentence = "";
+    WordNode current = head;
+    while (current != null) {
+      if (sentence.length() != 0) {
+        sentence += " ";
+      }
+      sentence += current.getWord();
+      current = current.getNext();
+    }
+    return sentence;
+  }
+
+  // Anhaengen eines Wortes ans Ende der Liste
+  public void appendWordIterative(String word) {
+    if (head == null) {
+      head = new WordNode(word);
+    }
+    else {
       WordNode current = head;
-      while (current != null) {
-         if (sentence.length() != 0) {
-            sentence += " ";
-         }
-         sentence += current.getWord();
-         current = current.getNext();
+      while (current.getNext() != null) {
+        current = current.getNext();
       }
-      return sentence;
-   }
+      current.setNext(new WordNode(word));
+    }
+  }
 
-   // Anhaengen eines Wortes ans Ende der Liste
-   public void appendWordIterative(String word) {
-      if (head == null) {
-         head = new WordNode(word);
-      }
-      else {
-         WordNode current = head;
-         while (current.getNext() != null) {
-            current = current.getNext();
-         }
-         current.setNext(new WordNode(word));
-      }
-   }
-
-   // Rueckgabe des Strings eines Wortes an der durch index gegebenen Stelle.
-   // Das erste Wort in der Liste hat den Index 0
-   public String getWordAtIterative(int index) {
-      WordNode currentNode = head;
-      int currentIndex = 0;
-      while (currentIndex < index && currentNode != null) {
-         currentNode = currentNode.getNext();
-         currentIndex++;
-      }
-      if (currentNode != null) {
-         return currentNode.getWord();
-      }
-      else {
-         return null;
-      }
-   }
-	
 	/*
 	 * Beispiel fuer eine rekursive Ermittlung der Groesse der Wortliste.
 	 * 
@@ -168,107 +213,120 @@ public class RecursiveWordList {
 	 * gibt selbst den gleichen Wert zurueck.
 	 */
 
-   public int getSize() {
-      return getSize(head);
-   }
-
-   private int getSize(WordNode node) {
-      if (node == null) {
-         return 0;
-      }
-      else {
-         return getSize(node.getNext()) + 1;
-      }
-   }
-
-   //================================
-   // BEGINN des zu aendernden Codes
-   //================================
-
-   /*
-    * Die Methode appendWord(String word) soll den als Parameter uebergebenen
-    * String ans Ende der Liste anhaengen.
-    * Finden Sie mit der Methode appendWord(String word, WordNode node) auf
-    * rekursive Weise das letzte Element der Liste und haengen das neue Element
-    * an das letzte Element an. Starten Sie die Rekursion durch einen
-    * geeigneten Aufruf in der Methode appendWord(String word).
-    * Beachten Sie den Sonderfall, dass die Liste leer ist. Fangen Sie diesen
-    * Sonderfall in der Methode appendWord(String word) ab.
-    *
-    * Beispiel:
-    *
-    * "Diese" --> "Aufgabe" --> "ist" --> null
-    *
-    * Aufruf von appendWord("gruen") --> neue Liste:
-    * "Diese" --> "Aufgabe" --> "ist" --> "gruen" --> null
-    *
-    * Die Ausfuehrung soll den gleichen Effekt haben wie die Ausfuehrung der
-    * Methode appendWordIterative(String word).
-    */
-   public void appendWord(String word) {
-
-   }
-
-   private void appendWord(String word, WordNode node) {
-
-   }
-
-   /*
-    * Die Methode getWordAt(index) soll den String an der durch den Parameter
-    * index gegebenen Stelle zurueck geben. Das erste Element hat dabei wie bei
-    * Arrays den Index 0.
-    * Finden Sie mit der Methode getWordAt(int index, WordNode node) auf
-    * rekursive Weise die gewuenschte Stelle und geben Sie den entsprechenden
-    * String zurueck. Starten Sie die Rekursion durch einen geeigneten Aufruf
-    * in der Methode getWordAt(int index).
-    * Existiert kein Element mit dem gewuenschten Index, soll die Rueckgabe
-    * null sein.
-    *
-    * Beispiel:
-    *
-    * "Ich"(0) --> "habe"(1) --> "droelf"(2) --> "Elemente"(3)
-    *
-    * Rueckgabe von getWordAt(2):
-    * "droelf"
-    *
-    * Die Rueckgabe soll identisch mit der Rueckgabe der Methode
-    * getWordAtIterative(int index) sein.
-    */
-   public String getWordAt(int index) {
+  // Rueckgabe des Strings eines Wortes an der durch index gegebenen Stelle.
+  // Das erste Wort in der Liste hat den Index 0
+  public String getWordAtIterative(int index) {
+    WordNode currentNode = head;
+    int currentIndex = 0;
+    while (currentIndex < index && currentNode != null) {
+      currentNode = currentNode.getNext();
+      currentIndex++;
+    }
+    if (currentNode != null) {
+      return currentNode.getWord();
+    }
+    else {
       return null;
-   }
+    }
+  }
 
-   private String getWordAt(int index, WordNode node) {
-      return null;
-   }
+  public int getSize() {
+    return getSize(head);
+  }
 
-   /*
-    * Die Methode toString() soll alle Worte der Liste durch je ein Leerzeichen
-    * getrennt in einem String zurueckgeben. Bauen sie mit der Methode
-    * toString(WordNode node) den String rekursiv zusammen und starten Sie die
-    * Rekursion durch einen geeigneten Aufruf in der Methode toString().
-    *
-    * Beispiel:
-    *
-    * "Das" --> "ist" --> "eine" --> "Liste" --> null
-    *
-    * Rueckgabe von toString:
-    * "Das ist eine Liste"
-    *
-    * Die Rueckgabe soll identisch mit der Rueckgabe der Methode
-    * toStringIterative() sein.
-    */
-   public String toString() {
-      return null;
-   }
+  //================================
+  // BEGINN des zu aendernden Codes
+  //================================
 
-   private String toString(WordNode node) {
-      return null;
-   }
+  private int getSize(WordNode node) {
+    if (node == null) {
+      return 0;
+    }
+    else {
+      return getSize(node.getNext()) + 1;
+    }
+  }
 
-   //===================================
-   // ENDE des zu aendernden Codes
-   //===================================
+  /*
+   * Die Methode appendWord(String word) soll den als Parameter uebergebenen
+   * String ans Ende der Liste anhaengen.
+   * Finden Sie mit der Methode appendWord(String word, WordNode node) auf
+   * rekursive Weise das letzte Element der Liste und haengen das neue Element
+   * an das letzte Element an. Starten Sie die Rekursion durch einen
+   * geeigneten Aufruf in der Methode appendWord(String word).
+   * Beachten Sie den Sonderfall, dass die Liste leer ist. Fangen Sie diesen
+   * Sonderfall in der Methode appendWord(String word) ab.
+   *
+   * Beispiel:
+   *
+   * "Diese" --> "Aufgabe" --> "ist" --> null
+   *
+   * Aufruf von appendWord("gruen") --> neue Liste:
+   * "Diese" --> "Aufgabe" --> "ist" --> "gruen" --> null
+   *
+   * Die Ausfuehrung soll den gleichen Effekt haben wie die Ausfuehrung der
+   * Methode appendWordIterative(String word).
+   */
+  public void appendWord(String word) {
+
+  }
+
+  private void appendWord(String word, WordNode node) {
+
+  }
+
+  /*
+   * Die Methode getWordAt(index) soll den String an der durch den Parameter
+   * index gegebenen Stelle zurueck geben. Das erste Element hat dabei wie bei
+   * Arrays den Index 0.
+   * Finden Sie mit der Methode getWordAt(int index, WordNode node) auf
+   * rekursive Weise die gewuenschte Stelle und geben Sie den entsprechenden
+   * String zurueck. Starten Sie die Rekursion durch einen geeigneten Aufruf
+   * in der Methode getWordAt(int index).
+   * Existiert kein Element mit dem gewuenschten Index, soll die Rueckgabe
+   * null sein.
+   *
+   * Beispiel:
+   *
+   * "Ich"(0) --> "habe"(1) --> "droelf"(2) --> "Elemente"(3)
+   *
+   * Rueckgabe von getWordAt(2):
+   * "droelf"
+   *
+   * Die Rueckgabe soll identisch mit der Rueckgabe der Methode
+   * getWordAtIterative(int index) sein.
+   */
+  public String getWordAt(int index) {
+    return null;
+  }
+
+  private String getWordAt(int index, WordNode node) {
+    return null;
+  }
+
+  /*
+   * Die Methode toString() soll alle Worte der Liste durch je ein Leerzeichen
+   * getrennt in einem String zurueckgeben. Bauen sie mit der Methode
+   * toString(WordNode node) den String rekursiv zusammen und starten Sie die
+   * Rekursion durch einen geeigneten Aufruf in der Methode toString().
+   *
+   * Beispiel:
+   *
+   * "Das" --> "ist" --> "eine" --> "Liste" --> null
+   *
+   * Rueckgabe von toString:
+   * "Das ist eine Liste"
+   *
+   * Die Rueckgabe soll identisch mit der Rueckgabe der Methode
+   * toStringIterative() sein.
+   */
+  public String toString() {
+    return null;
+  }
+
+  //===================================
+  // ENDE des zu aendernden Codes
+  //===================================
 
 	
 	/*
@@ -279,65 +337,7 @@ public class RecursiveWordList {
 	 * Fehlerfreiheit Ihres Codes!
 	 */
 
-   public static void main(String[] args) {
-      System.out.println("Die folgenden Ausgaben zeigen die Ergebnisse der "
-         + "vorgegebenen iterativen Methoden, gefolgt von den "
-         + "Ergebnissen Ihrer Methoden.\nSollten die Ergebnisse Ihrer "
-         + "Methoden abweichen, verbirgt sich noch ein Fehler in ihnen."
-         + "\n");
-
-      // Testfall fuer appendWord(String word)
-      RecursiveWordList rwlIter = new RecursiveWordList();
-      RecursiveWordList rwlRec = new RecursiveWordList();
-      rwlIter.appendWordIterative("Rekursion");
-      rwlRec.appendWordIterative("Rekursion");
-      rwlIter.appendWordIterative("ist");
-      rwlRec.appendWordIterative("ist");
-      System.out.println("Test 1: appendWord(String word)\n"
-         + "===============================");
-      System.out.println("AusgangsListe:\n"
-         + "--------------");
-      System.out.println(rwlIter.toStringIterative());
-
-      rwlIter.appendWordIterative("toll");
-      rwlRec.appendWord("toll");
-      System.out.println("\nAufruf von appendWord(\"toll\") auf der Liste.\n"
-         + "Sollzustand gefolgt vom durch Ihre Methode erzeugten Zustand:");
-      System.out.println("----------------------");
-      System.out.println(rwlIter.toStringIterative());
-      System.out.println(rwlRec.toStringIterative());
-      System.out.println("\n");
-
-      //Testfall fuer toString()
-      rwlIter = new RecursiveWordList();
-      rwlIter.appendWordIterative("Rekursion");
-      rwlIter.appendWordIterative("ist");
-      rwlIter.appendWordIterative("toll");
-      System.out.println("Test 2: appendWord\n"
-         + "==================");
-      System.out.println("AusgangsListe:\n"
-         + "--------------");
-      System.out.println(rwlIter.toStringIterative());
-
-      System.out.println("\nRueckgabe von toString() auf der Liste:");
-      System.out.println(rwlIter.toString());
-      System.out.println("\n");
-
-      //Testfall fuer getWordAt(int index)
-      rwlIter = new RecursiveWordList();
-      rwlIter.appendWordIterative("Rekursion");
-      rwlIter.appendWordIterative("ist");
-      rwlIter.appendWordIterative("toll");
-      System.out.println("Test 3: getWordAt(index)\n"
-         + "========================");
-      System.out.println("AusgangsListe:\n"
-         + "--------------");
-      System.out.println(rwlIter.toStringIterative());
-
-      System.out.println("\nRueckgabe von getWordAt(1) auf der Liste.\n"
-         + "Sollrueckgabe gefolgt von der Rueckgabe Ihrer Methode:");
-      System.out.println("----------------");
-      System.out.println(rwlIter.getWordAtIterative(1));
-      System.out.println(rwlIter.getWordAt(1));
-   }
+  private String toString(WordNode node) {
+    return null;
+  }
 }

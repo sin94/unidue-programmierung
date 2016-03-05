@@ -16,6 +16,17 @@ public class Tree {
 
   private Node root;
 
+  public static void main(String[] args) {
+    Tree tree = new Tree();
+
+    tree.add(10);
+    tree.add(6);
+    tree.add(33);
+    tree.add(7);
+    tree.add(45);
+    tree.add(1);
+  }
+
   /*
    * Teilaufgabe a)
    */
@@ -33,15 +44,6 @@ public class Tree {
 
   }
 
-  public int getMinHeight() {
-        /*
-         * Diese methode war auch vorgegeben, ich hab sie zwar nicht mehr im kopf,
-    	 * aber sie hat die mindesthoehe vom Knoten bis zur Wurzel zurueckgegeben
-    	 */
-    int minHeight = 0;
-    return minHeight;
-  }
-
     /*
      * Teilaufgabe b)
      *
@@ -55,6 +57,15 @@ public class Tree {
     //                       / \    /  \
     //                     7   45  1
      */
+
+  public int getMinHeight() {
+        /*
+         * Diese methode war auch vorgegeben, ich hab sie zwar nicht mehr im kopf,
+    	 * aber sie hat die mindesthoehe vom Knoten bis zur Wurzel zurueckgegeben
+    	 */
+    int minHeight = 0;
+    return minHeight;
+  }
 
   /*
    * Teilaufgabe c)
@@ -118,17 +129,6 @@ public class Tree {
     }
     node.setNumber(makeParentsProducts(node.getNextRight()) * makeParentsProducts(node.getNextLeft()));
     return node.getNumber();
-  }
-
-  public static void main(String[] args) {
-    Tree tree = new Tree();
-
-    tree.add(10);
-    tree.add(6);
-    tree.add(33);
-    tree.add(7);
-    tree.add(45);
-    tree.add(1);
   }
 
 }

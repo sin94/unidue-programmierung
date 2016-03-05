@@ -1,6 +1,5 @@
 package com.oppahansi.ss14.generics;
 
-import java.awt.Choice;
 import java.util.ArrayList;
 
 /*
@@ -11,25 +10,26 @@ import java.util.ArrayList;
  */
 
 public class MyExample1 {
-    private static ArrayList names = new ArrayList();
-    private static String[] ordner;
 
-    public static void main(String[] args) {
-        names.add("Anton");
-        names.add("Boris");
-        names.add("Caesar");
+  private static ArrayList names = new ArrayList();
+  private static String[] ordner;
 
-        ordner = new String[names.size()];
+  public static void main(String[] args) {
+    names.add("Anton");
+    names.add("Boris");
+    names.add("Caesar");
 
-        for (int i = 0; i < names.size(); ++i) {
-            ordner[i] = (String) names.get(i);
-        }
+    ordner = new String[names.size()];
+
+    for (int i = 0; i < names.size(); ++i) {
+      ordner[i] = (String) names.get(i);
+    }
 
 //		for (int i = 0; i < ordner.length; i++)
 //		{
 //			System.out.println(ordner[i]);
 //		}
-    }
+  }
 }
 
 /*

@@ -17,33 +17,14 @@ import java.util.Arrays;
  */
 public class Point implements Comparable<Point> {
 
-  private int x;
-  private int y;
-
   // Nullpunkt
   private static final Point ZERO = new Point(0, 0);
+  private int x;
+  private int y;
 
   public Point(int x, int y) {
     this.x = x;
     this.y = y;
-  }
-
-  public int getX() {
-    return x;
-  }
-
-  public int getY() {
-    return y;
-  }
-
-  /**
-   * Berechnet den Abstand zu Punkt p
-   */
-  public double getDistance(Point p) {
-    int dx = x - p.x;
-    int dy = y - p.y;
-
-    return Math.sqrt(dx * dx + dy * dy);
   }
 
   public static void main(String[] args) {
@@ -69,6 +50,24 @@ public class Point implements Comparable<Point> {
     for (Point p : points) {
       System.out.println(String.format("\t(%3d|%3d), Abstand vom Nullpunkt: %7.3f", p.x, p.y, p.getDistance(ZERO)));
     }
+  }
+
+  public int getX() {
+    return x;
+  }
+
+  public int getY() {
+    return y;
+  }
+
+  /**
+   * Berechnet den Abstand zu Punkt p
+   */
+  public double getDistance(Point p) {
+    int dx = x - p.x;
+    int dy = y - p.y;
+
+    return Math.sqrt(dx * dx + dy * dy);
   }
 
   @Override

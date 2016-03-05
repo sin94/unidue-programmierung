@@ -2,11 +2,11 @@
  * Created by:
  * Institute for Computer Science and Business Information Systems
  * University Duisburg-Essen
- *
+ * <p>
  * For learning purpose only.
- *
+ * <p>
  * Offizielle moegliche Loesung
- *
+ * <p>
  * ledControl is located inside the res/ledControl/ folder - add it to your project as library.
  */
 

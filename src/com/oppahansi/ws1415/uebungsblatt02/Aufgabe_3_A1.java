@@ -1,8 +1,8 @@
 /**
  * Created by Rogerg Fu
- *
+ * <p>
  * Eine mögliche Lösung für die Aufgabe 3 aus dem Uebungsblatt 2
- *
+ * <p>
  * Alternative 1
  */
 

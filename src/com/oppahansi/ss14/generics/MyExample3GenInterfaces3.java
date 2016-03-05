@@ -3,15 +3,16 @@ package com.oppahansi.ss14.generics;
 import java.util.Collection;
 
 public class MyExample3GenInterfaces3<T extends Collection> {
-    T t;
 
-    public MyExample3GenInterfaces3(T t) {
-        this.t = t;
-    }
+  T t;
 
-    public int length() {
-        return t.size();
-    }
+  public MyExample3GenInterfaces3(T t) {
+    this.t = t;
+  }
+
+  public int length() {
+    return t.size();
+  }
 }
 
 /*

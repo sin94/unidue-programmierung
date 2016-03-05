@@ -2,9 +2,9 @@
  * Created by:
  * Institute for Computer Science and Business Information Systems
  * University Duisburg-Essen
- *
+ * <p>
  * For learning purpose only.
- *
+ * <p>
  * Offizielle moegliche Loesung
  */
 
@@ -52,7 +52,7 @@ class Suchbaeume {
 
 		/*Debug ausgbae*/
     s.printSearchTree(s.getRoot(), 0);
-		/*
+    /*
 		 *         10               10
 		 *     8       15      <=>   |-15
 		 *   7   9   14                 |-14

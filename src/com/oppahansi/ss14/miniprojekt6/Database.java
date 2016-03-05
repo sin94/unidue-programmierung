@@ -8,27 +8,27 @@ import java.util.List;
  */
 public interface Database {
 
-    void insertStudent(Student student);
+  void insertStudent(Student student);
 
-    void insertStudents(List<Student> students);
+  void insertStudents(List<Student> students);
 
-    int countStudents();
+  int countStudents();
 
-    List<Student> getStudents();
+  List<Student> getStudents();
 
-    List<Student> getStudentsBornAfter(Calendar date);
+  List<Student> getStudentsBornAfter(Calendar date);
 
-    List<Student> getGoodStudents(double gradeThreshold);
+  List<Student> getGoodStudents(double gradeThreshold);
 
-    List<Student> getGoodStudentsOrderedByGrade(double gradeThreshold);
+  List<Student> getGoodStudentsOrderedByGrade(double gradeThreshold);
 
-    List<Student> getStudentsAttendingCourse(Course course);
+  List<Student> getStudentsAttendingCourse(Course course);
 
-    void insertCourse(Course course);
+  void insertCourse(Course course);
 
-    List<Course> getCourses();
+  List<Course> getCourses();
 
-    List<Course> getCoursesInTerm(Term term);
+  List<Course> getCoursesInTerm(Term term);
 
-    int countCourses();
+  int countCourses();
 }

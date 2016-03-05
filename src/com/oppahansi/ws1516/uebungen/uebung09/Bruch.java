@@ -1,9 +1,9 @@
 /**
  * Created by:
  * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- *
+ * <p>
  * For learning purpose only.
- *
+ * <p>
  * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
  * solve these tasks.
  */
@@ -32,22 +32,6 @@ public class Bruch implements Comparable<Bruch> {
     this.nenner = nenner;
   }
 
-  public int getZaehler() {
-    return zaehler;
-  }
-
-  public void setZaehler(int zaehler) {
-    this.zaehler = zaehler;
-  }
-
-  public int getNenner() {
-    return nenner;
-  }
-
-  public void setNenner(int nenner) {
-    this.nenner = nenner;
-  }
-
   public static void main(String[] args) {
     ArrayList<Bruch> brueche = new ArrayList<Bruch>();
     brueche.add(new Bruch(14, 3));
@@ -55,7 +39,7 @@ public class Bruch implements Comparable<Bruch> {
     brueche.add(new Bruch(2, 7));
     brueche.add(new Bruch(155, 156));
     /*
-		 * Die Fehlermarkierung unter sort erscheint, weil Objekte der Klasse
+     * Die Fehlermarkierung unter sort erscheint, weil Objekte der Klasse
 		 * Bruch nicht untereinander vergleichbar sind, Vergleichbarkeit aber
 		 * fuer die Verwendung der Methode Collections.sort notwendig ist.
 		 * Stellen Sie die Vergleichbarkeit her, indem sie in der
@@ -70,6 +54,22 @@ public class Bruch implements Comparable<Bruch> {
       System.out.println("( " + b.getZaehler() + " / " + b.getNenner() +
         " ) = " + (b.getZaehler() / (double) b.getNenner()));
     }
+  }
+
+  public int getZaehler() {
+    return zaehler;
+  }
+
+  public void setZaehler(int zaehler) {
+    this.zaehler = zaehler;
+  }
+
+  public int getNenner() {
+    return nenner;
+  }
+
+  public void setNenner(int nenner) {
+    this.nenner = nenner;
   }
 
   @Override

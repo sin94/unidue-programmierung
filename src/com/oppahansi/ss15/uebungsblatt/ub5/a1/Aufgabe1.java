@@ -1,9 +1,9 @@
 /**
  * Created by:
  * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- *
+ * <p>
  * For learning purpose only.
- *
+ * <p>
  * Implementation by Oppa Hansi. Possible solution - there are other ways to
  * solve these tasks.
  */
@@ -56,8 +56,7 @@ public class Aufgabe1 {
       if (i < p.length && i < q.length) {
         result[i] = p[i] * q[i];
       }
-      else
-      {
+      else {
         result[i] = 0;
       }
     }
@@ -131,7 +130,7 @@ public class Aufgabe1 {
     int lastNumber = -1;
 
     for (Integer currentNumber : numbersArray) {
-      if (currentNumber > 10 && currentNumber <99 && lastNumber != currentNumber) {
+      if (currentNumber > 10 && currentNumber < 99 && lastNumber != currentNumber) {
         numbers.insertElement(new Element(currentNumber));
       }
       lastNumber = currentNumber;

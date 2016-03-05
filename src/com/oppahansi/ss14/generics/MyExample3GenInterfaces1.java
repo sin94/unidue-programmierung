@@ -1,31 +1,30 @@
 package com.oppahansi.ss14.generics;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 
 public class MyExample3GenInterfaces1 {
-    private static ArrayList<String> names = new ArrayList<String>();
-    private static String[] ordner;
 
-    public static void main(String[] args) {
-        names.add("Anton");
-        names.add("Boris");
-        names.add("Caesar");
-        // names.add(2);
+  private static ArrayList<String> names = new ArrayList<String>();
+  private static String[] ordner;
 
-        ordner = new String[names.size()];
-        int i = 0;
-        for (String s : names) //f�ngt bei 0 an und geht alle string names durch und gibt die als s zur�ck
-        {
-            ordner[i] = s;
-            i++;
-        }
+  public static void main(String[] args) {
+    names.add("Anton");
+    names.add("Boris");
+    names.add("Caesar");
+    // names.add(2);
 
-        for (int k = 0; k < ordner.length; k++) {
-            System.out.println(ordner[k]);
-        }
+    ordner = new String[names.size()];
+    int i = 0;
+    for (String s : names) //f�ngt bei 0 an und geht alle string names durch und gibt die als s zur�ck
+    {
+      ordner[i] = s;
+      i++;
     }
+
+    for (int k = 0; k < ordner.length; k++) {
+      System.out.println(ordner[k]);
+    }
+  }
 }
 /*
  * - generics nicht nur auf Klassen bezogen

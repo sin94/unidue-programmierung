@@ -8,30 +8,28 @@ public class Addieren {
     * 1 bis n. Aufgabe 3a
    */
 
-    public int addieren(int n) {
-        int ergebnis = 0;
-        // ergaenzen Sie bitte hier Ihren Quellcode
-        // und speicher das Ergbnis in der Variablen ergebnis
+  public static void main(String args[]) {
 
-        return ergebnis;
-    }
+    Addieren a = new Addieren();
 
+    int ergebnis1 = a.addieren(1);
+    int ergebnis3 = a.addieren(3);
+    int ergebnis6 = a.addieren(6);
+    int ergebnis100 = a.addieren(100);
 
-    public static void main(String args[]) {
+    System.out.println("addieren(1)   hat " + ergebnis1 + " berechnet, richtig ist 1");
+    System.out.println("addieren(3)   hat " + ergebnis3 + " berechnet, richtig ist 6");
+    System.out.println("addieren(6)   hat " + ergebnis6 + " berechnet, richtig ist 21");
+    System.out.println("addieren(100) hat " + ergebnis100 + " berechnet, richtig ist 5050");
 
-        Addieren a = new Addieren();
+  }
 
-        int ergebnis1 = a.addieren(1);
-        int ergebnis3 = a.addieren(3);
-        int ergebnis6 = a.addieren(6);
-        int ergebnis100 = a.addieren(100);
+  public int addieren(int n) {
+    int ergebnis = 0;
+    // ergaenzen Sie bitte hier Ihren Quellcode
+    // und speicher das Ergbnis in der Variablen ergebnis
 
-        System.out.println("addieren(1)   hat " + ergebnis1 + " berechnet, richtig ist 1");
-        System.out.println("addieren(3)   hat " + ergebnis3 + " berechnet, richtig ist 6");
-        System.out.println("addieren(6)   hat " + ergebnis6 + " berechnet, richtig ist 21");
-        System.out.println("addieren(100) hat " + ergebnis100 + " berechnet, richtig ist 5050");
-
-    }
-
+    return ergebnis;
+  }
 
 }

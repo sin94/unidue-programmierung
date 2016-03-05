@@ -35,121 +35,122 @@ package com.oppahansi.ss14.woche5;
 
 public class Queue {
 
-    Node first, last;
+  Node first, last;
 
-    public void Warteschlange() {
-        first = null;
-        last = null;
-    }
+  /*
+   * Testen Sie hier Ihre Implementierung.
+   */
+  public static void main(String[] args) {
+    Queue queue = new Queue();
+    queue.push(4);        // Inhalt der Warteschlange: (4)
+    queue.push(17);        // Inhalt der Warteschlange: (4, 17)
+    queue.pop();        // ...                       (17)
+    queue.push(33);        // 							 (17, 33)
+    queue.push(-13);    //							 (17, 33, -13)
+    queue.pop();        //							 (33, -13)
+    System.out.println("Erwartete Laenge der Warteschlange: 2");
+    System.out.println("Tatsaechliche Laenge:               " + queue.length());
+    System.out.println();
+    System.out.println("Erwartete Summe ueber der Warteschlange: 20");
+    System.out.println("Tatsaechliche Summe:                     " + queue.sum());
+  }
 
 	
 	/*
      * BEGINN des zu bearbeitenden Codes
 	 */
 
-    /*
-     * Mit Hilfe dieser Methode soll eine neue Zahl ans Ende der Warteschlange
-     * angehaengt werden. Beruecksichtigen Sie auch den Fall ein neues Element
-     * in eine leere Schlange einzufuegen.
-     */
-    public void push(int zahl) {
-        if (first == null) {
-            this.first = new Node(zahl, null);
-            this.last = this.first;
-        } else {
-            this.last.setNext(new Node(zahl, null));
-            this.last = this.last.getNext();
-        }
+  public void Warteschlange() {
+    first = null;
+    last = null;
+  }
+
+  /*
+   * Mit Hilfe dieser Methode soll eine neue Zahl ans Ende der Warteschlange
+   * angehaengt werden. Beruecksichtigen Sie auch den Fall ein neues Element
+   * in eine leere Schlange einzufuegen.
+   */
+  public void push(int zahl) {
+    if (first == null) {
+      this.first = new Node(zahl, null);
+      this.last = this.first;
     }
-
-
-    /*
-     * Diese Methode soll das vorderste Element aus der Warteschlange zurueck-
-     * geben und aus der Warteschlange entfernen. Beruecksichtigen Sie auch hier
-     * die Sonderfaelle einer leeren Warteschlange und einer Warteschlange mit
-     * nur einem Element. Wenn die Warteschlange leer ist, soll der kleinste
-     * moegliche Wert fuer eine Integervariable zurueckgegeben werden.
-     * Den kleinsten moeglichen Wert erhalten Sie durch "Integer.MIN_VALUE".
-     */
-    public int pop() {
-        if (this.first == null) {
-            return Integer.MIN_VALUE;
-        } else if (this.first.equals(this.last)) {
-            int num = this.first.getZahl();
-            this.first = null;
-            this.last = null;
-            return num;
-        } else {
-            int num = this.first.getZahl();
-            Node newFirst = this.first.getNext();
-            this.first = null;
-            this.first = newFirst;
-            return num;
-        }
+    else {
+      this.last.setNext(new Node(zahl, null));
+      this.last = this.last.getNext();
     }
+  }
 
-
-    /*
-     * Diese Methode soll die Anzahl der Elemente in der Warteschlange
-     * zurueckgeben. Ist die Warteschlange leer, soll die Rueckgabe 0 sein, hat
-     * die Warteschlange zB 10 Elemente, soll die Rueckgabe 10 sein.
-     */
-    public int length() {
-        if (this.first == null) {
-            return 0;
-        } else {
-            Node node = this.first;
-            int counter = 0;
-            while (node != null) {
-                counter++;
-                node = node.getNext();
-            }
-            return counter;
-        }
+  /*
+   * Diese Methode soll das vorderste Element aus der Warteschlange zurueck-
+   * geben und aus der Warteschlange entfernen. Beruecksichtigen Sie auch hier
+   * die Sonderfaelle einer leeren Warteschlange und einer Warteschlange mit
+   * nur einem Element. Wenn die Warteschlange leer ist, soll der kleinste
+   * moegliche Wert fuer eine Integervariable zurueckgegeben werden.
+   * Den kleinsten moeglichen Wert erhalten Sie durch "Integer.MIN_VALUE".
+   */
+  public int pop() {
+    if (this.first == null) {
+      return Integer.MIN_VALUE;
     }
-
-
-    /*
-     * Diese Methode hat nichts mit dem Konzept der Warteschlange zu tun und
-     * dient nur der Uebung des Umgangs mit Listenelementen. Der Rueckgabewert
-     * soll die Summe aller Zahlen in der Warteschlange sein. Ist die
-     * Warteschlange leer, soll der Rueckgabewert 0 sein.
-     */
-    public int sum() {
-        if (this.first == null) {
-            return 0;
-        } else {
-            Node node = this.first;
-            int sum = 0;
-            while (node != null) {
-                sum += node.getZahl();
-                node = node.getNext();
-            }
-            return sum;
-        }
+    else if (this.first.equals(this.last)) {
+      int num = this.first.getZahl();
+      this.first = null;
+      this.last = null;
+      return num;
     }
-	
+    else {
+      int num = this.first.getZahl();
+      Node newFirst = this.first.getNext();
+      this.first = null;
+      this.first = newFirst;
+      return num;
+    }
+  }
+
+  /*
+   * Diese Methode soll die Anzahl der Elemente in der Warteschlange
+   * zurueckgeben. Ist die Warteschlange leer, soll die Rueckgabe 0 sein, hat
+   * die Warteschlange zB 10 Elemente, soll die Rueckgabe 10 sein.
+   */
+  public int length() {
+    if (this.first == null) {
+      return 0;
+    }
+    else {
+      Node node = this.first;
+      int counter = 0;
+      while (node != null) {
+        counter++;
+        node = node.getNext();
+      }
+      return counter;
+    }
+  }
+
 	/*
 	 * ENDE des zu bearbeitenden Codes
 	 */
 
-
-    /*
-     * Testen Sie hier Ihre Implementierung.
-     */
-    public static void main(String[] args) {
-        Queue queue = new Queue();
-        queue.push(4);        // Inhalt der Warteschlange: (4)
-        queue.push(17);        // Inhalt der Warteschlange: (4, 17)
-        queue.pop();        // ...                       (17)
-        queue.push(33);        // 							 (17, 33)
-        queue.push(-13);    //							 (17, 33, -13)
-        queue.pop();        //							 (33, -13)
-        System.out.println("Erwartete Laenge der Warteschlange: 2");
-        System.out.println("Tatsaechliche Laenge:               " + queue.length());
-        System.out.println();
-        System.out.println("Erwartete Summe ueber der Warteschlange: 20");
-        System.out.println("Tatsaechliche Summe:                     " + queue.sum());
+  /*
+   * Diese Methode hat nichts mit dem Konzept der Warteschlange zu tun und
+   * dient nur der Uebung des Umgangs mit Listenelementen. Der Rueckgabewert
+   * soll die Summe aller Zahlen in der Warteschlange sein. Ist die
+   * Warteschlange leer, soll der Rueckgabewert 0 sein.
+   */
+  public int sum() {
+    if (this.first == null) {
+      return 0;
     }
+    else {
+      Node node = this.first;
+      int sum = 0;
+      while (node != null) {
+        sum += node.getZahl();
+        node = node.getNext();
+      }
+      return sum;
+    }
+  }
 
 }

@@ -23,13 +23,13 @@ package com.oppahansi.ws1516.uebungen.uebung06;
 
 public class Fibonacci {
 
-   public static int fibonacci(int n) {
-      return -1;
-   }
+  public static int fibonacci(int n) {
+    return -1;
+  }
 
-   public static void main(String[] args) {
-      // Testaufruf
-      System.out.println(fibonacci(4));
-      System.out.println(fibonacci(12));
-   }
+  public static void main(String[] args) {
+    // Testaufruf
+    System.out.println(fibonacci(4));
+    System.out.println(fibonacci(12));
+  }
 }

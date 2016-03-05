@@ -5,10 +5,10 @@ package com.oppahansi.ss14.extra;
 
 public class WarenkorbMain {
 
-    public static void main(String[] args) {
-        Warenkorb ware = new Warenkorb(300.0, 3);
+  public static void main(String[] args) {
+    Warenkorb ware = new Warenkorb(300.0, 3);
 
 //		ware.rechnungsDatenAusgeben();
-    }
+  }
 
 }

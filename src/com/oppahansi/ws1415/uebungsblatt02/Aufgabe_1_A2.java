@@ -1,8 +1,8 @@
 /**
  * Created by oppahansi on 06.11.2014.
- *
+ * <p>
  * Eine mögliche Lösung für die Aufgabe 1 aus dem Uebungsblatt 2
- *
+ * <p>
  * Alternative 2
  */
 

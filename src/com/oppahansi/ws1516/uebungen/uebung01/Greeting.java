@@ -1,9 +1,9 @@
 /**
  * Created by:
  * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- *
+ * <p>
  * For learning purpose only.
- *
+ * <p>
  * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
  * solve these tasks.
  */
@@ -26,28 +26,28 @@ import java.util.Scanner;
 
 public class Greeting {
 
-   // ----- diese Methode veraendern -----
-   public static String greeting(String name) {
-      String greeting = "Hallo, " + name + "!";
+  // ----- diese Methode veraendern -----
+  public static String greeting(String name) {
+    String greeting = "Hallo, " + name + "!";
 
-      // return "Hallo, " + name + "!";               // Kurze version
+    // return "Hallo, " + name + "!";               // Kurze version
 
-      return greeting;
-   }
+    return greeting;
+  }
 
-   private static String getName() {
-      System.out.print("Name: ");
+  private static String getName() {
+    System.out.print("Name: ");
 
-      Scanner scanner = new Scanner(System.in);
-      String name = scanner.nextLine();
-      scanner.close();
+    Scanner scanner = new Scanner(System.in);
+    String name = scanner.nextLine();
+    scanner.close();
 
-      return name;
-   }
+    return name;
+  }
 
-   public static void main(String[] args) {
-      String name = getName();
-      System.out.println(greeting(name));
-   }
+  public static void main(String[] args) {
+    String name = getName();
+    System.out.println(greeting(name));
+  }
 
 }

@@ -8,12 +8,12 @@ import java.util.List;
  */
 public interface Database {
 
-    void insertStudent(Student student, int matriculationNumber);
+  void insertStudent(Student student, int matriculationNumber);
 
-    Student getStudentByMatriculationNumber(int matriculationNumber);
+  Student getStudentByMatriculationNumber(int matriculationNumber);
 
-    int countStudentsWithFirstName(String firstName);
+  int countStudentsWithFirstName(String firstName);
 
-    List<Student> getStudentsBornAfter(Calendar date);
+  List<Student> getStudentsBornAfter(Calendar date);
 
 }

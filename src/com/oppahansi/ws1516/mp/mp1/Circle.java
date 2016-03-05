@@ -1,9 +1,9 @@
 /**
  * Created by:
  * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- *
+ * <p>
  * For learning purpose only.
- *
+ * <p>
  * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
  * solve these tasks.
  */
@@ -16,61 +16,61 @@ package com.oppahansi.ws1516.mp.mp1;
  */
 public class Circle {
 
-   // Mittelpunkt des Kreises
-   private Point location;
-   private double radius;
+  // Mittelpunkt des Kreises
+  private Point location;
+  private double radius;
 
-   public Circle() {
-   }
+  public Circle() {
+  }
 
-   public Circle(Point initLocation, double initRadius) {
-      this.location = initLocation;
-      this.radius = initRadius;
-   }
+  public Circle(Point initLocation, double initRadius) {
+    this.location = initLocation;
+    this.radius = initRadius;
+  }
 
-   public double getRadius() {
-      return radius;
-   }
+  public static Circle fromPoints(Point center, Point p) {
+    Circle circle = new Circle();
 
-   public void setRadius(double newRadius) {
-      this.radius = newRadius;
-   }
+    // An dieser Stelle das circle-Objekt bearbeiten
 
-   public Point getLocation() {
-      return location;
-   }
+    circle.setLocation(center);
+    circle.setRadius(center.getDistance(p));
 
-   public void setLocation(Point newLocation) {
-      this.location = newLocation;
-   }
+    return circle;
+  }
 
-   // Durchmesser
-   public double getDiameter() {
-      return radius * 2;
-   }
+  public double getRadius() {
+    return radius;
+  }
 
-   // Umfang
-   public double getCircumference() {
-      return Math.PI * getDiameter();
-   }
+  public void setRadius(double newRadius) {
+    this.radius = newRadius;
+  }
 
-   // Flaeche
-   public double getArea() {
-      return Math.PI * Math.pow(getRadius(), 2);
-   }
+  public Point getLocation() {
+    return location;
+  }
 
-   public boolean containsPoint(Point point) {
-      return getLocation().getDistance(point) < getRadius();
-   }
+  public void setLocation(Point newLocation) {
+    this.location = newLocation;
+  }
 
-   public static Circle fromPoints(Point center, Point p) {
-      Circle circle = new Circle();
+  // Durchmesser
+  public double getDiameter() {
+    return radius * 2;
+  }
 
-      // An dieser Stelle das circle-Objekt bearbeiten
+  // Umfang
+  public double getCircumference() {
+    return Math.PI * getDiameter();
+  }
 
-      circle.setLocation(center);
-      circle.setRadius(center.getDistance(p));
+  // Flaeche
+  public double getArea() {
+    return Math.PI * Math.pow(getRadius(), 2);
+  }
 
-      return circle;
-   }
+  public boolean containsPoint(Point point) {
+    return getLocation().getDistance(point) < getRadius();
+  }
 }

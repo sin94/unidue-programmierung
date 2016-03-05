@@ -2,11 +2,11 @@
  * Created by:
  * Institute for Computer Science and Business Information Systems
  * University Duisburg-Essen
- *
+ * <p>
  * For learning purpose only.
- *
+ * <p>
  * Eine mögliche Lösung für die Aufgabe 3 aus dem Uebungsblatt 1
- *
+ * <p>
  * Alternative 1
  */
 

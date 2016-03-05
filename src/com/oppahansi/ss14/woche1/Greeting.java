@@ -16,24 +16,24 @@ import java.util.Scanner;
 
 public class Greeting {
 
-    // ----- diese Methode ver�ndern -----
-    public static String greeting(String name) {
-        return "Hallo, " + name + "!";
-    }
+  // ----- diese Methode ver�ndern -----
+  public static String greeting(String name) {
+    return "Hallo, " + name + "!";
+  }
 
-    private static String getName() {
-        System.out.print("Name: ");
+  private static String getName() {
+    System.out.print("Name: ");
 
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine();
-        scanner.close();
+    Scanner scanner = new Scanner(System.in);
+    String name = scanner.nextLine();
+    scanner.close();
 
-        return name;
-    }
+    return name;
+  }
 
-    public static void main(String[] args) {
-        String name = getName();
-        System.out.println(greeting(name));
-    }
+  public static void main(String[] args) {
+    String name = getName();
+    System.out.println(greeting(name));
+  }
 
 }

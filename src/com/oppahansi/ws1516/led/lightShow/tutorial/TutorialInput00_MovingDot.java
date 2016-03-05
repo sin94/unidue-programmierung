@@ -1,7 +1,7 @@
 /**
  * Created by:
  * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- *
+ * <p>
  * For learning purpose only.
  */
 
@@ -40,93 +40,93 @@
 
 package com.oppahansi.ws1516.led.lightShow.tutorial;
 
-import java.awt.event.KeyEvent;
-
 import ledControl.BoardController;
 import ledControl.gui.KeyBuffer;
 
-public class TutorialInput00_MovingDot {
-	
-	private static BoardController	controller;
-	// Der KeyBuffer in dem die Tastatureingaben zwischengespeichert werden.
-	private static KeyBuffer		buffer;
-	// In den beiden Variablen xPos und yPos wird die Position des roten Punktes
-	// gespeichert.
-	private static int xPos, yPos;
+import java.awt.event.KeyEvent;
 
-	public static void main(String[] args) {
-		// Den Boardcontroller anfordern
-		controller = BoardController.getBoardController();
-		// Danach den KeyBuffer anfordern
-		buffer = controller.getKeyBuffer();
-		// Startposition des Punktes festlegen
-		xPos = 5;
-		yPos = 5;
-		
-		// In einer Endlosschleife das Programm laufen lassen. Das Programm wird
-		// trotzdem beendet, sobald der Benutzer es schliesst.
-		// Zwei Dinge werden in der Schleife getan:
-		// 1. a) Das letzte KeyEvent wird aus dem Buffer gelesen
-		//    b) Es wird geprueft, ob ueberhaupt eine Tastatureingabe vorliegt.
-		//    c) Wenn eine Eingabe vorliegt, wird geprueft, ob es sich um ein
-		//       KEY_PRESSED-Event handelt, da dieses Programm nur auf das
-		//       druecken, nicht auf das loslassen einer Taste reagieren soll.
-		//    d) Wenn ein KEY_PRESSED-Event vorliegt, wird geprueft, ob es sich
-		//       um eine der vier Pfeiltasten handelt, um dann
-		//    e) gegebenenfalls die Position des roten Punktes anzupassen.
-		// 2. Das Bild wird neu gezeichnet.
-		while (true){
-			// 1. a)
-			KeyEvent event = buffer.pop();
-			// 1. b)
-			if (event != null){
-				// 1.c)
-				if (event.getID() == KeyEvent.KEY_PRESSED){
-					// 1.d)
-					switch (event.getKeyCode()){
-					case KeyEvent.VK_UP:
-						// der rote Punkt soll bewegt werden. Das darf nur dann
-						// geschehen, wenn der Punkt sich dadurch nicht ueber
-						// Bildrand hinaus bewegt
-						if (yPos > 0){
-							// 1.e)
-							yPos--;
-						}
-						break;
-					case KeyEvent.VK_DOWN:
-						// Pruefung auf den Bildrand
-						if (yPos < 11){
-							// 1.e)
-							yPos++;
-						}
-						break;
-					case KeyEvent.VK_LEFT:
-						// Pruefung auf den Bildrand
-						if (xPos > 0){
-							// 1.e)
-							xPos--;
-						}
-						break;
-					case KeyEvent.VK_RIGHT:
-						// Pruefung auf den Bildrand
-						if (xPos < 11){
-							// 1.e)
-							xPos++;
-						}
-						break;
-					default:
-					}
-				}
-			}
-			
-			// 2.
-			// Zuruecksetzen des Bildes
-			controller.resetColors();
-			// Zeichnen des roten Punktes an der gespeicherten Position
-			controller.setColor(xPos, yPos, 127, 0, 0);
-			// Darstellung des neu gezeichneten Bildes auf dem Board
-			controller.updateLedStripe();
-		}
-	}
+public class TutorialInput00_MovingDot {
+
+  private static BoardController controller;
+  // Der KeyBuffer in dem die Tastatureingaben zwischengespeichert werden.
+  private static KeyBuffer buffer;
+  // In den beiden Variablen xPos und yPos wird die Position des roten Punktes
+  // gespeichert.
+  private static int xPos, yPos;
+
+  public static void main(String[] args) {
+    // Den Boardcontroller anfordern
+    controller = BoardController.getBoardController();
+    // Danach den KeyBuffer anfordern
+    buffer = controller.getKeyBuffer();
+    // Startposition des Punktes festlegen
+    xPos = 5;
+    yPos = 5;
+
+    // In einer Endlosschleife das Programm laufen lassen. Das Programm wird
+    // trotzdem beendet, sobald der Benutzer es schliesst.
+    // Zwei Dinge werden in der Schleife getan:
+    // 1. a) Das letzte KeyEvent wird aus dem Buffer gelesen
+    //    b) Es wird geprueft, ob ueberhaupt eine Tastatureingabe vorliegt.
+    //    c) Wenn eine Eingabe vorliegt, wird geprueft, ob es sich um ein
+    //       KEY_PRESSED-Event handelt, da dieses Programm nur auf das
+    //       druecken, nicht auf das loslassen einer Taste reagieren soll.
+    //    d) Wenn ein KEY_PRESSED-Event vorliegt, wird geprueft, ob es sich
+    //       um eine der vier Pfeiltasten handelt, um dann
+    //    e) gegebenenfalls die Position des roten Punktes anzupassen.
+    // 2. Das Bild wird neu gezeichnet.
+    while (true) {
+      // 1. a)
+      KeyEvent event = buffer.pop();
+      // 1. b)
+      if (event != null) {
+        // 1.c)
+        if (event.getID() == KeyEvent.KEY_PRESSED) {
+          // 1.d)
+          switch (event.getKeyCode()) {
+            case KeyEvent.VK_UP:
+              // der rote Punkt soll bewegt werden. Das darf nur dann
+              // geschehen, wenn der Punkt sich dadurch nicht ueber
+              // Bildrand hinaus bewegt
+              if (yPos > 0) {
+                // 1.e)
+                yPos--;
+              }
+              break;
+            case KeyEvent.VK_DOWN:
+              // Pruefung auf den Bildrand
+              if (yPos < 11) {
+                // 1.e)
+                yPos++;
+              }
+              break;
+            case KeyEvent.VK_LEFT:
+              // Pruefung auf den Bildrand
+              if (xPos > 0) {
+                // 1.e)
+                xPos--;
+              }
+              break;
+            case KeyEvent.VK_RIGHT:
+              // Pruefung auf den Bildrand
+              if (xPos < 11) {
+                // 1.e)
+                xPos++;
+              }
+              break;
+            default:
+          }
+        }
+      }
+
+      // 2.
+      // Zuruecksetzen des Bildes
+      controller.resetColors();
+      // Zeichnen des roten Punktes an der gespeicherten Position
+      controller.setColor(xPos, yPos, 127, 0, 0);
+      // Darstellung des neu gezeichneten Bildes auf dem Board
+      controller.updateLedStripe();
+    }
+  }
 
 }

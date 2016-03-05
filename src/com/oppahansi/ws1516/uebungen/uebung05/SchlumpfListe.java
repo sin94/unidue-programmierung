@@ -296,7 +296,7 @@ public class SchlumpfListe {
   }
 
 	/*
-	 * ENDE des zu bearbeitenden Codes
+   * ENDE des zu bearbeitenden Codes
 	 */
 
   // Mittels dieser Methode sollen alle Schluempfe in der Liste um den durch

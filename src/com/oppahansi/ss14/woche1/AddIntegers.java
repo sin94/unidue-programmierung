@@ -6,19 +6,19 @@ package com.oppahansi.ss14.woche1;
 
 public class AddIntegers {
 
-    // ----- Modifizieren Sie diese Methode -----
-    public static int add(int a, int b) {
+  // ----- Modifizieren Sie diese Methode -----
+  public static int add(int a, int b) {
 
-        return a + b;
-    }
-    // ------------------------------------------
+    return a + b;
+  }
+  // ------------------------------------------
 
-    public static void main(String[] args) {
-        // Testaufruf
-        int x = 12;
-        int y = 7;
+  public static void main(String[] args) {
+    // Testaufruf
+    int x = 12;
+    int y = 7;
 
-        System.out.println(add(x, y));
-    }
+    System.out.println(add(x, y));
+  }
 
 }

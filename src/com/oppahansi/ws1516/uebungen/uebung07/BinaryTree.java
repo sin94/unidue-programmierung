@@ -32,17 +32,17 @@ package com.oppahansi.ws1516.uebungen.uebung07;
 
 public class BinaryTree {
 
-   BinaryTreeNode top;
+  BinaryTreeNode top;
 
-   public BinaryTree() {
-      top = null;
-   }
+  public BinaryTree() {
+    top = null;
+  }
 
 	
 	/* 
     * BEGINN des zu implementierenden Bereichs
 	 */
-	
+
 	
 	/*
 	 * Mit dieser Methode soll ein neuer Knoten mit der durch den Parameter
@@ -67,9 +67,9 @@ public class BinaryTree {
 	 *                      -3   4  8   20
 	 */
 
-   public void insert(int number) {
+  public static void main(String[] args) {
 
-   }
+  }
 	
 	
 	
@@ -91,9 +91,9 @@ public class BinaryTree {
 	 * damit leer ist, soll die zurueckgegebene Tiefe 0 sein.
 	 */
 
-   public int maxDepth() {
-      return 0;
-   }
+  public void insert(int number) {
+
+  }
 	
 	
 	
@@ -111,9 +111,9 @@ public class BinaryTree {
 	 * Die Summe ueber diesen Baum ware 5 + 2 + (-3) + 17 = 21
 	 */
 
-   public int sumOfElements() {
-      return 0;
-   }
+  public int maxDepth() {
+    return 0;
+  }
 	
 	
 	
@@ -124,16 +124,16 @@ public class BinaryTree {
 	 * Elements wieder der oben geforderten Sortierung entspricht.
 	 */
 
-   public void deleteNumber(int number) {
-
-   }
+  public int sumOfElements() {
+    return 0;
+  }
 	
 	/*
 	 * ENDE des zu implementierenden Bereichs
 	 */
 
-   public static void main(String[] args) {
+  public void deleteNumber(int number) {
 
-   }
+  }
 
 }

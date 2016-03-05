@@ -1,9 +1,9 @@
 /**
  * Created by:
  * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- *
+ * <p>
  * For learning purpose only.
- *
+ * <p>
  * Implementation by Oppa Hansi. Possible solution - there are other ways to
  * solve these tasks.
  */
@@ -289,7 +289,7 @@ public class Miniprojekt3 {
     for (Tisch aktuellerTisch : alleTische) {
       Tischbuchung aktuelleTischbuchung = aktuellerTisch.getTischbuchungen();
 
-      if(aktuelleTischbuchung == null) {
+      if (aktuelleTischbuchung == null) {
         verfuegbareTische++;
       }
       else {
@@ -317,7 +317,7 @@ public class Miniprojekt3 {
   // 4
   public int[] belegteTische(int Zeitpunkt) {
     int[] belegteTische = new int[alleTische.length - nichtReserviert(Zeitpunkt)];
-    int index  = 0;
+    int index = 0;
 
     for (Tisch aktuellerTisch : alleTische) {
       Tischbuchung aktuelleTischbuchung = aktuellerTisch.getTischbuchungen();
@@ -470,7 +470,7 @@ public class Miniprojekt3 {
       }
     }
 
-    return  anzTischeMitFreienPlaetzen;
+    return anzTischeMitFreienPlaetzen;
   }
 
   // 12

@@ -2,7 +2,7 @@
  * Created by:
  * Institute for Computer Science and Business Information Systems
  * University Duisburg-Essen
- *
+ * <p>
  * Solved by Ya Sin.
  * For learning purpose only.
  */
@@ -15,69 +15,69 @@ package com.oppahansi.ws1516.mp.mp1_A1;
  */
 public class Circle {
 
-	// Mittelpunkt des Kreises
-	private Point location;
-	private double radius;
+  // Mittelpunkt des Kreises
+  private Point location;
+  private double radius;
 
-	public Circle() {
-	}
+  public Circle() {
+  }
 
-	public Circle(Point initLocation, double initRadius) {
-		this.location = initLocation;
-		this.radius = initRadius;
-	}
+  public Circle(Point initLocation, double initRadius) {
+    this.location = initLocation;
+    this.radius = initRadius;
+  }
 
-	public double getRadius() {
+  public static Circle fromPoints(Point center, Point p) {
+    Circle circle = new Circle();
 
-		return this.radius;
-	}
+    // An dieser Stelle das circle-Objekt bearbeiten
+    circle.location = center;
+    circle.radius = Math.sqrt(Math.pow(p.getX() - center.getX(), 2) + Math.pow(p.getY() - center.getY(), 2));
 
-	public void setRadius(double newRadius) {
-		this.radius = newRadius;
-	}
+    return circle;
+  }
 
-	public Point getLocation() {
-		return this.location;
-	}
+  public double getRadius() {
 
-	public void setLocation(Point newLocation) {
-		this.location= newLocation;
-	}
+    return this.radius;
+  }
 
-	// Durchmesser
-	public double getDiameter() {
+  public void setRadius(double newRadius) {
+    this.radius = newRadius;
+  }
 
-		return 2*this.radius;
-	}
+  public Point getLocation() {
+    return this.location;
+  }
 
-	// Umfang
-	public double getCircumference() {
+  public void setLocation(Point newLocation) {
+    this.location = newLocation;
+  }
 
-		return Math.PI* getDiameter();
-	}
+  // Durchmesser
+  public double getDiameter() {
 
-	// Fl�che
-	public double getArea() {
-		return Math.PI * Math.pow(this.radius, 2);
-	}
+    return 2 * this.radius;
+  }
 
-	public boolean containsPoint(Point point) {
-		if((location.getX() - radius)< point.getX() && point.getX() < (location.getX() + radius) && (location.getY() - radius)< point.getY() && point.getY() < (location.getY() + radius)){
-			return true;
-		}
-		else{
-		return false;
-		}
-	}
+  // Umfang
+  public double getCircumference() {
 
-	public static Circle fromPoints(Point center, Point p) {
-		Circle circle = new Circle();
+    return Math.PI * getDiameter();
+  }
 
-		// An dieser Stelle das circle-Objekt bearbeiten
-		circle.location = center;
-		circle.radius = Math.sqrt(Math.pow(p.getX() - center.getX() , 2) + Math.pow(p.getY() - center.getY(), 2));
+  // Fl�che
+  public double getArea() {
+    return Math.PI * Math.pow(this.radius, 2);
+  }
 
-		return circle;
-	}
+  public boolean containsPoint(Point point) {
+    if ((location.getX() - radius) < point.getX() && point.getX() < (location.getX() + radius) && (location.getY() - radius) < point.getY() && point.getY() < (location.getY() + radius)) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 
 }

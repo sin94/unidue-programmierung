@@ -6,7 +6,7 @@
  * <p>
  * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
  * solve these tasks.
- *
+ * <p>
  * Lösung siehe ss14.woche3 - Package
  */
 

@@ -1,9 +1,9 @@
 /**
  * Created by:
  * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- *
+ * <p>
  * For learning purpose only.
- *
+ * <p>
  * Implementation by Oppa Hansi. Possible solution - there are other ways to
  * solve these tasks.
  */

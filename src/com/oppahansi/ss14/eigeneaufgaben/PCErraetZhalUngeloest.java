@@ -42,12 +42,11 @@ package com.oppahansi.ss14.eigeneaufgaben;
 
 public class PCErraetZhalUngeloest {
 
-    /*
-    * Hier das Minispiel implementieren.
-    */
-    public static void main(String[] args) {
+  /*
+  * Hier das Minispiel implementieren.
+  */
+  public static void main(String[] args) {
 
-
-    }
+  }
 
 }

@@ -24,19 +24,16 @@ import java.util.Set;
  */
 public class Student {
 
-  //Vor-,Nachname
-  private String firstName;
-  private String lastName;
-
-  // Geburtstag
-  private Calendar dateOfBirth = new GregorianCalendar();
-
-  // Abbildung von Veranstaltung auf Note (in Form eines Double-Wertes)
-  private Map<Course, Double> grades = new HashMap<>();
-
   // wird für die formatierte Ausgabe benötigt
   private static final DateFormat DATE_FORMAT = new SimpleDateFormat(
     "dd.MM.yyyy");
+  //Vor-,Nachname
+  private String firstName;
+  private String lastName;
+  // Geburtstag
+  private Calendar dateOfBirth = new GregorianCalendar();
+  // Abbildung von Veranstaltung auf Note (in Form eines Double-Wertes)
+  private Map<Course, Double> grades = new HashMap<>();
 
   public Student(String firstName, String lastName, int dobYear,
     int dobMonth, int dobDate) {

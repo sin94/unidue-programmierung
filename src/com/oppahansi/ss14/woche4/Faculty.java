@@ -18,21 +18,23 @@ package com.oppahansi.ss14.woche4;
  */
 
 public class Faculty {
-    public static int faculty(int n) {
-        if (n == 0 || n == 1) {
-            return 1;
-        } else {
-            int solution = 1;
-            for (int i = 2; i <= n; i++) {
-                solution *= i;
-            }
-            return solution;
-        }
-    }
 
-    public static void main(String[] args) {
-        // Testaufruf
-        System.out.println("3! = 6 - Ihr Ergebnis ist: " + faculty(3));
-        System.out.println("6! = 720 - Ihr Ergebnis ist: " + faculty(6));
+  public static int faculty(int n) {
+    if (n == 0 || n == 1) {
+      return 1;
     }
+    else {
+      int solution = 1;
+      for (int i = 2; i <= n; i++) {
+        solution *= i;
+      }
+      return solution;
+    }
+  }
+
+  public static void main(String[] args) {
+    // Testaufruf
+    System.out.println("3! = 6 - Ihr Ergebnis ist: " + faculty(3));
+    System.out.println("6! = 720 - Ihr Ergebnis ist: " + faculty(6));
+  }
 }

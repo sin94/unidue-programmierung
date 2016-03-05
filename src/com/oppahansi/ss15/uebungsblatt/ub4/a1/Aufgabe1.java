@@ -1,9 +1,9 @@
 /**
  * Created by:
  * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- *
+ * <p>
  * For learning purpose only.
- *
+ * <p>
  * Implementation by Oppa Hansi. Possible solution - there are other ways to
  * solve these tasks.
  */
@@ -39,14 +39,14 @@ public class Aufgabe1 {
     for (int i = 0; i < p.length; i++) {
       counter = 0;
       currentNumber = p[i];
-     for (int j = i; j < p.length - 1;j++) {
-       if (currentNumber == p[j + 1]) {
-         counter++;
-       }
-       else {
-         break;
-       }
-     }
+      for (int j = i; j < p.length - 1; j++) {
+        if (currentNumber == p[j + 1]) {
+          counter++;
+        }
+        else {
+          break;
+        }
+      }
       if (counter == n - 1) {
         return true;
       }
@@ -61,7 +61,7 @@ public class Aufgabe1 {
     for (int i = 0; i < p.length; i++) {
       counter = 0;
       currentNumber = p[i];
-      for (int j = i; j < p.length - 1;j++) {
+      for (int j = i; j < p.length - 1; j++) {
         if (currentNumber == p[j + 1]) {
           counter++;
         }
@@ -80,7 +80,7 @@ public class Aufgabe1 {
     for (int i = 0; i < p.length; i++) {
       counter = 0;
       currentNumber = p[i];
-      for (int j = i; j < p.length - 1;j++) {
+      for (int j = i; j < p.length - 1; j++) {
         if (currentNumber == p[j + 1]) {
           counter++;
         }
@@ -100,7 +100,7 @@ public class Aufgabe1 {
     for (int i = 0; i < p.length; i++) {
       counter = 0;
       currentNumber = p[i];
-      for (int j = i; j < p.length - 1;j++) {
+      for (int j = i; j < p.length - 1; j++) {
         if (currentNumber == p[j + 1]) {
           counter++;
         }
@@ -113,7 +113,7 @@ public class Aufgabe1 {
   }
 
   public boolean gleich(char[] p, char z) {
-    for (char current: p) {
+    for (char current : p) {
       if (current != z) {
         return false;
       }
@@ -139,7 +139,7 @@ public class Aufgabe1 {
       for (int i = 0; i < q.length; i++) {
         for (int j = 0; j < p.length; j++) {
           counter = 0;
-          for (int k = j, l = i; k < j + n && k < q.length && l < q.length; k++, l++){
+          for (int k = j, l = i; k < j + n && k < q.length && l < q.length; k++, l++) {
             if (q[l] == p[k]) {
               counter++;
             }
@@ -154,7 +154,7 @@ public class Aufgabe1 {
       for (int i = 0; i < p.length; i++) {
         for (int j = 0; j < q.length; j++) {
           counter = 0;
-          for (int k = j, l = i; k < j + n && k < p.length && l < p.length; k++, l++){
+          for (int k = j, l = i; k < j + n && k < p.length && l < p.length; k++, l++) {
             if (p[l] == q[k]) {
               counter++;
             }

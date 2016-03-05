@@ -9,44 +9,44 @@ package com.oppahansi.ss14.woche5;
 
 public class CarNode {
 
-    public CarNode next;
-    public CarNode previous;
-    public Car car;
+  public CarNode next;
+  public CarNode previous;
+  public Car car;
 
-    public CarNode() {
-        this.car = null;
-        this.previous = null;
-        this.next = null;
-    }
+  public CarNode() {
+    this.car = null;
+    this.previous = null;
+    this.next = null;
+  }
 
-    public CarNode(Car car, CarNode previous, CarNode next) {
-        this.car = car;
-        this.previous = previous;
-        this.next = next;
-    }
+  public CarNode(Car car, CarNode previous, CarNode next) {
+    this.car = car;
+    this.previous = previous;
+    this.next = next;
+  }
 
-    public Car getCar() {
-        return car;
-    }
+  public Car getCar() {
+    return car;
+  }
 
-    public void setCar(Car car) {
-        this.car = car;
-    }
+  public void setCar(Car car) {
+    this.car = car;
+  }
 
-    public CarNode getPrevious() {
-        return previous;
-    }
+  public CarNode getPrevious() {
+    return previous;
+  }
 
-    public void setPrevious(CarNode previous) {
-        this.previous = previous;
-    }
+  public void setPrevious(CarNode previous) {
+    this.previous = previous;
+  }
 
-    public CarNode getNext() {
-        return next;
-    }
+  public CarNode getNext() {
+    return next;
+  }
 
-    public void setNext(CarNode next) {
-        this.next = next;
-    }
+  public void setNext(CarNode next) {
+    this.next = next;
+  }
 
 }

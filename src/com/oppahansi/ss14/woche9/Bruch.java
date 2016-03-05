@@ -14,36 +14,20 @@ import java.util.Collections;
  */
 public class Bruch implements Comparable<Bruch> {
 
-    private int zaehler;
-    private int nenner;
+  private int zaehler;
+  private int nenner;
 
-    public Bruch(int zaehler, int nenner) {
-        this.zaehler = zaehler;
-        this.nenner = nenner;
-    }
+  public Bruch(int zaehler, int nenner) {
+    this.zaehler = zaehler;
+    this.nenner = nenner;
+  }
 
-    public int getZaehler() {
-        return zaehler;
-    }
-
-    public void setZaehler(int zaehler) {
-        this.zaehler = zaehler;
-    }
-
-    public int getNenner() {
-        return nenner;
-    }
-
-    public void setNenner(int nenner) {
-        this.nenner = nenner;
-    }
-
-    public static void main(String[] args) {
-        ArrayList<Bruch> brueche = new ArrayList<Bruch>();
-        brueche.add(new Bruch(14, 3));
-        brueche.add(new Bruch(27, 6));
-        brueche.add(new Bruch(2, 7));
-        brueche.add(new Bruch(155, 156));
+  public static void main(String[] args) {
+    ArrayList<Bruch> brueche = new ArrayList<Bruch>();
+    brueche.add(new Bruch(14, 3));
+    brueche.add(new Bruch(27, 6));
+    brueche.add(new Bruch(2, 7));
+    brueche.add(new Bruch(155, 156));
         /*
          * Die Fehlermarkierung unter sort erscheint, weil Objekte der Klasse
 		 * Bruch nicht untereinander vergleichbar sind, Vergleichbarkeit aber
@@ -54,23 +38,41 @@ public class Bruch implements Comparable<Bruch> {
 		 * Wenn ihre Implementierung korrekt ist, erscheint die Liste in
 		 * aufsteigender Reihenfolge sortiert.
 		 */
-        Collections.sort(brueche);
-        for (int i = 0; i < brueche.size(); i++) {
-            Bruch b = brueche.get(i);
-            System.out.println("( " + b.getZaehler() + " / " + b.getNenner() +
-                    " ) = " + (b.getZaehler() / (double) b.getNenner()));
-        }
+    Collections.sort(brueche);
+    for (int i = 0; i < brueche.size(); i++) {
+      Bruch b = brueche.get(i);
+      System.out.println("( " + b.getZaehler() + " / " + b.getNenner() +
+        " ) = " + (b.getZaehler() / (double) b.getNenner()));
     }
+  }
 
-    @Override
-    public int compareTo(Bruch bruch) {
-        if ((this.zaehler / (double) this.nenner) < (bruch.zaehler / (double) bruch.nenner)) {
-            return -1;
-        } else if ((this.zaehler / (double) this.nenner) > (bruch.zaehler / (double) bruch.nenner)) {
-            return 1;
-        } else {
-            return 0;
-        }
+  public int getZaehler() {
+    return zaehler;
+  }
+
+  public void setZaehler(int zaehler) {
+    this.zaehler = zaehler;
+  }
+
+  public int getNenner() {
+    return nenner;
+  }
+
+  public void setNenner(int nenner) {
+    this.nenner = nenner;
+  }
+
+  @Override
+  public int compareTo(Bruch bruch) {
+    if ((this.zaehler / (double) this.nenner) < (bruch.zaehler / (double) bruch.nenner)) {
+      return -1;
     }
+    else if ((this.zaehler / (double) this.nenner) > (bruch.zaehler / (double) bruch.nenner)) {
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  }
 
 }

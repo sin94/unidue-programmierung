@@ -1,9 +1,9 @@
 /**
  * Created by:
  * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- *
+ * <p>
  * For learning purpose only.
- *
+ * <p>
  * Implementation by Oppa Hansi. Possible solution - there are other ways to
  * solve these tasks.
  */
@@ -16,7 +16,8 @@ public class Element {
   private int Zahl; // In das Element eingetragene Zahl.
 
   public Element(int Zahl) {
-    this.Zahl = Zahl; Nf = null;
+    this.Zahl = Zahl;
+    Nf = null;
   }
 
   public int getZahl() {

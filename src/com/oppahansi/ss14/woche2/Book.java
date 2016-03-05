@@ -9,62 +9,60 @@ package com.oppahansi.ss14.woche2;
  * Ausgabe betrachtet.
  */
 
-
 public class Book {
 
-    public String title;
-    public String author;
-    public int yearOfPublication;
+  public String title;
+  public String author;
+  public int yearOfPublication;
 
-    public void setTitle(String name) {
-        this.title = name;
-    }
+  // Programmtest
+  public static void main(String[] args) {
+    String titel = "Per Anhalter durch die Galaxis";
+    String author = "Douglas Adams";
+    int year = 1979;
+    Book book = new Book();
+    book.setTitle(titel);
+    book.setAuthor(author);
+    book.setYearOfPublication(year);
+    System.out.println("Titel den das Buch haben sollte: " + titel);
+    System.out.println("Titel den das Buch hat:          " +
+      book.getTitle());
+    System.out.println("Author den das Buch haben sollte: " + author);
+    System.out.println("Author den das Buch hat:          " +
+      book.getAuthor());
+    System.out.println("Erscheinungsjahr das das Buch haben sollte: " +
+      year);
+    System.out.println("Erscheinungsdatum das das Buch hat:         " +
+      book.getYearOfPublication());
+  }
 
-    public String getTitle() {
-        // Diese Methode muss von euch veraendert werden.
-        return title;
-    }
+  public String getTitle() {
+    // Diese Methode muss von euch veraendert werden.
+    return title;
+  }
 
-    public void setAuthor(String name) {
-        // Diese Methode muss von euch veraendert werden.
-        this.author = name;
-    }
+  public void setTitle(String name) {
+    this.title = name;
+  }
 
-    public String getAuthor() {
-        // Diese Methode muss von euch veraendert werden.
-        return author;
-    }
+  public String getAuthor() {
+    // Diese Methode muss von euch veraendert werden.
+    return author;
+  }
 
-    public void setYearOfPublication(int year) {
-        // Diese Methode muss von euch veraendert werden.
-        this.yearOfPublication = year;
-    }
+  public void setAuthor(String name) {
+    // Diese Methode muss von euch veraendert werden.
+    this.author = name;
+  }
 
-    public int getYearOfPublication() {
-        // Diese Methode muss von euch veraendert werden.
-        return yearOfPublication;
-    }
+  public int getYearOfPublication() {
+    // Diese Methode muss von euch veraendert werden.
+    return yearOfPublication;
+  }
 
-
-    // Programmtest
-    public static void main(String[] args) {
-        String titel = "Per Anhalter durch die Galaxis";
-        String author = "Douglas Adams";
-        int year = 1979;
-        Book book = new Book();
-        book.setTitle(titel);
-        book.setAuthor(author);
-        book.setYearOfPublication(year);
-        System.out.println("Titel den das Buch haben sollte: " + titel);
-        System.out.println("Titel den das Buch hat:          " +
-                book.getTitle());
-        System.out.println("Author den das Buch haben sollte: " + author);
-        System.out.println("Author den das Buch hat:          " +
-                book.getAuthor());
-        System.out.println("Erscheinungsjahr das das Buch haben sollte: " +
-                year);
-        System.out.println("Erscheinungsdatum das das Buch hat:         " +
-                book.getYearOfPublication());
-    }
+  public void setYearOfPublication(int year) {
+    // Diese Methode muss von euch veraendert werden.
+    this.yearOfPublication = year;
+  }
 
 }

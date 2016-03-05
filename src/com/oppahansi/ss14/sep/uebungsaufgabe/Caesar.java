@@ -7,26 +7,24 @@ public class Caesar {
     * Caesarchiffre, Aufgabe 3e
    */
 
-    public String chiffre(String s, int v) {
+  public static void main(String args[]) {
 
-        String ergebnis = "";
+    Caesar c = new Caesar();
 
-        // erg�nzen Sie bitte hier Ihren Quellcode
-        // und speichern sie das Ergebnis in der Variablen ergebnis
+    System.out.println("Casesar-Chiffre von 'haus' mit 1 ist " + c.chiffre("haus", 1) + " richtig ist: ibvt");
+    System.out.println("Casesar-Chiffre von 'bauzaun' mit 8 ist " + c.chiffre("bauzaun", 8) + " richtig ist: jichicv");
+    System.out.println("Casesar-Chiffre von 'hundert' mit 10 ist " + c.chiffre("hundert", 10) + " richtig ist: rexnobd");
+    System.out.println("Casesar-Chiffre von 'rexnobd' mit 16 ist " + c.chiffre("rexnobd", 16) + " richtig ist: hundert");
+  }
 
-        return ergebnis;
-    }
+  public String chiffre(String s, int v) {
 
+    String ergebnis = "";
 
-    public static void main(String args[]) {
+    // erg�nzen Sie bitte hier Ihren Quellcode
+    // und speichern sie das Ergebnis in der Variablen ergebnis
 
-        Caesar c = new Caesar();
-
-        System.out.println("Casesar-Chiffre von 'haus' mit 1 ist " + c.chiffre("haus", 1) + " richtig ist: ibvt");
-        System.out.println("Casesar-Chiffre von 'bauzaun' mit 8 ist " + c.chiffre("bauzaun", 8) + " richtig ist: jichicv");
-        System.out.println("Casesar-Chiffre von 'hundert' mit 10 ist " + c.chiffre("hundert", 10) + " richtig ist: rexnobd");
-        System.out.println("Casesar-Chiffre von 'rexnobd' mit 16 ist " + c.chiffre("rexnobd", 16) + " richtig ist: hundert");
-    }
-
+    return ergebnis;
+  }
 
 }

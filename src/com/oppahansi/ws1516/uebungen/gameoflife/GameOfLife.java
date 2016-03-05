@@ -1,9 +1,9 @@
 /**
  * Created by:
  * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- *
+ * <p>
  * For learning purpose only.
- *
+ * <p>
  * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
  * solve these tasks.
  */
@@ -14,6 +14,7 @@ import java.util.Random;
 
 public class GameOfLife {
 
+  final Random random = new Random();
   // Spielfeld mit [ZEILEN][SPALTEN]. Hat ein Element den Wert 1, lebt die
   // Zelle in dem entsprechenden Feld. Hat sie den Wert 0, ist sie tot
   private byte[][] board;
@@ -121,6 +122,8 @@ public class GameOfLife {
     return 0;
   }
 
+  // ------------------------------------------------------------------
+
   /**
    * Berechnet die nächste Generation
    */
@@ -130,10 +133,6 @@ public class GameOfLife {
     // die Anzahl der lebendigen Nachbarn gezählt und die entsprechenden
     // Regeln angewendet werden.
   }
-
-  // ------------------------------------------------------------------
-
-  final Random random = new Random();
 
   private byte getRandomNumber() {
     return random.nextBoolean() ? (byte) 1 : 0;

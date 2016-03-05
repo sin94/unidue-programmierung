@@ -52,12 +52,11 @@ package com.oppahansi.ss14.eigeneaufgaben;
 
 public class ZahlenRatenUngeloest {
 
-    /*
-    * Hier das Minispiel implementieren.
-    */
-    public static void main(String[] args) {
+  /*
+  * Hier das Minispiel implementieren.
+  */
+  public static void main(String[] args) {
 
-
-    }
+  }
 
 }

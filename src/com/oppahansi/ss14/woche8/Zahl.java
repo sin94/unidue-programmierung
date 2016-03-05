@@ -21,66 +21,66 @@ import java.util.Collections;
  */
 public class Zahl implements Comparable {
 
-    private int zahl;
+  private int zahl;
 
-    public Zahl(int zahl) {
-        this.zahl = zahl;
+  public Zahl(int zahl) {
+    this.zahl = zahl;
+  }
+
+  public static void main(String[] args) {
+    ArrayList<Zahl> zahlen = new ArrayList<Zahl>();
+    zahlen.add(new Zahl(5));
+    zahlen.add(new Zahl(27));
+    zahlen.add(new Zahl(187));
+    zahlen.add(new Zahl(33));
+    zahlen.add(new Zahl(40));
+    zahlen.add(new Zahl(1));
+    // Liste ausgeben
+    for (int i = 0; i < zahlen.size(); i++) {
+      System.out.println(zahlen.get(i).getZahl());
     }
-
-    public int getZahl() {
-        return zahl;
+    System.out.println();
+    // Liste sortieren und nochmal ausgeben
+    Collections.sort(zahlen);
+    for (int i = 0; i < zahlen.size(); i++) {
+      System.out.println(zahlen.get(i).getZahl());
     }
+  }
 
-    public void setZahl(int zahl) {
-        this.zahl = zahl;
+  public int getZahl() {
+    return zahl;
+  }
+
+  public void setZahl(int zahl) {
+    this.zahl = zahl;
+  }
+
+  /*
+   * Hier ist die vom Interface geforderte Methode. Als Parameter wird ein
+   * Objekt des Typs Object uebergeben. Da alle Klassen automatisch vom der
+   * Klasse Object abgeleitet sind, kann diese Methode fuer beliebige
+   * Klassen verwendet werden. Wir koennen davon ausgehen, dass wenn die
+   * Methode auf einem Objekt der Klasse Zahl aufgerufen wird, das uebergebene
+   * Objekt o auch vom Typ Zahl sein wird. Aus diesem Grund koennen wir Java
+   * mit einem Typecast zusichern, dass o tatsaechlich vom Typ Zahl ist.
+   * (Zahl)o ist genau dieser Typecast. Mit Hilfe einer weiteren Klammer
+   * koennen wir dann auf die Methoden und Felder von o zugreifen:
+   * ((Zahl)o).methode
+   * Wenn unser aktuelles Objekt kleiner ist als das als Parameter
+   * uebergebene Projekt, soll -1, wenn es groesser ist 1 und bei Gleichheit
+   * 0 zurueckgegeben werden.
+   */
+  @Override
+  public int compareTo(Object o) {
+    if (this.zahl < ((Zahl) o).getZahl()) {
+      return -1;
     }
-
-
-    /*
-     * Hier ist die vom Interface geforderte Methode. Als Parameter wird ein
-     * Objekt des Typs Object uebergeben. Da alle Klassen automatisch vom der
-     * Klasse Object abgeleitet sind, kann diese Methode fuer beliebige
-     * Klassen verwendet werden. Wir koennen davon ausgehen, dass wenn die
-     * Methode auf einem Objekt der Klasse Zahl aufgerufen wird, das uebergebene
-     * Objekt o auch vom Typ Zahl sein wird. Aus diesem Grund koennen wir Java
-     * mit einem Typecast zusichern, dass o tatsaechlich vom Typ Zahl ist.
-     * (Zahl)o ist genau dieser Typecast. Mit Hilfe einer weiteren Klammer
-     * koennen wir dann auf die Methoden und Felder von o zugreifen:
-     * ((Zahl)o).methode
-     * Wenn unser aktuelles Objekt kleiner ist als das als Parameter
-     * uebergebene Projekt, soll -1, wenn es groesser ist 1 und bei Gleichheit
-     * 0 zurueckgegeben werden.
-     */
-    @Override
-    public int compareTo(Object o) {
-        if (this.zahl < ((Zahl) o).getZahl()) {
-            return -1;
-        } else if (this.zahl > ((Zahl) o).getZahl()) {
-            return 1;
-        } else {
-            return 0;
-        }
+    else if (this.zahl > ((Zahl) o).getZahl()) {
+      return 1;
     }
-
-
-    public static void main(String[] args) {
-        ArrayList<Zahl> zahlen = new ArrayList<Zahl>();
-        zahlen.add(new Zahl(5));
-        zahlen.add(new Zahl(27));
-        zahlen.add(new Zahl(187));
-        zahlen.add(new Zahl(33));
-        zahlen.add(new Zahl(40));
-        zahlen.add(new Zahl(1));
-        // Liste ausgeben
-        for (int i = 0; i < zahlen.size(); i++) {
-            System.out.println(zahlen.get(i).getZahl());
-        }
-        System.out.println();
-        // Liste sortieren und nochmal ausgeben
-        Collections.sort(zahlen);
-        for (int i = 0; i < zahlen.size(); i++) {
-            System.out.println(zahlen.get(i).getZahl());
-        }
+    else {
+      return 0;
     }
+  }
 
 }

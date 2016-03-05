@@ -8,28 +8,27 @@ package com.oppahansi.ss14.woche6;
 
 public class WordNode {
 
-    private WordNode next;
-    private String word;
+  private WordNode next;
+  private String word;
 
+  public WordNode(String word) {
+    this.word = word;
+  }
 
-    public WordNode(String word) {
-        this.word = word;
-    }
+  public WordNode getNext() {
+    return next;
+  }
 
-    public WordNode getNext() {
-        return next;
-    }
+  public void setNext(WordNode next) {
+    this.next = next;
+  }
 
-    public void setNext(WordNode next) {
-        this.next = next;
-    }
+  public String getWord() {
+    return word;
+  }
 
-    public String getWord() {
-        return word;
-    }
-
-    public void setWord(String word) {
-        this.word = word;
-    }
+  public void setWord(String word) {
+    this.word = word;
+  }
 
 }

@@ -12,44 +12,47 @@ package com.oppahansi.ss14.woche4;
  */
 
 public class Pow {
-    /*
-     * Potenz = base hoch exponent
-     * Beispiel: 2 hoch 4 lässt sich schreiben als:
-     * 2 * 2 * 2 * 2 - das muss jetzt nur noch als Code umgesetzt werden
-     *
-     * Bei exponentn = 0 muss eine 1 zurück - Definition - auch bei 0 hoch 0 gibt es 1 zurück
-     *
-     */
-    public static int pow(int base, int exponent) {
+
+  /*
+   * Potenz = base hoch exponent
+   * Beispiel: 2 hoch 4 lässt sich schreiben als:
+   * 2 * 2 * 2 * 2 - das muss jetzt nur noch als Code umgesetzt werden
+   *
+   * Bei exponentn = 0 muss eine 1 zurück - Definition - auch bei 0 hoch 0 gibt es 1 zurück
+   *
+   */
+  public static int pow(int base, int exponent) {
         /*
          * Fall 1: exponent = 0
 		 */
-        if (exponent == 0) {
-            return 1;
-		/*
+    if (exponent == 0) {
+      return 1;
+    /*
 		 * Fall 2: base = 0
 		 */
-        } else if (base == 0) {
-            return 0;
-        } else {
+    }
+    else if (base == 0) {
+      return 0;
+    }
+    else {
 			/*
 			 * Hilfsvariable für das Ergebnis
 			 * Beginnend bei 2 - da wir am Anfang solution = base gesetzt haben
 			 * d.h bei exponent = 1 gibt er direkt solution zurück
 			 * denn: base hoch 1 ist base
 			 */
-            int solution = base;
-            for (int i = 2; i <= exponent; i++) {
-                // andere Schreibweise
-                // solution = solution * base;
-                solution *= base;
-            }
-            return solution;
-        }
+      int solution = base;
+      for (int i = 2; i <= exponent; i++) {
+        // andere Schreibweise
+        // solution = solution * base;
+        solution *= base;
+      }
+      return solution;
     }
+  }
 
-    public static void main(String[] args) {
-        // Testaufruf
-        System.out.println("pow(2,4) = " + pow(2, 4));
-    }
+  public static void main(String[] args) {
+    // Testaufruf
+    System.out.println("pow(2,4) = " + pow(2, 4));
+  }
 }

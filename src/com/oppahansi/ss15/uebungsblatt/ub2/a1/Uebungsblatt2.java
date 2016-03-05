@@ -1,9 +1,9 @@
 /**
  * Created by:
  * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- *
+ * <p>
  * For learning purpose only.
- *
+ * <p>
  * Implementation by Oppa Hansi. Possible solution - there are other ways to
  * solve these tasks.
  */
@@ -44,7 +44,7 @@ public class Uebungsblatt2 {
       solution += 1;
     }
     if (d2) {
-     solution += 2;
+      solution += 2;
     }
     if (d1) {
       solution += 4;
@@ -69,7 +69,7 @@ public class Uebungsblatt2 {
 
     System.out.print("While: ");
     int counter = start;
-    while(counter <= end) {
+    while (counter <= end) {
       if (counter % 9 == 0 && counter % 17 == 0) {
         System.out.print(counter + " ");
       }

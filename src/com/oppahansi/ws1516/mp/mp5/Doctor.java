@@ -12,22 +12,22 @@ package com.oppahansi.ws1516.mp.mp5;
 
 public class Doctor extends Person {
 
-   private String phdTopic;
+  private String phdTopic;
 
-   public Doctor(String firstName, String lastName, int yearOfBirth) {
-     super(firstName, lastName, yearOfBirth);
-     this.phdTopic = "Dr.";
-   }
+  public Doctor(String firstName, String lastName, int yearOfBirth) {
+    super(firstName, lastName, yearOfBirth);
+    this.phdTopic = "Dr.";
+  }
 
-   public String getPhdTopic() {
-      return phdTopic;
-   }
+  public String getPhdTopic() {
+    return phdTopic;
+  }
 
-   public void setPhdTopic(String phdTopic) {
-      this.phdTopic = phdTopic;
-   }
+  public void setPhdTopic(String phdTopic) {
+    this.phdTopic = phdTopic;
+  }
 
-   public String getName() {
-      return phdTopic + " " + super.getName();
-   }
+  public String getName() {
+    return phdTopic + " " + super.getName();
+  }
 }
