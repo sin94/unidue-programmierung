@@ -120,23 +120,34 @@ public class Train {
    * leider nicht, Programmierberatung etc. koennen weiterhelfen...
    */
   public boolean ListenAufgabe(int[] passengers) {
+    if (size() * 50 - getPassengers() < getAllPassengers(passengers)) {
+      return false;
+    }
+
     for (int i = 0; i < passengers.length; i++) {
       Coach node = firstCoach;
-      int counter = 0;
-      int freeSpace = 50 - node.getPassengers();
+
       while (node != null) {
+        int freeSpace = 50 - node.getPassengers();
         if (passengers[i] > freeSpace) {
           return false;
         }
 
         node = node.getNext();
-        counter++;
-      }
-      if (counter > passengers.length) {
-        return false;
       }
     }
+
     return true;
+  }
+
+  private int getAllPassengers(int[] passengers) {
+    int sum = 0;
+
+    for (int i = 0; i < passengers.length; i++) {
+      sum += passengers[i];
+    }
+
+    return sum;
   }
 
   // Oppahansi's Vorschlag, anhand gegebener Aufgabenstellung
@@ -144,7 +155,7 @@ public class Train {
     Coach node = firstCoach;
 
     // 1. Bedingung -> Array hat mehr Zellen als der gesamte Zug
-    if (size() * 50 < passengers.length) {
+    if (size() * 50 - getPassengers() < passengers.length) {
       return false;
     }
 
