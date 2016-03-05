@@ -154,7 +154,7 @@ public class Train {
   public boolean listenAufgabe(int[] passengers) {
     Coach node = firstCoach;
 
-    // 1. Bedingung -> Array hat mehr Zellen als der gesamte Zug
+    // 1. Bedingung -> Array hat mehr Zellen als der freie Plaetze im Zug
     if (size() * 50 - getPassengers() < passengers.length) {
       return false;
     }
