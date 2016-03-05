@@ -139,4 +139,36 @@ public class Train {
     return true;
   }
 
+  // Oppahansi's Vorschlag, anhand gegebener Aufgabenstellung
+  public boolean listenAufgabe(int[] passengers) {
+    Coach node = firstCoach;
+
+    // 1. Bedingung -> Array hat mehr Zellen als der gesamte Zug
+    if (size() * 50 < passengers.length) {
+      return false;
+    }
+
+    while (node != null) {
+      // 2. Bedingung -> Ein Waggon hat weniger freie Plaetze als Array's Laenge/Groesse
+      if (50 - node.getPassengers() < passengers.length) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  // Anzahl der Waggons im Zug.
+  private int size() {
+    Coach node = firstCoach;
+    int size = 0;
+
+    while (node != null) {
+      size++;
+      node = node.getNext();
+    }
+
+    return size;
+  }
+
 }
