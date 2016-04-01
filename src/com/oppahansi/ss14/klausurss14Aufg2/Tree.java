@@ -76,17 +76,17 @@ public class Tree {
     print(root);
   }
 
-  private void print(Node node) {
+  private void print(Node node) { // Fixed by Marc E.
     // hier den baum aus der postorder zur�ckgeben,
-    // also erst den rechten teilbaum, dann den linken, dann die wurzel
+    // also erst den linken teilbaum, dann den rechten, dann die wurzel
     if (node != null) {
+      print(node.getNextLeft());          //Links
+      print(node.getNextRight());         //Rechts
+      System.out.println(node.getNumber());   //Wurzel
 
-      print(node.getNextRight());
-      print(node.getNextLeft());
-      System.out.println(node.getNumber());
+      // fuer unseren beispielbaum waeren es die werte :
+      //  Postorder (L-R-W): 7, 45, 6, 1, 33, 10
     }
-    // fuer unseren beispielbaum waeren es die werte :
-    //  1 , 33 , 7, 45 , 6 , 10
   }
 
   /*
