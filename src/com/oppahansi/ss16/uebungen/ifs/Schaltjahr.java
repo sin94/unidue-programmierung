@@ -30,7 +30,7 @@ public class Schaltjahr {
    * 1900 ist kein Schaltjahr.
    */
   public static boolean schaltjahr(int jahr) {
-    if (jahr % 100 == 0 && (jahr % 100) % 4 == 0) {
+    if (jahr % 4 == 0 && (jahr % 100 != 0 || jahr % 400 == 0)) {
       return true;
     }
     else {
