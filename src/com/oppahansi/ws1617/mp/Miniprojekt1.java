@@ -1,46 +1,73 @@
+/**
+ * Created by:
+ * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * For learning purpose only.
+ *
+ * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
+ * solve these tasks.
+ */
 package com.oppahansi.ws1617.mp;
 
 public class Miniprojekt1 {
 
 	public static double endNote(int noteUebung, int noteAusarbeitung, int noteVortrag) {
-		return (noteUebung + noteAusarbeitung * 3 + noteVortrag * 2) / 6.0;
+        double summe = (noteUebung + noteAusarbeitung * 3 + noteVortrag * 2);
+        double ergebnis = summe / 6;
+		return ergebnis;
 	}
 
 	public static double tarif1(int min) {
-		double grundGebuehr = 7.99;
-        double minutenPreis = 0.37;
-        double summe = grundGebuehr + minutenPreis * min;
+        double grundgebuehr = 7.99;
+        double proMinute = 0.37;
+        double summe = grundgebuehr + (min * proMinute);
         return summe;
 	}
 
 	public static double tarif2(int min) {
-        double grundGebuehr = 19.95;
-        double minutenPreis = 0.25;
-        double summe = grundGebuehr + minutenPreis * (min - 30);
+        double grundgebuehr = 19.95;
+        double proMinute = 0.25;
+        double freiMinuten = 30;
+        double summe = grundgebuehr + ((min - freiMinuten) * proMinute);
         return summe;
 	}
 
 	public static double tarif3(int min) {
-        double grundGebuehr = 24.95;
-        double minutenPreis = 0.19;
-        double summe = grundGebuehr + minutenPreis * (min - 50);
+        double grundgebuehr = 24.95;
+        double proMinute = 0.19;
+        double freiMinuten = 50;
+        double summe = grundgebuehr + ((min - freiMinuten) * proMinute);
         return summe;
 	}
 
 	public static boolean tripel(int a, int b, int c) {
-        double aQuadrat = a*a;
-        double bQuadrat = b*b;
-        double cQuatrat = c*c;
-		return aQuadrat + bQuadrat == cQuatrat;
+        double a2 = a * a;
+        double b2 = b * b;
+        double c2 = c * c; // Math.pow(c, 2);
+        boolean vergleich = (a2 + b2 == c2);
+		return vergleich;
 	}
 
 	public static boolean checkEven(int zahl) {
+		if (zahl % 2 == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
 
-		return zahl % 2 == 0;
+        // return zahl % 2 == 0;
 	}
 
 	public static boolean checkOdd(int zahl) {
-		return zahl % 2 != 0;
+        if (zahl % 2 != 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+        // return zahl % 2 != 0;
 	}
 
 	public static boolean schaltjahr(int jahr) {
@@ -53,18 +80,23 @@ public class Miniprojekt1 {
 	}
 
 	public static boolean enthaeltPunkt(int x, int y) {
-        if((x > 2 && x < 14) && (y > (-15) && y < 3)){
+        if (x > 2 && x < 14 && y < 3 && y > -15) {
             return true;
-        }else{
+        }
+        else {
             return false;
         }
 	}
 
 	public static double kreisFlaeche(double radius) {
-		return Math.PI * radius * radius;
+        double flaeche = Math.PI * Math.pow(radius, 2);
+        // return flaeche;
+		return Math.PI * Math.pow(radius, 2);
 	}
 
 	public static double kreisUmfang(double radius) {
+        double umfang = Math.PI * 2 * radius;
+        // return umfang;
 		return Math.PI * 2 * radius;
 	}
 
@@ -73,16 +105,21 @@ public class Miniprojekt1 {
 	}
 
 	public static boolean kreisKleinerRechteck(double radius, double laenge, double breite) {
-		return kreisFlaeche(radius) < rechteckFlaeche(laenge, breite);
+        double kreisFlaeche = kreisFlaeche(radius);
+        double rechteckFlaeche = rechteckFlaeche(laenge, breite);
+		return kreisFlaeche < rechteckFlaeche;
 	}
+
 	public static double steigung(double xA, double yA, double xB, double yB){
-		double y = yA - yB;
+        double y = yA - yB;
         double x = xA - xB;
-        return y / x;
+        // double m = y / x;
+		return y / x;
 	}
 	public static double rechteck1VergleicheRechteck2(double l1,double b1,double l2,double b2){
         double rechteck1 = rechteckFlaeche(l1, b1);
         double rechteck2 = rechteckFlaeche(l2, b2);
+
 		return rechteck1 / rechteck2;
 	}
 
