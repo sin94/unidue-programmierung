@@ -1,6 +1,6 @@
 # README #
 
-[Hier geht es zum Code](https://github.com/oppahansi/unidue-programmierung-ws14_15/tree/master/src/de/oppahansi)
+[Hier geht es zum Code](https://github.com/oppahansi/unidue-programmierung/tree/master/src/com/oppahansi)
 
 ### Info ###
 
