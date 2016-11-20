@@ -3,19 +3,13 @@ package com.oppahansi.ws1617.mp;
 import java.util.Arrays;
 
 public class Miniprojekt2 {
-
 	/*
 	 * Wichtig: Die Methodensignatur darf nicht veraendert werden.
 	 */
-
-
-	public Miniprojekt2() {
-
-	}
+	public Miniprojekt2() {}
 
 	// Aufgabe 1
 	public int sollTeile(int Stunde) {
-		// Bitte ergaenzen!
         if (Stunde >= 5 && Stunde < 12){
             return 150;
         }
@@ -29,8 +23,6 @@ public class Miniprojekt2 {
 
 	// Aufgabe 2
 	public double[] mittlereStdProduktionSchicht(int[][] stundenproduktion, int tag) {
-		// Bitte ergaenzen!
-
         double frueh = 0, spaet = 0, nacht = 0;
         double[] ergebnis = new double[3];
 
@@ -55,13 +47,10 @@ public class Miniprojekt2 {
         ergebnis[2] = nacht / 8.0;
 
 		return ergebnis;
-
 	}
 
 	// Aufgabe 3
 	public int[] tagesproduktion(int[][] stundenproduktion) {
-		// Bitte ergaenzen!
-
         int[] ergebnis = new int[stundenproduktion.length];
         int counter = 0;
 
@@ -77,7 +66,6 @@ public class Miniprojekt2 {
 
 	// Aufgabe 4
 	public int[] istSollVergleich(int[][] stundenproduktion) {
-		// Bitte ergaenzen!
         int[] ist = new int[stundenproduktion.length];
         int[] soll = new int[stundenproduktion.length];
         int[] ergebnis = new int[stundenproduktion.length];
@@ -107,7 +95,6 @@ public class Miniprojekt2 {
 
 	// Aufgabe 5
 	public int minMittlereStdProd(int[][] stundenproduktion, int tag) {
-
         double[] schichten = mittlereStdProduktionSchicht(stundenproduktion, tag);
 
         if (schichten[0] != schichten[1] && schichten[0] != schichten[2] && schichten[1] != schichten[2]) {
@@ -136,7 +123,6 @@ public class Miniprojekt2 {
 
 	// Aufgabe 6
 	public int maxMittlereStdProd(int[][] stundenproduktion, int tag) {
-		// Bitte ergaenzen!
         double[] schichten = mittlereStdProduktionSchicht(stundenproduktion, tag);
 
         if (schichten[0] != schichten[1] && schichten[0] != schichten[2] && schichten[1] != schichten[2]) {
@@ -165,7 +151,6 @@ public class Miniprojekt2 {
 
 	// Aufgabe 7
 	public int[] minSchichtProd(int[][] stundenproduktion) {
-		// Bitte ergaenzen!
         double[][] tagesSchichten = new double[8][3];
         int tag = 1;
         int minSchicht = 0;
@@ -195,8 +180,6 @@ public class Miniprojekt2 {
 	}
 
     public double[] produktionSchicht(int[][] stundenproduktion, int tag) {
-        // Bitte ergaenzen!
-
         double frueh = 0, spaet = 0, nacht = 0;
         double[] ergebnis = new double[3];
 
@@ -221,12 +204,10 @@ public class Miniprojekt2 {
         ergebnis[2] = nacht;
 
         return ergebnis;
-
     }
 
 	// Aufgabe 8
 	public int[] maxSchichtProd(int[][] stundenproduktion) {
-		// Bitte ergaenzen!
         double[][] tagesSchichten = new double[8][3];
         int tag = 1;
         int minSchicht = 0;
@@ -257,8 +238,6 @@ public class Miniprojekt2 {
 	// Aufgabe 9
 
 	public int[] differentStdProd(int[][] stundenproduktion, int tag) {
-		// Bitte ergaenzen!
-
         int[][] tempProd = new int[10][24];
 
         for (int i = 0; i < stundenproduktion.length; i++){
@@ -294,7 +273,6 @@ public class Miniprojekt2 {
 
 	// Aufgabe 10
 	public int secondStundeProd(int[][] stundenproduktion, int std) {
-		// Bitte ergaenzen!
         int max = stundenproduktion[0][std], secondMax = 0;
 
         for (int i = 0; i < stundenproduktion.length; i++) {
@@ -314,7 +292,6 @@ public class Miniprojekt2 {
 
 	// Aufgabe 11
 	public int[] maxProfitMargin(int[][] stundenproduktion) {
-		// Bitte ergaenzen!
         int tag = 1;
         int std = 0;
         int maxProfitSchicht = 0;
@@ -329,8 +306,7 @@ public class Miniprojekt2 {
                         stundenproduktion[i][j] > stundenproduktion[i - 1][j + 1] &&
                         stundenproduktion[i][j] > stundenproduktion[i][j + 1] &&
                         stundenproduktion[i][j] > stundenproduktion[i + 1][j + 1] &&
-                        maxProfitSchicht <= stundenproduktion[i][j]
-                        ) {
+                        maxProfitSchicht <= stundenproduktion[i][j]) {
                     tag = i;
                     std = j;
                     maxProfitSchicht = stundenproduktion[i][j];
@@ -343,7 +319,6 @@ public class Miniprojekt2 {
 
 	// Aufgabe 12
 	public int[] maxLostSchicht(int[][] stundenproduktion) {
-		// Bitte ergaenzen!
         int tag = 0;
         int schicht = 0;
         int maxLostDif = 0;
@@ -400,7 +375,6 @@ public class Miniprojekt2 {
 	}
 
 	public static void main(String[] args) {
-
 		Miniprojekt2 mini2 = new Miniprojekt2();
 
 		int tag = 0;
@@ -449,20 +423,23 @@ public class Miniprojekt2 {
 				{ 120, 120, 120, 120, 120, 150, 150, 150, 150, 150, 150, 150, 200, 200, 200, 200, 200, 200, 200, 200,
 						200, 120, 120, 120 } };
 
-		System.out.println("Aufgabe 1) sollTeile(5)" + mini2.sollTeile(5));
-		System.out.println("Aufgabe 1) sollTeile(12)" + mini2.sollTeile(12));
-		System.out.println("Aufgabe 1) sollTeile(21)" + mini2.sollTeile(21));
-
+        // Aufgabe 1)
+		System.out.println("Aufgabe 1) sollTeile(5) : " + mini2.sollTeile(5));
+		System.out.println("Aufgabe 1) sollTeile(12) : " + mini2.sollTeile(12));
+		System.out.println("Aufgabe 1) sollTeile(21) : " + mini2.sollTeile(21));
 		/*
 		 * Erwartete Loesung: Aufgabe 1) sollTeile(5)150 Aufgabe 1)
 		 * sollTeile(12)200 Aufgabe 1) sollTeile(21)120
 		 */
-        double[] stundenprod = mini2.mittlereStdProduktionSchicht(stundenproduktion, tag);
+
+        // Aufgabe 2)
+        double[] stundenprod = mini2.mittlereStdProduktionSchicht(stundenproduktion, 0);
         System.out.println("Aufgabe 2) mittlereStdProduktionSchicht");
         mini2.ausgabeA(stundenprod);
 		/*
 		 * Erwartete Loesung: [150.0] [200.0] [120.0]
 		 */
+
 		double[] stundenprod2 = mini2.mittlereStdProduktionSchicht(mittlereStundenproduktion, 5);
 		System.out.println("Aufgabe 2) mittlereStdProduktionSchicht");
 		mini2.ausgabeA(stundenprod2);
@@ -470,6 +447,8 @@ public class Miniprojekt2 {
 		 * Erwartete Loesung: [467.14285714285717] [179.44444444444446]
 		 * [300.375]
 		 */
+
+        // Aufgabe 3)
         int[] tagesProduction = mini2.tagesproduktion(mittlereStundenproduktion);
         System.out.println("Aufgabe 3) tagesproduktion");
         mini2.ausgabeA(tagesProduction);
@@ -486,6 +465,8 @@ public class Miniprojekt2 {
             [8912]
             [10748]
 		 */
+
+        // Aufgabe 4)
         int[] istSollVergleich = mini2.istSollVergleich(mittlereStundenproduktion);
         System.out.println("Aufgabe 4) istSollVergleich");
         mini2.ausgabeA(istSollVergleich);
@@ -502,18 +483,24 @@ public class Miniprojekt2 {
             [5102]
             [6938]
 		 */
+
+        // Aufgabe 5)
         int minMittlereStdProd = mini2.minMittlereStdProd(mittlereStundenproduktion, 1);
         System.out.println("Aufgabe 5) minMittlereStdProd\n" + minMittlereStdProd);
 		/*
 		 * Erwartete Loesung:
             1
 		 */
+
+        // Aufgabe 6)
         int maxMittlereStdProd = mini2.maxMittlereStdProd(mittlereStundenproduktion, 1);
-        System.out.println("Aufgabe 6) minMittlereStdProd\n" + maxMittlereStdProd);
+        System.out.println("Aufgabe 6) maxMittlereStdProd\n" + maxMittlereStdProd);
 		/*
 		 * Erwartete Loesung:
-            1
+            0
 		 */
+
+        // Aufgabe 7)
         int[] minSchichtProd = mini2.minSchichtProd(mittlereStundenproduktion);
         System.out.println("Aufgabe 7) minSchichtProd");
         mini2.ausgabeA(minSchichtProd);
@@ -523,6 +510,8 @@ public class Miniprojekt2 {
             [1]
             [1584]
 		 */
+
+        // Aufgabe 8)
         int[] maxSchichtProd = mini2.maxSchichtProd(mittlereStundenproduktion);
         System.out.println("Aufgabe 8) maxSchichtProd");
         mini2.ausgabeA(maxSchichtProd);
@@ -532,6 +521,8 @@ public class Miniprojekt2 {
             [0]
             [4455]
 		 */
+
+        // Aufgabe 9)
         int[] differentStdProd = mini2.differentStdProd(mittlereStundenproduktion, 2);
         System.out.println("Aufgabe 9) differentStdProd");
         mini2.ausgabeA(differentStdProd);
@@ -560,12 +551,16 @@ public class Miniprojekt2 {
             [610]
             [647]
 		 */
+
+        // Aufgabe 10)
         int secondStundeProd = mini2.secondStundeProd(mittlereStundenproduktion, 0);
         System.out.println("Aufgabe 10) secondStundeProd\n" + secondStundeProd);
 		/*
 		 * Erwartete Loesung:
             866
 		 */
+
+        // Aufgabe 11)
         int[] maxProfitMargin = mini2.maxProfitMargin(mittlereStundenproduktion);
         System.out.println("Aufgabe 11) maxProfitMargin");
         mini2.ausgabeA(maxProfitMargin);
@@ -575,6 +570,8 @@ public class Miniprojekt2 {
             [6]
             [929]
 		 */
+
+        // Aufgabe 12)
         int[] maxLostSchicht = mini2.maxLostSchicht(mittlereStundenproduktion);
         System.out.println("Aufgabe 12) maxLostSchicht");
         mini2.ausgabeA(maxLostSchicht);
@@ -585,5 +582,4 @@ public class Miniprojekt2 {
             [-185]
 		 */
 	}
-
 }
