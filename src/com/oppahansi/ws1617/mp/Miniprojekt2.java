@@ -72,47 +72,33 @@ public class Miniprojekt2 {
     // Aufgabe 5
     public int minMittlereStdProd(int[][] stundenproduktion, int tag) {
         double[] schichten = mittlereStdProduktionSchicht(stundenproduktion, tag);
+        double vergleichswert = schichten[0];
+        int schicht = -1;
 
-        if (schichten[0] != schichten[1] && schichten[0] != schichten[2] && schichten[1] != schichten[2]) {
-            if (schichten[0] < schichten[1] && schichten[0] < schichten[2]) {
-                return 0;
-            } else if (schichten[1] < schichten[0] && schichten[1] < schichten[2]) {
-                return 1;
-            } else {
-                return 2;
-            }
-        } else {
-            if (schichten[0] == schichten[1]) {
-                return 0;
-            } else if (schichten[1] == schichten[2]) {
-                return 1;
-            } else {
-                return 2;
+        for (int i = 0; i < schichten.length; i++) {
+            if (vergleichswert > schichten[i]) {
+                vergleichswert = schichten[i];
+                schicht = i;
             }
         }
+
+        return schicht;
     }
 
     // Aufgabe 6
     public int maxMittlereStdProd(int[][] stundenproduktion, int tag) {
         double[] schichten = mittlereStdProduktionSchicht(stundenproduktion, tag);
+        double vergleichswert = schichten[0];
+        int schicht = -1;
 
-        if (schichten[0] != schichten[1] && schichten[0] != schichten[2] && schichten[1] != schichten[2]) {
-            if (schichten[0] > schichten[1] && schichten[0] > schichten[2]) {
-                return 0;
-            } else if (schichten[1] > schichten[0] && schichten[1] > schichten[2]) {
-                return 1;
-            } else {
-                return 2;
-            }
-        } else {
-            if (schichten[0] == schichten[1]) {
-                return 1;
-            } else if (schichten[1] == schichten[2]) {
-                return 2;
-            } else {
-                return 2;
+        for (int i = 0; i < schichten.length; i++) {
+            if (vergleichswert <= schichten[i]) {
+                vergleichswert = schichten[i];
+                schicht = i;
             }
         }
+
+        return schicht;
     }
 
     // Aufgabe 7
