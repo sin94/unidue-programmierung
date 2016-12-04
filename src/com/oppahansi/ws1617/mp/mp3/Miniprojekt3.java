@@ -226,7 +226,11 @@ public class Miniprojekt3 {
                         (r1.piste != null && r2Temp.piste != null && r1.piste == r2Temp.piste)) {
                     return false;
                 }
+
+                r2Temp = r2Temp.nF;
             }
+
+            r1 = r1.nF;
         }
 
         return true;
