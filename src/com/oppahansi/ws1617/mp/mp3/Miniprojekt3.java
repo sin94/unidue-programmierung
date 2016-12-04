@@ -218,92 +218,19 @@ public class Miniprojekt3 {
 	}
 	
 	public boolean sindDisjunkt(RElement r1, RElement r2) {
-        return ErmittleDisjunkt(LifteDerRoute(r1), PistenDerRoute(r1), r2);
-	}
+        while (r1 != null) {
+            RElement r2Temp = r2;
 
-	private Lift[] LifteDerRoute(RElement route) {
-        Lift[] lifte = new Lift[AnzLifteAufDerPiste(route)];
-        if (lifte.length > 0) {
-            RElement aktuellerPunkt = route;
-            int index = 0;
-
-            while (aktuellerPunkt != null) {
-                if (aktuellerPunkt.lift != null) {
-                    lifte[index] = aktuellerPunkt.lift;
-                    index++;
-                }
-                aktuellerPunkt = aktuellerPunkt.nF;
-            }
-        }
-
-        return lifte;
-    }
-
-    private int AnzLifteAufDerPiste(RElement route) {
-	    RElement aktuellerPunkt = route;
-	    int anzLifte = 0;
-        while (aktuellerPunkt != null) {
-            anzLifte += aktuellerPunkt.lift  != null ? 1 : 0;
-            aktuellerPunkt = aktuellerPunkt.nF;
-        }
-
-        return anzLifte;
-    }
-
-    private Piste[] PistenDerRoute(RElement route) {
-        Piste[] pisten = new Piste[AnzPistenAufDerPiste(route)];
-        if (pisten.length > 0) {
-            RElement aktuellerPunkt = route;
-            int index = 0;
-
-            while (aktuellerPunkt != null) {
-                if (aktuellerPunkt.piste != null) {
-                    pisten[index] = aktuellerPunkt.piste;
-                    index++;
-                }
-                aktuellerPunkt = aktuellerPunkt.nF;
-            }
-        }
-
-
-        return pisten;
-    }
-
-    private int AnzPistenAufDerPiste(RElement route) {
-        RElement aktuellerPunkt = route;
-        int anzPisten = 0;
-        while (aktuellerPunkt != null) {
-            anzPisten += aktuellerPunkt.piste  != null ? 1 : 0;
-            aktuellerPunkt = aktuellerPunkt.nF;
-        }
-
-        return anzPisten;
-    }
-
-    private boolean ErmittleDisjunkt(Lift[] lifte, Piste[] pisten, RElement r2) {
-        RElement aktuellerPunkt = r2;
-
-        while (aktuellerPunkt != null) {
-            if (aktuellerPunkt.lift != null) {
-                for (Lift aktuellerLift : lifte) {
-                    if (aktuellerLift == aktuellerPunkt.lift) {
-                        return false;
-                    }
+            while (r2Temp != null) {
+                if ((r1.lift != null && r2Temp.lift != null && r1.lift == r2Temp.lift) ||
+                        (r1.piste != null && r2Temp.piste != null && r1.piste == r2Temp.piste)) {
+                    return false;
                 }
             }
-            if (aktuellerPunkt.piste != null) {
-                for (Piste aktuellerPiste : pisten) {
-                    if (aktuellerPiste == aktuellerPunkt.piste) {
-                        return false;
-                    }
-                }
-            }
-
-            aktuellerPunkt = aktuellerPunkt.nF;
         }
 
         return true;
-    }
+	}
 	
 		
 	public static void main(String[] args) {
