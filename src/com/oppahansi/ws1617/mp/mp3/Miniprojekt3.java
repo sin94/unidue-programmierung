@@ -181,10 +181,8 @@ public class Miniprojekt3 {
                     }
                 }
             }
-
-            return false;
         }
-        else if (s.pisten != null) {
+        if (s.pisten != null) {
             for (Piste aktuellePiste : s.pisten) {
                 if (aktuellePiste.ziel.lifte != null) {
                     for (Lift aktuellerLift : aktuellePiste.ziel.lifte) {
@@ -194,12 +192,9 @@ public class Miniprojekt3 {
                     }
                 }
             }
+        }
 
-            return false;
-        }
-        else {
-		    return false;
-        }
+        return false;
 	}
 	
 	public int befahrbarBis(RElement r) {
@@ -218,19 +213,21 @@ public class Miniprojekt3 {
 	}
 	
 	public boolean sindDisjunkt(RElement r1, RElement r2) {
-        while (r1 != null) {
-            RElement r2Temp = r2;
+        RElement aktuellR1 = r1;
 
-            while (r2Temp != null) {
-                if ((r1.lift != null && r2Temp.lift != null && r1.lift == r2Temp.lift) ||
-                        (r1.piste != null && r2Temp.piste != null && r1.piste == r2Temp.piste)) {
+        while (aktuellR1 != null) {
+            RElement aktuellR2 = r2;
+
+            while (aktuellR2 != null) {
+                if ((aktuellR1.lift != null && aktuellR2.lift != null && aktuellR1.lift == aktuellR2.lift) ||
+                        (aktuellR1.piste != null && aktuellR2.piste != null && aktuellR1.piste == aktuellR2.piste)) {
                     return false;
                 }
 
-                r2Temp = r2Temp.nF;
+                aktuellR2 = aktuellR2.nF;
             }
 
-            r1 = r1.nF;
+            aktuellR1 = aktuellR1.nF;
         }
 
         return true;
