@@ -4,7 +4,7 @@
  *
  * For learning purpose only.
  *
- * Solved/Edited by Manuel B. Possible solution - there are other ways to
+ * Solved/Edited by Mark K. Possible solution - there are other ways to
  * solve these tasks.
  */
 
