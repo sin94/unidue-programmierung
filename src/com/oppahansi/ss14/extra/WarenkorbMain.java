@@ -8,7 +8,6 @@ public class WarenkorbMain {
   public static void main(String[] args) {
     Warenkorb ware = new Warenkorb(300.0, 3);
 
-//		ware.rechnungsDatenAusgeben();
+    //		ware.rechnungsDatenAusgeben();
   }
-
 }

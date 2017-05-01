@@ -47,7 +47,13 @@ public class Person {
   }
 
   public void vorstellen() {
-    System.out.println("Mein Name ist " + name + ", ich habe den Rang " + rangname + " und bin " + (istmaennlich ? "ein Mann" : "eine Frau") + ".");
+    System.out.println(
+        "Mein Name ist "
+            + name
+            + ", ich habe den Rang "
+            + rangname
+            + " und bin "
+            + (istmaennlich ? "ein Mann" : "eine Frau")
+            + ".");
   }
-
 }

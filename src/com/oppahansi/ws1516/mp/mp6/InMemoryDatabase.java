@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.mp.mp6;
 
 import java.util.Calendar;
@@ -15,9 +12,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Implementierung des Database-Interfaces, die Objekte über Listen des Java
- * Collection-Framework direkt im Speicher verwaltet
+/*
+ * Implementierung des Database-Interfaces, die Objekte über Listen des Java Collection-Framework
+ * direkt im Speicher verwaltet
  */
 public class InMemoryDatabase implements Database {
 
@@ -69,7 +66,8 @@ public class InMemoryDatabase implements Database {
     // Aufgabe
     List<Student> goodStudents = new LinkedList<>();
     for (int i = 0; i < students.size(); i++) {
-      if (this.students.get(i).getAverageGrade() != 0 && this.students.get(i).getAverageGrade() < gradeThreshold) {
+      if (this.students.get(i).getAverageGrade() != 0
+          && this.students.get(i).getAverageGrade() < gradeThreshold) {
         goodStudents.add(students.get(i));
       }
     }

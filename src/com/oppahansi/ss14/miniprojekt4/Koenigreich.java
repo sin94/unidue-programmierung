@@ -83,7 +83,6 @@ public class Koenigreich {
     for (int i = 0; i < array2.length; i++) {
       array2[i].vorstellen();
     }
-
   }
 
   //Aufgabe 2
@@ -92,8 +91,7 @@ public class Koenigreich {
     if (person != null && person.getRang().ordinal() != spitze.getRang().ordinal()) {
       if (person.getIstMaennlich()) {
         spitze.setLinks(einfuegen(person, spitze.getLinks()));
-      }
-      else {
+      } else {
         spitze.setRechts(einfuegen(person, spitze.getRechts()));
       }
     }
@@ -102,18 +100,15 @@ public class Koenigreich {
   private Person einfuegen(Person person, Person teilBaum) {
     if (teilBaum == null) {
       return person;
-    }
-    else {
+    } else {
       if (person.getRang().ordinal() < teilBaum.getRang().ordinal()) {
         teilBaum.setLinks(einfuegen(person, teilBaum.getLinks()));
         return teilBaum;
-      }
-      else {
+      } else {
         if (person.getRang().ordinal() == teilBaum.getRang().ordinal()) {
           teilBaum.setRechts(einfuegen(person, teilBaum.getRechts()));
           return teilBaum;
-        }
-        else {
+        } else {
           person.setLinks(teilBaum);
           return person;
         }
@@ -134,8 +129,7 @@ public class Koenigreich {
   private Person[] zerlegen(Person teilBaum) {
     if (teilBaum == null) {
       return new Person[0];
-    }
-    else {
+    } else {
       Person[] hier = {teilBaum};
       Person[] rechts = zerlegen(teilBaum.getRechts());
       Person[] links = zerlegen(teilBaum.getLinks());
@@ -172,18 +166,17 @@ public class Koenigreich {
           gefunden = zusammen(gefunden, treffer);
         }
       }
-    }
-    else if (rang == null && name != null) {
+    } else if (rang == null && name != null) {
       for (int i = 0; i < suchArray.length; i++) {
         if (suchArray[i].getName().compareTo(name) == 0) {
           Person[] treffer = {suchArray[i]};
           gefunden = zusammen(gefunden, treffer);
         }
       }
-    }
-    else if (name != null && rang != null) {
+    } else if (name != null && rang != null) {
       for (int i = 0; i < suchArray.length; i++) {
-        if (suchArray[i].getName().compareTo(name) == 0 && suchArray[i].getRang().ordinal() == rang.ordinal()) {
+        if (suchArray[i].getName().compareTo(name) == 0
+            && suchArray[i].getRang().ordinal() == rang.ordinal()) {
           Person[] treffer = {suchArray[i]};
           gefunden = zusammen(gefunden, treffer);
         }
@@ -197,8 +190,7 @@ public class Koenigreich {
     //Bitte hier Code einfuegen.
     if (name.compareTo(spitze.getName()) == 0) {
 
-    }
-    else {
+    } else {
       spitze.setLinks(entfernen(name, spitze.getLinks()));
       spitze.setRechts(entfernen(name, spitze.getRechts()));
     }
@@ -209,19 +201,16 @@ public class Koenigreich {
       if (teilBaum.getName().compareTo(name) == 0) {
         if (teilBaum.getRechts() == null) {
           return entfernen(name, teilBaum.getLinks());
-        }
-        else {
+        } else {
           teilBaum.getRechts().setLinks(teilBaum.getLinks());
           return entfernen(name, teilBaum);
         }
-      }
-      else {
+      } else {
         teilBaum.setLinks(entfernen(name, teilBaum.getLinks()));
         teilBaum.setRechts(entfernen(name, teilBaum.getRechts()));
         return teilBaum;
       }
-    }
-    else {
+    } else {
       return null;
     }
   }
@@ -247,8 +236,7 @@ public class Koenigreich {
       for (int i = 0; i < volk.length; i++) {
         if (volk[i].getIstMaennlich()) {
           spitze.setLinks(einfuegenNeu(volk[i], spitze.getLinks()));
-        }
-        else {
+        } else {
           spitze.setRechts(einfuegenNeu(volk[i], spitze.getRechts()));
         }
       }
@@ -258,18 +246,15 @@ public class Koenigreich {
   private Person einfuegenNeu(Person person, Person teilBaum) {
     if (teilBaum == null) {
       return person;
-    }
-    else {
+    } else {
       if (person.getRang().ordinal() > teilBaum.getRang().ordinal()) {
         teilBaum.setLinks(einfuegen(person, teilBaum.getLinks()));
         return teilBaum;
-      }
-      else {
+      } else {
         if (person.getRang().ordinal() == teilBaum.getRang().ordinal()) {
           teilBaum.setRechts(einfuegen(person, teilBaum.getRechts()));
           return teilBaum;
-        }
-        else {
+        } else {
           person.setLinks(teilBaum);
           return person;
         }
@@ -282,19 +267,16 @@ public class Koenigreich {
       if (teilBaum == person) {
         if (teilBaum.getRechts() == null) {
           return entfernen(person, teilBaum.getLinks());
-        }
-        else {
+        } else {
           teilBaum.getRechts().setLinks(teilBaum.getLinks());
           return entfernen(person, teilBaum.getRechts());
         }
-      }
-      else {
+      } else {
         teilBaum.setLinks(entfernen(person, teilBaum.getLinks()));
         teilBaum.setRechts(entfernen(person, teilBaum.getRechts()));
         return teilBaum;
       }
-    }
-    else {
+    } else {
       return null;
     }
   }

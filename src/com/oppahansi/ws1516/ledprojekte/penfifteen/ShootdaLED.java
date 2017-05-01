@@ -1,13 +1,10 @@
-/**
+/*
  * ShootdaLED
- * <p>
- * Created by:
- * Penfifteen (Gruppe)
- * <p>
- * Bedienung:
- * Pfeiltasten.
+ *
+ * <p>Created by: Penfifteen (Gruppe)
+ *
+ * <p>Bedienung: Pfeiltasten.
  */
-
 package com.oppahansi.ws1516.ledprojekte.penfifteen;
 
 import ledControl.BoardController;
@@ -17,9 +14,16 @@ import java.util.Random;
 
 public class ShootdaLED {
 
-  final static int[][] COLORS = new int[][]{{127, 127, 127},
-    {127, 127, 0}, {127, 0, 127}, {127, 0, 0}, {0, 127, 127},
-    {0, 127, 0}, {0, 0, 127}};
+  static final int[][] COLORS =
+      new int[][] {
+        {127, 127, 127},
+        {127, 127, 0},
+        {127, 0, 127},
+        {127, 0, 0},
+        {0, 127, 127},
+        {0, 127, 0},
+        {0, 0, 127}
+      };
 
   static int[][] colors;
   static int[] lights;
@@ -54,10 +58,10 @@ public class ShootdaLED {
   static boolean isWallHit = false;
 
   // Colors
-  static int[] wandColor = new int[]{100, 50, 100};
-  static int[] shootColor = new int[]{100, 100, 50};
-  static int[] enterpriseColor = new int[]{100, 80, 40};
-  static int[] black = new int[]{0, 0, 0};
+  static int[] wandColor = new int[] {100, 50, 100};
+  static int[] shootColor = new int[] {100, 100, 50};
+  static int[] enterpriseColor = new int[] {100, 80, 40};
+  static int[] black = new int[] {0, 0, 0};
 
   public static void main(String[] args) {
 
@@ -70,7 +74,6 @@ public class ShootdaLED {
     random = myRandom(0, 11);
 
     game();
-
   }
 
   public static void restart() {
@@ -91,43 +94,36 @@ public class ShootdaLED {
     random = myRandom(0, 11);
 
     game();
-
   }
 
   public static void drawEnterprise(int y, int x, int[] color) {
 
-    controller.setColor(ShootdaLED.x, ShootdaLED.y, color[0], color[0],
-      color[2]);
-
+    controller.setColor(ShootdaLED.x, ShootdaLED.y, color[0], color[0], color[2]);
   }
 
   public static void move(KeyEvent event) {
 
     if (event != null) {
       if (event.getID() == KeyEvent.KEY_PRESSED) {
-        if (event.getKeyCode() == KeyEvent.VK_LEFT
-          && x > 0) {
+        if (event.getKeyCode() == KeyEvent.VK_LEFT && x > 0) {
 
           drawEnterprise(x, enterpriseGetY(), black);
           enterpriseSetX(enterpriseGetX() - 1);
           drawEnterprise(x, enterpriseGetY(), enterpriseColor);
         }
-        if (event.getKeyCode() == KeyEvent.VK_RIGHT
-          && x < 11) {
+        if (event.getKeyCode() == KeyEvent.VK_RIGHT && x < 11) {
 
           drawEnterprise(x, enterpriseGetY(), black);
           enterpriseSetX(enterpriseGetX() + 1);
           drawEnterprise(x, enterpriseGetY(), enterpriseColor);
         }
-        if (event.getKeyCode() == KeyEvent.VK_UP
-          && y > 2) {
+        if (event.getKeyCode() == KeyEvent.VK_UP && y > 2) {
 
           drawEnterprise(x, enterpriseGetY(), black);
           enterpriseSetY(enterpriseGetY() - 1);
           drawEnterprise(x, enterpriseGetY(), enterpriseColor);
         }
-        if (event.getKeyCode() == KeyEvent.VK_DOWN
-          && y < 11) {
+        if (event.getKeyCode() == KeyEvent.VK_DOWN && y < 11) {
 
           drawEnterprise(x, enterpriseGetY(), black);
           enterpriseSetY(enterpriseGetY() + 1);
@@ -144,16 +140,13 @@ public class ShootdaLED {
       // zeichnet die Wand bis zu einem Zufallspunkt
       for (int i = 0; i < random; i++) {
         controller.setColor(i, yS, a, b, c);
-
       }
 
       // zeichnet die Wand weiter ab Zufallspunkt+2, somit entsteht das
       // Loch
       for (int i = random + 1; i < controller.getHeight(); i++) {
         controller.setColor(i, yS, a, b, c);
-
       }
-
     }
   }
 
@@ -166,7 +159,6 @@ public class ShootdaLED {
 
         break;
       }
-
     }
   }
 
@@ -176,7 +168,6 @@ public class ShootdaLED {
     controller.setColor(ShootdaLED.x, ShootdaLED.ySh, 100, 100, 100);
     ShootdaLED.xSh = ShootdaLED.x;
     isShoot = true;
-
   }
 
   public static void moveShoot() {
@@ -197,11 +188,9 @@ public class ShootdaLED {
       if (xSh != random) {
         controller.setColor(ShootdaLED.xSh, ShootdaLED.ySh, 100, 0, 0);
         if (ySh == 0) {
-          controller
-            .setColor(ShootdaLED.xSh, ShootdaLED.ySh, 0, 0, 0);
+          controller.setColor(ShootdaLED.xSh, ShootdaLED.ySh, 0, 0, 0);
         }
       }
-
     }
   }
 
@@ -214,8 +203,7 @@ public class ShootdaLED {
 
       if (isWallHit == false) {
         drawBreak(yS + 1, 100, 80, 40);
-      }
-      else {
+      } else {
         drawBreak(yS + 1, 0, 0, 0);
       }
 
@@ -224,8 +212,7 @@ public class ShootdaLED {
       yS++;
       wandSetY(yS);
 
-    }
-    else {
+    } else {
       wandSetY(-1);
       random = myRandom(0, 11);
       isWallHit = false;
@@ -234,7 +221,6 @@ public class ShootdaLED {
         changeTimer = changeTimer - 2;
       }
     }
-
   }
 
   // startet das Spiel sobald Space gedr�ckt wird
@@ -275,8 +261,7 @@ public class ShootdaLED {
 
         moveWand(yS);
         myTimer = 0;
-      }
-      else {
+      } else {
         myTimer++;
       }
 
@@ -285,19 +270,16 @@ public class ShootdaLED {
         if (isShoot == true) {
           moveShoot();
         }
-      }
-      else {
+      } else {
         myTimer2++;
       }
 
       controller.updateLedStripe();
-
     }
     controller.resetColors();
     controller.updateLedStripe();
 
     restart();
-
   }
 
   public static boolean shipAlive() {

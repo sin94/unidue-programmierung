@@ -1,18 +1,13 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.mp.mp6;
 
-/**
- * Veranstaltung mit Name und Turnus (Sommer-/Wintersemester)
- */
+/* Veranstaltung mit Name und Turnus (Sommer-/Wintersemester) */
 public class Course {
 
   private String name;
@@ -43,5 +38,4 @@ public class Course {
   public String toString() {
     return String.format("'%s' (%s)", name, term);
   }
-
 }

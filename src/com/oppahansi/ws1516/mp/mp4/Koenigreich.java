@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.mp.mp4;
 
 import java.util.ArrayList;
@@ -93,7 +90,6 @@ public class Koenigreich {
     for (Person anArray2 : array2) {
       anArray2.vorstellen();
     }
-
   }
 
   //Aufgabe 2
@@ -102,16 +98,13 @@ public class Koenigreich {
       if (person.getIstMaennlich()) {
         if (spitze.getLinks() == null) {
           spitze.setLinks(person);
-        }
-        else {
+        } else {
           fuegePersonEin(spitze, spitze.getLinks(), person);
         }
-      }
-      else {
+      } else {
         if (spitze.getRechts() == null) {
           spitze.setRechts(person);
-        }
-        else {
+        } else {
           fuegePersonEin(spitze, spitze.getRechts(), person);
         }
       }
@@ -122,20 +115,16 @@ public class Koenigreich {
     if (spitze.getRang().ordinal() < person.getRang().ordinal()) {
       prev.setLinks(person);
       person.setLinks(spitze);
-    }
-    else if (spitze.getRang().ordinal() > person.getRang().ordinal()) {
+    } else if (spitze.getRang().ordinal() > person.getRang().ordinal()) {
       if (spitze.getLinks() == null) {
         spitze.setLinks(person);
-      }
-      else {
+      } else {
         fuegePersonEin(spitze, spitze.getLinks(), person);
       }
-    }
-    else if (spitze.getRang().ordinal() == person.getRang().ordinal()) {
+    } else if (spitze.getRang().ordinal() == person.getRang().ordinal()) {
       if (spitze.getRechts() == null) {
         spitze.setRechts(person);
-      }
-      else {
+      } else {
         fuegePersonEin(spitze, spitze.getRechts(), person);
       }
     }
@@ -161,9 +150,10 @@ public class Koenigreich {
       list.add(spitze);
       volkEinreihen(spitze.getLinks(), list);
       volkEinreihen(spitze.getRechts(), list);
-    }
-    else {
-      list.sort((person1, person2) -> Integer.compare(person2.getRang().ordinal(), person1.getRang().ordinal()));
+    } else {
+      list.sort(
+          (person1, person2) ->
+              Integer.compare(person2.getRang().ordinal(), person1.getRang().ordinal()));
     }
   }
 
@@ -191,8 +181,7 @@ public class Koenigreich {
   public Person[] suche(String name, Rang rang) {
     if (name == null && rang == null) {
       return null;
-    }
-    else {
+    } else {
       return getGesuchtenArray(volkszaehlung(), name, rang);
     }
   }
@@ -209,8 +198,7 @@ public class Koenigreich {
       }
 
       return list.toArray(ergebnis);
-    }
-    else if (rang == null) {
+    } else if (rang == null) {
       for (Person currentPerson : volk) {
         if (currentPerson.getName().compareTo(name) == 0) {
           list.add(currentPerson);
@@ -218,8 +206,7 @@ public class Koenigreich {
       }
 
       return list.toArray(ergebnis);
-    }
-    else {
+    } else {
       for (Person currentPerson : volk) {
         if (currentPerson.getName().compareTo(name) == 0 && currentPerson.getRang() == rang) {
           list.add(currentPerson);
@@ -245,30 +232,23 @@ public class Koenigreich {
         if (vorgaenger.getRechts().equals(volk[i])) {
           if (volk[i].getLinks() != null && volk[i].getRechts() == null) {
             vorgaenger.setRechts(volk[i].getLinks());
-          }
-          else if (volk[i].getLinks() == null && volk[i].getRechts() != null) {
+          } else if (volk[i].getLinks() == null && volk[i].getRechts() != null) {
             vorgaenger.setRechts(volk[i].getRechts());
-          }
-          else if (volk[i].getLinks() != null && volk[i].getRechts() != null) {
+          } else if (volk[i].getLinks() != null && volk[i].getRechts() != null) {
             vorgaenger.setRechts(volk[i].getRechts());
             vorgaenger.getRechts().setLinks(volk[i].getLinks());
-          }
-          else if (volk[i].getLinks() == null && volk[i].getRechts() == null) {
+          } else if (volk[i].getLinks() == null && volk[i].getRechts() == null) {
             vorgaenger.setRechts(null);
           }
-        }
-        else if (vorgaenger.getLinks().equals(volk[i])) {
+        } else if (vorgaenger.getLinks().equals(volk[i])) {
           if (volk[i].getLinks() != null && volk[i].getRechts() == null) {
             vorgaenger.setLinks(volk[i].getLinks());
-          }
-          else if (volk[i].getLinks() == null && volk[i].getRechts() != null) {
+          } else if (volk[i].getLinks() == null && volk[i].getRechts() != null) {
             vorgaenger.setLinks(volk[i].getRechts());
-          }
-          else if (volk[i].getLinks() != null && volk[i].getRechts() != null) {
+          } else if (volk[i].getLinks() != null && volk[i].getRechts() != null) {
             vorgaenger.setLinks(volk[i].getRechts());
             vorgaenger.getLinks().setLinks(volk[i].getLinks());
-          }
-          else if (volk[i].getLinks() == null && volk[i].getRechts() == null) {
+          } else if (volk[i].getLinks() == null && volk[i].getRechts() == null) {
             vorgaenger.setLinks(null);
           }
         }
@@ -280,8 +260,8 @@ public class Koenigreich {
 
   private Person getVorgaenger(Person[] volk, Person geloescht) {
     for (Person currentPerson : volk) {
-      if (currentPerson.getLinks() != null && currentPerson.getLinks().equals(geloescht) ||
-        currentPerson.getRechts() != null && currentPerson.getRechts().equals(geloescht)) {
+      if (currentPerson.getLinks() != null && currentPerson.getLinks().equals(geloescht)
+          || currentPerson.getRechts() != null && currentPerson.getRechts().equals(geloescht)) {
         return currentPerson;
       }
     }
@@ -319,16 +299,13 @@ public class Koenigreich {
       if (person.getIstMaennlich()) {
         if (spitze.getLinks() == null) {
           spitze.setLinks(person);
-        }
-        else {
+        } else {
           revolutionsEinfuegen(spitze, spitze.getLinks(), person);
         }
-      }
-      else {
+      } else {
         if (spitze.getRechts() == null) {
           spitze.setRechts(person);
-        }
-        else {
+        } else {
           revolutionsEinfuegen(spitze, spitze.getRechts(), person);
         }
       }
@@ -339,20 +316,16 @@ public class Koenigreich {
     if (spitze.getRang().ordinal() > person.getRang().ordinal()) {
       prev.setLinks(person);
       person.setLinks(spitze);
-    }
-    else if (spitze.getRang().ordinal() < person.getRang().ordinal()) {
+    } else if (spitze.getRang().ordinal() < person.getRang().ordinal()) {
       if (spitze.getLinks() == null) {
         spitze.setLinks(person);
-      }
-      else {
+      } else {
         revolutionsEinfuegen(spitze, spitze.getLinks(), person);
       }
-    }
-    else if (spitze.getRang().ordinal() == person.getRang().ordinal()) {
+    } else if (spitze.getRang().ordinal() == person.getRang().ordinal()) {
       if (spitze.getRechts() == null) {
         spitze.setRechts(person);
-      }
-      else {
+      } else {
         revolutionsEinfuegen(spitze, spitze.getRechts(), person);
       }
     }

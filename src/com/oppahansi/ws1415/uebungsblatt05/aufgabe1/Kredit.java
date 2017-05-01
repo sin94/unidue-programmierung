@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Offizielle moegliche Loesung
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Offizielle moegliche Loesung
  */
-
 package com.oppahansi.ws1415.uebungsblatt05.aufgabe1;
 
 public class Kredit {
@@ -16,10 +14,7 @@ public class Kredit {
   private double gebuehr;
   private double betrag, rate;
 
-  public Kredit(double zinssatz,
-    double gebuehr,
-    double betrag,
-    double rate) {
+  public Kredit(double zinssatz, double gebuehr, double betrag, double rate) {
     this.zinssatz = zinssatz;
     this.gebuehr = gebuehr;
     this.betrag = betrag;
@@ -70,10 +65,7 @@ public class Kredit {
       if (gesamtbetrag < 0) {
         gesamtbetrag = 0;
       }
-      System.out.println("RestBetrag nach " + jahre +
-        " Jahren: " + gesamtbetrag);
-
+      System.out.println("RestBetrag nach " + jahre + " Jahren: " + gesamtbetrag);
     }
   }
-
 }

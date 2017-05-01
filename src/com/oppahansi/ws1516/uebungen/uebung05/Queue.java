@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.uebungen.uebung05;
 /*
  * Diese Aufgabe soll ein einfacher Einstieg in Listen sein.
@@ -16,16 +13,16 @@ package com.oppahansi.ws1516.uebungen.uebung05;
  * neue Elemente (Node) hinten angefuegt und wenn ein Element entnommen wird,
  * muss dies in jedem Fall das vorderste oder erste Element der Warteschlange
  * sein.
- * 
+ *
  * In dieser Vorgabe verfuegt die Warteschlange schon ueber zwei vorgegebene
  * Nodes, first und last. Es bietet sich an in first das vorderste Element der
  * Schlange zu speichern und in last das letzte Element. Die Verwendung dieser
  * zwei Verweise sollte die Realisierung der Warteschlange recht einfach
  * gestalten.
- * 
+ *
  * Die eigentlich gespeicherten Elemente sollen in dieser Warteschlange ganze
  * Zahlen (int) sein.
- * 
+ *
  * HINWEIS:
  * - Bei dieser Aufgabe kann es leicht passieren, aus Versehen Endlosschleifen
  *   oder Endlosmethodenaufrufe zu programmieren. Wenn JACK unerwartet lange
@@ -44,12 +41,12 @@ public class Queue {
    */
   public static void main(String[] args) {
     Queue queue = new Queue();
-    queue.push(4);      // Inhalt der Warteschlange: (4)
-    queue.push(17);      // Inhalt der Warteschlange: (4, 17)
-    queue.pop();      // ...                       (17)
-    queue.push(33);      // 							 (17, 33)
-    queue.push(-13);   //							 (17, 33, -13)
-    queue.pop();      //							 (33, -13)
+    queue.push(4); // Inhalt der Warteschlange: (4)
+    queue.push(17); // Inhalt der Warteschlange: (4, 17)
+    queue.pop(); // ...                       (17)
+    queue.push(33); // 							 (17, 33)
+    queue.push(-13); //							 (17, 33, -13)
+    queue.pop(); //							 (33, -13)
     System.out.println("Erwartete Laenge der Warteschlange: 2");
     System.out.println("Tatsaechliche Laenge:               " + queue.length());
     System.out.println();
@@ -57,10 +54,9 @@ public class Queue {
     System.out.println("Tatsaechliche Summe:                     " + queue.sum());
   }
 
-	
-	/*
-    * BEGINN des zu bearbeitenden Codes
-	 */
+  /*
+   * BEGINN des zu bearbeitenden Codes
+   */
 
   public void Warteschlange() {
     first = null;
@@ -76,8 +72,7 @@ public class Queue {
     if (getFirst() == null) {
       setFirst(new Node(zahl, getLast()));
       setLast(getFirst());
-    }
-    else {
+    } else {
       getLast().setNext(new Node(zahl, null));
       setLast(getLast().getNext());
     }
@@ -110,16 +105,14 @@ public class Queue {
   public int pop() {
     if (getFirst() == null) {
       return Integer.MIN_VALUE;
-    }
-    else if (getFirst().getNext() == null) {
+    } else if (getFirst().getNext() == null) {
       int result = getFirst().getZahl();
 
       setFirst(null);
       setLast(getFirst());
 
       return result;
-    }
-    else {
+    } else {
       int result = getFirst().getZahl();
 
       setFirst(getFirst().getNext());
@@ -145,9 +138,9 @@ public class Queue {
     return result;
   }
 
-	/*
+  /*
    * ENDE des zu bearbeitenden Codes
-	 */
+   */
 
   /*
    * Diese Methode hat nichts mit dem Konzept der Warteschlange zu tun und
@@ -166,5 +159,4 @@ public class Queue {
 
     return result;
   }
-
 }

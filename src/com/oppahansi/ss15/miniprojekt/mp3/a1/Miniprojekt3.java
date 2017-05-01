@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Implementation by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Implementation by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ss15.miniprojekt.mp3.a1;
 
 import java.util.Arrays;
@@ -22,20 +19,46 @@ public class Miniprojekt3 {
     Miniprojekt3 m = new Miniprojekt3();
 
     // Alle vorhandenen Speisen gelistet im Array 'alleSpeisen'.
-    m.alleSpeisen[0] = new Speise(11, "PIZZA SCAMPI RUCOLA", 11.50,
-      new String[]{"Scampi", "Rucola", "schwarze Oliven",
-        "hausgemachte Tomatensauce", "Mozzarella"});
-    m.alleSpeisen[1] = new Speise(12, "PIZZA DIAVOLO", 10.50, new String[]{
-      "Scharfe Peperoni-Salami", "frische Paprika", "rote Zwiebeln",
-      "hausgemachte Tomatensauce", "Mozzarella"});
-    m.alleSpeisen[2] = new Speise(13, "PASTA SCAMPI", 8.90, new String[]{
-      "Gebratene Scampi", "Fruehlingszwiebeln", "frische Tomaten",
-      "hausgemachte Tomatensauce"});
-    m.alleSpeisen[3] = new Speise(14, "PASTA CARBONARA", 7.60,
-      new String[]{"Speck", "Zwiebeln", "Sahnesauce", "Ei"});
-    m.alleSpeisen[4] = new Speise(15, "SALAT MISTA PICCOLA", 4.90,
-      new String[]{"Blattsalate", "Kirschtomaten", "Karotten",
-        "Grana Padano"});
+    m.alleSpeisen[0] =
+        new Speise(
+            11,
+            "PIZZA SCAMPI RUCOLA",
+            11.50,
+            new String[] {
+              "Scampi", "Rucola", "schwarze Oliven", "hausgemachte Tomatensauce", "Mozzarella"
+            });
+    m.alleSpeisen[1] =
+        new Speise(
+            12,
+            "PIZZA DIAVOLO",
+            10.50,
+            new String[] {
+              "Scharfe Peperoni-Salami",
+              "frische Paprika",
+              "rote Zwiebeln",
+              "hausgemachte Tomatensauce",
+              "Mozzarella"
+            });
+    m.alleSpeisen[2] =
+        new Speise(
+            13,
+            "PASTA SCAMPI",
+            8.90,
+            new String[] {
+              "Gebratene Scampi",
+              "Fruehlingszwiebeln",
+              "frische Tomaten",
+              "hausgemachte Tomatensauce"
+            });
+    m.alleSpeisen[3] =
+        new Speise(
+            14, "PASTA CARBONARA", 7.60, new String[] {"Speck", "Zwiebeln", "Sahnesauce", "Ei"});
+    m.alleSpeisen[4] =
+        new Speise(
+            15,
+            "SALAT MISTA PICCOLA",
+            4.90,
+            new String[] {"Blattsalate", "Kirschtomaten", "Karotten", "Grana Padano"});
 
     // Alle vorhandenen Getraenke gelistet im Array 'alleGetraenke'.
 
@@ -89,8 +112,7 @@ public class Miniprojekt3 {
     m.alleTische[2].hinzufuegenTischbuchung(10, 12);
     m.alleTische[2].hinzufuegenTischbuchung(20, 24);
     // Ausgabe.
-    System.out
-      .println("################# Tischbelegungen #################" + '\n');
+    System.out.println("################# Tischbelegungen #################" + '\n');
     m.ausgabe(m.alleTische);
     m.ausgabeBuchung(m.alleTische);
     System.out.println("#######################################" + '\n');
@@ -100,63 +122,72 @@ public class Miniprojekt3 {
     System.out.printf("%-60s\n", "Platziere 7 Personen an Tisch 13.");
     m.plazieren(13, 7);
     // System.out.println("Tisch 13 bestellt Getraenk mit ArtNr: 10, 13, 14 und Speisen mit ArtNr: 12, 13.");
-    System.out.printf("%-60s\n",
-      "Tisch 13 bestellt Getraenk mit ArtNr: 10, 13, 14.");
-    System.out.printf("%-60s\n",
-      "Tisch 13 bestellt Speisen mit ArtNr: 12, 13.");
+    System.out.printf("%-60s\n", "Tisch 13 bestellt Getraenk mit ArtNr: 10, 13, 14.");
+    System.out.printf("%-60s\n", "Tisch 13 bestellt Speisen mit ArtNr: 12, 13.");
     m.hinzufuegenGetraenk(13, 10);
     m.hinzufuegenGetraenk(13, 13);
     m.hinzufuegenGetraenk(13, 14);
     m.hinzufuegenSpeise(13, 12);
     m.hinzufuegenSpeise(13, 13);
 
-    System.out.printf("%-60s%-15s%-20s\n",
-      "Verfuegbare Tische zum Zeitpunkt 10: ", m.nichtReserviert(10),
-      "(richtig: 4)");
-    System.out.printf("%-60s%-15s%-20s\n",
-      "Verfuegbare Tische von 11 bis 13: ",
-      m.nichtReserviert(11, 13), "(richtig: 2)");
-    System.out.printf("%-60s%-15s%-20s\n",
-      "Zum Zeitpunkt 11 belegte Tische: ",
-      Arrays.toString(m.belegteTische(11)), "(richtig: [12, 13])");
-    System.out.printf("%-60s%-15s%-20s\n", "Rechnungssumme von Tisch 11: ",
-      m.summeRechnung(11), "(richtig: 44.5)");
-    System.out.printf("%-60s%-15s%-20s\n",
-      "Naechste Reservierung f�r Tisch 13 zum Zeitpunkt 11: ",
-      m.naechsteReservierung(13, 11), "(richtig: 20 bis 24)");
-    System.out.printf("%-60s\n",
-      "Tischbuchung: Tisch 13 von Zeitpunkt 14 bis 16 buchen.");
+    System.out.printf(
+        "%-60s%-15s%-20s\n",
+        "Verfuegbare Tische zum Zeitpunkt 10: ", m.nichtReserviert(10), "(richtig: 4)");
+    System.out.printf(
+        "%-60s%-15s%-20s\n",
+        "Verfuegbare Tische von 11 bis 13: ", m.nichtReserviert(11, 13), "(richtig: 2)");
+    System.out.printf(
+        "%-60s%-15s%-20s\n",
+        "Zum Zeitpunkt 11 belegte Tische: ",
+        Arrays.toString(m.belegteTische(11)),
+        "(richtig: [12, 13])");
+    System.out.printf(
+        "%-60s%-15s%-20s\n",
+        "Rechnungssumme von Tisch 11: ", m.summeRechnung(11), "(richtig: 44.5)");
+    System.out.printf(
+        "%-60s%-15s%-20s\n",
+        "Naechste Reservierung f�r Tisch 13 zum Zeitpunkt 11: ",
+        m.naechsteReservierung(13, 11),
+        "(richtig: 20 bis 24)");
+    System.out.printf("%-60s\n", "Tischbuchung: Tisch 13 von Zeitpunkt 14 bis 16 buchen.");
     m.TischReservieren(13, 14, 16);
     System.out.printf("%-60s\n", "Bon fuer Tisch 15 verwerfen.");
     m.verwerfenBon(15);
-    System.out.printf("%-60s%-15s%-20s\n",
-      "Tisch mit der hoechsten Rechnung: ", m.teuersterTisch(),
-      "(richtig: 11)");
-    System.out.printf("%-60s%-15s%-20s\n",
-      "Tische an denen nur Getraenke bestellt wurden: ",
-      Arrays.toString(m.nurGetraenkeBestellt()), "(richtig: [12])");
-    System.out.printf("%-60s%-15s%-20s\n",
-      "Tische an denen noch zusaetzlich 2 Personen platz haben: ",
-      Arrays.toString(m.extraFreiePlaetze(2)), "(richtig: [13, 15])");
-    System.out.printf("%-60s%-15s%-20s\n",
-      "Tisch mit der meisten Anzahl an Artikeln: ", m.maxArtikel(),
-      "(richtig: 11)");
-    System.out.printf("%-60s%-15s%-20s\n",
-      "Anzahl freier Pl�tze (belegte und nicht belegte Tische): ",
-      m.freiePlaetze(), "(richtig: 8)");
-    System.out.printf("%-60s%-15s%-20s\n",
-      "Aufteilen einer Gruppe (2 Personen) auf alle freien Tische: ",
-      m.platzierenMoeglich(2), "(richtig: true)");
-    System.out.printf("%-60s%-15s%-20s\n",
-      "Am h�ufigsten bestellte Getraenk ArtNr.: ",
-      m.meisteGetraenk(), "(richtig: 14)");
+    System.out.printf(
+        "%-60s%-15s%-20s\n",
+        "Tisch mit der hoechsten Rechnung: ", m.teuersterTisch(), "(richtig: 11)");
+    System.out.printf(
+        "%-60s%-15s%-20s\n",
+        "Tische an denen nur Getraenke bestellt wurden: ",
+        Arrays.toString(m.nurGetraenkeBestellt()),
+        "(richtig: [12])");
+    System.out.printf(
+        "%-60s%-15s%-20s\n",
+        "Tische an denen noch zusaetzlich 2 Personen platz haben: ",
+        Arrays.toString(m.extraFreiePlaetze(2)),
+        "(richtig: [13, 15])");
+    System.out.printf(
+        "%-60s%-15s%-20s\n",
+        "Tisch mit der meisten Anzahl an Artikeln: ", m.maxArtikel(), "(richtig: 11)");
+    System.out.printf(
+        "%-60s%-15s%-20s\n",
+        "Anzahl freier Pl�tze (belegte und nicht belegte Tische): ",
+        m.freiePlaetze(),
+        "(richtig: 8)");
+    System.out.printf(
+        "%-60s%-15s%-20s\n",
+        "Aufteilen einer Gruppe (2 Personen) auf alle freien Tische: ",
+        m.platzierenMoeglich(2),
+        "(richtig: true)");
+    System.out.printf(
+        "%-60s%-15s%-20s\n",
+        "Am h�ufigsten bestellte Getraenk ArtNr.: ", m.meisteGetraenk(), "(richtig: 14)");
 
     // System.out.println('\n' +
     // "############### neue Tischbelegungen ###############" +'\n');
     // m.ausgabe(m.alleTische);
     // m.ausgabeBuchung(m.alleTische);
     System.out.println("#######################################" + '\n');
-
   }
 
   /*
@@ -165,28 +196,34 @@ public class Miniprojekt3 {
   public void ausgabe(Tisch[] tische) {
     for (int i = 0; i < tische.length; i++) {
       if (tische[i] != null) {
-        System.out.println("Tisch: " + tische[i].getTischnummer()
-          + "  belegt mit " + tische[i].getAnzahlPersonen()
-          + " von max. " + tische[i].getMaxAnzahlPersonen()
-          + " Personen." + '\n');
+        System.out.println(
+            "Tisch: "
+                + tische[i].getTischnummer()
+                + "  belegt mit "
+                + tische[i].getAnzahlPersonen()
+                + " von max. "
+                + tische[i].getMaxAnzahlPersonen()
+                + " Personen."
+                + '\n');
         System.out.println("Speisen:");
-        System.out.printf("%-12s%-24s%-12s\n", "ArtNr.", "Name",
-          "Preis");
+        System.out.printf("%-12s%-24s%-12s\n", "ArtNr.", "Name", "Preis");
         Speise tempSpeise = tische[i].getSpeisen();
         while (tempSpeise != null) {
-          System.out.printf("%-12d%-24s%-12s\n",
-            tempSpeise.getArtNr(), tempSpeise.getName(),
-            tempSpeise.getPreis());
+          System.out.printf(
+              "%-12d%-24s%-12s\n",
+              tempSpeise.getArtNr(), tempSpeise.getName(), tempSpeise.getPreis());
           tempSpeise = tempSpeise.getNachfolger();
         }
         System.out.println('\n' + "Getraenke:");
-        System.out.printf("%-12s%-12s%-12s%-12s\n", "ArtNr.", "Name",
-          "Groesse", "Preis");
+        System.out.printf("%-12s%-12s%-12s%-12s\n", "ArtNr.", "Name", "Groesse", "Preis");
         Getraenk tempGetraenk = tische[i].getGetraenke();
         while (tempGetraenk != null) {
-          System.out.printf("%-12s%-12s%-12s%-12s\n",
-            tempGetraenk.getArtNr(), tempGetraenk.getName(),
-            tempGetraenk.groesse, tempGetraenk.getPreis());
+          System.out.printf(
+              "%-12s%-12s%-12s%-12s\n",
+              tempGetraenk.getArtNr(),
+              tempGetraenk.getName(),
+              tempGetraenk.groesse,
+              tempGetraenk.getPreis());
           tempGetraenk = tempGetraenk.getNachfolger();
         }
         System.out.println('\n');
@@ -204,8 +241,7 @@ public class Miniprojekt3 {
         System.out.println("Tisch: " + tische[i].getTischnummer());
         Tischbuchung tempBuchung = tische[i].getTischbuchungen();
         while (tempBuchung != null) {
-          System.out.println(tempBuchung.getStart() + " bis "
-            + tempBuchung.getEnde());
+          System.out.println(tempBuchung.getStart() + " bis " + tempBuchung.getEnde());
           tempBuchung = tempBuchung.getNachfolger();
         }
         System.out.println('\n');
@@ -262,12 +298,12 @@ public class Miniprojekt3 {
 
       if (aktuelleTischbuchung == null) {
         verfuegbareTische++;
-      }
-      else {
+      } else {
         boolean verfuegbar = true;
 
         while (aktuelleTischbuchung != null) {
-          if (Zeitpunkt >= aktuelleTischbuchung.getStart() && Zeitpunkt < aktuelleTischbuchung.getEnde()) {
+          if (Zeitpunkt >= aktuelleTischbuchung.getStart()
+              && Zeitpunkt < aktuelleTischbuchung.getEnde()) {
             verfuegbar = false;
             break;
           }
@@ -291,14 +327,16 @@ public class Miniprojekt3 {
 
       if (aktuelleTischbuchung == null) {
         verfuegbareTische++;
-      }
-      else {
+      } else {
         boolean verfuegbar = true;
 
         while (aktuelleTischbuchung != null) {
-          if ((BelegtStart >= aktuelleTischbuchung.getStart() && BelegtStart < aktuelleTischbuchung.getEnde()) || (BelegtEnde >=
-            aktuelleTischbuchung.getStart() && BelegtEnde < aktuelleTischbuchung.getEnde()) || (BelegtStart <
-            aktuelleTischbuchung.getStart() && BelegtEnde >= aktuelleTischbuchung.getEnde())) {
+          if ((BelegtStart >= aktuelleTischbuchung.getStart()
+                  && BelegtStart < aktuelleTischbuchung.getEnde())
+              || (BelegtEnde >= aktuelleTischbuchung.getStart()
+                  && BelegtEnde < aktuelleTischbuchung.getEnde())
+              || (BelegtStart < aktuelleTischbuchung.getStart()
+                  && BelegtEnde >= aktuelleTischbuchung.getEnde())) {
             verfuegbar = false;
             break;
           }
@@ -323,7 +361,8 @@ public class Miniprojekt3 {
       Tischbuchung aktuelleTischbuchung = aktuellerTisch.getTischbuchungen();
 
       while (aktuelleTischbuchung != null) {
-        if (Zeitpunkt >= aktuelleTischbuchung.getStart() && Zeitpunkt < aktuelleTischbuchung.getEnde()) {
+        if (Zeitpunkt >= aktuelleTischbuchung.getStart()
+            && Zeitpunkt < aktuelleTischbuchung.getEnde()) {
           belegteTische[index] = aktuellerTisch.getTischnummer();
           index++;
           break;
@@ -450,8 +489,9 @@ public class Miniprojekt3 {
     int index = 0;
 
     for (Tisch aktuellerTisch : alleTische) {
-      if (aktuellerTisch.getAnzahlPersonen() > 0 && aktuellerTisch.getMaxAnzahlPersonen() - aktuellerTisch
-        .getAnzahlPersonen() >= AnzahlPersonen) {
+      if (aktuellerTisch.getAnzahlPersonen() > 0
+          && aktuellerTisch.getMaxAnzahlPersonen() - aktuellerTisch.getAnzahlPersonen()
+              >= AnzahlPersonen) {
         tischeMitFreienPlaetzen[index] = aktuellerTisch.getTischnummer();
         index++;
       }
@@ -464,8 +504,9 @@ public class Miniprojekt3 {
     int anzTischeMitFreienPlaetzen = 0;
 
     for (Tisch aktuellerTisch : alleTische) {
-      if (aktuellerTisch.getAnzahlPersonen() > 0 && aktuellerTisch.getMaxAnzahlPersonen() - aktuellerTisch.getAnzahlPersonen() >=
-        anzahlPersonen) {
+      if (aktuellerTisch.getAnzahlPersonen() > 0
+          && aktuellerTisch.getMaxAnzahlPersonen() - aktuellerTisch.getAnzahlPersonen()
+              >= anzahlPersonen) {
         anzTischeMitFreienPlaetzen++;
       }
     }
@@ -531,20 +572,15 @@ public class Miniprojekt3 {
         while (aktuellesGetraenk != null) {
           if (aktuellesGetraenk.getArtNr() == 10) {
             getraenkeHaeufigkeiten[0]++;
-          }
-          else if (aktuellesGetraenk.getArtNr() == 11) {
+          } else if (aktuellesGetraenk.getArtNr() == 11) {
             getraenkeHaeufigkeiten[1]++;
-          }
-          else if (aktuellesGetraenk.getArtNr() == 12) {
+          } else if (aktuellesGetraenk.getArtNr() == 12) {
             getraenkeHaeufigkeiten[2]++;
-          }
-          else if (aktuellesGetraenk.getArtNr() == 13) {
+          } else if (aktuellesGetraenk.getArtNr() == 13) {
             getraenkeHaeufigkeiten[3]++;
-          }
-          else if (aktuellesGetraenk.getArtNr() == 14) {
+          } else if (aktuellesGetraenk.getArtNr() == 14) {
             getraenkeHaeufigkeiten[4]++;
-          }
-          else {
+          } else {
             getraenkeHaeufigkeiten[5]++;
           }
 

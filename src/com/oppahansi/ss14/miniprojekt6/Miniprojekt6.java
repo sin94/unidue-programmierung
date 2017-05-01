@@ -8,43 +8,45 @@ public class Miniprojekt6 {
   public static void main(String[] args) {
     Database db = new InMemoryDatabase();
 
-    System.out
-      .println(String
-        .format("Neue Datenbank 'db' erzeugt. Anzahl der Student-Objekte in der Datenbank: %d - Anzahl der Course-Objekte in der Datenbank: %d",
-          db.countStudents(), db.countCourses()));
+    System.out.println(
+        String.format(
+            "Neue Datenbank 'db' erzeugt. Anzahl der Student-Objekte in der Datenbank: %d - Anzahl der Course-Objekte in der Datenbank: %d",
+            db.countStudents(), db.countCourses()));
 
-    Course[] courses = new Course[]{
-      new Course("Programmierung", Term.WINTER_TERM),
-      new Course("Design und Architektur von Software-Systemen",
-        Term.WINTER_TERM),
-      new Course("Distributed Objects and XML", Term.SUMMER_TERM),
-      new Course("Formale Methoden", Term.SUMMER_TERM),
-      new Course("Anwendung Formaler Methoden", Term.WINTER_TERM)};
+    Course[] courses =
+        new Course[] {
+          new Course("Programmierung", Term.WINTER_TERM),
+          new Course("Design und Architektur von Software-Systemen", Term.WINTER_TERM),
+          new Course("Distributed Objects and XML", Term.SUMMER_TERM),
+          new Course("Formale Methoden", Term.SUMMER_TERM),
+          new Course("Anwendung Formaler Methoden", Term.WINTER_TERM)
+        };
 
     for (final Course course : courses) {
       db.insertCourse(course);
     }
 
-    System.out
-      .println(String
-        .format("Kurse hinzugefügt. Anzahl der Course-Objekte in der Datenbank: %d",
-          db.countCourses()));
+    System.out.println(
+        String.format(
+            "Kurse hinzugefügt. Anzahl der Course-Objekte in der Datenbank: %d",
+            db.countCourses()));
 
-    Student[] students = new Student[]{
-      new Student("Eduard", "Sunshine", 1995, 4, 12),
-      new Student("Alina", "von Beetz", 1986, 9, 1),
-      new Student("Bernd", "Bauer", 1993, 11, 5),
-      new Student("Konstanze", "Fuchsberg", 1990, 8, 30),
-      new Student("Daria", "Kern", 1989, 2, 14),
-      new Student("Maciek", "Daborowski", 1992, 7, 11)};
+    Student[] students =
+        new Student[] {
+          new Student("Eduard", "Sunshine", 1995, 4, 12),
+          new Student("Alina", "von Beetz", 1986, 9, 1),
+          new Student("Bernd", "Bauer", 1993, 11, 5),
+          new Student("Konstanze", "Fuchsberg", 1990, 8, 30),
+          new Student("Daria", "Kern", 1989, 2, 14),
+          new Student("Maciek", "Daborowski", 1992, 7, 11)
+        };
 
     for (final Student student : students) {
       db.insertStudent(student);
-      System.out
-        .println(String
-          .format("%s %s eingefügt. Anzahl der Student-Objekte in der Datenbank: %d",
-            student.getFirstName(),
-            student.getLastName(), db.countStudents()));
+      System.out.println(
+          String.format(
+              "%s %s eingefügt. Anzahl der Student-Objekte in der Datenbank: %d",
+              student.getFirstName(), student.getLastName(), db.countStudents()));
     }
 
     // Noten
@@ -80,24 +82,23 @@ public class Miniprojekt6 {
     System.out.println("\nDie besten Studenten (unsortiert):");
     double gradeThreshold = 2.3;
     for (final Student student : db.getGoodStudents(gradeThreshold)) {
-      System.out.println(String.format("\t* %s %s (%.2f)",
-        student.getFirstName(), student.getLastName(),
-        student.getAverageGrade()));
+      System.out.println(
+          String.format(
+              "\t* %s %s (%.2f)",
+              student.getFirstName(), student.getLastName(), student.getAverageGrade()));
     }
 
     System.out.println("\nDie besten Studenten (sortiert):");
-    for (final Student student : db
-      .getGoodStudentsOrderedByGrade(gradeThreshold)) {
-      System.out.println(String.format("\t* %s %s (%.2f)",
-        student.getFirstName(), student.getLastName(),
-        student.getAverageGrade()));
+    for (final Student student : db.getGoodStudentsOrderedByGrade(gradeThreshold)) {
+      System.out.println(
+          String.format(
+              "\t* %s %s (%.2f)",
+              student.getFirstName(), student.getLastName(), student.getAverageGrade()));
     }
 
-    System.out.println(String.format("\nStudenten, die '%s' gehört haben:",
-      courses[2].getName()));
+    System.out.println(String.format("\nStudenten, die '%s' gehört haben:", courses[2].getName()));
     for (final Student student : db.getStudentsAttendingCourse(courses[2])) {
-      System.out.println(String.format("\t* %s %s",
-        student.getFirstName(), student.getLastName()));
+      System.out.println(String.format("\t* %s %s", student.getFirstName(), student.getLastName()));
     }
 
     System.out.println("\nAlle Veranstaltungen:");
@@ -111,15 +112,15 @@ public class Miniprojekt6 {
     }
 
     Database db2 = new InMemoryDatabase();
-    System.out
-      .println(String
-        .format("\nNeue Datenbank 'db2' erzeugt. Anzahl der Student-Objekte in der Datenbank: %d - Anzahl der Course-Objekte in der Datenbank: %d",
-          db2.countStudents(), db2.countCourses()));
+    System.out.println(
+        String.format(
+            "\nNeue Datenbank 'db2' erzeugt. Anzahl der Student-Objekte in der Datenbank: %d - Anzahl der Course-Objekte in der Datenbank: %d",
+            db2.countStudents(), db2.countCourses()));
 
     db2.insertStudents(db.getStudents());
-    System.out
-      .println(String
-        .format("Alle Student-Objekte aus 'db' in 'db2' eingefügt. Anzahl der Student-Objekte in der Datenbank: %d",
-          db2.countStudents()));
+    System.out.println(
+        String.format(
+            "Alle Student-Objekte aus 'db' in 'db2' eingefügt. Anzahl der Student-Objekte in der Datenbank: %d",
+            db2.countStudents()));
   }
 }

@@ -10,8 +10,7 @@ public class Train {
   public int getSize() {
     if (head == null) {
       return 0;
-    }
-    else {
+    } else {
       int counter = 0;
       Waggon node = head;
       while (node != null) {
@@ -25,8 +24,7 @@ public class Train {
   public int getPassengerCount() {
     if (head == null) {
       return 0;
-    }
-    else {
+    } else {
       int counter = 0;
       Waggon node = head;
       while (node != null) {
@@ -40,8 +38,7 @@ public class Train {
   public int getCapacity() {
     if (head == null) {
       return 0;
-    }
-    else {
+    } else {
       int counter = 0;
       Waggon node = head;
       while (node != null) {
@@ -56,8 +53,7 @@ public class Train {
     if (head == null || waggon == null || getSize() == 0) {
       head = waggon;
 
-    }
-    else {
+    } else {
       Waggon node = head;
       int size = getSize();
       for (int i = 1; i < size; i++) {
@@ -79,13 +75,11 @@ public class Train {
         node = node.getNext();
         continue;
 
-      }
-      else if (free >= passengersTo) {
+      } else if (free >= passengersTo) {
         node.setPassengers(in + passengersTo);
         break;
 
-      }
-      else if (free < passengersTo) {
+      } else if (free < passengersTo) {
         node.setPassengers(in + free);
         passengersTo -= free;
       }
@@ -96,10 +90,9 @@ public class Train {
   public Train uncoupleWaggons(int index) {
     if (index < 0 || index > getSize()) {
       return null;
-    }
-    else {
-      Train newTrain = new Train();    //neuen Zug erstellen
-      Waggon node = getWaggonAt(index - 1);    //Waggon an der Stelle index -1 den letzten vom zug
+    } else {
+      Train newTrain = new Train(); //neuen Zug erstellen
+      Waggon node = getWaggonAt(index - 1); //Waggon an der Stelle index -1 den letzten vom zug
       Waggon next = node.getNext();
       node.setNext(null);
       newTrain.head = next;
@@ -110,20 +103,17 @@ public class Train {
   public void insertWaggon(Waggon waggon, int index) {
     if (waggon == null || index < 0) {
 
-    }
-    else if (index == 0)        //falls index 0 ist, der neue Waggon muss an die erste Stelle
+    } else if (index == 0) //falls index 0 ist, der neue Waggon muss an die erste Stelle
     {
       Waggon next = head;
       head = waggon;
       head.setNext(next);
 
-    }
-    else if (index >= getSize()) {
+    } else if (index >= getSize()) {
       Waggon node = getWaggonAt(getSize() - 1);
       node.setNext(waggon);
 
-    }
-    else {
+    } else {
       Waggon previous = getWaggonAt(index - 1);
       Waggon next = getWaggonAt(index);
       previous.setNext(waggon);
@@ -132,7 +122,7 @@ public class Train {
   }
 
   public void turnOver() {
-    Waggon newHead = getWaggonAt(getSize() - 1);    //letzte Stelle des aktuellen Zuges
+    Waggon newHead = getWaggonAt(getSize() - 1); //letzte Stelle des aktuellen Zuges
     Train newTrain = new Train();
     while (getSize() > 0) {
       newHead = getWaggonAt(getSize() - 1);
@@ -145,13 +135,11 @@ public class Train {
   public void removeWaggon(Waggon waggon) {
     if (waggon == null) {
 
-    }
-    else {
+    } else {
       if (head == waggon) {
         head = head.getNext();
 
-      }
-      else {
+      } else {
         Waggon node = head;
         while (node != null && node.getNext() != waggon) {
           node = node.getNext();
@@ -168,8 +156,7 @@ public class Train {
     if (index < 0 || index > getSize()) {
       return null;
 
-    }
-    else {
+    } else {
       Waggon node = head;
       for (int i = 0; i < index; i++) {
         node = node.getNext();
@@ -195,6 +182,4 @@ public class Train {
 
     return str.toString();
   }
-
 }
-

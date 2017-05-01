@@ -16,8 +16,8 @@ package com.oppahansi.ss14.eigeneaufgaben;
  *
  * Bitte Obergrenze angeben: 100        // Obergrenze angeben
  *
- *  
- * Bitte geben Sie nach jedem Versuch g, k oder r an.   // Befehle/Hinweise f�r den Computer  
+ *
+ * Bitte geben Sie nach jedem Versuch g, k oder r an.   // Befehle/Hinweise f�r den Computer
  * g: Die Zahl des Users ist groesser.
  * k: Die Zahl des Users ist ist kleiner.
  * r: Die Zahl des Computers gleicht der des Users.
@@ -43,10 +43,7 @@ package com.oppahansi.ss14.eigeneaufgaben;
 public class PCErraetZhalUngeloest {
 
   /*
-  * Hier das Minispiel implementieren.
-  */
-  public static void main(String[] args) {
-
-  }
-
+   * Hier das Minispiel implementieren.
+   */
+  public static void main(String[] args) {}
 }

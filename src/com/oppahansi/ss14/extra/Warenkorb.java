@@ -1,7 +1,5 @@
 package com.oppahansi.ss14.extra;
 
-
-
 /*  Code und die Idee von http://www.informatikzentrale.de/getter-setter-java.html
  *	Modifiziert durch oppahansi
  */
@@ -44,10 +42,10 @@ public class Warenkorb {
 
   // ENDE des zu bearbeitenden Codes
 
-//	public void rechnungsDatenAusgeben() {
-//		System.out.println("Rechnungsumme: " + getRechnungSumme());
-//		System.out.println("Anzahl Artikel im Warenkorb: " + getAnzahlArtikel());
-//		System.out.println("Enthaltene MwSt.: " + getEnthalteneMehrwertsteuer());
-//	}
+  //	public void rechnungsDatenAusgeben() {
+  //		System.out.println("Rechnungsumme: " + getRechnungSumme());
+  //		System.out.println("Anzahl Artikel im Warenkorb: " + getAnzahlArtikel());
+  //		System.out.println("Enthaltene MwSt.: " + getEnthalteneMehrwertsteuer());
+  //	}
 
 }

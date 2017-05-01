@@ -1,22 +1,24 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ws1415.miniprojekt3;
 
-// Fassen Sie diese Klasse nicht an! 
+// Fassen Sie diese Klasse nicht an!
 public class Lebensmittel {
 
   // Als Konstanten
-  public static final Lebensmittel Seelachsfilet = new Lebensmittel("Seelachsfilet", 16.0, 3.6, 0.9);
+  public static final Lebensmittel Seelachsfilet =
+      new Lebensmittel("Seelachsfilet", 16.0, 3.6, 0.9);
   public static final Lebensmittel Rindfleisch = new Lebensmittel("Rindfleisch", 29.9, 0.0, 9.3);
-  public static final Lebensmittel Haenchenfleisch = new Lebensmittel("Haenchenfleisch", 16.0, 0.0, 1.0);
-  public static final Lebensmittel Haenchenbrustfilet = new Lebensmittel("Haenchenbrustfilet", 23.0, 0.0, 2.0);
-  public static final Lebensmittel Schweinefleisch = new Lebensmittel("Schweinefleisch", 26.7, 0.0, 16.7);
+  public static final Lebensmittel Haenchenfleisch =
+      new Lebensmittel("Haenchenfleisch", 16.0, 0.0, 1.0);
+  public static final Lebensmittel Haenchenbrustfilet =
+      new Lebensmittel("Haenchenbrustfilet", 23.0, 0.0, 2.0);
+  public static final Lebensmittel Schweinefleisch =
+      new Lebensmittel("Schweinefleisch", 26.7, 0.0, 16.7);
   public static final Lebensmittel Tofu = new Lebensmittel("Tofu", 15.8, 0.6, 8.7);
   public static final Lebensmittel Nudeln = new Lebensmittel("Nudeln", 13.0, 70.0, 1.0);
   public static final Lebensmittel Reis = new Lebensmittel("Reis", 7.8, 74.1, 2.2);
@@ -35,7 +37,8 @@ public class Lebensmittel {
   public static final Lebensmittel Bechamelsauce = new Lebensmittel("Bechamelsauce", 2.4, 6.2, 7.3);
   public static final Lebensmittel Currysauce = new Lebensmittel("Currysauce", 1.9, 8.0, 11.9);
   public static final Lebensmittel Tomatensauce = new Lebensmittel("Tomatensauce", 1.4, 7.1, 0.3);
-  public static final Lebensmittel Gorgonzolasauce = new Lebensmittel("Gorgonzolasauce", 4.5, 6.4, 19.0);
+  public static final Lebensmittel Gorgonzolasauce =
+      new Lebensmittel("Gorgonzolasauce", 4.5, 6.4, 19.0);
   public static final Lebensmittel Analogkaese = new Lebensmittel("Analogkaese", 3.1, 22.0, 27.2);
   public static final Lebensmittel Kaese = new Lebensmittel("Kaese", 22.0, 0.0, 31.0);
   public static final Lebensmittel Joghurt = new Lebensmittel("Joghurt", 5.6, 6.4, 0.1);
@@ -48,7 +51,8 @@ public class Lebensmittel {
   public static final Lebensmittel Broetchen = new Lebensmittel("Broetchen", 7.4, 50.7, 1.4);
   public static final Lebensmittel Senf = new Lebensmittel("Senf", 6.0, 6.0, 4.0);
   public static final Lebensmittel Essig = new Lebensmittel("Essig", 0.0, 3.0, 1.0);
-  public static final Lebensmittel Sojaschnetzel = new Lebensmittel("Sojaschnetzel", 49.2, 16.3, 7.6);
+  public static final Lebensmittel Sojaschnetzel =
+      new Lebensmittel("Sojaschnetzel", 49.2, 16.3, 7.6);
   public static final Lebensmittel Zwiebel = new Lebensmittel("Zwiebel", 1.2, 4.9, 0.2);
   public static final Lebensmittel Sojamilch = new Lebensmittel("Sojamilch", 15.7, 0.2, 9.9);
   public static final Lebensmittel Hefeflocken = new Lebensmittel("Hefeflocken", 43.4, 34.2, 5.2);
@@ -59,19 +63,21 @@ public class Lebensmittel {
   public static final Lebensmittel Milch = new Lebensmittel("Milch", 3.4, 4.8, 1.5);
   public static final Lebensmittel Zucchini = new Lebensmittel("Zucchini", 2.0, 2.3, 0.3);
   public static final Lebensmittel Oliven = new Lebensmittel("Oliven", 1.4, 3.0, 12.7);
-  public static final Lebensmittel[] AlleLebensmittel = new Lebensmittel[]{
-    Seelachsfilet, Rindfleisch, Haenchenfleisch, Haenchenbrustfilet,
-    Schweinefleisch, Tofu, Nudeln, Reis,
-    Kartoffeln, Tomaten, Broccoli, Blumenkohl,
-    Erbsen, Karotten, Bohnen, Paprika,
-    Mais, Auberginen, Champignons, Waldpilzsauce,
-    Bechamelsauce, Currysauce, Tomatensauce, Gorgonzolasauce,
-    Analogkaese, Kaese, Joghurt, Paniermehl,
-    Ei, Oel, Margarine, Butter,
-    Sojagranulat, Broetchen, Senf, Essig,
-    Sojaschnetzel, Zwiebel, Sojamilch, Hefeflocken,
-    Blattspinat, Sojamehl, Mehl, Gewuerze,
-    Milch, Zucchini, Oliven};
+  public static final Lebensmittel[] AlleLebensmittel =
+      new Lebensmittel[] {
+        Seelachsfilet, Rindfleisch, Haenchenfleisch, Haenchenbrustfilet,
+        Schweinefleisch, Tofu, Nudeln, Reis,
+        Kartoffeln, Tomaten, Broccoli, Blumenkohl,
+        Erbsen, Karotten, Bohnen, Paprika,
+        Mais, Auberginen, Champignons, Waldpilzsauce,
+        Bechamelsauce, Currysauce, Tomatensauce, Gorgonzolasauce,
+        Analogkaese, Kaese, Joghurt, Paniermehl,
+        Ei, Oel, Margarine, Butter,
+        Sojagranulat, Broetchen, Senf, Essig,
+        Sojaschnetzel, Zwiebel, Sojamilch, Hefeflocken,
+        Blattspinat, Sojamehl, Mehl, Gewuerze,
+        Milch, Zucchini, Oliven
+      };
   public String name;
   // Gewicht pro Makronaehrstoff auf 100g
   public double protein;

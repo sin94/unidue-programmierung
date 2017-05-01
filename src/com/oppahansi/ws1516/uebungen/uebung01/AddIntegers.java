@@ -1,17 +1,14 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.uebungen.uebung01;
 
 // Integer-Werte addieren
-// 
+//
 // Modifizieren Sie die Methode "add" so, dass sie die Variablen "a" und "b" addiert und das Ergebnis zurueckgibt.
 
 public class AddIntegers {
@@ -33,5 +30,4 @@ public class AddIntegers {
     System.out.println("260 + (-5) = " + add(260, -5) + " (255 ist korrekt)");
     System.out.println("-12 + 20 = " + add(-12, 20) + " (8 ist korrekt)");
   }
-
 }

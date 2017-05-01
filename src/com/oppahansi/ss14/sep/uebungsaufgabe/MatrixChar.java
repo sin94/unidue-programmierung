@@ -1,7 +1,8 @@
 package com.oppahansi.ss14.sep.uebungsaufgabe;
 
-public class MatrixChar {	/* Datenstruktur der Matrix realisiert mit zweidimensionalen String Array
-        */
+public class MatrixChar {
+  /* Datenstruktur der Matrix realisiert mit zweidimensionalen String Array
+   */
 
   char[][] matrix;
 
@@ -52,18 +53,15 @@ public class MatrixChar {	/* Datenstruktur der Matrix realisiert mit zweidimensi
     System.out.println("Ist das Wort ARRAY in der Zeile vorhanden :true");
     System.out.println("Ist das Wort BRATEN in der Spalte vorhanden :true");
     System.out.println("Ist das Wort BRATEN in der Zeile vorhanden :false");
-
   }
 
   public void erzeugematrix(int groesse)
 
+        /* Die Methode erzeugt die Matrix mit der L�nge "groesse"
+         * Hinweis: zum Adressieren der Matrix das erste Feld hat den Index 0 !!!
+         */
 
-
-		/* Die Methode erzeugt die Matrix mit der L�nge "groesse"
-     * Hinweis: zum Adressieren der Matrix das erste Feld hat den Index 0 !!!
-		 */
-
-  {
+      {
     int puffer;
     matrix = new char[groesse][groesse];
     for (int i = 0; i < groesse; i++) {
@@ -72,26 +70,24 @@ public class MatrixChar {	/* Datenstruktur der Matrix realisiert mit zweidimensi
         puffer = (i + j) % 26 + 65;
 
         matrix[i][j] = (char) puffer;
-
       }
     }
   }
 
   public void fuegein(char chr, int positionY, int positionX)
 
-	 	/* f�gt einen Character(Buchstaben) in die Matrix ein an der Stelle "positionX"(horizontal), "positionY" (vertikal)
-	  	*/
+        /* f�gt einen Character(Buchstaben) in die Matrix ein an der Stelle "positionX"(horizontal), "positionY" (vertikal)
+         */
 
-  {
+      {
     matrix[positionX][positionY] = chr;
-
   }
 
   public void ausgabe()
 
-  //* Die Methode veranschaulicht die Matrix auf dem Bildschirm
+        //* Die Methode veranschaulicht die Matrix auf dem Bildschirm
 
-  {
+      {
     int ssumme = 0;
     for (int x = 0; x < matrix.length; x++) {
       for (int y = 0; y < matrix.length; y++) {
@@ -99,14 +95,13 @@ public class MatrixChar {	/* Datenstruktur der Matrix realisiert mit zweidimensi
       }
       System.out.println();
     }
-
   }
 
   public boolean findeWortSP(String wort)
 
-  //* Sucht in den Spalten von oben nach unten nach dem Wort
+        //* Sucht in den Spalten von oben nach unten nach dem Wort
 
-  {
+      {
 
     //* Hier ist der Code f�r die Aufagbe zu implementieren
     return false;
@@ -114,8 +109,8 @@ public class MatrixChar {	/* Datenstruktur der Matrix realisiert mit zweidimensi
 
   public boolean findeWortZE(String wort)
 
-  //* Sucht in den Zeilen von links nach rechts nach dem Wort
-  {
+        //* Sucht in den Zeilen von links nach rechts nach dem Wort
+      {
 
     //* Hier ist der Code f�r die Aufagbe zu implementieren
     return false;

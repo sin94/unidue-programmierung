@@ -1,9 +1,8 @@
-/**
+/*
  * Created by Rogerg Fu on 10.11.2014.
- * <p>
- * Altermative 2
+ *
+ * <p>Altermative 2
  */
-
 package com.oppahansi.ws1415.uebungsblatt03;
 
 public class Aufgabe_2_A2 {
@@ -14,8 +13,7 @@ public class Aufgabe_2_A2 {
 
     if (array1.length < array2.length) {
       x = array2.length;
-    }
-    else {
+    } else {
       x = array1.length;
     }
 
@@ -32,15 +30,13 @@ public class Aufgabe_2_A2 {
 
       if (y < z) {
         a[b] = Math.abs(z - y);
-      }
-      else {
+      } else {
         a[b] = Math.abs(y - z);
       }
 
       summe = summe + a[b];
     }
     return summe;
-
   }
 
   public static void main(String[] args) {
@@ -53,6 +49,5 @@ public class Aufgabe_2_A2 {
     test = summeDerDifferenzen(array1, array2);
 
     System.out.println(test);
-
   }
 }

@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Offizielle moegliche Loesung
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Offizielle moegliche Loesung
  */
-
 package com.oppahansi.ws1415.uebungsblatt05.aufgabe3;
 
 class Aufgabe5_5 {
@@ -38,8 +36,7 @@ class QuadratischeGleichung {
     double maxdelta = 0.000000000001d;
     if (delta < maxdelta && delta > -maxdelta) {
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }

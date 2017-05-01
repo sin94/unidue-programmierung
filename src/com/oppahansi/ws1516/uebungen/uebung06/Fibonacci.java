@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.uebungen.uebung06;
 // Fibonacci-Zahlen
 //
@@ -18,8 +15,8 @@ package com.oppahansi.ws1516.uebungen.uebung06;
 // f_{n} = f_{n-1} + f_{n-2} fuer n>=2
 //
 // In der Code-Vorlage befindet sich eine Klasse mit der Methode fibonacci,
-// welche die n-te Fibonacci-Zahl berechnet. 
-// Vervollstaendigen Sie die Methode mit Nutzung der Rekursion aus der obigen Definition! 
+// welche die n-te Fibonacci-Zahl berechnet.
+// Vervollstaendigen Sie die Methode mit Nutzung der Rekursion aus der obigen Definition!
 
 public class Fibonacci {
 

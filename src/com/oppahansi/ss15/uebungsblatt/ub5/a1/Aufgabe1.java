@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Implementation by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Implementation by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ss15.uebungsblatt.ub5.a1;
 
 public class Aufgabe1 {
@@ -55,8 +52,7 @@ public class Aufgabe1 {
     for (int i = 0; i < result.length; i++) {
       if (i < p.length && i < q.length) {
         result[i] = p[i] * q[i];
-      }
-      else {
+      } else {
         result[i] = 0;
       }
     }
@@ -67,8 +63,7 @@ public class Aufgabe1 {
   private int[] getFittingArray(int[] first, int[] second) {
     if (first.length <= second.length) {
       return new int[second.length];
-    }
-    else {
+    } else {
       return new int[first.length];
     }
   }

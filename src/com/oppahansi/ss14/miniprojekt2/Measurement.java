@@ -11,14 +11,14 @@ public class Measurement {
 
   private int[] data;
 
-	/*
-     * Aufgabe 1
-	 * 
-	 * beachtet "this" nicht - hier kann man es weglassen
-	 * 
-	 * Was this genau bedeutet und wieso man diesen Operator
-	 * verwendet wird noch später deutlich
-	 */
+  /*
+   * Aufgabe 1
+   *
+   * beachtet "this" nicht - hier kann man es weglassen
+   *
+   * Was this genau bedeutet und wieso man diesen Operator
+   * verwendet wird noch später deutlich
+   */
 
   // a)
   public Measurement() {
@@ -43,7 +43,7 @@ public class Measurement {
 
     System.out.println("------------------------------------------------------------------");
 
-    m.addValues(new int[]{58, 78, 61, 72, 93, 81, 79, 78, 75, 81, 93});
+    m.addValues(new int[] {58, 78, 61, 72, 93, 81, 79, 78, 75, 81, 93});
     System.out.println("Hinzuzfügen einer Menge von Werten. m:");
     // Erwartete Ausgabe:
     // [85, 58, 78, 61, 72, 93, 81, 79, 78, 75, 81, 93]
@@ -84,8 +84,7 @@ public class Measurement {
       // Auf data verweisen
       data = data2;
       // Fall 2: data ist nicht leer beim Aufruf der Methode
-    }
-    else {
+    } else {
       // Hilfsarray mit der benötigten Länge erstellen
       // die Länge von data + 1 - da die Länge der Arrays
       // den Modifizierer final hat und nicht mehr geändert
@@ -104,7 +103,6 @@ public class Measurement {
 
       // Auf data verweisen
       data = data2;
-
     }
   }
 
@@ -119,8 +117,7 @@ public class Measurement {
     // Falls values ein leeres Object ist - tun wir nichts
     if (values == null) {
       // Falls values werte enthält
-    }
-    else {
+    } else {
       // Äußere for-Schleife überträgt die werte von data in data2, solange
       // i kleiner der Länge von data ist
       // <= in diesem Fall, da ich einen weiteren Durchlauf benötige um dann
@@ -140,8 +137,7 @@ public class Measurement {
           for (int j = i, k = 0; j < data2.length; j++, k++) {
             data2[j] = values[k];
           }
-        }
-        else {
+        } else {
           data2[i] = data[i];
         }
       }
@@ -178,8 +174,7 @@ public class Measurement {
     // Falls threshold 0 ist , dann geben wir ein leeres Object zurück
     if (threshold == 0) {
       return null;
-    }
-    else {
+    } else {
       // Hilfsvariable zur Ermittlung der Anzahl der Werte, die
       // echt größer sind als der Schwellenwert threshold
       int counter = 0;
@@ -219,5 +214,4 @@ public class Measurement {
   public void printData() {
     System.out.println(Arrays.toString(data));
   }
-
 }

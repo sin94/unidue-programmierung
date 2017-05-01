@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.mp.mp2;
 
 import java.util.Arrays;
@@ -39,7 +36,7 @@ public class Measurement {
 
     System.out.println("------------------------------------------------------------------");
 
-    m.addValues(new int[]{58, 78, 61, 72, 93, 81, 79, 78, 75, 81, 93});
+    m.addValues(new int[] {58, 78, 61, 72, 93, 81, 79, 78, 75, 81, 93});
     System.out.println("Hinzuzfügen einer Menge von Werten. m:");
     // Erwartete Ausgabe:
     // [85, 58, 78, 61, 72, 93, 81, 79, 78, 75, 81, 93]
@@ -116,7 +113,7 @@ public class Measurement {
       result[i] = data[i];
     }
 
-//      System.arraycopy(data, 0, result, 0, data.length);        // besser
+    //      System.arraycopy(data, 0, result, 0, data.length);        // besser
 
     result[result.length - 1] = value;
 
@@ -130,13 +127,13 @@ public class Measurement {
       result[i] = data[i];
     }
 
-//      System.arraycopy(data, 0, result, 0, data.length);                 // besser
+    //      System.arraycopy(data, 0, result, 0, data.length);                 // besser
 
     for (int i = data.length, j = 0; i < result.length; i++, j++) {
       result[i] = values[j];
     }
 
-//      System.arraycopy(values, 0, result, data.length, values.length);   // besser
+    //      System.arraycopy(values, 0, result, data.length, values.length);   // besser
 
     return result;
   }
@@ -144,5 +141,4 @@ public class Measurement {
   private void setData(int[] data) {
     this.data = data;
   }
-
 }

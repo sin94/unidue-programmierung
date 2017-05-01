@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved by oppahansi.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved by oppahansi.
  */
-
 package com.oppahansi.ws1415.miniprojekt3;
 
 import java.text.DecimalFormat;
@@ -19,7 +17,9 @@ public class Mensa_A1 {
   private final double KOHLENKCAL = 4.1;
   private final double PROTEINKCAL = 4.1;
   Lebensmittel lebensmittel[] = new Lebensmittel[0];
-  Speise_A1 haupt[] = new Speise_A1[16], staerke[] = new Speise_A1[16], gemuese[] = new Speise_A1[16];
+  Speise_A1 haupt[] = new Speise_A1[16],
+      staerke[] = new Speise_A1[16],
+      gemuese[] = new Speise_A1[16];
 
   public static void main(String[] args) {
     Mensa_A1 m = new Mensa_A1();
@@ -61,7 +61,10 @@ public class Mensa_A1 {
     s.neueZutat(Lebensmittel.Currysauce, 25);
     s.neueZutat(Lebensmittel.Gewuerze, 15);
 
-    s = m.neueSpeise(m.haupt, "H�hnchenbrust \"Tandoori\"�mit Chili-Ingwer-Sauce [a, c, e, f, g, h, i, j, k](G)");
+    s =
+        m.neueSpeise(
+            m.haupt,
+            "H�hnchenbrust \"Tandoori\"�mit Chili-Ingwer-Sauce [a, c, e, f, g, h, i, j, k](G)");
     s.neueZutat(Lebensmittel.Haenchenbrustfilet, 200.0);
     s.neueZutat(Lebensmittel.Zwiebel, 150);
     s.neueZutat(Lebensmittel.Kaese, 50.0);
@@ -156,7 +159,8 @@ public class Mensa_A1 {
       System.out.println("Protein      : " + l.protein);
       System.out.println("Kohlenhydrate: " + l.kohlenhydrat);
       System.out.println("Fett         : " + l.fett);
-      System.out.println("Kcal/100g    : " + ((l.fett * 9.3 + l.kohlenhydrat * 4.1 + l.protein * 4.1)));
+      System.out.println(
+          "Kcal/100g    : " + ((l.fett * 9.3 + l.kohlenhydrat * 4.1 + l.protein * 4.1)));
     }
   }
 
@@ -168,7 +172,9 @@ public class Mensa_A1 {
         System.out.printf("%s (Kcal: %.1f)\n", k.name, k.getKcal());
         Zutat_A1 z = k.kopf;
         while (z != null) {
-          System.out.printf("%sg | %s\n", fmt.format(z.menge), z.lebensmittel != null ? z.lebensmittel.name : "NULL");
+          System.out.printf(
+              "%sg | %s\n",
+              fmt.format(z.menge), z.lebensmittel != null ? z.lebensmittel.name : "NULL");
           z = z.nachfolger;
         }
       }
@@ -206,43 +212,45 @@ public class Mensa_A1 {
       }
       if (gemuese[i] != null && gemuese[i].getKcal() < 300) {
         double differenz = 200 - gemuese[i].getKcal();
-        gemuese[i].neueZutat(Lebensmittel.Margarine, getMengeAnreicherung(differenz, Lebensmittel.Margarine));
+        gemuese[i].neueZutat(
+            Lebensmittel.Margarine, getMengeAnreicherung(differenz, Lebensmittel.Margarine));
       }
     }
   }
 
   private double getMengeAnreicherung(double kcalDifferenz, Lebensmittel lebensmitte1) {
-    return kcalDifferenz * (100 / (lebensmitte1.fett * FETTKCAL + lebensmitte1.kohlenhydrat * KOHLENKCAL + lebensmitte1.protein * PROTEINKCAL));
+    return kcalDifferenz
+        * (100
+            / (lebensmitte1.fett * FETTKCAL
+                + lebensmitte1.kohlenhydrat * KOHLENKCAL
+                + lebensmitte1.protein * PROTEINKCAL));
   }
 
   // Aufgabe
   public void deveganisiere() {
     for (int i = 0; i < haupt.length; i++) {
-      if (haupt[i] != null && (
-        haupt[i].enthaeltZutat(Lebensmittel.Analogkaese) ||
-          haupt[i].enthaeltZutat(Lebensmittel.Sojagranulat) ||
-          haupt[i].enthaeltZutat(Lebensmittel.Sojaschnetzel) ||
-          haupt[i].enthaeltZutat(Lebensmittel.Sojamehl) ||
-          haupt[i].enthaeltZutat(Lebensmittel.Sojamilch)
-      )) {
+      if (haupt[i] != null
+          && (haupt[i].enthaeltZutat(Lebensmittel.Analogkaese)
+              || haupt[i].enthaeltZutat(Lebensmittel.Sojagranulat)
+              || haupt[i].enthaeltZutat(Lebensmittel.Sojaschnetzel)
+              || haupt[i].enthaeltZutat(Lebensmittel.Sojamehl)
+              || haupt[i].enthaeltZutat(Lebensmittel.Sojamilch))) {
         haupt[i].ersetzeVeggieZutaten();
       }
-      if (staerke[i] != null && (
-        staerke[i].enthaeltZutat(Lebensmittel.Analogkaese) ||
-          staerke[i].enthaeltZutat(Lebensmittel.Sojagranulat) ||
-          staerke[i].enthaeltZutat(Lebensmittel.Sojaschnetzel) ||
-          staerke[i].enthaeltZutat(Lebensmittel.Sojamehl) ||
-          staerke[i].enthaeltZutat(Lebensmittel.Sojamilch)
-      )) {
+      if (staerke[i] != null
+          && (staerke[i].enthaeltZutat(Lebensmittel.Analogkaese)
+              || staerke[i].enthaeltZutat(Lebensmittel.Sojagranulat)
+              || staerke[i].enthaeltZutat(Lebensmittel.Sojaschnetzel)
+              || staerke[i].enthaeltZutat(Lebensmittel.Sojamehl)
+              || staerke[i].enthaeltZutat(Lebensmittel.Sojamilch))) {
         staerke[i].ersetzeVeggieZutaten();
       }
-      if (gemuese[i] != null && (
-        gemuese[i].enthaeltZutat(Lebensmittel.Analogkaese) ||
-          gemuese[i].enthaeltZutat(Lebensmittel.Sojagranulat) ||
-          gemuese[i].enthaeltZutat(Lebensmittel.Sojaschnetzel) ||
-          gemuese[i].enthaeltZutat(Lebensmittel.Sojamehl) ||
-          gemuese[i].enthaeltZutat(Lebensmittel.Sojamilch)
-      )) {
+      if (gemuese[i] != null
+          && (gemuese[i].enthaeltZutat(Lebensmittel.Analogkaese)
+              || gemuese[i].enthaeltZutat(Lebensmittel.Sojagranulat)
+              || gemuese[i].enthaeltZutat(Lebensmittel.Sojaschnetzel)
+              || gemuese[i].enthaeltZutat(Lebensmittel.Sojamehl)
+              || gemuese[i].enthaeltZutat(Lebensmittel.Sojamilch))) {
         gemuese[i].ersetzeVeggieZutaten();
       }
     }
@@ -251,46 +259,43 @@ public class Mensa_A1 {
   // Aufgabe
   public void veganisiere() {
     for (int i = 0; i < haupt.length; i++) {
-      if (haupt[i] != null && (
-        haupt[i].enthaeltZutat(Lebensmittel.Kaese) ||
-          haupt[i].enthaeltZutat(Lebensmittel.Rindfleisch) ||
-          haupt[i].enthaeltZutat(Lebensmittel.Haenchenfleisch) ||
-          haupt[i].enthaeltZutat(Lebensmittel.Schweinefleisch) ||
-          haupt[i].enthaeltZutat(Lebensmittel.Ei) ||
-          haupt[i].enthaeltZutat(Lebensmittel.Milch) ||
-          haupt[i].enthaeltZutat(Lebensmittel.Haenchenbrustfilet) ||
-          haupt[i].enthaeltZutat(Lebensmittel.Seelachsfilet) ||
-          haupt[i].enthaeltZutat(Lebensmittel.Margarine) ||
-          haupt[i].enthaeltZutat(Lebensmittel.Butter)
-      )) {
+      if (haupt[i] != null
+          && (haupt[i].enthaeltZutat(Lebensmittel.Kaese)
+              || haupt[i].enthaeltZutat(Lebensmittel.Rindfleisch)
+              || haupt[i].enthaeltZutat(Lebensmittel.Haenchenfleisch)
+              || haupt[i].enthaeltZutat(Lebensmittel.Schweinefleisch)
+              || haupt[i].enthaeltZutat(Lebensmittel.Ei)
+              || haupt[i].enthaeltZutat(Lebensmittel.Milch)
+              || haupt[i].enthaeltZutat(Lebensmittel.Haenchenbrustfilet)
+              || haupt[i].enthaeltZutat(Lebensmittel.Seelachsfilet)
+              || haupt[i].enthaeltZutat(Lebensmittel.Margarine)
+              || haupt[i].enthaeltZutat(Lebensmittel.Butter))) {
         haupt[i].ersetzeNichtVeggieZutaten();
       }
-      if (staerke[i] != null && (
-        staerke[i].enthaeltZutat(Lebensmittel.Kaese) ||
-          staerke[i].enthaeltZutat(Lebensmittel.Rindfleisch) ||
-          staerke[i].enthaeltZutat(Lebensmittel.Haenchenfleisch) ||
-          staerke[i].enthaeltZutat(Lebensmittel.Schweinefleisch) ||
-          staerke[i].enthaeltZutat(Lebensmittel.Ei) ||
-          staerke[i].enthaeltZutat(Lebensmittel.Milch) ||
-          staerke[i].enthaeltZutat(Lebensmittel.Haenchenbrustfilet) ||
-          staerke[i].enthaeltZutat(Lebensmittel.Seelachsfilet) ||
-          staerke[i].enthaeltZutat(Lebensmittel.Margarine) ||
-          staerke[i].enthaeltZutat(Lebensmittel.Butter)
-      )) {
+      if (staerke[i] != null
+          && (staerke[i].enthaeltZutat(Lebensmittel.Kaese)
+              || staerke[i].enthaeltZutat(Lebensmittel.Rindfleisch)
+              || staerke[i].enthaeltZutat(Lebensmittel.Haenchenfleisch)
+              || staerke[i].enthaeltZutat(Lebensmittel.Schweinefleisch)
+              || staerke[i].enthaeltZutat(Lebensmittel.Ei)
+              || staerke[i].enthaeltZutat(Lebensmittel.Milch)
+              || staerke[i].enthaeltZutat(Lebensmittel.Haenchenbrustfilet)
+              || staerke[i].enthaeltZutat(Lebensmittel.Seelachsfilet)
+              || staerke[i].enthaeltZutat(Lebensmittel.Margarine)
+              || staerke[i].enthaeltZutat(Lebensmittel.Butter))) {
         staerke[i].ersetzeNichtVeggieZutaten();
       }
-      if (gemuese[i] != null && (
-        gemuese[i].enthaeltZutat(Lebensmittel.Kaese) ||
-          gemuese[i].enthaeltZutat(Lebensmittel.Rindfleisch) ||
-          gemuese[i].enthaeltZutat(Lebensmittel.Haenchenfleisch) ||
-          gemuese[i].enthaeltZutat(Lebensmittel.Schweinefleisch) ||
-          gemuese[i].enthaeltZutat(Lebensmittel.Ei) ||
-          gemuese[i].enthaeltZutat(Lebensmittel.Milch) ||
-          gemuese[i].enthaeltZutat(Lebensmittel.Haenchenbrustfilet) ||
-          gemuese[i].enthaeltZutat(Lebensmittel.Seelachsfilet) ||
-          gemuese[i].enthaeltZutat(Lebensmittel.Margarine) ||
-          gemuese[i].enthaeltZutat(Lebensmittel.Butter)
-      )) {
+      if (gemuese[i] != null
+          && (gemuese[i].enthaeltZutat(Lebensmittel.Kaese)
+              || gemuese[i].enthaeltZutat(Lebensmittel.Rindfleisch)
+              || gemuese[i].enthaeltZutat(Lebensmittel.Haenchenfleisch)
+              || gemuese[i].enthaeltZutat(Lebensmittel.Schweinefleisch)
+              || gemuese[i].enthaeltZutat(Lebensmittel.Ei)
+              || gemuese[i].enthaeltZutat(Lebensmittel.Milch)
+              || gemuese[i].enthaeltZutat(Lebensmittel.Haenchenbrustfilet)
+              || gemuese[i].enthaeltZutat(Lebensmittel.Seelachsfilet)
+              || gemuese[i].enthaeltZutat(Lebensmittel.Margarine)
+              || gemuese[i].enthaeltZutat(Lebensmittel.Butter))) {
         gemuese[i].ersetzeNichtVeggieZutaten();
       }
     }
@@ -324,8 +329,7 @@ public class Mensa_A1 {
 
     if (kombinationA && kombinationB && kombinationC) {
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }

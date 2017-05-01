@@ -2,9 +2,8 @@ package com.oppahansi.ss14.sep.uebungsaufgabe;
 
 public class Zaehlen {
 
-
-   /*
-    * Zaehlmethode f�r die Anzahl von Zeichen z in String s, Aufgabe 3b
+  /*
+   * Zaehlmethode f�r die Anzahl von Zeichen z in String s, Aufgabe 3b
    */
 
   public static void main(String args[]) {
@@ -28,5 +27,4 @@ public class Zaehlen {
 
     return ergebnis;
   }
-
 }

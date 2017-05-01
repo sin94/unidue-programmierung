@@ -10,5 +10,4 @@ public class HtmlPersonPrinter extends PersonPrinter {
     }
     System.out.println("</ul>");
   }
-
 }

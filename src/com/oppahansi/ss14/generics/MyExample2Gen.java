@@ -11,7 +11,7 @@ public class MyExample2Gen {
     names.add("Anton");
     names.add("Boris");
     names.add("Caesar");
-//		names.add(2);
+    //		names.add(2);
 
     ordner = new String[names.size()];
 

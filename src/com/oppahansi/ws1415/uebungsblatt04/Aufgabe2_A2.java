@@ -1,17 +1,15 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved by oppahansi.
- * <p>
- * Alternative 2
- * <p>
- * Main-Methode/printList-Methode created by oppahansi.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved by oppahansi.
+ *
+ * <p>Alternative 2
+ *
+ * <p>Main-Methode/printList-Methode created by oppahansi.
  */
-
 package com.oppahansi.ws1415.uebungsblatt04;
 
 public class Aufgabe2_A2 {

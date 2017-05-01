@@ -1,7 +1,4 @@
-/**
- * Created by oppahansi on 07.11.2014.
- */
-
+/* Created by oppahansi on 07.11.2014. */
 package com.oppahansi.ws1415.uebungsblatt03;
 
 public class Aufgabe_2_A1 {
@@ -19,15 +16,12 @@ public class Aufgabe_2_A1 {
   private static int berechneDifferenz(int[] array_1, int[] array_2) {
     if (array_1 == null || array_2 == null) {
       return -1;
-    }
-    else {
+    } else {
       if (array_1.length <= array_2.length) {
         return berechneDifferenzArray1Kleiner(array_1, array_2);
-      }
-      else {
+      } else {
         return berechneDifferenzArray2Kleiner(array_1, array_2);
       }
-
     }
   }
 
@@ -37,8 +31,7 @@ public class Aufgabe_2_A1 {
     for (int i = 0; i < maxLaenge; i++) {
       if (i < array_1.length) {
         ergebnis[i] = (array_1[i] - array_2[i]);
-      }
-      else {
+      } else {
         ergebnis[i] = (STANDARTWERT_SONST - array_2[i]);
       }
     }
@@ -51,8 +44,7 @@ public class Aufgabe_2_A1 {
     for (int i = 0; i < maxLaenge; i++) {
       if (i < array_2.length) {
         ergebnis[i] = (array_1[i] - array_2[i]);
-      }
-      else {
+      } else {
         ergebnis[i] = (array_1[i] - STANDARTWERT_SONST);
       }
     }
@@ -63,8 +55,7 @@ public class Aufgabe_2_A1 {
     for (int wert : arrayDifferenz) {
       if (wert < 0) {
         summe += (-1) * wert;
-      }
-      else {
+      } else {
         summe += wert;
       }
     }

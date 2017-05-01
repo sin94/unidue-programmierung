@@ -1,15 +1,13 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Offizielle moegliche Loesung
- * <p>
- * ledControl is located inside the res/ledControl/ folder - add it to your project as library.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Offizielle moegliche Loesung
+ *
+ * <p>ledControl is located inside the res/ledControl/ folder - add it to your project as library.
  */
-
 package com.oppahansi.ws1415.uebungsblatt07;
 
 import ledControl.BoardController;
@@ -23,7 +21,6 @@ public class Aufgabe1 {
     Aufgabe1 A1 = new Aufgabe1();
     A1.KansasCityOstSued(0, 0);
     A1.KansasCitySuedOst(0, 0);
-
   }
 
   void KansasCityOstSued(int x, int y) {
@@ -39,7 +36,6 @@ public class Aufgabe1 {
 
     controller.setColor(x, y, 0, 0, 0);
     controller.updateLedStripe();
-
   }
 
   void KansasCitySuedOst(int x, int y) {
@@ -54,7 +50,5 @@ public class Aufgabe1 {
     }
     controller.setColor(x, y, 0, 0, 0);
     controller.updateLedStripe();
-
   }
-
 }

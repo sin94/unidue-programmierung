@@ -1,9 +1,8 @@
-/**
+/*
  * Created by Rogerg Fu on 10.11.2014.
- * <p>
- * Altermative 2
+ *
+ * <p>Altermative 2
  */
-
 package com.oppahansi.ws1415.uebungsblatt03;
 
 public class Aufgabe_3_A2 {
@@ -25,6 +24,5 @@ public class Aufgabe_3_A2 {
     double test;
     test = skalar(vector1, vector2);
     System.out.println(test);
-
   }
 }

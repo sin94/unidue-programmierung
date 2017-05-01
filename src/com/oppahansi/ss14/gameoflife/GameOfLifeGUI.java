@@ -2,12 +2,12 @@ package com.oppahansi.ss14.gameoflife;
 
 import com.oppahansi.ws1516.uebungen.gameoflife.GameOfLife;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import javax.swing.*;
 
 public class GameOfLifeGUI extends JFrame {
 
@@ -32,12 +32,13 @@ public class GameOfLifeGUI extends JFrame {
   public static void main(String[] args) {
     try {
       UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-    }
-    catch (ClassNotFoundException | InstantiationException
-      | IllegalAccessException | UnsupportedLookAndFeelException e) {
+    } catch (ClassNotFoundException
+        | InstantiationException
+        | IllegalAccessException
+        | UnsupportedLookAndFeelException e) {
 
-      System.err
-        .println("System Look-And-Feel konnte nicht gesetzt werden. Dies hat jedoch nur optische Auswirkungen.");
+      System.err.println(
+          "System Look-And-Feel konnte nicht gesetzt werden. Dies hat jedoch nur optische Auswirkungen.");
     }
 
     final GameOfLifeGUI application = new GameOfLifeGUI();
@@ -63,58 +64,60 @@ public class GameOfLifeGUI extends JFrame {
 
     final JButton stepButton = new JButton("Nächste Generation");
     final JButton randomBoardButton = new JButton("Zufälliges Board");
-    final JButton showNeighboursButton = new JButton(
-      "Anzahl Nachbarn einblenden");
+    final JButton showNeighboursButton = new JButton("Anzahl Nachbarn einblenden");
 
-    stepButton.addActionListener(new ActionListener() {
+    stepButton.addActionListener(
+        new ActionListener() {
 
-      @Override
-      public void actionPerformed(ActionEvent arg0) {
-        game.step();
-        gamePanel.repaint();
+          @Override
+          public void actionPerformed(ActionEvent arg0) {
+            game.step();
+            gamePanel.repaint();
 
-        generation++;
-        updateGenerationsLabel();
-      }
-    });
+            generation++;
+            updateGenerationsLabel();
+          }
+        });
 
-    stepButton.addKeyListener(new KeyAdapter() {
-      @Override
-      public void keyPressed(KeyEvent e) {
-        game.step();
-        gamePanel.repaint();
+    stepButton.addKeyListener(
+        new KeyAdapter() {
+          @Override
+          public void keyPressed(KeyEvent e) {
+            game.step();
+            gamePanel.repaint();
 
-        generation++;
-        updateGenerationsLabel();
-      }
-    });
+            generation++;
+            updateGenerationsLabel();
+          }
+        });
 
-    randomBoardButton.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        game.shuffleBoard();
-        gamePanel.repaint();
+    randomBoardButton.addActionListener(
+        new ActionListener() {
+          @Override
+          public void actionPerformed(ActionEvent e) {
+            game.shuffleBoard();
+            gamePanel.repaint();
 
-        generation = 0;
-        updateGenerationsLabel();
-      }
-    });
+            generation = 0;
+            updateGenerationsLabel();
+          }
+        });
 
-    showNeighboursButton.addActionListener(new ActionListener() {
+    showNeighboursButton.addActionListener(
+        new ActionListener() {
 
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        gamePanel.setShowNeighbours(!gamePanel.isShowNeighbours());
-        gamePanel.repaint();
+          @Override
+          public void actionPerformed(ActionEvent e) {
+            gamePanel.setShowNeighbours(!gamePanel.isShowNeighbours());
+            gamePanel.repaint();
 
-        if (gamePanel.isShowNeighbours()) {
-          showNeighboursButton.setText("Anzahl Nachbarn ausblenden");
-        }
-        else {
-          showNeighboursButton.setText("Anzahl Nachbarn einblenden");
-        }
-      }
-    });
+            if (gamePanel.isShowNeighbours()) {
+              showNeighboursButton.setText("Anzahl Nachbarn ausblenden");
+            } else {
+              showNeighboursButton.setText("Anzahl Nachbarn einblenden");
+            }
+          }
+        });
 
     buttonPanel.add(stepButton, BorderLayout.PAGE_START);
     buttonPanel.add(randomBoardButton, BorderLayout.CENTER);
@@ -146,8 +149,8 @@ public class GameOfLifeGUI extends JFrame {
 
     @Override
     public Dimension getPreferredSize() {
-      return new Dimension(game.getBoard().length * FIELD_SIZE + 1,
-        game.getBoard()[0].length * FIELD_SIZE + 1);
+      return new Dimension(
+          game.getBoard().length * FIELD_SIZE + 1, game.getBoard()[0].length * FIELD_SIZE + 1);
     }
 
     @Override
@@ -179,14 +182,12 @@ public class GameOfLifeGUI extends JFrame {
         for (int y = 0; y < fieldsY; y++) {
           if (game.isAlive(x, y)) {
             g.setColor(Color.DARK_GRAY);
-            g.fillRect(x * FIELD_SIZE + 1, y * FIELD_SIZE + 1,
-              FIELD_SIZE - 1, FIELD_SIZE - 1);
+            g.fillRect(x * FIELD_SIZE + 1, y * FIELD_SIZE + 1, FIELD_SIZE - 1, FIELD_SIZE - 1);
           }
 
           if (showNeighbours) {
             g.setColor(Color.RED);
-            g.drawString("" + game.countNeighbours(x, y), x
-              * FIELD_SIZE + 7, y * FIELD_SIZE + 15);
+            g.drawString("" + game.countNeighbours(x, y), x * FIELD_SIZE + 7, y * FIELD_SIZE + 15);
           }
         }
       }
@@ -199,6 +200,5 @@ public class GameOfLifeGUI extends JFrame {
     public void setShowNeighbours(boolean showNeighbours) {
       this.showNeighbours = showNeighbours;
     }
-
   }
 }

@@ -1,14 +1,10 @@
-/**
- * Created by:
- * Diaoliu
- * https://github.com/Diaoliu/Rekursive-Datenstrukturen
- * <p>
- * For learning purpose only.
- * <p>
- * Modified by oppahansi (refactored the code)
- * No code changes has been made.
+/*
+ * Created by: Diaoliu https://github.com/Diaoliu/Rekursive-Datenstrukturen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Modified by oppahansi (refactored the code) No code changes has been made.
  */
-
 package com.oppahansi.ws1415.klausuraufgaben.graph;
 
 public class Run {
@@ -42,7 +38,8 @@ public class Run {
       Kante kante = k.kopf;
       System.out.println(((strKnoten) k).bez + " hat folgende Kanten:");
       while (kante != null) {
-        System.out.println("[" + ((strKnoten) k).bez + "]" + "--->" + ((strKnoten) kante.hinKnote).bez);
+        System.out.println(
+            "[" + ((strKnoten) k).bez + "]" + "--->" + ((strKnoten) kante.hinKnote).bez);
         kante = kante.nf;
       }
       k = k.nf;
@@ -58,6 +55,5 @@ public class Run {
 
     System.out.println(graph.Summe(knoten[1]));
     System.out.println(graph.anzMax());
-
   }
 }

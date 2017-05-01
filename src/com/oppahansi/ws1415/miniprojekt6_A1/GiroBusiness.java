@@ -1,15 +1,13 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved by Alex Oppa Hansi
- * <p>
- * Alternative 1
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved by Alex Oppa Hansi
+ *
+ * <p>Alternative 1
  */
-
 package com.oppahansi.ws1415.miniprojekt6_A1;
 
 public class GiroBusiness extends GiroKonto {
@@ -47,8 +45,7 @@ public class GiroBusiness extends GiroKonto {
     if (getKontoStand() + getKreditlimit() >= betrag + berechneAbhebeGebuehren(betrag)) {
       gebuehren += berechneAbhebeGebuehren(betrag);
       return super.abheben(betrag);
-    }
-    else {
+    } else {
       return false;
     }
   }
@@ -61,15 +58,15 @@ public class GiroBusiness extends GiroKonto {
   public boolean ueberweisenAuf(Konto ziel, double betrag) {
     if (ueberweisungen == 5) {
       ueberweisungen = 0;
-      return getKontoStand() + getKreditlimit() >= betrag && super.abheben(betrag) && ziel.einzahlen(betrag);
-    }
-    else {
+      return getKontoStand() + getKreditlimit() >= betrag
+          && super.abheben(betrag)
+          && ziel.einzahlen(betrag);
+    } else {
       if (getKontoStand() + getKreditlimit() >= betrag + berechneUeberwGebuehren(betrag)) {
         gebuehren += berechneUeberwGebuehren(betrag);
         ueberweisungen++;
         return super.abheben(betrag) && ziel.einzahlen(betrag);
-      }
-      else {
+      } else {
         return false;
       }
     }

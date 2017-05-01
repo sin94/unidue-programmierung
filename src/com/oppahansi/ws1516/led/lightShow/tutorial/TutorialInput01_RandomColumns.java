@@ -1,8 +1,7 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
 
 /*
@@ -12,11 +11,11 @@
  * Rechner auf dem der Keybuffer gestartet wird ein Emulatorfenster, falls das
  * nicht ohnehin schon angefordert wurde. Wenn das Emulatorfenster fokussiert
  * ist, werden alle Tastatureingaben angefangen und im KeyBuffer abgelegt.
- * 
+ *
  * Die im KeyBuffer abgelegten Objekte sind sogenannte KeyEvents.
  * http://docs.oracle.com/javase/6/docs/api/java/awt/event/KeyEvent.html
  * Es gibt drei verschiedene Arten von KeyEvents.
- * 
+ *
  * Die ersten beiden sind KEY_PRESSED und KEY_RELEASED. Diese beiden Events
  * werden generiert, wenn eine Taste gedrueckt wird (Halten einer Taste bewirkt
  * die wiederholte Generierung des Events) (KEY_PRESSED) bzw. losgelassen wird
@@ -25,7 +24,7 @@
  * anzeigt, welche Taste das Ereignis ausgeloest hat. VK_A zB markiert die
  * Taste a, VK_ENTER markiert die Eingabetaste. Eine vollstaendige Auflistung
  * ist unter dem obigen Link zu finden.
- * 
+ *
  * Der dritte und letzte Ereignistyp ist KEY_TYPED.
  * Dieses Event wird generiert, wenn ein wiedergebbares Zeichen registriert
  * wurde. Das Halten von Shift und das waehrenddessen erfolgende Druecken der
@@ -35,8 +34,8 @@
  * mittels KeyEvent.getKeyChar() abgerufen werden. Die Rueckgabe ist vom Typ
  * char. Dieser Eventtyp ist nuetzlich, wenn ihr zB eine dynamisch erzeugte
  * Laufschrift programmieren wollt.
- * 
- * 
+ *
+ *
  * Das Programm unten wertet alle Tastendruecke der Tasten 0-9 aus und erzeugt
  * bunte LED-Balken der eingegebenen Laenge (0-9).
  */
@@ -50,13 +49,16 @@ import java.util.Random;
 
 public class TutorialInput01_RandomColumns {
 
-  final static int[][] COLORS = new int[][]{{127, 127, 127},
-    {127, 127, 0},
-    {127, 0, 127},
-    {127, 0, 0},
-    {0, 127, 127},
-    {0, 127, 0},
-    {0, 0, 127}};
+  static final int[][] COLORS =
+      new int[][] {
+        {127, 127, 127},
+        {127, 127, 0},
+        {127, 0, 127},
+        {127, 0, 0},
+        {0, 127, 127},
+        {0, 127, 0},
+        {0, 0, 127}
+      };
   static int[][] colors;
   static int[] lights;
   static int current_row;
@@ -102,8 +104,8 @@ public class TutorialInput01_RandomColumns {
         // Methode getKeyCode() und nicht getKeyChar() verwenden.
         // Da es sich um Integerwerte handelt, kann man arithmetische
         // Vergleiche und ein paar andere Tricks verwenden.
-        if (event.getKeyCode() >= java.awt.event.KeyEvent.VK_0 &&
-          event.getKeyCode() <= java.awt.event.KeyEvent.VK_9) {
+        if (event.getKeyCode() >= java.awt.event.KeyEvent.VK_0
+            && event.getKeyCode() <= java.awt.event.KeyEvent.VK_9) {
 
           // Wenn tatsaechlich eine Zahl gedrueckt wurde, ziehen wir
           // von der erhaltenen Konstante die Konstante fuer die Taste
@@ -127,5 +129,4 @@ public class TutorialInput01_RandomColumns {
     }
     controller.updateLedStripe();
   }
-
 }

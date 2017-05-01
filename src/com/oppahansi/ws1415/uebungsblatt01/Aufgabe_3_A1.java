@@ -1,15 +1,13 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Eine mögliche Lösung für die Aufgabe 3 aus dem Uebungsblatt 1
- * <p>
- * Alternative 1
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Eine mögliche Lösung für die Aufgabe 3 aus dem Uebungsblatt 1
+ *
+ * <p>Alternative 1
  */
-
 package com.oppahansi.ws1415.uebungsblatt01;
 
 public class Aufgabe_3_A1 {
@@ -22,7 +20,7 @@ public class Aufgabe_3_A1 {
     String ergebnisText;
 
     ergebnisText = "";
-//		ergebnisText += (a - b);
+    //		ergebnisText += (a - b);
     ergebnisText = ergebnisText + (a - b);
     ergebnisText += " ist das erste Ergebnis, ";
 

@@ -1,10 +1,8 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ws1516.led.lightShow.example.matrix;
 
 import ledControl.BoardController;
@@ -33,15 +31,21 @@ public class Matrix {
         // outcomment the next line to enable blue sparks
         blue = 1;
         // generate a new spark
-        Spark spark = new Spark(controller,
-          (double) (rng.nextInt(12)), 0.,
-          0., 1.,
-          (double) ((2 + rng.nextInt(5)) / 7.),
-          rng.nextInt(4) + 4,
-          rng.nextDouble(),
-          new int[]{(red == 0 && blue != 0) ? 127 : 0,
-            (red != 0 && blue != 0) ? 127 : 0,
-            blue == 0 ? 127 : 0});
+        Spark spark =
+            new Spark(
+                controller,
+                (double) (rng.nextInt(12)),
+                0.,
+                0.,
+                1.,
+                (double) ((2 + rng.nextInt(5)) / 7.),
+                rng.nextInt(4) + 4,
+                rng.nextDouble(),
+                new int[] {
+                  (red == 0 && blue != 0) ? 127 : 0,
+                  (red != 0 && blue != 0) ? 127 : 0,
+                  blue == 0 ? 127 : 0
+                });
         // add the new spark to the list of sparks
         sparks.add(spark);
       }
@@ -62,5 +66,4 @@ public class Matrix {
       }
     }
   }
-
 }

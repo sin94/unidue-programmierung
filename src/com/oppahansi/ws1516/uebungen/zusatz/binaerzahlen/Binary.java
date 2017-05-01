@@ -1,10 +1,8 @@
-/**
- * Created by:
- * Oppa Hansi
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Oppa Hansi
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ws1516.uebungen.zusatz.binaerzahlen;
 
 import java.util.ArrayList;
@@ -29,8 +27,7 @@ public class Binary {
     while (number > 0) {
       if (number % 2 == 0) {
         binaryList.add(0);
-      }
-      else {
+      } else {
         binaryList.add(1);
       }
       number /= 2;
@@ -65,15 +62,16 @@ public class Binary {
   public String bitwiseOr(String binary1, String binary2) {
     String binaryNormal = (binary1.length() > binary2.length()) ? binary1 : binary2;
     String binaryFilled =
-      (binary1.length() > binary2.length()) ? fill(binary2, binary1.length()) : fill(binary1, binary2.length());
+        (binary1.length() > binary2.length())
+            ? fill(binary2, binary1.length())
+            : fill(binary1, binary2.length());
 
     String result = "";
 
     for (int i = binaryNormal.length() - 1; i >= 0; i--) {
       if (binaryNormal.charAt(i) == '1' || binaryFilled.charAt(i) == '1') {
         result = "1" + result;
-      }
-      else {
+      } else {
         result = "0" + result;
       }
     }
@@ -92,15 +90,16 @@ public class Binary {
   public String bitwiseAnd(String binary1, String binary2) {
     String binaryNormal = (binary1.length() > binary2.length()) ? binary1 : binary2;
     String binaryFilled =
-      (binary1.length() > binary2.length()) ? fill(binary2, binary1.length()) : fill(binary1, binary2.length());
+        (binary1.length() > binary2.length())
+            ? fill(binary2, binary1.length())
+            : fill(binary1, binary2.length());
 
     String result = "";
 
     for (int i = binaryNormal.length() - 1; i >= 0; i--) {
       if (binaryNormal.charAt(i) == '1' && binaryFilled.charAt(i) == '1') {
         result = "1" + result;
-      }
-      else {
+      } else {
         result = "0" + result;
       }
     }
@@ -112,7 +111,9 @@ public class Binary {
   public String bitwiseAdd(String binary1, String binary2) {
     String binaryNormal = (binary1.length() > binary2.length()) ? binary1 : binary2;
     String binaryFilled =
-      (binary1.length() > binary2.length()) ? fill(binary2, binary1.length()) : fill(binary1, binary2.length());
+        (binary1.length() > binary2.length())
+            ? fill(binary2, binary1.length())
+            : fill(binary1, binary2.length());
 
     String result = "";
     String overflow = "";
@@ -122,27 +123,22 @@ public class Binary {
         if (overflow.isEmpty()) {
           result = "0" + result;
           overflow = "1";
-        }
-        else {
+        } else {
           result = "1" + result;
           overflow = "";
         }
-      }
-      else if (binaryNormal.charAt(i) == '1' && binaryFilled.charAt(i) == '0'
-        || binaryNormal.charAt(i) == '0' && binaryFilled.charAt(i) == '1') {
+      } else if (binaryNormal.charAt(i) == '1' && binaryFilled.charAt(i) == '0'
+          || binaryNormal.charAt(i) == '0' && binaryFilled.charAt(i) == '1') {
         if (overflow.isEmpty()) {
           result = "1" + result;
-        }
-        else {
+        } else {
           result = "0" + result;
           overflow = "";
         }
-      }
-      else {
+      } else {
         if (overflow.isEmpty()) {
           result = "0" + result;
-        }
-        else {
+        } else {
           result = "1" + result;
           overflow = "";
         }

@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved by Oppa Hansi
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved by Oppa Hansi
  */
-
 package com.oppahansi.ws1415.miniprojekt5_A3;
 
 class Graph {
@@ -17,8 +15,7 @@ class Graph {
   public void fuegeEin(Knoten k) {
     if (kopf == null) {
       kopf = fuss = k;
-    }
-    else {
+    } else {
       fuss.nf = k;
       fuss = k;
     }
@@ -186,5 +183,4 @@ class Graph {
   public int diff(Knoten k) {
     return Math.abs(anzahlHinKanten(k) - anzahlAusKanten(k));
   }
-
 }

@@ -1,32 +1,24 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.mp.mp6;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
-/**
- * Ein Student mit Namen, Geburtsdatum und einer Map von Veranstaltungen, an
- * denen der Student teilgenommen hat, und dafür erzielte Noten
+/*
+ * Ein Student mit Namen, Geburtsdatum und einer Map von Veranstaltungen, an denen der Student
+ * teilgenommen hat, und dafür erzielte Noten
  */
 public class Student {
 
   // wird für die formatierte Ausgabe benötigt
-  private static final DateFormat DATE_FORMAT = new SimpleDateFormat(
-    "dd.MM.yyyy");
+  private static final DateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy");
   //Vor-,Nachname
   private String firstName;
   private String lastName;
@@ -35,8 +27,7 @@ public class Student {
   // Abbildung von Veranstaltung auf Note (in Form eines Double-Wertes)
   private Map<Course, Double> grades = new HashMap<>();
 
-  public Student(String firstName, String lastName, int dobYear,
-    int dobMonth, int dobDate) {
+  public Student(String firstName, String lastName, int dobYear, int dobMonth, int dobDate) {
     this.firstName = firstName;
     this.lastName = lastName;
 
@@ -86,7 +77,8 @@ public class Student {
 
   @Override
   public String toString() {
-    return String.format("%s %s (%s, Schnitt %.2f)", firstName, lastName,
-      DATE_FORMAT.format(dateOfBirth.getTime()), getAverageGrade());
+    return String.format(
+        "%s %s (%s, Schnitt %.2f)",
+        firstName, lastName, DATE_FORMAT.format(dateOfBirth.getTime()), getAverageGrade());
   }
 }

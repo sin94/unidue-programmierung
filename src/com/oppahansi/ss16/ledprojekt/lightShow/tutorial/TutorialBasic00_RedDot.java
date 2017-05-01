@@ -10,15 +10,14 @@ import ledControl.BoardController;
 
 public class TutorialBasic00_RedDot {
 
-	public static void main(String[] args) {
-		// Boardcontroller anfordern
-		BoardController controller = BoardController.getBoardController();
-		
-		// Roten Punkt setzen
-		controller.setColor(5, 5, 127, 0, 0);
-		
-		// das bislang gemalte Bild anzeigen
-		controller.updateLedStripe();
-	}
+  public static void main(String[] args) {
+    // Boardcontroller anfordern
+    BoardController controller = BoardController.getBoardController();
 
+    // Roten Punkt setzen
+    controller.setColor(5, 5, 127, 0, 0);
+
+    // das bislang gemalte Bild anzeigen
+    controller.updateLedStripe();
+  }
 }

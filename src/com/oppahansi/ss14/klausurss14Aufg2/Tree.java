@@ -44,25 +44,25 @@ public class Tree {
 
   }
 
-    /*
-     * Teilaufgabe b)
-     *
-     * Zeichne den baum nach Ausfuehrung der main Methode. ( 6 punkte )
-     *
-     * so wuerde unser beispielbaum nach ausfuehrung dieser methode aussehen:
-	// so wuerde dieser baum aussehen
-    //                            10
-    //                         /     \
-    //                        6      33
-    //                       / \    /  \
-    //                     7   45  1
-     */
+  /*
+      * Teilaufgabe b)
+      *
+      * Zeichne den baum nach Ausfuehrung der main Methode. ( 6 punkte )
+      *
+      * so wuerde unser beispielbaum nach ausfuehrung dieser methode aussehen:
+  // so wuerde dieser baum aussehen
+     //                            10
+     //                         /     \
+     //                        6      33
+     //                       / \    /  \
+     //                     7   45  1
+      */
 
   public int getMinHeight() {
-        /*
-         * Diese methode war auch vorgegeben, ich hab sie zwar nicht mehr im kopf,
-    	 * aber sie hat die mindesthoehe vom Knoten bis zur Wurzel zurueckgegeben
-    	 */
+    /*
+     * Diese methode war auch vorgegeben, ich hab sie zwar nicht mehr im kopf,
+     * aber sie hat die mindesthoehe vom Knoten bis zur Wurzel zurueckgegeben
+     */
     int minHeight = 0;
     return minHeight;
   }
@@ -80,9 +80,9 @@ public class Tree {
     // hier den baum aus der postorder zur�ckgeben,
     // also erst den linken teilbaum, dann den rechten, dann die wurzel
     if (node != null) {
-      print(node.getNextLeft());          //Links
-      print(node.getNextRight());         //Rechts
-      System.out.println(node.getNumber());   //Wurzel
+      print(node.getNextLeft()); //Links
+      print(node.getNextRight()); //Rechts
+      System.out.println(node.getNumber()); //Wurzel
 
       // fuer unseren beispielbaum waeren es die werte :
       //  Postorder (L-R-W): 7, 45, 6, 1, 33, 10
@@ -127,8 +127,8 @@ public class Tree {
     if (node == null) {
       return 1;
     }
-    node.setNumber(makeParentsProducts(node.getNextRight()) * makeParentsProducts(node.getNextLeft()));
+    node.setNumber(
+        makeParentsProducts(node.getNextRight()) * makeParentsProducts(node.getNextLeft()));
     return node.getNumber();
   }
-
 }

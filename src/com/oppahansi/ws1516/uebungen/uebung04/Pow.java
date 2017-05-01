@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.uebungen.uebung04;
 // Potenz
 //
@@ -19,8 +16,7 @@ public class Pow {
   public static int pow(int base, int exponent) {
     if (exponent == 0) {
       return 1;
-    }
-    else {
+    } else {
       int result = base;
 
       for (int i = 1; i < exponent; i++) {
@@ -36,5 +32,4 @@ public class Pow {
     System.out.println("pow(2,4) = " + pow(2, 4) + " - Richtig: 16");
     System.out.println("pow(3,4) = " + pow(3, 4) + " - Richtig: 81");
   }
-
 }

@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Reformatted by oppahansi - Clean Code Version
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Reformatted by oppahansi - Clean Code Version
  */
-
 package com.oppahansi.ws1415.miniprojekt4_CC;
 
 public class Diagnose {
@@ -60,14 +58,19 @@ public class Diagnose {
   public void diagnosenInfoAusgabe() {
     System.out.println("                           Diagnoseschluessel:        " + diagnose);
     System.out.println("                           Diagnosearzt:              " + diagnoseArzt);
-    System.out.println("                           Laboruntersuchungen:       " + laborUntersuchungen);
+    System.out.println(
+        "                           Laboruntersuchungen:       " + laborUntersuchungen);
     System.out.println("                           Chirurgische Eingriffe:    " + operationen);
-    System.out.println("                                                      +------------------------+");
-    System.out.println("                                                      |       Medikamente      |");
-    System.out.println("                                                      +------------------------+");
+    System.out.println(
+        "                                                      +------------------------+");
+    System.out.println(
+        "                                                      |       Medikamente      |");
+    System.out.println(
+        "                                                      +------------------------+");
     for (int i = 0; i < medikamente.length; i++) {
       if (medikamente[i] != null) {
-        System.out.println("                                                      " + medikamente[i]);
+        System.out.println(
+            "                                                      " + medikamente[i]);
       }
     }
   }

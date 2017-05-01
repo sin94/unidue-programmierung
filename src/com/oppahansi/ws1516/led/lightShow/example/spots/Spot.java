@@ -1,16 +1,13 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ws1516.led.lightShow.example.spots;
 
 public class Spot {
 
   final double X_MAX, Y_MAX;
-
   double xPos, yPos;
   double dx, dy;
   int[] color;
@@ -46,5 +43,4 @@ public class Spot {
       dy = -dy;
     }
   }
-
 }

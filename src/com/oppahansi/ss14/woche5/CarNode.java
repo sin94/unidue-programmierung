@@ -48,5 +48,4 @@ public class CarNode {
   public void setNext(CarNode next) {
     this.next = next;
   }
-
 }

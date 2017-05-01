@@ -11,5 +11,4 @@ public class Knoten {
     Nr = Nummer;
     Nf = Nachfolger;
   }
-
 }

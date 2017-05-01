@@ -1,10 +1,8 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ws1516.led.lightShow.example.matrix;
 
 import ledControl.BoardController;
@@ -26,7 +24,16 @@ public class Spark {
   // false if any part of the spark is still on the board, true otherwise
   private boolean offBoard;
 
-  public Spark(BoardController board, double xpos, double ypos, double xdir, double ydir, double speed, int length, double intensity, int[] color) {
+  public Spark(
+      BoardController board,
+      double xpos,
+      double ypos,
+      double xdir,
+      double ydir,
+      double speed,
+      int length,
+      double intensity,
+      int[] color) {
     this.board = board;
     this.xpos = xpos;
     this.ypos = ypos;
@@ -70,10 +77,14 @@ public class Spark {
         // at the same position.
         // n/(double)length is used to lessen the brightness from the
         // first to the last dot.
-        board.maxColor(x, y,
-          new int[]{(int) (color[0] * intensity * (n / (double) length)),
-            (int) (color[1] * intensity * (n / (double) length)),
-            (int) (color[2] * intensity * (n / (double) length))});
+        board.maxColor(
+            x,
+            y,
+            new int[] {
+              (int) (color[0] * intensity * (n / (double) length)),
+              (int) (color[1] * intensity * (n / (double) length)),
+              (int) (color[2] * intensity * (n / (double) length))
+            });
         // since we just found a dot, a part of the spark is still on
         // the board, so offboard should be false.
         offBoard = false;
@@ -87,5 +98,4 @@ public class Spark {
   public boolean isOnBoard() {
     return !offBoard;
   }
-
 }

@@ -1,15 +1,13 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved by oppahansi.
- * <p>
- * Alternative 2
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved by oppahansi.
+ *
+ * <p>Alternative 2
  */
-
 package com.oppahansi.ws1415.uebungsblatt04;
 
 class Liste_A2 {
@@ -22,8 +20,7 @@ class Liste_A2 {
     Element neu = new Element(zahl);
     if (Kopf == null) {
       Kopf = Fuss = neu;
-    }
-    else {
+    } else {
       Fuss.Nf = neu;
       Fuss = Fuss.Nf;
     }
@@ -36,8 +33,7 @@ class Liste_A2 {
     if (position == 1) {
       this.Kopf = neu;
       neu.Nf = element;
-    }
-    else {
+    } else {
       while (counter < position - 1) {
         element = element.Nf;
         counter++;
@@ -56,16 +52,14 @@ class Liste_A2 {
       this.Kopf = Kopf.Nf;
       return deleted;
 
-    }
-    else {
+    } else {
       while (counter < position - 1) {
         element = element.Nf;
         counter++;
       }
       if (element == null) {
         return null;
-      }
-      else {
+      } else {
         deleted = element;
         element.Nf = element.Nf.Nf;
         return deleted;

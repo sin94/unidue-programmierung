@@ -1,10 +1,9 @@
 package com.oppahansi.ss14.sep.uebungsaufgabe;
 
 public class Suchen {
-    
 
-   /*
-    * suchmethode f�r die Suche von String s2 in String s1, Aufgabe 3c
+  /*
+   * suchmethode f�r die Suche von String s2 in String s1, Aufgabe 3c
    */
 
   public static void main(String args[]) {
@@ -28,5 +27,4 @@ public class Suchen {
 
     return ergebnis;
   }
-
 }

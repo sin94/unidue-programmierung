@@ -1,11 +1,9 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ws1415.miniprojektfreiwillig_A1;
 
 public class Beschreibung {
@@ -15,8 +13,7 @@ public class Beschreibung {
   private String text;
   private int anzeigePrioritaet;
 
-  public Beschreibung(String autor, int produktId, String text,
-    int anzeigePrioritaet) {
+  public Beschreibung(String autor, int produktId, String text, int anzeigePrioritaet) {
     super();
     this.autor = autor;
     this.produktId = produktId;
@@ -39,5 +36,4 @@ public class Beschreibung {
   public int getAnzeigePrioritaet() {
     return anzeigePrioritaet;
   }
-
 }

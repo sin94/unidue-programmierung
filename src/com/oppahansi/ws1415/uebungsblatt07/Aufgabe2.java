@@ -1,15 +1,13 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Offizielle moegliche Loesung
- * <p>
- * ledControl is located inside the res/ledControl/ folder - add it to your project as library.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Offizielle moegliche Loesung
+ *
+ * <p>ledControl is located inside the res/ledControl/ folder - add it to your project as library.
  */
-
 package com.oppahansi.ws1415.uebungsblatt07;
 
 import ledControl.BoardController;
@@ -23,11 +21,25 @@ public class Aufgabe2 {
 
     Aufgabe2 s = new Aufgabe2();
 
-    int[][] color = {{98, 0, 0}, {113, 0, 0}, {127, 0, 0},
-      {98, 0, 0}, {41, 0, 0}, {31, 0, 0}, {0, 0, 93},
-      {0, 0, 120}, {0, 122, 0}, {0, 82, 0}, {22, 17, 3},
-      {22, 117, 3}, {2, 127, 113}, {2, 31, 13}, {2, 31, 14},
-      {2, 64, 13}, {2, 64, 14}};
+    int[][] color = {
+      {98, 0, 0},
+      {113, 0, 0},
+      {127, 0, 0},
+      {98, 0, 0},
+      {41, 0, 0},
+      {31, 0, 0},
+      {0, 0, 93},
+      {0, 0, 120},
+      {0, 122, 0},
+      {0, 82, 0},
+      {22, 17, 3},
+      {22, 117, 3},
+      {2, 127, 113},
+      {2, 31, 13},
+      {2, 31, 14},
+      {2, 64, 13},
+      {2, 64, 14}
+    };
 
     Knoten temp = s.getRoot();
 
@@ -39,7 +51,6 @@ public class Aufgabe2 {
     s.erzeugeQuadtree(color);
     // Aufgabe 2b)
     s.zeichneQuadtree();
-
   }
 
   // Aufgabe 2b)
@@ -66,18 +77,14 @@ public class Aufgabe2 {
     if (color[0] > 0 && color[1] == 0 && color[2] == 0) {
       Kind = Kind.nodes[0];
 
-    }
-    else if (color[0] == 0 && color[1] > 0 && color[2] == 0) {
+    } else if (color[0] == 0 && color[1] > 0 && color[2] == 0) {
       Kind = Kind.nodes[1];
 
-    }
-    else if (color[0] == 0 && color[1] == 0 && color[2] > 0) {
+    } else if (color[0] == 0 && color[1] == 0 && color[2] > 0) {
       Kind = Kind.nodes[2];
 
-    }
-    else if (color[0] > 0 && color[1] > 0 && color[2] > 0) {
+    } else if (color[0] > 0 && color[1] > 0 && color[2] > 0) {
       Kind = Kind.nodes[3];
-
     }
 
     int gruppenweite;
@@ -95,89 +102,70 @@ public class Aufgabe2 {
 
       if (Mutter.checkColor(color)) {
         Kind = null;
-      }
-      else if (colorvalue <= (Mutter.minValue + gruppenweite) - 1
-        && colorvalue >= Mutter.minValue) {
+      } else if (colorvalue <= (Mutter.minValue + gruppenweite) - 1
+          && colorvalue >= Mutter.minValue) {
         Kind = Kind.nodes[0];
-      }
-
-      else if (colorvalue <= (Mutter.minValue + 2 * gruppenweite) - 1
-        && colorvalue >= gruppenweite) {
+      } else if (colorvalue <= (Mutter.minValue + 2 * gruppenweite) - 1
+          && colorvalue >= gruppenweite) {
         Kind = Kind.nodes[1];
-      }
-      else if (colorvalue <= (Mutter.minValue + 3 * gruppenweite) - 1
-        && colorvalue >= 2 * gruppenweite) {
+      } else if (colorvalue <= (Mutter.minValue + 3 * gruppenweite) - 1
+          && colorvalue >= 2 * gruppenweite) {
         Kind = Kind.nodes[2];
-      }
-      else if (colorvalue <= (Mutter.minValue + 4 * gruppenweite) - 1
-        && colorvalue >= 3 * gruppenweite) {
+      } else if (colorvalue <= (Mutter.minValue + 4 * gruppenweite) - 1
+          && colorvalue >= 3 * gruppenweite) {
         Kind = Kind.nodes[3];
       }
 
-    }
-    while (Kind != null);
+    } while (Kind != null);
 
     if (!Mutter.checkColor(color)) {
 
       gruppenweite = (Mutter.maxValue - Mutter.minValue + 1) / 4;
 
-      if (colorvalue <= (Mutter.minValue + gruppenweite) - 1
-        && colorvalue >= Mutter.minValue) {
+      if (colorvalue <= (Mutter.minValue + gruppenweite) - 1 && colorvalue >= Mutter.minValue) {
 
         Mutter.nodes[0] = new Knoten(color);
-        Mutter.nodes[0].setMinMaxValue(Mutter.minValue,
-          (Mutter.minValue + gruppenweite) - 1);
+        Mutter.nodes[0].setMinMaxValue(Mutter.minValue, (Mutter.minValue + gruppenweite) - 1);
 
-      }
-      else if (colorvalue <= (Mutter.minValue + 2 * gruppenweite) - 1
-        && colorvalue >= gruppenweite) {
+      } else if (colorvalue <= (Mutter.minValue + 2 * gruppenweite) - 1
+          && colorvalue >= gruppenweite) {
 
         Mutter.nodes[1] = new Knoten(color);
-        Mutter.nodes[1].setMinMaxValue(gruppenweite,
-          (Mutter.minValue + 2 * gruppenweite) - 1);
+        Mutter.nodes[1].setMinMaxValue(gruppenweite, (Mutter.minValue + 2 * gruppenweite) - 1);
 
-      }
-      else if (colorvalue <= (Mutter.minValue + 3 * gruppenweite) - 1
-        && colorvalue >= 2 * gruppenweite) {
+      } else if (colorvalue <= (Mutter.minValue + 3 * gruppenweite) - 1
+          && colorvalue >= 2 * gruppenweite) {
 
         Mutter.nodes[2] = new Knoten(color);
-        Mutter.nodes[2].setMinMaxValue(2 * gruppenweite,
-          (Mutter.minValue + 3 * gruppenweite) - 1);
+        Mutter.nodes[2].setMinMaxValue(2 * gruppenweite, (Mutter.minValue + 3 * gruppenweite) - 1);
 
-      }
-      else if (colorvalue <= (Mutter.minValue + 4 * gruppenweite) - 1
-        && colorvalue >= 3 * gruppenweite) {
+      } else if (colorvalue <= (Mutter.minValue + 4 * gruppenweite) - 1
+          && colorvalue >= 3 * gruppenweite) {
 
         Mutter.nodes[3] = new Knoten(color);
-        Mutter.nodes[3].setMinMaxValue(3 * gruppenweite,
-          (Mutter.minValue + 4 * gruppenweite) - 1);
-
+        Mutter.nodes[3].setMinMaxValue(3 * gruppenweite, (Mutter.minValue + 4 * gruppenweite) - 1);
       }
-
     }
-
   }
 
   // Aufgabe 2b)
-  private void zeichneQuadtree(Knoten k, int xMin, int xMax, int yMin,
-    int yMax) {
+  private void zeichneQuadtree(Knoten k, int xMin, int xMax, int yMin, int yMax) {
 
     if (k != null && xMax - xMin > -1) {
 
       int xMitte = (xMax - xMin) / 2 + xMin;
       int yMitte = (yMax - yMin) / 2 + yMin;
       this.zeichneQuadrad(k.getColor(), xMin, xMax, yMin, yMax);
-      System.out.println(" Knoten  Color: " + k.getRed() + ", " + k.getGreen() + ", " + k.getBlue());
+      System.out.println(
+          " Knoten  Color: " + k.getRed() + ", " + k.getGreen() + ", " + k.getBlue());
       zeichneQuadtree(k.nodes[0], xMin, xMitte, yMin, yMitte);
       zeichneQuadtree(k.nodes[1], xMitte, xMax, yMin, yMitte);
       zeichneQuadtree(k.nodes[2], xMin, xMitte, yMitte, yMax);
       zeichneQuadtree(k.nodes[3], xMitte, xMax, yMitte, yMax);
-
     }
   }
 
-  private void zeichneQuadrad(int[] color, int xMin, int xMax, int yMin,
-    int yMax) {
+  private void zeichneQuadrad(int[] color, int xMin, int xMax, int yMin, int yMax) {
 
     for (int x = xMin; x < xMax; x++) {
       for (int y = yMin; y < yMax; y++) {
@@ -185,7 +173,6 @@ public class Aufgabe2 {
       }
     }
     controller.updateLedStripe();
-
   }
 
   public Knoten getRoot() {
@@ -195,7 +182,6 @@ public class Aufgabe2 {
   public void setRoot(Knoten k) {
     wurzel = k;
   }
-
 }
 
 class Knoten {
@@ -211,14 +197,14 @@ class Knoten {
 
   public Knoten() {
     nodes = new Knoten[4];
-    this.setColor(new int[]{77, 77, 77});
-    nodes[0] = new Knoten(new int[]{127, 0, 0});
+    this.setColor(new int[] {77, 77, 77});
+    nodes[0] = new Knoten(new int[] {127, 0, 0});
     nodes[0].setMinMaxValue(0, 127);
-    nodes[1] = new Knoten(new int[]{0, 127, 0});
+    nodes[1] = new Knoten(new int[] {0, 127, 0});
     nodes[1].setMinMaxValue(0, 127);
-    nodes[2] = new Knoten(new int[]{0, 0, 127});
+    nodes[2] = new Knoten(new int[] {0, 0, 127});
     nodes[2].setMinMaxValue(0, 127);
-    nodes[3] = new Knoten(new int[]{127, 127, 127});
+    nodes[3] = new Knoten(new int[] {127, 127, 127});
     nodes[3].setMinMaxValue(0, 127);
   }
 
@@ -241,7 +227,6 @@ class Knoten {
 
   public void setColor(int[] color) {
     this.color = color;
-
   }
 
   public boolean checkColor(int[] color) {
@@ -255,11 +240,9 @@ class Knoten {
 
     if (temp == color.length) {
       return true;
-    }
-    else {
+    } else {
       return false;
     }
-
   }
 
   public int getRed() {

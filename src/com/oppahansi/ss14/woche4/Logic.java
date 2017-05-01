@@ -16,30 +16,26 @@ package com.oppahansi.ss14.woche4;
 
 public class Logic {
 
-  public static boolean doesPersonWearHat(boolean isMale,
-    boolean hasGlasses,
-    boolean hasEarrings) {
-        /*
-         * Fall 1:
-		 * Alle Männer(isMale ist true) mit Brille(hasGlasses ist true) tragen einen Hut
-		 * da es boolean Variablen sind und diese nur true oder false sein kann, kann man
-		 * diese einfach so schreiben - andere Schreibweise wäre:
-		 * if(isMale == true && hasGlasses == true) {...}
-		 */
+  public static boolean doesPersonWearHat(boolean isMale, boolean hasGlasses, boolean hasEarrings) {
+    /*
+     * Fall 1:
+     * Alle Männer(isMale ist true) mit Brille(hasGlasses ist true) tragen einen Hut
+     * da es boolean Variablen sind und diese nur true oder false sein kann, kann man
+     * diese einfach so schreiben - andere Schreibweise wäre:
+     * if(isMale == true && hasGlasses == true) {...}
+     */
     if (isMale && hasGlasses) {
       return true;
-    /* Fall 2:
-		 * Nur diejenigen Frauen(isMale ist false), die keine Brille(hasGlasses ist false), 
-		 * aber Ohrringe(hasEarrings ist true) tragen, tragen ebenfalls einen Hut.
-		 */
-    }
-    else if (!isMale && !hasGlasses && hasEarrings) {
+      /* Fall 2:
+       * Nur diejenigen Frauen(isMale ist false), die keine Brille(hasGlasses ist false),
+       * aber Ohrringe(hasEarrings ist true) tragen, tragen ebenfalls einen Hut.
+       */
+    } else if (!isMale && !hasGlasses && hasEarrings) {
       return true;
-		/*
-		 * Falls keiner der Fälle zutreffen false zurückgeben
-		 */
-    }
-    else {
+      /*
+       * Falls keiner der Fälle zutreffen false zurückgeben
+       */
+    } else {
       return false;
     }
   }

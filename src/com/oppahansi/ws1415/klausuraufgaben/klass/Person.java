@@ -1,14 +1,10 @@
-/**
- * Created by:
- * Diaoliu
- * https://github.com/Diaoliu/Rekursive-Datenstrukturen
- * <p>
- * For learning purpose only.
- * <p>
- * Modified by oppahansi (refactored the code)
- * No code changes has been made.
+/*
+ * Created by: Diaoliu https://github.com/Diaoliu/Rekursive-Datenstrukturen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Modified by oppahansi (refactored the code) No code changes has been made.
  */
-
 package com.oppahansi.ws1415.klausuraufgaben.klass;
 
 class Person {
@@ -27,7 +23,6 @@ class Person {
     if (Mutter != null) {
       Mutter.trage_Kind_ein(this);
     }
-
   }
 
   public static void main(String[] args) {
@@ -42,8 +37,7 @@ class Person {
     if (k == null) {
       Kinder = new Person[1];
       Kinder[0] = Kind;
-    }
-    else {
+    } else {
       Kinder = new Person[k.length + 1];
       for (int i = 0; i < Kinder.length - 1; i++) {
         Kinder[i] = k[i];

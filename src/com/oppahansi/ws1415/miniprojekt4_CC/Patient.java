@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Reformatted by oppahansi - Clean Code Version
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Reformatted by oppahansi - Clean Code Version
  */
-
 package com.oppahansi.ws1415.miniprojekt4_CC;
 
 public class Patient {
@@ -24,25 +22,25 @@ public class Patient {
   private Station station;
 
   /*
-  * AUFGABE
-  */
-  public Patient(String name, String vorname, String geburtsDatum, int aufenthaltDauer) {
-  }
+   * AUFGABE
+   */
+  public Patient(String name, String vorname, String geburtsDatum, int aufenthaltDauer) {}
 
   /*
-  * AUFGABE
-  *
-  * Setzt die Versicherungsdaten
-  */
-  public void setVersicherungDaten(char versicherungArt, String versicherung, String versicherungNr) {
-  }
+   * AUFGABE
+   *
+   * Setzt die Versicherungsdaten
+   */
+  public void setVersicherungDaten(
+      char versicherungArt, String versicherung, String versicherungNr) {}
 
   /*
    * AUFGABE
    *
    * Weist dem Patient eine Station zu
    */
-  public boolean setStation(Station station) { /* wieso boolean? */
+  public boolean setStation(Station station) {
+    /* wieso boolean? */
     return false;
   }
 
@@ -52,8 +50,7 @@ public class Patient {
    * Fuegt eine neue Diagnose zur Liste
    * der Diagnosen hinzu
    */
-  public void fuegeDiagnoseHinzu(Diagnose diagnose) {
-  }
+  public void fuegeDiagnoseHinzu(Diagnose diagnose) {}
 
   public String getName() {
     return name;
@@ -100,7 +97,8 @@ public class Patient {
   }
 
   public void patientenInfoAusgabe() {
-    System.out.println("\n+----------------------------------------------------------------------------------------+\n");
+    System.out.println(
+        "\n+----------------------------------------------------------------------------------------+\n");
     System.out.println("ID:                        " + patientenID);
     System.out.println("Name:                      " + name);
     System.out.println("Vorname:                   " + vorname);
@@ -110,8 +108,7 @@ public class Patient {
 
     if (versicherungArt == 'P') {
       versicherungArtAusgabe = "privat versichert";
-    }
-    else {
+    } else {
       versicherungArtAusgabe = "gesetzlich versichert";
     }
 
@@ -138,8 +135,7 @@ public class Patient {
       System.out.println("******************************************");
       System.out.println("Der Patient wurde stationaer behandelt in: ");
       station.stationsInfoAusgabe();
-    }
-    else {
+    } else {
       System.out.println("\nDer Patient wurde ambulant behandelt");
     }
   }

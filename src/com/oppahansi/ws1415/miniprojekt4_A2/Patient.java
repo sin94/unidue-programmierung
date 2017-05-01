@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved by Tthe K.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved by Tthe K.
  */
-
 package com.oppahansi.ws1415.miniprojekt4_A2;
 
 public class Patient {
@@ -33,7 +31,6 @@ public class Patient {
     this.station = null;
 
     this.diagnosen = new Diagnose[15];
-
   }
 
   //Getter
@@ -94,7 +91,6 @@ public class Patient {
     this.versArt = versArt;
     this.vers = vers;
     this.versNr = versNr;
-
   }
 
   /*
@@ -103,15 +99,13 @@ public class Patient {
   public boolean setStation(Station station) {
     //Aufgabe 5
 
-    if (station != null) {                     //pr�ft ob Station existiert
+    if (station != null) { //pr�ft ob Station existiert
 
       if (station.aufnehmen(this) == true) {
         return true;
-      }
-      else {
+      } else {
         return false;
       }
-
     }
 
     return false;
@@ -135,7 +129,8 @@ public class Patient {
    * Gibt s�mtliche Infos des Patienten
    */
   public void ausgabe() {
-    System.out.println("\n+----------------------------------------------------------------------------------------+\n");
+    System.out.println(
+        "\n+----------------------------------------------------------------------------------------+\n");
     System.out.println("ID:                        " + id);
     System.out.println("Name:                      " + name);
     System.out.println("Vorname:                   " + vorname);
@@ -144,8 +139,7 @@ public class Patient {
     String vs;
     if (versArt == 'P') {
       vs = "privat versichert";
-    }
-    else {
+    } else {
       vs = "gesetzlich versichert";
     }
     System.out.println("Versicherungsart:          " + vs);
@@ -170,11 +164,8 @@ public class Patient {
       System.out.println("Der Patient wurde stationaer behandelt in: ");
       station.ausgabe();
 
-    }
-    else {
+    } else {
       System.out.println("\nDer Patient wurde ambulant behandelt");
     }
-
   }
-
 }

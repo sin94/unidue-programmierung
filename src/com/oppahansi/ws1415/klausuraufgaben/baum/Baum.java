@@ -1,14 +1,10 @@
-/**
- * Created by:
- * Diaoliu
- * https://github.com/Diaoliu/Rekursive-Datenstrukturen
- * <p>
- * For learning purpose only.
- * <p>
- * Modified by oppahansi (refactored the code)
- * No code changes has been made.
+/*
+ * Created by: Diaoliu https://github.com/Diaoliu/Rekursive-Datenstrukturen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Modified by oppahansi (refactored the code) No code changes has been made.
  */
-
 package com.oppahansi.ws1415.klausuraufgaben.baum;
 
 import java.util.LinkedList;
@@ -19,35 +15,35 @@ public class Baum {
 
   public static void main(String[] args) {
     Baum baum = new Baum();
-//        String[] bezeicher = {"A","B","C","D","E", "F","G","H"};
-//        for (String s : bezeicher) baum.erzeuge_Blatt(s);
-//        int [] zahl = {5,3,10,6,2,1,8,12,4};
+    //        String[] bezeicher = {"A","B","C","D","E", "F","G","H"};
+    //        for (String s : bezeicher) baum.erzeuge_Blatt(s);
+    //        int [] zahl = {5,3,10,6,2,1,8,12,4};
 
     int[] zahl = {5, -8, 8, 2, 6, -9, 3, -2, -5};
     for (int i : zahl) {
       baum.erzeuge_Blatt(i);
     }
     baum.durchLauf(baum.Wurzel);
-//        int[] sortietZahlen = baum.neu(16);
-//        for (int i : zahl) baum.sortiereein(sortietZahlen, i);
-//        for (int i : sortietZahlen) System.out.print(i + ", ");
-//        baum.sortiereein(sortietZahlen, 7);
-//        System.out.println(" ");
-//        for (int i : sortietZahlen) System.out.print(i + ", ");
-//        System.out.println(" ");
-//        baum.durchLauf(baum.Suchbaumwurzel(sortietZahlen));
-//        for (int i : zahl) baum.erzeuge_Blatt(i);
-//        baum.durchLauf(baum.Wurzel);
-//        baum.loeschenBlatt();
-//        baum.durchLauf(baum.Wurzel);
-//        System.out.println(baum.h(baum.Wurzel));
-//        System.out.println(baum.e(baum.Wurzel));
-//        int[] zahlen = baum.z();
-//        for (int i : zahlen)  System.out.print(i + ", ");
-//        System.out.println(baum.biggerThanKind());
-//        baum.v();
-//        baum.durchLauf(baum.Wurzel);
-//        System.out.println(baum.b());
+    //        int[] sortietZahlen = baum.neu(16);
+    //        for (int i : zahl) baum.sortiereein(sortietZahlen, i);
+    //        for (int i : sortietZahlen) System.out.print(i + ", ");
+    //        baum.sortiereein(sortietZahlen, 7);
+    //        System.out.println(" ");
+    //        for (int i : sortietZahlen) System.out.print(i + ", ");
+    //        System.out.println(" ");
+    //        baum.durchLauf(baum.Suchbaumwurzel(sortietZahlen));
+    //        for (int i : zahl) baum.erzeuge_Blatt(i);
+    //        baum.durchLauf(baum.Wurzel);
+    //        baum.loeschenBlatt();
+    //        baum.durchLauf(baum.Wurzel);
+    //        System.out.println(baum.h(baum.Wurzel));
+    //        System.out.println(baum.e(baum.Wurzel));
+    //        int[] zahlen = baum.z();
+    //        for (int i : zahlen)  System.out.print(i + ", ");
+    //        System.out.println(baum.biggerThanKind());
+    //        baum.v();
+    //        baum.durchLauf(baum.Wurzel);
+    //        System.out.println(baum.b());
   }
 
   void erzeuge_Blatt(int Zahl) {
@@ -57,12 +53,10 @@ public class Baum {
   private Knoten erzeuge_Blatt(int z, Knoten k, int tief) {
     if (k == null) {
       return new Knoten(z, tief);
-    }
-    else if (z <= k.Zahl) {
+    } else if (z <= k.Zahl) {
       k.links = erzeuge_Blatt(z, k.links, tief + 1);
       return k;
-    }
-    else {
+    } else {
       k.rechts = erzeuge_Blatt(z, k.rechts, tief + 1);
       return k;
     }
@@ -71,15 +65,14 @@ public class Baum {
   void erzeuge_Blatt(String bez) { //用链表队列实现二叉堆的广度优先添加节点（非排序添加）
     if (this.Wurzel == null) {
       Wurzel = new Knoten(bez);
-    }
-    else {
+    } else {
       LinkedList<Knoten> list = new LinkedList<Knoten>();
       list.add(Wurzel);
       erzeuge_Blatt(bez, list);
     }
   }
 
-// Aufgabe 3.2: Vervollständigung von Bäumen
+  // Aufgabe 3.2: Vervollständigung von Bäumen
 
   private void erzeuge_Blatt(String bez, LinkedList<Knoten> l) {
     while (l.size() != 0) {
@@ -87,12 +80,10 @@ public class Baum {
       if (k.links == null) {
         k.links = new Knoten(bez);
         break;
-      }
-      else if (k.rechts == null) {
+      } else if (k.rechts == null) {
         k.rechts = new Knoten(bez);
         break;
-      }
-      else {
+      } else {
         l.addLast(k.links);
         l.addLast(k.rechts);
       }
@@ -102,19 +93,17 @@ public class Baum {
   int h(Knoten k) { // Höhe des Binärbaums.
     if (k == null) {
       return 0;
-    }
-    else {
+    } else {
       return 1 + Math.max(h(k.links), h(k.rechts));
     }
   }
 
-  int e(Knoten k) {  // Anz. Knoten mit genau 1 Nachfolger.
+  int e(Knoten k) { // Anz. Knoten mit genau 1 Nachfolger.
     if (k != null) {
       if (k.links == null && k.rechts != null || k.links != null && k.rechts == null) {
         System.out.println(k.Zahl);
         return 1 + e(k.links) + e(k.rechts);
-      }
-      else {
+      } else {
         return 0 + e(k.links) + e(k.rechts);
       }
     }
@@ -127,7 +116,7 @@ public class Baum {
     v(i, Wurzel);
   }
 
-// Aufgabe 3.3: Inhalte von Blättern in Array übernehmen
+  // Aufgabe 3.3: Inhalte von Blättern in Array übernehmen
 
   void v(int tief, Knoten k) { // Vervollständigung des Binärbaums mit 1.
     if (tief <= 1) {
@@ -150,11 +139,9 @@ public class Baum {
   int b(Knoten k) { // Anzahl der Blätter
     if (k == null) {
       return 0;
-    }
-    else if (k.links == null && k.rechts == null) {
+    } else if (k.links == null && k.rechts == null) {
       return 1;
-    }
-    else {
+    } else {
       return b(k.links) + b(k.rechts);
     }
   }
@@ -167,8 +154,7 @@ public class Baum {
       }
       if (k.Bez != null) {
         System.out.print(k.Bez + " --> ");
-      }
-      else {
+      } else {
         System.out.print(" --> ");
       }
       durchLauf(k.rechts);
@@ -201,7 +187,7 @@ public class Baum {
     }
   }
 
-//Aufgabe 3.4 Blätter entfernen
+  //Aufgabe 3.4 Blätter entfernen
 
   boolean p(int x) {
     int[] zahlen = z();
@@ -222,15 +208,15 @@ public class Baum {
   boolean biggerThanKind(Knoten k) { //
     if (k == null) {
       return true;
-    }
-    else {
+    } else {
       if (k.links != null && k.rechts != null) {
-        return k.Zahl > k.links.Zahl && k.Zahl > k.rechts.Zahl && biggerThanKind(k.links) && biggerThanKind(k.rechts);
-      }
-      else if (k.links == null && k.rechts != null) {
+        return k.Zahl > k.links.Zahl
+            && k.Zahl > k.rechts.Zahl
+            && biggerThanKind(k.links)
+            && biggerThanKind(k.rechts);
+      } else if (k.links == null && k.rechts != null) {
         return k.Zahl > k.rechts.Zahl && biggerThanKind(k.rechts);
-      }
-      else {
+      } else {
         return k.links == null || k.Zahl > k.links.Zahl && biggerThanKind(k.links);
       }
     }
@@ -240,23 +226,21 @@ public class Baum {
     loeschenBlatt(Wurzel);
   }
 
-//Aufgabe 3.5 Array und Suchbaum 数组和堆
+  //Aufgabe 3.5 Array und Suchbaum 数组和堆
 
   void loeschenBlatt(Knoten k) {
     if (k != null) {
       if (k.links != null) {
         if (k.links.links == null && k.links.rechts == null) {
           k.links = null;
-        }
-        else {
+        } else {
           loeschenBlatt(k.links);
         }
       }
       if (k.rechts != null) {
         if (k.rechts.links == null && k.rechts.rechts == null) {
           k.rechts = null;
-        }
-        else {
+        } else {
           loeschenBlatt(k.rechts);
         }
       }
@@ -296,8 +280,7 @@ public class Baum {
     for (int i = 1; i <= a[0]; i++) {
       if (e < a[i]) {
         return 0;
-      }
-      else if (e == a[i]) {
+      } else if (e == a[i]) {
         return a[i];
       }
     }
@@ -310,7 +293,7 @@ public class Baum {
     return baum.Wurzel;
   }
 
-//Aufgabe 3.6 Teilbäume
+  //Aufgabe 3.6 Teilbäume
 
   void Suchbaumwurzel(Baum b, int[] a, int left, int right) {
     if ((right - left) >= 0) {
@@ -330,13 +313,15 @@ public class Baum {
     return k != null && ((k.Bez.equals(bez)) || TB(k.links, bez) || TB(k.rechts, bez));
   }
 
-// Aufgabe 3.7: Teilweise sortierter Baum
+  // Aufgabe 3.7: Teilweise sortierter Baum
 
   boolean gleich(Knoten k) { //判断节点K的子树是否结构和内容都相同
-    return k.links == null && k.rechts == null ||
-      k.links != null && k.rechts != null &&
-        k.links.Bez.equals(k.rechts.Bez) &&
-        gleich(k.links) && gleich(k.rechts);
+    return k.links == null && k.rechts == null
+        || k.links != null
+            && k.rechts != null
+            && k.links.Bez.equals(k.rechts.Bez)
+            && gleich(k.links)
+            && gleich(k.rechts);
   }
 
   Knoten frei() {
@@ -346,17 +331,14 @@ public class Baum {
   Knoten frei(Knoten k) {
     if (k == null) {
       return null;
-    }
-    else if (!(k.links != null && k.rechts != null)) {
+    } else if (!(k.links != null && k.rechts != null)) {
       return k;
-    }
-    else {
+    } else {
       Knoten kLeft = frei(k.links);
       Knoten kRight = frei(k.rechts);
       if (kLeft.Tiefe == kRight.Tiefe) {
         return kLeft;
-      }
-      else {
+      } else {
         return kLeft.Tiefe < kRight.Tiefe ? kLeft : kRight;
       }
     }
@@ -367,7 +349,7 @@ public class Baum {
     return zwei(Wurzel);
   }
 
-//Aufgabe 3.9 Baum und Rekursion
+  //Aufgabe 3.9 Baum und Rekursion
 
   boolean zwei(Knoten k) {
     return k != null && (k.links == null && k.rechts == null || zwei(k.links) && zwei(k.rechts));
@@ -380,29 +362,25 @@ public class Baum {
     }
     if (k.Zahl > Wurzel.Zahl) {
       return k;
-    }
-    else {
+    } else {
       return Wurzel;
     }
   }
 
-//Aufgabe 3.10 Bäume
+  //Aufgabe 3.10 Bäume
 
   Knoten maxizahl(Knoten k) {
     if (k == null) {
       return null;
-    }
-    else {
+    } else {
       Knoten k1 = maxizahl(k.links);
       Knoten k2 = maxizahl(k.rechts);
       Knoten max;
       if (k1 == null && k2 == null) {
         return k;
-      }
-      else if (k1 != null && k2 != null) {
+      } else if (k1 != null && k2 != null) {
         max = k1.Zahl > k2.Zahl ? k1 : k2;
-      }
-      else {
+      } else {
         max = k2 == null ? k1 : k2;
       }
       return max.Zahl > k.Zahl ? max : k;
@@ -416,8 +394,7 @@ public class Baum {
   int minBlattabstand(Knoten k) {
     if (k == null) {
       return 0;
-    }
-    else {
+    } else {
       return 1 + Math.min(minBlattabstand(k.links), minBlattabstand(k.rechts));
     }
   }
@@ -426,26 +403,23 @@ public class Baum {
     return Blattanzahl(Wurzel);
   }
 
-// Test Area 测试部分
+  // Test Area 测试部分
 
   int Blattanzahl(Knoten k) {
     if (k == null) {
       return 0;
-    }
-    else if (k.links == null && k.rechts == null) {
+    } else if (k.links == null && k.rechts == null) {
       return 1;
-    }
-    else {
+    } else {
       return Blattanzahl(k.links) + Blattanzahl(k.rechts);
     }
   }
-
 }
 
 class Knoten { // Ein Knoten des Binärbaums.
 
   int Zahl, // In den Knoten eingetragene Zahl.
-    Tiefe; // Tiefgrad dieser Knote
+      Tiefe; // Tiefgrad dieser Knote
   String Bez;
   Knoten links, rechts; // Nachfolger im Binärbaum.
 

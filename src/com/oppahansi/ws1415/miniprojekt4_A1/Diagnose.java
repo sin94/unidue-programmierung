@@ -1,11 +1,9 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ws1415.miniprojekt4_A1;
 
 public class Diagnose {
@@ -70,14 +68,16 @@ public class Diagnose {
     System.out.println("                           Diagnosearzt:              " + diagA);
     System.out.println("                           Laboruntersuchungen:       " + laborU);
     System.out.println("                           Chirurgische Eingriffe:    " + operations);
-    System.out.println("                                                      +------------------------+");
-    System.out.println("                                                      |       Medikamente      |");
-    System.out.println("                                                      +------------------------+");
+    System.out.println(
+        "                                                      +------------------------+");
+    System.out.println(
+        "                                                      |       Medikamente      |");
+    System.out.println(
+        "                                                      +------------------------+");
     for (int i = 0; i < mediList.length; i++) {
       if (mediList[i] != null) {
         System.out.println("                                                      " + mediList[i]);
       }
     }
   }
-
 }

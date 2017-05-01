@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved by Mark Kunze
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved by Mark Kunze
  */
-
 package com.oppahansi.ws1415.miniprojekt4_A1;
 
 public class Patient {
@@ -29,7 +27,7 @@ public class Patient {
     this.geburtsdatum = geburtsdatum;
     this.aufDauer = aufDauer;
     diagnosen = new Diagnose[15];
-  }//end proc
+  } //end proc
 
   //Getter
 
@@ -84,10 +82,10 @@ public class Patient {
    * Setzt die Versicherungsdaten
    */
   public void setVers(char versArt, String vers, String versNr) {
-    this.versArt = versArt;//Selbsterkl�rend?
+    this.versArt = versArt; //Selbsterkl�rend?
     this.vers = vers;
     this.versNr = versNr;
-  }//end proc
+  } //end proc
 
   /*
    * Weist dem Patient eine Station zu
@@ -96,11 +94,11 @@ public class Patient {
     if (station != null) //Pr�ft null zugriff
     {
       if (station.aufnehmen(this)) { //Platz verhanden
-        this.station = station;   //setze station
-        return true;         //beende mit true
+        this.station = station; //setze station
+        return true; //beende mit true
       } //end of if aufnehmen
     }
-    return false;   //beende mit false
+    return false; //beende mit false
   } //end proc
 
   /*
@@ -114,13 +112,14 @@ public class Patient {
         break;
       }
     }
-  }//end proc
+  } //end proc
 
   /*
    * Gibt s�mtliche Infos des Patienten
    */
   public void ausgabe() {
-    System.out.println("\n+----------------------------------------------------------------------------------------+\n");
+    System.out.println(
+        "\n+----------------------------------------------------------------------------------------+\n");
     System.out.println("ID:                        " + id);
     System.out.println("Name:                      " + name);
     System.out.println("Vorname:                   " + vorname);
@@ -129,8 +128,7 @@ public class Patient {
     String vs;
     if (versArt == 'P') {
       vs = "privat versichert";
-    }
-    else {
+    } else {
       vs = "gesetzlich versichert";
     }
     System.out.println("Versicherungsart:          " + vs);
@@ -155,11 +153,8 @@ public class Patient {
       System.out.println("Der Patient wurde stationaer behandelt in: ");
       station.ausgabe();
 
-    }
-    else {
+    } else {
       System.out.println("\nDer Patient wurde ambulant behandelt");
     }
-
   }
-
 }

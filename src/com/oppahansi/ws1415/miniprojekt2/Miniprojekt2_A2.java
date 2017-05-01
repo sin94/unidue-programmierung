@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Alternative 2
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Alternative 2
  */
-
 package com.oppahansi.ws1415.miniprojekt2;
 
 public class Miniprojekt2_A2 {
@@ -30,39 +28,59 @@ public class Miniprojekt2_A2 {
     Miniprojekt2_A2 demo = new Miniprojekt2_A2(3, 5);
     System.out.println("Der leere Saal sieht so aus (- frei, B bezahlt, R reserviert):");
     demo.debugPrint();
-    System.out.println("Die Methode platzBelegt liefert fuer den existierenden Platz C 7: " + demo.platzBelegt('C', 7));
-    System.out
-      .println("Die Methode platzBelegt liefert fuer den nicht existierenden Platz  Q 23: " + demo.platzBelegt('Q', 23));
-    System.out.println("Die Methode naechsteReservierungsnummer liefert: " + demo.naechsteReservierungsnummer());
-    System.out.println("Die Methode festePlaetzeReservieren liefert fuer Reihe C Plaetze 3-7 die Reservierungsnummer: " + demo
-      .festePlaetzeReservieren('C', 3, 7));
+    System.out.println(
+        "Die Methode platzBelegt liefert fuer den existierenden Platz C 7: "
+            + demo.platzBelegt('C', 7));
+    System.out.println(
+        "Die Methode platzBelegt liefert fuer den nicht existierenden Platz  Q 23: "
+            + demo.platzBelegt('Q', 23));
+    System.out.println(
+        "Die Methode naechsteReservierungsnummer liefert: " + demo.naechsteReservierungsnummer());
+    System.out.println(
+        "Die Methode festePlaetzeReservieren liefert fuer Reihe C Plaetze 3-7 die Reservierungsnummer: "
+            + demo.festePlaetzeReservieren('C', 3, 7));
     System.out.println("Nach der Reservierung der Plaetze 3,4,5,6 und 7 in der Reihe C:");
     demo.debugPrint();
-    System.out.println("Die Methode platzBelegt liefert fuer den reservierten Platz C 7: " + demo.platzBelegt('C', 7));
-    System.out.println("Die Methode naechsteReservierungsnummer liefert: " + demo.naechsteReservierungsnummer());
-    System.out.println("Die Methode festePlaetzeReservieren liefert fuer Reihe C Plaetze 1-3 die Reservierungsnummer: " + demo
-      .festePlaetzeReservieren('C', 1, 3));
-    System.out.println("Die Methode festePlaetzeReservieren liefert fuer Reihe D Plaetze 7-5 die Reservierungsnummer: " + demo
-      .festePlaetzeReservieren('D', 7, 5));
-    demo.debugPrint();
-    System.out.println("Die Methode festePlaetzeReservieren liefert fuer Reihe D Plaetze 1-2 die Reservierungsnummer: " + demo
-      .festePlaetzeReservieren('D', 1, 2));
-    demo.debugPrint();
-    System.out.println("Der Anteil der freien Plaetze ist: " + demo.anteilFreiePlaetze() * 100 + "%");
-    System.out.println("Die Methode bezahleReservierung liefert fuer Reservierung 7: " + demo.bezahleReservierung(7));
-    System.out.println("Die Methode bezahleReservierung liefert fuer Reservierung 1: " + demo.bezahleReservierung(1));
-    demo.debugPrint();
-    System.out.println("Die Methode naechsteReservierungsnummer liefert: " + demo.naechsteReservierungsnummer());
     System.out.println(
-      "Die Methode effizienteReservierung liefert fuer 6 Leute die Reservierungsnummer: " + demo.effizienteReservierung(6));
+        "Die Methode platzBelegt liefert fuer den reservierten Platz C 7: "
+            + demo.platzBelegt('C', 7));
+    System.out.println(
+        "Die Methode naechsteReservierungsnummer liefert: " + demo.naechsteReservierungsnummer());
+    System.out.println(
+        "Die Methode festePlaetzeReservieren liefert fuer Reihe C Plaetze 1-3 die Reservierungsnummer: "
+            + demo.festePlaetzeReservieren('C', 1, 3));
+    System.out.println(
+        "Die Methode festePlaetzeReservieren liefert fuer Reihe D Plaetze 7-5 die Reservierungsnummer: "
+            + demo.festePlaetzeReservieren('D', 7, 5));
+    demo.debugPrint();
+    System.out.println(
+        "Die Methode festePlaetzeReservieren liefert fuer Reihe D Plaetze 1-2 die Reservierungsnummer: "
+            + demo.festePlaetzeReservieren('D', 1, 2));
+    demo.debugPrint();
+    System.out.println(
+        "Der Anteil der freien Plaetze ist: " + demo.anteilFreiePlaetze() * 100 + "%");
+    System.out.println(
+        "Die Methode bezahleReservierung liefert fuer Reservierung 7: "
+            + demo.bezahleReservierung(7));
+    System.out.println(
+        "Die Methode bezahleReservierung liefert fuer Reservierung 1: "
+            + demo.bezahleReservierung(1));
+    demo.debugPrint();
+    System.out.println(
+        "Die Methode naechsteReservierungsnummer liefert: " + demo.naechsteReservierungsnummer());
+    System.out.println(
+        "Die Methode effizienteReservierung liefert fuer 6 Leute die Reservierungsnummer: "
+            + demo.effizienteReservierung(6));
     demo.festePlaetzeReservieren('A', 1, 2);
     System.out.println("TEST " + demo.effizienteReservierung(3));
     System.out.println("TEST " + demo.effizienteReservierung(2));
     demo.debugPrint();
-    System.out.println("Die Methode effizienteReservierung liefert fuer 100 Leute die Reservierungsnummer: " + demo
-      .effizienteReservierung(100));
+    System.out.println(
+        "Die Methode effizienteReservierung liefert fuer 100 Leute die Reservierungsnummer: "
+            + demo.effizienteReservierung(100));
     demo.debugPrint();
-    System.out.println("Nach dem Aufruf der Methode neueVorstellungVorbereiten sieht der Kinosaal wieder so aus:");
+    System.out.println(
+        "Nach dem Aufruf der Methode neueVorstellungVorbereiten sieht der Kinosaal wieder so aus:");
     demo.neueVorstellungVorbereiten();
     demo.debugPrint();
     System.out.println("Nach zwei Reservierungen:");
@@ -72,7 +90,8 @@ public class Miniprojekt2_A2 {
     demo.festePlaetzeReservieren('A', 5, 5);
     //demo.festePlaetzeReservieren('D', 4, 7);
     System.out.println(
-      "Die Methode knoblauchReservierung liefert fuer 3 Leute die Reservierungsnummer: " + demo.knoblauchReservierung(4));
+        "Die Methode knoblauchReservierung liefert fuer 3 Leute die Reservierungsnummer: "
+            + demo.knoblauchReservierung(4));
     demo.debugPrint();
   }
 
@@ -95,12 +114,9 @@ public class Miniprojekt2_A2 {
       for (int j = 0; j < kinosaal[i].length; j++) {
         if (kinosaal[i][j] == 0) {
           System.out.print(" -");
-        }
-        else if (kinosaal[i][j] > 0
-          && kinosaal[i][j] < Integer.MAX_VALUE) {
+        } else if (kinosaal[i][j] > 0 && kinosaal[i][j] < Integer.MAX_VALUE) {
           System.out.print(" R");
-        }
-        else {
+        } else {
           System.out.print(" B");
         }
       }
@@ -122,7 +138,8 @@ public class Miniprojekt2_A2 {
     int groessteReservierungsNummer = 0;
     for (int reihenNummer = 0; reihenNummer < kinosaal.length; reihenNummer++) {
       for (int platzInReihe = 0; platzInReihe < kinosaal[0].length; platzInReihe++) {
-        if (kinosaal[reihenNummer][platzInReihe] >= groessteReservierungsNummer && kinosaal[reihenNummer][platzInReihe] != BEZAHLT) {
+        if (kinosaal[reihenNummer][platzInReihe] >= groessteReservierungsNummer
+            && kinosaal[reihenNummer][platzInReihe] != BEZAHLT) {
           groessteReservierungsNummer = kinosaal[reihenNummer][platzInReihe];
         }
       }
@@ -139,14 +156,15 @@ public class Miniprojekt2_A2 {
   }
 
   public boolean platzBelegt(char reihe, int platz) {
-    if (getReiheAusChar(reihe) < 0 || getReiheAusChar(reihe) >= kinosaal.length || platz < 0 || platz > kinosaal[0].length) {
+    if (getReiheAusChar(reihe) < 0
+        || getReiheAusChar(reihe) >= kinosaal.length
+        || platz < 0
+        || platz > kinosaal[0].length) {
       return false;
-    }
-    else {
+    } else {
       if (kinosaal[getReiheAusChar(reihe)][platz - 1] != FREI) {
         return true;
-      }
-      else {
+      } else {
         return false;
       }
     }
@@ -155,12 +173,10 @@ public class Miniprojekt2_A2 {
   public boolean platzBelegt(int reihe, int platz) {
     if (reihe < 0 || reihe >= kinosaal.length || platz <= 0 || platz > kinosaal[0].length) {
       return false;
-    }
-    else {
+    } else {
       if (kinosaal[reihe][platz - 1] != FREI) {
         return true;
-      }
-      else {
+      } else {
         return false;
       }
     }
@@ -171,11 +187,15 @@ public class Miniprojekt2_A2 {
   }
 
   public int festePlaetzeReservieren(char reihe, int start, int ende) {
-    if (getReiheAusChar(reihe) < 0 || getReiheAusChar(
-      reihe) >= kinosaal.length || start < 0 || start > kinosaal[0].length || ende < 0 || ende > kinosaal[0].length || start > ende) {
+    if (getReiheAusChar(reihe) < 0
+        || getReiheAusChar(reihe) >= kinosaal.length
+        || start < 0
+        || start > kinosaal[0].length
+        || ende < 0
+        || ende > kinosaal[0].length
+        || start > ende) {
       return -1;
-    }
-    else {
+    } else {
       for (int platzNummer = start - 1; platzNummer < ende; platzNummer++) {
         if (platzBelegt(reihe, platzNummer + 1)) {
           return -1;
@@ -234,13 +254,14 @@ public class Miniprojekt2_A2 {
   public int effizienteReservierung(int anzalLeute) {
     if (anzalLeute > kinosaal[0].length) {
       return -1;
-    }
-    else {
+    } else {
       int verbleibendeLeute = anzalLeute;
       for (int reihenNummer = kinosaal.length - 1; reihenNummer >= 0; reihenNummer--) {
         if (reiheOk(reihenNummer, anzalLeute)) {
           int reservierung = naechsteReservierungsnummer();
-          for (int platzInReihe = kinosaal[0].length - 1; platzInReihe >= 0 && verbleibendeLeute > 0; platzInReihe--) {
+          for (int platzInReihe = kinosaal[0].length - 1;
+              platzInReihe >= 0 && verbleibendeLeute > 0;
+              platzInReihe--) {
             if (kinosaal[reihenNummer][platzInReihe] == FREI) {
               kinosaal[reihenNummer][platzInReihe] = reservierung;
               verbleibendeLeute--;
@@ -257,12 +278,13 @@ public class Miniprojekt2_A2 {
   private boolean reiheOk(int reihe, int anzahlLeute) {
     int zaehler = 0;
     int verbleibendePlaetze = anzahlLeute;
-    for (int platzInReihe = kinosaal[0].length - 1; platzInReihe >= 0 && verbleibendePlaetze > 0; platzInReihe--) {
+    for (int platzInReihe = kinosaal[0].length - 1;
+        platzInReihe >= 0 && verbleibendePlaetze > 0;
+        platzInReihe--) {
       if (kinosaal[reihe][platzInReihe] == FREI) {
         zaehler++;
         verbleibendePlaetze--;
-      }
-      else if (kinosaal[reihe][platzInReihe] > 0) {
+      } else if (kinosaal[reihe][platzInReihe] > 0) {
         zaehler = 0;
       }
     }
@@ -272,47 +294,47 @@ public class Miniprojekt2_A2 {
   public int knoblauchReservierung(int anzalLeute) {
     if (anzalLeute > kinosaal[0].length) {
       return -1;
-    }
-    else {
+    } else {
       for (int reihenNummer = kinosaal.length - 1; reihenNummer >= 0; reihenNummer--) {
         if (reiheOk(reihenNummer, anzalLeute)) {
           for (int platzInReihe = kinosaal[0].length - 1; platzInReihe >= 0; platzInReihe--) {
             boolean gueltigePlaetze = false;
             int verbleibendeLeute = anzalLeute;
             if (kinosaal[reihenNummer][platzInReihe] == FREI) {
-              if (!platzBelegt(reihenNummer, platzInReihe + 1) &&
-                !platzBelegt(reihenNummer, platzInReihe - anzalLeute) &&
-                !platzBelegt(reihenNummer + 1, platzInReihe + 1 + 1) &&
-                !platzBelegt(reihenNummer - 1, platzInReihe + 1 + 1) &&
-                !platzBelegt(reihenNummer + 1, platzInReihe - anzalLeute + 1) &&
-                !platzBelegt(reihenNummer - 1, platzInReihe - anzalLeute + 1)) {
+              if (!platzBelegt(reihenNummer, platzInReihe + 1)
+                  && !platzBelegt(reihenNummer, platzInReihe - anzalLeute)
+                  && !platzBelegt(reihenNummer + 1, platzInReihe + 1 + 1)
+                  && !platzBelegt(reihenNummer - 1, platzInReihe + 1 + 1)
+                  && !platzBelegt(reihenNummer + 1, platzInReihe - anzalLeute + 1)
+                  && !platzBelegt(reihenNummer - 1, platzInReihe - anzalLeute + 1)) {
 
                 for (int pruefZaehler = platzInReihe;
-                     pruefZaehler >= platzInReihe - (anzalLeute - 1) && platzInReihe - (anzalLeute - 1) >= 0;
-                     pruefZaehler--) {
-                  if (!platzBelegt(reihenNummer, pruefZaehler + 1) &&
-                    !platzBelegt(reihenNummer + 1, pruefZaehler + 1) &&
-                    !platzBelegt(reihenNummer - 1, pruefZaehler + 1)) {
+                    pruefZaehler >= platzInReihe - (anzalLeute - 1)
+                        && platzInReihe - (anzalLeute - 1) >= 0;
+                    pruefZaehler--) {
+                  if (!platzBelegt(reihenNummer, pruefZaehler + 1)
+                      && !platzBelegt(reihenNummer + 1, pruefZaehler + 1)
+                      && !platzBelegt(reihenNummer - 1, pruefZaehler + 1)) {
                     verbleibendeLeute--;
                   }
                 }
                 if (verbleibendeLeute == 0) {
                   gueltigePlaetze = true;
                 }
-              }
-              else {
+              } else {
                 gueltigePlaetze = false;
               }
             }
             if (gueltigePlaetze) {
               int reservierung = naechsteReservierungsnummer();
-              for (int zaehler = platzInReihe; zaehler >= platzInReihe - (anzalLeute - 1); zaehler--) {
+              for (int zaehler = platzInReihe;
+                  zaehler >= platzInReihe - (anzalLeute - 1);
+                  zaehler--) {
                 kinosaal[reihenNummer][zaehler] = reservierung;
               }
               setReservierungsNummer(reservierung);
               return getReservierungsNummer();
             }
-
           }
         }
       }

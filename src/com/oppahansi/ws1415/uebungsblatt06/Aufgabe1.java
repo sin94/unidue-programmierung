@@ -1,22 +1,21 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Offizielle moegliche Loesung
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Offizielle moegliche Loesung
  */
-
 package com.oppahansi.ws1415.uebungsblatt06;
 
 public class Aufgabe1 {
 
   public static void main(String[] args) {
-    char[] abc = {'a', 'b', 'c', 'e', 'g', 'h', 'i', 'j', 'k', 'J', 'K',
-      'L', 'M', 'P', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A',
-      'B', 'C', 'D', 'F', 'H', 'I', 'l', 'm', 'n', 'o', 'r', 'Q',
-      'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+    char[] abc = {
+      'a', 'b', 'c', 'e', 'g', 'h', 'i', 'j', 'k', 'J', 'K', 'L', 'M', 'P', 's', 't', 'u', 'v', 'w',
+      'x', 'y', 'z', 'A', 'B', 'C', 'D', 'F', 'H', 'I', 'l', 'm', 'n', 'o', 'r', 'Q', 'R', 'S', 'T',
+      'U', 'V', 'W', 'X', 'Y', 'Z'
+    };
 
     Aufgabe1 s = new Aufgabe1();
     charListe liste = new charListe();
@@ -29,7 +28,6 @@ public class Aufgabe1 {
 
     liste.erzeugen(abc);
     liste.ausgabe();
-
   }
 
   public void sortiere(char[] abc) {
@@ -87,16 +85,13 @@ class charListe {
             temp.UpperCase = abc[i];
             temp.LowerCase = abc[k];
 
-          }
-          else {
+          } else {
 
             temp.nachfolger = new charElement(abc[i], abc[k]); // Erzeugen
             // des neuen
             // Char-Elementes
             temp = temp.nachfolger;
-
           }
-
         }
       }
     }
@@ -111,7 +106,6 @@ class charListe {
     }
     System.out.print("Ende");
   }
-
 }
 
 class charElement {
@@ -123,7 +117,6 @@ class charElement {
   public charElement(char UpperCase, char LowerCase) {
     this.UpperCase = UpperCase;
     this.LowerCase = LowerCase;
-
   }
 
   public void ausgabe() {

@@ -22,8 +22,7 @@ public class Faculty {
   public static int faculty(int n) {
     if (n == 0 || n == 1) {
       return 1;
-    }
-    else {
+    } else {
       int solution = 1;
       for (int i = 2; i <= n; i++) {
         solution *= i;

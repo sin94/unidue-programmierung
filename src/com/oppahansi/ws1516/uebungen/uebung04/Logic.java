@@ -16,14 +16,25 @@ public class Logic {
 
   public static void main(String[] args) {
     // Testaufruf
-    System.out.println("Eine Frau mit Brille und Ohrringen traegt einen Hut: " + doesPersonWearHat(false, true, true) + " - "
-      + "Richtig: false");
-    System.out.println("Eine Frau ohne Brille und Ohrringen traegt einen Hut: " + doesPersonWearHat(false, false, true) + " - "
-      + "Richtig: true");
-    System.out.println("Ein Mann ohne Brille traegt einen Hut: " + doesPersonWearHat(true, false, false) + " - "
-      + "Richtig: false");
-    System.out.println("Eine Mann mit Brille traegt einen Hut: " + doesPersonWearHat(true, true, false) + " - "
-      + "Richtig: true");
+    System.out.println(
+        "Eine Frau mit Brille und Ohrringen traegt einen Hut: "
+            + doesPersonWearHat(false, true, true)
+            + " - "
+            + "Richtig: false");
+    System.out.println(
+        "Eine Frau ohne Brille und Ohrringen traegt einen Hut: "
+            + doesPersonWearHat(false, false, true)
+            + " - "
+            + "Richtig: true");
+    System.out.println(
+        "Ein Mann ohne Brille traegt einen Hut: "
+            + doesPersonWearHat(true, false, false)
+            + " - "
+            + "Richtig: false");
+    System.out.println(
+        "Eine Mann mit Brille traegt einen Hut: "
+            + doesPersonWearHat(true, true, false)
+            + " - "
+            + "Richtig: true");
   }
-
 }

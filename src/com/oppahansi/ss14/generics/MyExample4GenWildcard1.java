@@ -15,10 +15,10 @@ public class MyExample4GenWildcard1 {
     return list.size();
   }
 
-//	private static <T> int length(ArrayList<T> list)
-//	{
-//		return list.size();
-//	}
+  //	private static <T> int length(ArrayList<T> list)
+  //	{
+  //		return list.size();
+  //	}
 
   public static void print() {
     names.add("Anton");

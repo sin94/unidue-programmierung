@@ -28,5 +28,4 @@ public class Schlumpf {
   public void setGroesse(int groesse) {
     this.groesse = groesse;
   }
-
 }

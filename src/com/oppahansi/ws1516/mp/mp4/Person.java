@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.mp.mp4;
 
 public class Person {
@@ -58,7 +55,12 @@ public class Person {
 
   public void vorstellen() {
     System.out.println(
-      "Mein Name ist " + name + ", ich habe den Rang " + rangname + " und bin " + (istmaennlich ? "ein Mann" : "eine Frau") + ".");
+        "Mein Name ist "
+            + name
+            + ", ich habe den Rang "
+            + rangname
+            + " und bin "
+            + (istmaennlich ? "ein Mann" : "eine Frau")
+            + ".");
   }
-
 }

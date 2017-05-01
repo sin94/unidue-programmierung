@@ -1,14 +1,10 @@
-/**
- * Created by:
- * Diaoliu
- * https://github.com/Diaoliu/Rekursive-Datenstrukturen
- * <p>
- * For learning purpose only.
- * <p>
- * Modified by oppahansi (refactored the code)
- * No code changes has been made.
+/*
+ * Created by: Diaoliu https://github.com/Diaoliu/Rekursive-Datenstrukturen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Modified by oppahansi (refactored the code) No code changes has been made.
  */
-
 package com.oppahansi.ws1415.klausuraufgaben.list;
 
 import java.util.Random;
@@ -33,8 +29,7 @@ public class Aufgaben {
     }
     if (Fkt(x / 2) % 2 == 0) {
       return Fkt(x - 10);
-    }
-    else {
+    } else {
       return Fkt(x - 20);
     }
   }
@@ -65,8 +60,7 @@ public class Aufgaben {
         for (int k = 0; k < n; k++) {
           if (p[i + k] != q[j + k]) {
             break;
-          }
-          else {
+          } else {
             sum++;
           }
           if (sum == n) {
@@ -181,11 +175,9 @@ class Fahrt {
     int entfernungS = 0, entfernungN = 0;
     if (b == Start && b == null) {
       return false;
-    }
-    else if (b == Ziel) {
+    } else if (b == Ziel) {
       return true;
-    }
-    else {
+    } else {
       while (start != b) {
         entfernungS += start.nS.Entfernung;
         start = start.nS.nB;
@@ -216,9 +208,9 @@ class Fahrt {
 class Bahnhof {
 
   String Name; // Name des Bahnhofs.
-  Strecke nS;  // Strecke, die als nächste befahren wird.
+  Strecke nS; // Strecke, die als nächste befahren wird.
   int Ankunft; // Zeitpunkt der Ankunft im Bahnhof (in Minuten).
-  int Dauer;   // Dauer des Halts im Bahnhof (in Minuten).
+  int Dauer; // Dauer des Halts im Bahnhof (in Minuten).
   int Abfahrt; // Zeitpunkt der Abfahrt (in Minuten).
 
   Bahnhof(String Name, int Ankunft, int Dauer) {
@@ -238,7 +230,7 @@ class Bahnhof {
 
 class Strecke {
 
-  Bahnhof nB;     // nächster Bahnhof, zu dem der Zug hinfährt.
+  Bahnhof nB; // nächster Bahnhof, zu dem der Zug hinfährt.
   int Entfernung; // Länge der Strecke (in Kilometern).
 
   Strecke(Bahnhof nB, int Entfernung) {
@@ -314,8 +306,7 @@ class ProdukteList {
       if (p.ePreis >= erst) {
         zweit = erst;
         erst = p.ePreis;
-      }
-      else if (p.ePreis >= zweit) {
+      } else if (p.ePreis >= zweit) {
         zweit = p.ePreis;
       }
       p = p.Nf;
@@ -327,11 +318,11 @@ class ProdukteList {
 
 class Produkt {
 
-  Produkt Nf;      // Verweis auf das Nachfolger-Produkt in der Liste.
-  String Bez;      // Bezeichnung eines Produkts.
-  float ePreis;    // Einzelpreis eines Produkts in Euro.
-  float gPreis;    // Gesamtpreis eines Produkts in Euro.
-  Produkt Zubehoer;// Verweis auf ein benötigtes Zubehör-Produkt.
+  Produkt Nf; // Verweis auf das Nachfolger-Produkt in der Liste.
+  String Bez; // Bezeichnung eines Produkts.
+  float ePreis; // Einzelpreis eines Produkts in Euro.
+  float gPreis; // Gesamtpreis eines Produkts in Euro.
+  Produkt Zubehoer; // Verweis auf ein benötigtes Zubehör-Produkt.
 
   Produkt(String Bez, float ePreis, ProdukteList Liste) { //构造函数
     this.Nf = null;
@@ -342,13 +333,8 @@ class Produkt {
 
     if (Liste.Kopf == null) { //Produkt zum End der Produktliste einzufuegen.
       Liste.Kopf = Liste.Fuss = this;
-    }
-    else {
+    } else {
       Liste.Fuss = Liste.Fuss.Nf = this;
     }
   }
 }
-
-
-
-

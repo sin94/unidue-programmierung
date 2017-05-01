@@ -1,17 +1,12 @@
-/**
- * Created by:
- * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Implementation by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Implementation by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
 
-/**
- * Loesung siehe WS1516 MP3
- */
-
+/* Loesung siehe WS1516 MP3 */
 package com.oppahansi.ss16.mp.mp2;
 
 public class Train {
@@ -33,24 +28,19 @@ public class Train {
     return -1;
   }
 
-  public void appendWaggon(Waggon waggon) {
-  }
+  public void appendWaggon(Waggon waggon) {}
 
-  public void boardPassengers(int numberOfPassengers) {
-  }
+  public void boardPassengers(int numberOfPassengers) {}
 
   public Train uncoupleWaggons(int index) {
     return new Train();
   }
 
-  public void insertWaggon(Waggon waggon, int index) {
-  }
+  public void insertWaggon(Waggon waggon, int index) {}
 
-  public void turnOver() {
-  }
+  public void turnOver() {}
 
-  public void removeWaggon(Waggon waggon) {
-  }
+  public void removeWaggon(Waggon waggon) {}
 
   public Waggon getWaggonAt(int index) {
     return null;
@@ -73,5 +63,4 @@ public class Train {
 
     return str.toString();
   }
-
 }

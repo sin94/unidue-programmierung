@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Reformatted by oppahansi - Clean Code Version
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Reformatted by oppahansi - Clean Code Version
  */
-
 package com.oppahansi.ws1415.miniprojekt4_CC;
 
 public class Station {
@@ -19,7 +17,8 @@ public class Station {
   private int freuePlaetzeGesetz;
   private String fachabteilung;
 
-  public Station(int stationsNummer, String fachabteilung, int kapazitaetGesetz, int kapazitaetPrivat) {
+  public Station(
+      int stationsNummer, String fachabteilung, int kapazitaetGesetz, int kapazitaetPrivat) {
     this.stationsNummer = stationsNummer;
     this.kapazitaetGesetz = freuePlaetzeGesetz = kapazitaetGesetz;
     this.kapazitaetPrivat = freiePlaetzePrivat = kapazitaetPrivat;
@@ -31,7 +30,8 @@ public class Station {
    *
    * Aufnahme des �bergeben Patienten
    */
-  public boolean neuenPatientenAufnehmen(Patient patient) { /* wieso boolean? */
+  public boolean neuenPatientenAufnehmen(Patient patient) {
+    /* wieso boolean? */
     return false;
   }
 

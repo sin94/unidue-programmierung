@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.mp.mp3;
 
 public class Train {
@@ -20,8 +17,7 @@ public class Train {
   public int getSize() {
     if (getHead() == null) {
       return 0;
-    }
-    else {
+    } else {
       return countWaggons();
     }
   }
@@ -41,8 +37,7 @@ public class Train {
   public int getPassengerCount() {
     if (getSize() == 0) {
       return 0;
-    }
-    else {
+    } else {
       return countPassengers();
     }
   }
@@ -62,8 +57,7 @@ public class Train {
   public int getCapacity() {
     if (getSize() == 0) {
       return 0;
-    }
-    else {
+    } else {
       return calculateCapacity();
     }
   }
@@ -83,12 +77,10 @@ public class Train {
   public void appendWaggon(Waggon waggon) {
     if (getHead() == null) {
       setHead(waggon);
-    }
-    else {
+    } else {
       if (getSize() == 1) {
         getHead().setNext(waggon);
-      }
-      else {
+      } else {
         if (getSize() > 1) {
           getLastWaggon().setNext(waggon);
         }
@@ -99,8 +91,7 @@ public class Train {
   private Waggon getLastWaggon() {
     if (getSize() == 1) {
       return getHead();
-    }
-    else {
+    } else {
       Waggon currentWagon = getHead();
 
       while (currentWagon.getNext() != null) {
@@ -122,13 +113,11 @@ public class Train {
           if (freeSlots >= numberOfPassengers) {
             currentWaggon.setPassengers(currentWaggon.getPassengers() + numberOfPassengers);
             break;
-          }
-          else {
+          } else {
             currentWaggon.setPassengers(currentWaggon.getCapacity());
             numberOfPassengers -= freeSlots;
           }
-        }
-        else {
+        } else {
           break;
         }
 
@@ -160,8 +149,7 @@ public class Train {
       lastWaggonInTrain.setNext(null);
 
       return newTrain;
-    }
-    else {
+    } else {
       return null;
     }
   }
@@ -169,14 +157,12 @@ public class Train {
   public void insertWaggon(Waggon waggon, int index) {
     if (index >= getSize()) {
       appendWaggon(waggon);
-    }
-    else if (index >= 0 && index <= getSize() - 1) {
+    } else if (index >= 0 && index <= getSize() - 1) {
       if (index == 0) {
         Waggon next = getHead();
         setHead(waggon);
         getHead().setNext(next);
-      }
-      else {
+      } else {
         Waggon next = getWaggonAt(index - 1);
         waggon.setNext(next.getNext());
         next.setNext(waggon);
@@ -202,11 +188,9 @@ public class Train {
       if (waggonsPosition != -1) {
         if (waggonsPosition == 0) {
           setHead(getHead().getNext());
-        }
-        else if (waggonsPosition == getSize() - 1 && getSize() == 2) {
+        } else if (waggonsPosition == getSize() - 1 && getSize() == 2) {
           getHead().setNext(null);
-        }
-        else {
+        } else {
           Waggon prev = getWaggonAt(waggonsPosition - 1);
           Waggon next = getWaggonAt(waggonsPosition + 1);
           prev.setNext(next);
@@ -219,11 +203,9 @@ public class Train {
     if (waggon != null) {
       if (waggon.equals(getHead())) {
         return 0;
-      }
-      else if (waggon.equals(getLastWaggon())) {
+      } else if (waggon.equals(getLastWaggon())) {
         return getSize() - 1;
-      }
-      else {
+      } else {
         Waggon currentWaggon = getHead().getNext();
         int position = 1;
 
@@ -238,8 +220,7 @@ public class Train {
 
         return -1;
       }
-    }
-    else {
+    } else {
       return -1;
     }
   }
@@ -247,15 +228,12 @@ public class Train {
   public Waggon getWaggonAt(int index) {
     if (index < 0 && index >= getSize()) {
       return null;
-    }
-    else {
+    } else {
       if (index == 0) {
         return getHead();
-      }
-      else if (index == getSize() - 1) {
+      } else if (index == getSize() - 1) {
         return getLastWaggon();
-      }
-      else {
+      } else {
         Waggon currentWagon = getHead();
         int position = 0;
 

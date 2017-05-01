@@ -30,8 +30,7 @@ public class Sleigh {
     System.out.println("\nLeere Waggons wurden entfernt (Aufgabe 2):");
     System.out.println(sleigh);
 
-    System.out
-      .println("\n--------------- Weiterer Testfall für Aufgabe 2 ---------------");
+    System.out.println("\n--------------- Weiterer Testfall für Aufgabe 2 ---------------");
     final Sleigh sleigh2 = new Sleigh();
     final Trailer t1 = new Trailer("#1", 40, 0);
     final Trailer t2 = new Trailer("#2", 40, 10);
@@ -56,7 +55,7 @@ public class Sleigh {
     //Zaehlvariable definieren, die erst einmal alle vorhandenen Geschenke zaehlt
 
     Trailer knoten = head;
-    int geschenke = 0;    //Summe aller Geschenke
+    int geschenke = 0; //Summe aller Geschenke
 
     //Alle Schlitten durchgehen, Anzahl der Geschenke zaehlen und in der Zaehlvariable speichern
     //Sobald alle Geschenke eines Schlittens gezahelt sind, werden alle Geschenke des Schlittens auf 0 gesetzt
@@ -93,7 +92,6 @@ public class Sleigh {
       else {
         knoten.setGifts(geschenke);
         geschenke = 0;
-
       }
 
       //Nachdem if oder else-Kriterium erf�llt wurde, wechseln wir in den naechsten Schlitten.
@@ -112,22 +110,18 @@ public class Sleigh {
         head = head.getNext();
         node = head;
         continue;
-      }
-      else if (node.getGifts() == 0) {
+      } else if (node.getGifts() == 0) {
 
       }
     }
-
   }
 
   @Override
   public String toString() {
     if (head == null) {
       return "Leerer Schlitten";
-    }
-    else {
+    } else {
       return head.toString();
     }
   }
-
 }

@@ -1,15 +1,13 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved by Alex Oppa Hansi
- * <p>
- * Alternative 1
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved by Alex Oppa Hansi
+ *
+ * <p>Alternative 1
  */
-
 package com.oppahansi.ws1415.miniprojekt6_A1;
 
 public class GiroStudent extends GiroKonto {
@@ -47,11 +45,11 @@ public class GiroStudent extends GiroKonto {
 
   @Override
   public boolean abheben(double betrag) {
-    if (!studentenKonto && getKontoStand() + getKreditlimit() >= betrag + berechneAbhebeGebuehren(betrag)) {
+    if (!studentenKonto
+        && getKontoStand() + getKreditlimit() >= betrag + berechneAbhebeGebuehren(betrag)) {
       gebuehren += berechneAbhebeGebuehren(betrag);
       return super.abheben(betrag);
-    }
-    else {
+    } else {
       return getKontoStand() + getKreditlimit() >= betrag && super.abheben(betrag);
     }
   }
@@ -62,12 +60,14 @@ public class GiroStudent extends GiroKonto {
 
   @Override
   public boolean ueberweisenAuf(Konto ziel, double betrag) {
-    if (!studentenKonto && getKontoStand() + getKreditlimit() >= betrag + berechneUeberwGebuehren(betrag)) {
+    if (!studentenKonto
+        && getKontoStand() + getKreditlimit() >= betrag + berechneUeberwGebuehren(betrag)) {
       gebuehren += berechneUeberwGebuehren(betrag);
       return super.abheben(betrag) && ziel.einzahlen(betrag);
-    }
-    else {
-      return getKontoStand() + getKreditlimit() >= betrag && super.abheben(betrag) && ziel.einzahlen(betrag);
+    } else {
+      return getKontoStand() + getKreditlimit() >= betrag
+          && super.abheben(betrag)
+          && ziel.einzahlen(betrag);
     }
   }
 

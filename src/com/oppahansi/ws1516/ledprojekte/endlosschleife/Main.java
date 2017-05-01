@@ -1,10 +1,8 @@
-/**
+/*
  * Sunrise
- * <p>
- * Created by:
- * Endlosschleife (Gruppe
+ *
+ * <p>Created by: Endlosschleife (Gruppe
  */
-
 package com.oppahansi.ws1516.ledprojekte.endlosschleife;
 
 import ledControl.BoardController;
@@ -25,5 +23,3 @@ public class Main {
     }
   }
 }
-
-

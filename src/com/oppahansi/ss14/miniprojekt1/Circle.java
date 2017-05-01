@@ -1,8 +1,8 @@
 package com.oppahansi.ss14.miniprojekt1;
 
-/**
- * Definiert einen Kreis �ber einen Radius und einem Mittelpunkt in einem
- * zweidimensionalen Koordinatensystem
+/*
+ * Definiert einen Kreis �ber einen Radius und einem Mittelpunkt in einem zweidimensionalen
+ * Koordinatensystem
  */
 public class Circle {
 
@@ -10,8 +10,7 @@ public class Circle {
   private Point location;
   private double radius;
 
-  public Circle() {
-  }
+  public Circle() {}
 
   public Circle(Point initLocation, double initRadius) {
     this.location = initLocation;
@@ -62,10 +61,8 @@ public class Circle {
   public boolean containsPoint(Point point) {
     if (location.getDistance(point) <= radius) {
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }
-
 }

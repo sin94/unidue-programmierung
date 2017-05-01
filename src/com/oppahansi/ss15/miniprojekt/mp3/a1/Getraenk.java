@@ -1,10 +1,8 @@
-/**
- * Created by:
- * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ss15.miniprojekt.mp3.a1;
 
 public class Getraenk {
@@ -20,7 +18,6 @@ public class Getraenk {
     this.name = name;
     this.groesse = groesse;
     this.preis = preis;
-
   }
 
   public int getArtNr() {

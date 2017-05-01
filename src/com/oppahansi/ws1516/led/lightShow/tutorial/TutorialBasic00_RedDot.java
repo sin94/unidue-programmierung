@@ -1,8 +1,7 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
 
 /*
@@ -27,5 +26,4 @@ public class TutorialBasic00_RedDot {
     // das bislang gemalte Bild anzeigen
     controller.updateLedStripe();
   }
-
 }

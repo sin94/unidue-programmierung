@@ -30,5 +30,4 @@ public class WordNode {
   public void setWord(String word) {
     this.word = word;
   }
-
 }

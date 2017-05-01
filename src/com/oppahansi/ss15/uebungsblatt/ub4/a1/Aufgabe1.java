@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Implementation by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Implementation by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ss15.uebungsblatt.ub4.a1;
 
 public class Aufgabe1 {
@@ -42,8 +39,7 @@ public class Aufgabe1 {
       for (int j = i; j < p.length - 1; j++) {
         if (currentNumber == p[j + 1]) {
           counter++;
-        }
-        else {
+        } else {
           break;
         }
       }
@@ -149,8 +145,7 @@ public class Aufgabe1 {
           }
         }
       }
-    }
-    else {
+    } else {
       for (int i = 0; i < p.length; i++) {
         for (int j = 0; j < q.length; j++) {
           counter = 0;

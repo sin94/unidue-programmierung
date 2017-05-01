@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Offizielle moegliche Loesung
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Offizielle moegliche Loesung
  */
-
 package com.oppahansi.ws1415.uebungsblatt05;
 
 public class ArtikelListenElement {
@@ -45,5 +43,4 @@ public class ArtikelListenElement {
   public void setNext(ArtikelListenElement next) {
     this.next = next;
   }
-
 }

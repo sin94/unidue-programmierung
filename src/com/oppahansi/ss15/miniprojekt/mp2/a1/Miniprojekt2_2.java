@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Implementation by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Implementation by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ss15.miniprojekt.mp2.a1;
 
 import java.util.Arrays;
@@ -16,7 +13,7 @@ public class Miniprojekt2_2 {
   /*
    * Wichtig:
    * Die Methodensignatur darf nicht veraendert werden.
-	 */
+   */
 
   public static void main(String[] args) {
     int[][] mA = {{2, 2, 1}, {3, 1, 0}, {0, -1, -2}};
@@ -173,8 +170,7 @@ public class Miniprojekt2_2 {
   public void ausgabeA(int[][] array) {
     if (array == null) {
       System.out.println("null");
-    }
-    else {
+    } else {
       for (int i = 0; i < array.length; i++) {
         System.out.println(Arrays.toString(array[i]));
       }
@@ -188,8 +184,7 @@ public class Miniprojekt2_2 {
   public void ausgabeA(int[] array) {
     if (array == null) {
       System.out.println("null");
-    }
-    else {
+    } else {
       for (int i = 0; i < array.length; i++) {
         System.out.println("[" + array[i] + "]");
       }

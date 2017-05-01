@@ -13,8 +13,7 @@ public class ArraysAndLoops {
   public static int sum(final int[] elements) {
     if (elements == null) {
       return -1;
-    }
-    else {
+    } else {
       int sum = 0;
 
       for (int i = 0; i < elements.length; i++) {
@@ -34,8 +33,7 @@ public class ArraysAndLoops {
   public static int maxElement(final int[] elements) {
     if (elements == null) {
       return -1;
-    }
-    else {
+    } else {
       int prod = 0;
       int index = 0;
       if (elements[0] < 0) {
@@ -50,7 +48,6 @@ public class ArraysAndLoops {
 
       return prod * index;
     }
-
   }
 
   // Diese Methode soll ein Array zurueckgeben, in dem alle Elemente des
@@ -61,8 +58,7 @@ public class ArraysAndLoops {
   public static int[] duplicateElements(final int[] elements) {
     if (elements == null) {
       return null;
-    }
-    else {
+    } else {
       int[] newArray = new int[elements.length * 2];
 
       for (int i = 0; i < elements.length; i++) {
@@ -74,7 +70,6 @@ public class ArraysAndLoops {
 
       return newArray;
     }
-
   }
 
   // Diese Methode soll zu einem uebergebenen Array ein neues Array zurueck
@@ -84,8 +79,7 @@ public class ArraysAndLoops {
   public static int[] getSquares(final int[] elements) {
     if (elements == null) {
       return null;
-    }
-    else {
+    } else {
       int[] newArray = new int[elements.length];
 
       for (int i = 0; i < newArray.length; i++) {
@@ -105,8 +99,7 @@ public class ArraysAndLoops {
   public static void reverseArray(int[] elements) {
     if (elements == null) {
 
-    }
-    else {
+    } else {
       int[] newArray = new int[elements.length];
       for (int i = elements.length - 1; i >= 0; i--) {
         newArray[elements.length - 1 - i] = elements[i];
@@ -118,8 +111,5 @@ public class ArraysAndLoops {
   }
 
   // Hier koennt ihr eure Methoden testen
-  public static void main(String[] args) {
-
-  }
-
+  public static void main(String[] args) {}
 }

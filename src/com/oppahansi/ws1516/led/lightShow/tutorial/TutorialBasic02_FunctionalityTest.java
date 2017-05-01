@@ -1,8 +1,7 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
 
 /*
@@ -28,23 +27,23 @@ public class TutorialBasic02_FunctionalityTest {
     // Der Parameter ist ein dreielementiges Array, das fuer jede
     // Farbkomponente einen Wert zwischen 0 und 127 enthaelt.
     // Die Reihenfolge der Farben ist rgb, also rot, gruen, blau
-    setFieldColor(new int[]{127, 0, 0});
+    setFieldColor(new int[] {127, 0, 0});
     // das Bild eine Sekunde (bzw 1000 Millisekunden) stehen lassen
     controller.sleep(1000);
     // alle LEDs maximal gruen faerben
-    setFieldColor(new int[]{0, 127, 0});
+    setFieldColor(new int[] {0, 127, 0});
     // Bild eine Sekunde stehen lassen
     controller.sleep(1000);
     // alle LEDs maximal blau faerben
-    setFieldColor(new int[]{0, 0, 127});
+    setFieldColor(new int[] {0, 0, 127});
     // Bild eine Sekunde stehen lassen
     controller.sleep(1000);
     // alle LEDs maximal weiss faerben
-    setFieldColor(new int[]{127, 127, 127});
+    setFieldColor(new int[] {127, 127, 127});
     // Bild eine Sekunde stehen lassen
     controller.sleep(1000);
     // alle LEDs ausschalten, bzw. die Farbe auf schwarz setzen
-    setFieldColor(new int[]{0, 0, 0});
+    setFieldColor(new int[] {0, 0, 0});
     // Bild eine Sekunde stehen lassen
     controller.sleep(1000);
     // Testbild am Schluss
@@ -52,7 +51,7 @@ public class TutorialBasic02_FunctionalityTest {
     // Bild fuenf Sekunden stehen lassen
     controller.sleep(5000);
     // alle LEDs ausschalten, bzw. die Farbe auf schwarz setzen
-    setFieldColor(new int[]{0, 0, 0});
+    setFieldColor(new int[] {0, 0, 0});
   }
 
   public static void setFieldColor(int[] color) {
@@ -87,12 +86,12 @@ public class TutorialBasic02_FunctionalityTest {
   // Reihen und Spalten zusammen. Nachdem Reihen und Spalten gesetzt sind,
   // wird den LEDs an den Schnittpunkten noch eine Extrafarbe zugewiesen.
   public static void rowColumnChaos() {
-    setColumnColor(2, new int[]{32, 0, 0});
-    setColumnColor(6, new int[]{0, 32, 0});
-    setColumnColor(10, new int[]{0, 0, 32});
-    setRowColor(2, new int[]{32, 0, 0});
-    setRowColor(6, new int[]{0, 32, 0});
-    setRowColor(10, new int[]{0, 0, 32});
+    setColumnColor(2, new int[] {32, 0, 0});
+    setColumnColor(6, new int[] {0, 32, 0});
+    setColumnColor(10, new int[] {0, 0, 32});
+    setRowColor(2, new int[] {32, 0, 0});
+    setRowColor(6, new int[] {0, 32, 0});
+    setRowColor(10, new int[] {0, 0, 32});
     controller.setColor(2, 2, 127, 0, 0);
     controller.setColor(2, 6, 32, 32, 0);
     controller.setColor(2, 10, 32, 0, 32);
@@ -104,5 +103,4 @@ public class TutorialBasic02_FunctionalityTest {
     controller.setColor(10, 10, 0, 0, 127);
     controller.updateLedStripe();
   }
-
 }

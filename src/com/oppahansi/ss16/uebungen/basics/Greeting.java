@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut fuer Informatik und Wirtschaftsinformatik, Universitaet Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Implementation by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut fuer Informatik und Wirtschaftsinformatik, Universitaet Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Implementation by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ss16.uebungen.basics;
 
 // Begruessung
@@ -15,7 +12,7 @@ package com.oppahansi.ss16.uebungen.basics;
 // Die Methode greeting soll eine Begruessung abhaengig vom als Parameter
 // uebergebenen Namen zurueckgeben. Vervollstaendigen Sie die Methode
 // greeting so, dass sie folgenden Aufrufbeispielen genuegt:
-// 
+//
 // greeting("Anton") --> "Hallo, Anton!"
 // greeting("Barbara") --> "Hallo, Barbara!"
 // greeting("Christoph") --> "Hallo, Christoph!"
@@ -48,5 +45,4 @@ public class Greeting {
     String name = getName();
     System.out.println(greeting(name));
   }
-
 }

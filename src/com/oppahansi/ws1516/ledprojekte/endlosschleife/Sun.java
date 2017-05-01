@@ -1,10 +1,8 @@
-/**
+/*
  * Sunrise
- * <p>
- * Created by:
- * Endlosschleife (Gruppe
+ *
+ * <p>Created by: Endlosschleife (Gruppe
  */
-
 package com.oppahansi.ws1516.ledprojekte.endlosschleife;
 
 public class Sun {
@@ -22,7 +20,7 @@ public class Sun {
 
   // Konstruktor an den die Position der Sonne �bermittelt wird
   public Sun(double yMax) {
-    dy = 0.015;    // Geschwindigkeit der Sonne
+    dy = 0.015; // Geschwindigkeit der Sonne
     Y_MAX = yMax;
     xPos = 6;
     yPos = 0;

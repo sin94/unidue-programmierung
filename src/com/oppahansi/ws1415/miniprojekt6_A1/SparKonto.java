@@ -1,15 +1,13 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved by Alex Oppa Hansi
- * <p>
- * Alternative 1
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved by Alex Oppa Hansi
+ *
+ * <p>Alternative 1
  */
-
 package com.oppahansi.ws1415.miniprojekt6_A1;
 
 public class SparKonto extends Konto {
@@ -28,12 +26,12 @@ public class SparKonto extends Konto {
     // Alternative zum einfachen return.
     // Weiterhin werde ich, wenn moeglich, einfache return verwenden, ohne ifs
 
-//      if (getKontoStand() - betrag >= 0) {
-//         return super.abheben(betrag);
-//      }
-//      else {
-//         return false;
-//      }
+    //      if (getKontoStand() - betrag >= 0) {
+    //         return super.abheben(betrag);
+    //      }
+    //      else {
+    //         return false;
+    //      }
     return getKontoStand() - betrag >= 0 && super.abheben(betrag);
   }
 
@@ -42,14 +40,14 @@ public class SparKonto extends Konto {
     // Alternative zum einfachen return.
     // Weiterhin werde ich, wenn moeglich, einfache return verwenden, ohne ifs
 
-//      if (getKontoStand() - betrag >= 0) {
-//         super.abheben(betrag);
-//         ziel.einzahlen(betrag);
-//         return true;
-//      }
-//      else {
-//         return false;
-//      }
+    //      if (getKontoStand() - betrag >= 0) {
+    //         super.abheben(betrag);
+    //         ziel.einzahlen(betrag);
+    //         return true;
+    //      }
+    //      else {
+    //         return false;
+    //      }
     return (getKontoStand() - betrag >= 0) && abheben(betrag) && ziel.einzahlen(betrag);
   }
 
@@ -63,7 +61,8 @@ public class SparKonto extends Konto {
   public void jahresAbschluss() {
     if (bankKonto.getKontoStand() - (tagesZinsen / abschluesse) >= 10000000.0) {
       double jahresZinsen = tagesZinsen / abschluesse;
-      bankKonto.abheben(jahresZinsen); // notwendig, da in Konto.java ueberweisenAuf(...) {...} nicht implementiert ist
+      bankKonto.abheben(
+          jahresZinsen); // notwendig, da in Konto.java ueberweisenAuf(...) {...} nicht implementiert ist
       einzahlen(jahresZinsen);
       tagesZinsen = 0;
       abschluesse = 0;

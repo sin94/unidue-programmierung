@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Offizielle moegliche Loesung
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Offizielle moegliche Loesung
  */
-
 package com.oppahansi.ws1415.uebungsblatt05.aufgabe2;
 
 public class Warenkorb {
@@ -29,8 +27,7 @@ public class Warenkorb {
     if (kopf == null) {
       kopf = neu;
       fuss = neu;
-    }
-    else {
+    } else {
       fuss.setNext(neu);
       fuss = neu;
     }
@@ -57,5 +54,4 @@ public class Warenkorb {
 
     return sum;
   }
-
 }

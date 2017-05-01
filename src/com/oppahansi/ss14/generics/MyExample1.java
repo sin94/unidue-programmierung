@@ -25,10 +25,10 @@ public class MyExample1 {
       ordner[i] = (String) names.get(i);
     }
 
-//		for (int i = 0; i < ordner.length; i++)
-//		{
-//			System.out.println(ordner[i]);
-//		}
+    //		for (int i = 0; i < ordner.length; i++)
+    //		{
+    //			System.out.println(ordner[i]);
+    //		}
   }
 }
 
@@ -38,6 +38,6 @@ public class MyExample1 {
  * - intern Referenzen vom Datentyp Object
  * - Casting zu Laufzeit -> Laufzeitumgebung muss uns vertrauen
  * - Castings -> f�hrt schnell zu Programmierfehlern
- * 
+ *
  * - Castings vermieden durch generics
  */

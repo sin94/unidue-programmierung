@@ -56,8 +56,7 @@ public class Car {
   public int getValue() {
     if (damaged) {
       return value / 2;
-    }
-    else {
+    } else {
       return value;
     }
   }
@@ -67,8 +66,8 @@ public class Car {
   }
 
   /*
-* Diese Methode ist aufzurufen, wenn das Auto einen Unfall baut.
-*/
+   * Diese Methode ist aufzurufen, wenn das Auto einen Unfall baut.
+   */
   public void crash() {
     damaged = true;
   }
@@ -88,8 +87,7 @@ public class Car {
   public int getRepairCost() {
     if (damaged) {
       return value / 2;
-    }
-    else {
+    } else {
       return 0;
     }
   }

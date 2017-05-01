@@ -1,10 +1,6 @@
 package com.oppahansi.ss14.testat6;
 
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class InMemoryDatabase implements Database {
 
@@ -48,5 +44,4 @@ public class InMemoryDatabase implements Database {
 
     return bornAfter;
   }
-
 }

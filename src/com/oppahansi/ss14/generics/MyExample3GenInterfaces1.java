@@ -15,7 +15,8 @@ public class MyExample3GenInterfaces1 {
 
     ordner = new String[names.size()];
     int i = 0;
-    for (String s : names) //f�ngt bei 0 an und geht alle string names durch und gibt die als s zur�ck
+    for (String s :
+        names) //f�ngt bei 0 an und geht alle string names durch und gibt die als s zur�ck
     {
       ordner[i] = s;
       i++;
@@ -36,27 +37,27 @@ public class MyExample3GenInterfaces1 {
  * - wichti ist -> Iterator auch parametisiert (Iterator<T>)
  * - Beispiel f�r Klasse java.util.ArrayList
 
-package java.util; 
+package java.util;
 
-import java.lang.*; 
+import java.lang.*;
 
-public class ArrayList<T> implements Iterable<T> 
-{ 
-  public Iterator<T> iterator() 
-  { 
-  } 
+public class ArrayList<T> implements Iterable<T>
+{
+  public Iterator<T> iterator()
+  {
+  }
 
-  public boolean add(T t) 
-  { 
-  } 
+  public boolean add(T t)
+  {
+  }
 
-  public T get(int index) 
-  { 
-  } 
-} 
+  public T get(int index)
+  {
+  }
+}
 
  * - Platzhalter -> T -> Datentyp -> Parameter
  * - T kann an mehreren Stellen auftauchen
  * - Generische Klassen sind demnach unvollst�ndiger Code
- * 
+ *
  */

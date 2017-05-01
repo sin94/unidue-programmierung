@@ -5,8 +5,7 @@ public class Sphere {
   private Point location;
   private double radius;
 
-  public Sphere() {
-  }
+  public Sphere() {}
 
   public Sphere(Point initLocation, double initRadius) {
     // Aufgabe 3
@@ -17,10 +16,22 @@ public class Sphere {
   public static void main(String[] args) {
     Point a = new Point(0.0, 0.0, 0.0);
     Point b = new Point(2.0, -2.0, -1.0);
-    System.out.println("Der Abstand zwischen Punkt A(" + a.getX() + "|"
-      + a.getY() + "|" + a.getZ() + ") und Punkt B(" + b.getX() + "|"
-      + b.getY() + "|" + b.getZ() + ") betr?gt " + a.getDistance(b)
-      + ".");
+    System.out.println(
+        "Der Abstand zwischen Punkt A("
+            + a.getX()
+            + "|"
+            + a.getY()
+            + "|"
+            + a.getZ()
+            + ") und Punkt B("
+            + b.getX()
+            + "|"
+            + b.getY()
+            + "|"
+            + b.getZ()
+            + ") betr?gt "
+            + a.getDistance(b)
+            + ".");
 
     Sphere s = new Sphere(a, 4.0);
     Sphere t = new Sphere(b, 1.0);
@@ -36,8 +47,7 @@ public class Sphere {
     if (distance <= r1ur2) {
       return true;
 
-    }
-    else {
+    } else {
       return false;
     }
   }
@@ -46,11 +56,9 @@ public class Sphere {
     if (true) {
       return true;
 
-    }
-    else {
+    } else {
       return false;
     }
-
   }
 
   public Point getLocation() {
@@ -68,5 +76,4 @@ public class Sphere {
   public void setRadius(double radius) {
     this.radius = radius;
   }
-
 }

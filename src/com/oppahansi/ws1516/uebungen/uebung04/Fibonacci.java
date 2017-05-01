@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.uebungen.uebung04;
 // Fibonacci-Zahlen
 //
@@ -25,8 +22,7 @@ public class Fibonacci {
   public static int fibonacci(int n) {
     if (n < 2) {
       return (n == 0) ? 0 : 1;
-    }
-    else {
+    } else {
       return fibonacci(n - 1) + fibonacci(n - 2);
     }
   }
@@ -36,5 +32,4 @@ public class Fibonacci {
     System.out.println("Aufruf mit 4 liefert: " + fibonacci(4) + " - Richtig: 3");
     System.out.println("Aufruf mit 12 liefert: " + fibonacci(12) + " - Richtig: 144");
   }
-
 }

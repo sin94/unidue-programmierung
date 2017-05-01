@@ -1,10 +1,8 @@
-/**
- * Created by:
- * Oppa Hansi
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Oppa Hansi
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ws1516.uebungen.zusatz.todo;
 
 import java.util.ArrayList;
@@ -32,5 +30,4 @@ public class Main {
 
     todoList.forEach(todo -> System.out.println(todo.toString() + "\n"));
   }
-
 }

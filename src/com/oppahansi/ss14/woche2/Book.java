@@ -25,15 +25,12 @@ public class Book {
     book.setAuthor(author);
     book.setYearOfPublication(year);
     System.out.println("Titel den das Buch haben sollte: " + titel);
-    System.out.println("Titel den das Buch hat:          " +
-      book.getTitle());
+    System.out.println("Titel den das Buch hat:          " + book.getTitle());
     System.out.println("Author den das Buch haben sollte: " + author);
-    System.out.println("Author den das Buch hat:          " +
-      book.getAuthor());
-    System.out.println("Erscheinungsjahr das das Buch haben sollte: " +
-      year);
-    System.out.println("Erscheinungsdatum das das Buch hat:         " +
-      book.getYearOfPublication());
+    System.out.println("Author den das Buch hat:          " + book.getAuthor());
+    System.out.println("Erscheinungsjahr das das Buch haben sollte: " + year);
+    System.out.println(
+        "Erscheinungsdatum das das Buch hat:         " + book.getYearOfPublication());
   }
 
   public String getTitle() {
@@ -64,5 +61,4 @@ public class Book {
     // Diese Methode muss von euch veraendert werden.
     this.yearOfPublication = year;
   }
-
 }

@@ -1,7 +1,7 @@
 package com.oppahansi.ss14.woche1;
 
 // Integer-Werte addieren
-// 
+//
 // Modifizieren Sie die Methode "add" so, dass sie die Variablen "a" und "b" addiert und das Ergebnis zur�ckgibt.
 
 public class AddIntegers {
@@ -20,5 +20,4 @@ public class AddIntegers {
 
     System.out.println(add(x, y));
   }
-
 }

@@ -37,18 +37,16 @@ public class ZahlenRatenGeloest {
 
         if (eingabe < 0 || eingabe > 100) {
           System.out.println("\nUng�ltige Eignabe. Bitte Eingabe wiederholen:");
-        }
-        else if (eingabe < zufallZahl) {
+        } else if (eingabe < zufallZahl) {
           System.out.println("\nDie gesuchte Zahl ist groesser!");
           versuche++;
-        }
-        else if (eingabe > zufallZahl) {
+        } else if (eingabe > zufallZahl) {
           System.out.println("\nDie gesuchte Zahl ist kleiner!");
           versuche++;
-        }
-        else if (eingabe == zufallZahl) {
+        } else if (eingabe == zufallZahl) {
           System.out.println("\nSie haben die gesuchte Zahl gefunden!");
-          System.out.println("Sie haben die " + zufallZahl + " in " + versuche + " Versuchen gefunden.");
+          System.out.println(
+              "Sie haben die " + zufallZahl + " in " + versuche + " Versuchen gefunden.");
           break;
         }
       }
@@ -59,8 +57,7 @@ public class ZahlenRatenGeloest {
       if (antwort.compareTo("j") == 0) {
         aktiv = true;
         System.out.println();
-      }
-      else {
+      } else {
         aktiv = false;
       }
     }

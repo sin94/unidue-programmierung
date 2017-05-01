@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Reformatted by oppahansi - Clean Code Version
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Reformatted by oppahansi - Clean Code Version
  */
-
 package com.oppahansi.ws1415.miniprojekt4_CC;
 
 public class Medikament {
@@ -34,10 +32,13 @@ public class Medikament {
   }
 
   public void mediInfoAusgabe() {
-    System.out.println("                                                      Medikamentname:       " + mediName);
-    System.out.println("                                                      Hauptwirkstoff:       " + wirkstoff);
-    System.out
-      .println("                                                      Darreichungsform:     " + getVerabreichungsform());
+    System.out.println(
+        "                                                      Medikamentname:       " + mediName);
+    System.out.println(
+        "                                                      Hauptwirkstoff:       " + wirkstoff);
+    System.out.println(
+        "                                                      Darreichungsform:     "
+            + getVerabreichungsform());
     System.out.println("");
   }
 }

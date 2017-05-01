@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Implementation by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Implementation by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ss15.uebungsblatt.ub2.a1;
 
 public class Uebungsblatt2 {
@@ -85,8 +82,7 @@ public class Uebungsblatt2 {
 
     if (faculty == 0) {
       return 1;
-    }
-    else {
+    } else {
       for (int i = 1; i <= faculty; i++) {
         solution *= i;
       }

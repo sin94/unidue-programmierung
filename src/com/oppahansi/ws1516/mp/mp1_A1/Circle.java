@@ -1,17 +1,14 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * Solved by Ya Sin.
- * For learning purpose only.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>Solved by Ya Sin. For learning purpose only.
  */
-
 package com.oppahansi.ws1516.mp.mp1_A1;
 
-/**
- * Definiert einen Kreis �ber einen Radius und einem Mittelpunkt in einem
- * zweidimensionalen Koordinatensystem
+/*
+ * Definiert einen Kreis �ber einen Radius und einem Mittelpunkt in einem zweidimensionalen
+ * Koordinatensystem
  */
 public class Circle {
 
@@ -19,8 +16,7 @@ public class Circle {
   private Point location;
   private double radius;
 
-  public Circle() {
-  }
+  public Circle() {}
 
   public Circle(Point initLocation, double initRadius) {
     this.location = initLocation;
@@ -32,7 +28,8 @@ public class Circle {
 
     // An dieser Stelle das circle-Objekt bearbeiten
     circle.location = center;
-    circle.radius = Math.sqrt(Math.pow(p.getX() - center.getX(), 2) + Math.pow(p.getY() - center.getY(), 2));
+    circle.radius =
+        Math.sqrt(Math.pow(p.getX() - center.getX(), 2) + Math.pow(p.getY() - center.getY(), 2));
 
     return circle;
   }
@@ -72,12 +69,13 @@ public class Circle {
   }
 
   public boolean containsPoint(Point point) {
-    if ((location.getX() - radius) < point.getX() && point.getX() < (location.getX() + radius) && (location.getY() - radius) < point.getY() && point.getY() < (location.getY() + radius)) {
+    if ((location.getX() - radius) < point.getX()
+        && point.getX() < (location.getX() + radius)
+        && (location.getY() - radius) < point.getY()
+        && point.getY() < (location.getY() + radius)) {
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }
-
 }

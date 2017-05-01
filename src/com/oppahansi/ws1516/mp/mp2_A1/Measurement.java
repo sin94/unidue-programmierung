@@ -35,7 +35,7 @@ public class Measurement {
 
     System.out.println("------------------------------------------------------------------");
 
-    m.addValues(new int[]{58, 78, 61, 72, 93, 81, 79, 78, 75, 81, 93});
+    m.addValues(new int[] {58, 78, 61, 72, 93, 81, 79, 78, 75, 81, 93});
     System.out.println("Hinzuzfügen einer Menge von Werten. m:");
     // Erwartete Ausgabe:
     // [85, 58, 78, 61, 72, 93, 81, 79, 78, 75, 81, 93]
@@ -94,7 +94,6 @@ public class Measurement {
       data[j] = hilfsarray[j];
     }
     data[data.length - 1] = value;
-
   }
 
   public void addValues(int[] values) {
@@ -196,5 +195,4 @@ public class Measurement {
   public void printData() {
     System.out.println(Arrays.toString(data));
   }
-
 }

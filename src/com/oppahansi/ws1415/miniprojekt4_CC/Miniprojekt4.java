@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Reformatted by oppahansi - Clean Code Version
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Reformatted by oppahansi - Clean Code Version
  */
-
 package com.oppahansi.ws1415.miniprojekt4_CC;
 
 public class Miniprojekt4 {
@@ -17,7 +15,8 @@ public class Miniprojekt4 {
   private static Diagnose[] diagnosen;
 
   public static void main(String args[]) {
-    Krankenhaus santamaria = new Krankenhaus("Santamaria", 130);  // 10 Betten f�r ambulante Behandlungen
+    Krankenhaus santamaria =
+        new Krankenhaus("Santamaria", 130); // 10 Betten f�r ambulante Behandlungen
     aerzte = erzeugeAerzte();
     Station[] stationen = erzeugeStationen();
     diagnosen = erzeugeDiagnosen();
@@ -52,7 +51,9 @@ public class Miniprojekt4 {
 
     //Patient 5 wird ambulant behandelt
     santamaria.nehmeNeuenPatientAuf(new Patient("Thomas", "Karsten", "01.10.1947", 0));
-    santamaria.getPatienten(4).setVersicherungDaten('G', "AX", "2009122"); /// darf nicht versetz werden!
+    santamaria
+        .getPatienten(4)
+        .setVersicherungDaten('G', "AX", "2009122"); /// darf nicht versetz werden!
     santamaria.getPatienten(4).fuegeDiagnoseHinzu(diagnosen[5]);
 
     //Patient 6 wird stationaer behandelt
@@ -76,10 +77,15 @@ public class Miniprojekt4 {
     santamaria.patientenInfoAusgabe();
 
     System.out.println("");
-    System.out.println("Auslastung stationen: " + santamaria.getStationsAuslastung(santamaria.getStation(1)) + "%");
-    System.out.println("Patient " + santamaria.getPatientenMitLaengstemAufenthalt() + " hat die laengste Aufenthalt");
+    System.out.println(
+        "Auslastung stationen: "
+            + santamaria.getStationsAuslastung(santamaria.getStation(1))
+            + "%");
+    System.out.println(
+        "Patient "
+            + santamaria.getPatientenMitLaengstemAufenthalt()
+            + " hat die laengste Aufenthalt");
     System.out.println("Kosten " + santamaria.getKostenFuerPatientenID(3) + " Euro");
-
   }
 
   private static String[] erzeugeAerzte() {
@@ -104,23 +110,17 @@ public class Miniprojekt4 {
     for (i = 0; i < medikamente.length; i++) {
       if (i >= 1 && i <= 4) {
         j = 1;
-      }
-      else if (i == 5) {
+      } else if (i == 5) {
         j = 2;
-      }
-      else if (i == 6) {
+      } else if (i == 6) {
         j = 3;
-      }
-      else if (i >= 7 && i <= 9) {
+      } else if (i >= 7 && i <= 9) {
         j = 4;
-      }
-      else if (i >= 10 && i <= 11) {
+      } else if (i >= 10 && i <= 11) {
         j = 5;
-      }
-      else if (i >= 12 && i <= 13) {
+      } else if (i >= 12 && i <= 13) {
         j = 6;
-      }
-      else if (i == 14) {
+      } else if (i == 14) {
         j = 7;
       }
       diagnosen[j].fuegeMedikamentHinzu(medikamente[i]);

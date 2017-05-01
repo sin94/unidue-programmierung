@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved by Tthe K.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved by Tthe K.
  */
-
 package com.oppahansi.ws1415.miniprojekt4_A2;
 
 public class Station {
@@ -25,7 +23,6 @@ public class Station {
     this.kapazitaetG = freiG = kapazitaetG;
     this.kapazitaetP = freiP = kapazitaetP;
     this.fachabteilung = fachabteilung;
-
   }
 
   //Getter
@@ -45,10 +42,9 @@ public class Station {
     return this.kapazitaetG;
   }
 
-	 
-     /*
-      * Aufnahme des �bergeben Patienten
-      */
+  /*
+   * Aufnahme des �bergeben Patienten
+   */
 
   public boolean aufnehmen(Patient p) {
     //Aufgabe 4
@@ -56,8 +52,7 @@ public class Station {
       if (freiP > 0) {
         freiP--;
         return true;
-      }
-      else {
+      } else {
         return false;
       }
     }
@@ -65,13 +60,11 @@ public class Station {
       if (freiG > 0) {
         freiG--;
         return true;
-      }
-      else {
+      } else {
         return false;
       }
     }
     return false;
-
   }
 
   /*
@@ -84,5 +77,4 @@ public class Station {
     System.out.println("#Betten fuer G:            " + freiG);
     System.out.println();
   }
-
 }

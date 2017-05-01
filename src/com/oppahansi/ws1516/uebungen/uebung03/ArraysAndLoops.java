@@ -1,15 +1,12 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
- * <p>
- * Lösung siehe ss14.woche3 - Package
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
+ *
+ * <p>Lösung siehe ss14.woche3 - Package
  */
-
 package com.oppahansi.ws1516.uebungen.uebung03;
 /*
  * In dieser Aufgabe soll das Zusammenspiel von Arrays und For-Schleifen geuebt
@@ -59,13 +56,8 @@ public class ArraysAndLoops {
   //           Rueckgabe = {18,  7, 12, 4}
   // ACHTUNG: Diese Methode hat keine Rueckgabe. Das Array Elements soll
   // nach Ausfuehrung der Methode das Ergebnis beinhalten.
-  public static void reverseArray(int[] elements) {
-
-  }
+  public static void reverseArray(int[] elements) {}
 
   // Hier koennt ihr eure Methoden testen
-  public static void main(String[] args) {
-
-  }
-
+  public static void main(String[] args) {}
 }

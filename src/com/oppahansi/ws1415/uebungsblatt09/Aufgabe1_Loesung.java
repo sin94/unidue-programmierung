@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Offizielle moegliche Loesung
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Offizielle moegliche Loesung
  */
-
 package com.oppahansi.ws1415.uebungsblatt09;
 
 class Liste {
@@ -35,15 +33,13 @@ class Liste {
     while (temp.nachfolger != null && !find) {
       if (temp.nachfolger.getValue() > neu.getValue()) {
         find = true;
-      }
-      else {
+      } else {
         temp = temp.nachfolger;
       }
     }
 
     neu.nachfolger = temp.nachfolger;
     temp.nachfolger = neu;
-
   }
 
   public void output(int nr) {
@@ -79,8 +75,7 @@ class Element {
   public void output() {
     if (getValue() != -1) {
       System.out.print("[" + getValue() + "]" + "-->");
-    }
-    else {
+    } else {
       System.out.print("[Kopf]" + "-->");
     }
   }
@@ -115,7 +110,6 @@ class Listenmanipulation {
     //Aufgabe 1c
     lm.reverseList(l1);
     l1.output(4);
-
   }
 
   /*1a*/
@@ -132,7 +126,6 @@ class Listenmanipulation {
 
       temp = temp.nachfolger;
     }
-
   }
 
   /*Aufgabe 1.2*/
@@ -174,9 +167,3 @@ class Listenmanipulation {
     list1.setKopf(neuKopf);
   }
 }
-
-
-
-
-
-

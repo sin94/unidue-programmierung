@@ -25,5 +25,4 @@ public class SchlumpfNode {
   public void setNext(SchlumpfNode next) {
     this.next = next;
   }
-
 }

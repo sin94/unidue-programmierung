@@ -12,12 +12,12 @@ public class ArrayReadAndWrite {
   public static int addElementsOfArray(int[] numbers) {
     return numbers[0] + numbers[1];
 
-		/* 2. Möglichkeit
-         *
-		 * int summe = numbers[0] + numbers[1];
-		 * return summe;
-		 * 
-		 * */
+    /* 2. Möglichkeit
+     *
+     * int summe = numbers[0] + numbers[1];
+     * return summe;
+     *
+     * */
   }
 
   // Diese Methode soll auf eine Eingabe hin ein IntegerArray erzeugen und
@@ -28,26 +28,30 @@ public class ArrayReadAndWrite {
 
     return newArray;
 
-		/* 2. Möglichkeit
-		 * 
-		 * int[] newArray2 = new int[2];
-		 * newArray2[0] = number - 1;
-		 * newArray2[1] = number + 2;
-		 * 
-		 * return newArray2;
-		 * */
+    /* 2. Möglichkeit
+     *
+     * int[] newArray2 = new int[2];
+     * newArray2[0] = number - 1;
+     * newArray2[1] = number + 2;
+     *
+     * return newArray2;
+     * */
   }
 
   // Testausgabe. Hier k�nnt ihr eure Methoden testen.
   public static void main(String[] args) {
-    int zahlenArray[] = new int[]{5, 17};
-    System.out.println("Summe der Arrayelemente: "
-      + addElementsOfArray(zahlenArray));
+    int zahlenArray[] = new int[] {5, 17};
+    System.out.println("Summe der Arrayelemente: " + addElementsOfArray(zahlenArray));
     int zahl = 3;
     int ergebnisArray[] = neighbourNumbers(zahl);
-    System.out.println("Kleiner Nachbar der Zahl " + zahl +
-      ": " + ergebnisArray[0] +
-      "\nGrosserNachbar der Zahl " + zahl +
-      ": " + ergebnisArray[1]);
+    System.out.println(
+        "Kleiner Nachbar der Zahl "
+            + zahl
+            + ": "
+            + ergebnisArray[0]
+            + "\nGrosserNachbar der Zahl "
+            + zahl
+            + ": "
+            + ergebnisArray[1]);
   }
 }

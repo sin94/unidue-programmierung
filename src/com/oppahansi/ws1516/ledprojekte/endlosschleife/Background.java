@@ -1,10 +1,8 @@
-/**
+/*
  * Sunrise
- * <p>
- * Created by:
- * Endlosschleife (Gruppe
+ *
+ * <p>Created by: Endlosschleife (Gruppe
  */
-
 package com.oppahansi.ws1516.ledprojekte.endlosschleife;
 
 import ledControl.BoardController;
@@ -55,8 +53,7 @@ public class Background {
       for (int y = 8; y < bc.getHeight(); y++) {
         if (y % 2 == 1) {
           bc.setColor(x, y, a);
-        }
-        else {
+        } else {
           bc.setColor(x, y, b);
         }
       }

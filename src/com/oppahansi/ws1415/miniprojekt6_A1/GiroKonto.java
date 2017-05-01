@@ -1,15 +1,13 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved by Alex Oppa Hansi
- * <p>
- * Alternative 1
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved by Alex Oppa Hansi
+ *
+ * <p>Alternative 1
  */
-
 package com.oppahansi.ws1415.miniprojekt6_A1;
 
 public class GiroKonto extends Konto {

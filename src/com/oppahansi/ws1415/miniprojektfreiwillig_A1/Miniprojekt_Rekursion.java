@@ -1,11 +1,9 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ws1415.miniprojektfreiwillig_A1;
 
 public class Miniprojekt_Rekursion {
@@ -25,7 +23,6 @@ public class Miniprojekt_Rekursion {
     System.out.println("");
     System.out.println("Start Test nur fuer Binaer-Baum");
     mpe.binaerBaumTest(new DatenBBaum());
-
   }
 
   void allgemeinerTest(Datenverwaltung testobjekt) {
@@ -51,7 +48,10 @@ public class Miniprojekt_Rekursion {
     System.out.println("Es sind " + testobjekt.anzahlEintraege() + " Eintraege vorhanden.");
     testobjekt.loeschen(4571);
     System.out.println("Es sind " + testobjekt.anzahlEintraege() + " Eintraege vorhanden.");
-    System.out.println("Es sind " + testobjekt.getAll(23).anzahlEintraege() + " Eintraege mit der Produkt Id 23 vorhanden.");
+    System.out.println(
+        "Es sind "
+            + testobjekt.getAll(23).anzahlEintraege()
+            + " Eintraege mit der Produkt Id 23 vorhanden.");
     testobjekt.allesLoeschen();
     System.out.println("Es sind " + testobjekt.anzahlEintraege() + " Eintraege vorhanden.");
   }
@@ -62,7 +62,12 @@ public class Miniprojekt_Rekursion {
       test1[i] = new Beschreibung("", (int) (Math.random() * Integer.MAX_VALUE), "", i);
     }
     testobjekt.array2baum(test1);
-    System.out.println("Bei " + testobjekt.anzahlEintraege() + " Eintraegen ist die Tiefe " + testobjekt.tiefe() + " Ebenen.");
+    System.out.println(
+        "Bei "
+            + testobjekt.anzahlEintraege()
+            + " Eintraegen ist die Tiefe "
+            + testobjekt.tiefe()
+            + " Ebenen.");
 
     Beschreibung[] test2 = testobjekt.baum2array();
     boolean test2ArrayOk = true;
@@ -74,10 +79,16 @@ public class Miniprojekt_Rekursion {
         test2ArrayOk = false;
       }
     }
-    System.out.println("Baum2Array liefert ein Array mit genausoviel Elementen wie der Baum enthalten sollte: " + test2ArrayOk);
+    System.out.println(
+        "Baum2Array liefert ein Array mit genausoviel Elementen wie der Baum enthalten sollte: "
+            + test2ArrayOk);
 
     testobjekt.baumBalancieren();
-    System.out.println("Bei " + testobjekt.anzahlEintraege() + " Eintraegen ist die Tiefe nach dem Balancieren " + testobjekt
-      .tiefe() + " Ebenen.");
+    System.out.println(
+        "Bei "
+            + testobjekt.anzahlEintraege()
+            + " Eintraegen ist die Tiefe nach dem Balancieren "
+            + testobjekt.tiefe()
+            + " Ebenen.");
   }
 }

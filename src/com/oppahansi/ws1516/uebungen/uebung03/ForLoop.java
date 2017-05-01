@@ -1,26 +1,23 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
- * <p>
- * Lösung siehe ss14.woche3 - Package
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
+ *
+ * <p>Lösung siehe ss14.woche3 - Package
  */
-
 package com.oppahansi.ws1516.uebungen.uebung03;
 /*
  * In dieser Klasse soll eine erste einfache Verwendung der for-Schleife
  * geuebt werden. Der Kopf der for-Schleife besteht und dem Schluesselwort for,
- * sowie der Initialisierung, der Abbruchbedingung und dem Inkrement, gefolgt 
+ * sowie der Initialisierung, der Abbruchbedingung und dem Inkrement, gefolgt
  * von einem Befehlsblock:
- * 
+ *
  *   for(Initialisierung; Abbruchbedingung; Inkrement){
  *   	// durch die Schleife wiederholt auszufuehrender Code
  *   }
- *   
+ *
  *   Die einzelnen zu implementierenden Methoden gehen auf die oben genannten
  *   verschiedenen Bestandteile des Schleifenkopfes ein.
  *
@@ -92,29 +89,24 @@ public class ForLoop {
 
   public static void main(String[] args) {
     // Testen Sie hier Ihre Methoden
-    System.out.println("Rueckgabe des Aufrufs sumUpToN(4): " +
-      sumUpToN(4));
+    System.out.println("Rueckgabe des Aufrufs sumUpToN(4): " + sumUpToN(4));
     System.out.println("Erwartete Rueckgabe              : 10");
     System.out.println("");
 
-    System.out.println("Rueckgabe des Aufrufs sumOfEvenNumbersUpToN(7): " +
-      sumOfEvenNumbersUpToN(7));
+    System.out.println(
+        "Rueckgabe des Aufrufs sumOfEvenNumbersUpToN(7): " + sumOfEvenNumbersUpToN(7));
     System.out.println("Erwartete Rueckgabe                          : 12");
     System.out.println("");
 
-    System.out.println("Rueckgabe des Aufrufs sumFromAtoB(4, 6): " +
-      sumFromAtoB(4, 6));
+    System.out.println("Rueckgabe des Aufrufs sumFromAtoB(4, 6): " + sumFromAtoB(4, 6));
     System.out.println("Erwartete Rueckgabe                    : 15");
     System.out.println("");
 
-    System.out.println("Rueckgabe des Aufrufs sumUpToNWithMax(5, 9): " +
-      sumUpToNWithMax(5, 9));
+    System.out.println("Rueckgabe des Aufrufs sumUpToNWithMax(5, 9): " + sumUpToNWithMax(5, 9));
     System.out.println("Erwartete Rueckgabe                        : 6");
     System.out.println("");
 
-    System.out.println("Rueckgabe des Aufrufs power(2, 5): " +
-      power(2, 5));
+    System.out.println("Rueckgabe des Aufrufs power(2, 5): " + power(2, 5));
     System.out.println("Erwartete Rueckgabe              : 32");
   }
-
 }

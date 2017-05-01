@@ -2,10 +2,9 @@ package com.oppahansi.ss14.sep.uebungsaufgabe;
 
 public class Addieren {
 
-
-   /*
-    * Berechnungsmethode f�r die Summe der Zahlen von
-    * 1 bis n. Aufgabe 3a
+  /*
+   * Berechnungsmethode f�r die Summe der Zahlen von
+   * 1 bis n. Aufgabe 3a
    */
 
   public static void main(String args[]) {
@@ -21,7 +20,6 @@ public class Addieren {
     System.out.println("addieren(3)   hat " + ergebnis3 + " berechnet, richtig ist 6");
     System.out.println("addieren(6)   hat " + ergebnis6 + " berechnet, richtig ist 21");
     System.out.println("addieren(100) hat " + ergebnis100 + " berechnet, richtig ist 5050");
-
   }
 
   public int addieren(int n) {
@@ -31,5 +29,4 @@ public class Addieren {
 
     return ergebnis;
   }
-
 }

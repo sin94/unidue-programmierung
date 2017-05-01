@@ -1,15 +1,13 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved by Alex Oppa Hansi
- * <p>
- * Alternative 1
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved by Alex Oppa Hansi
+ *
+ * <p>Alternative 1
  */
-
 package com.oppahansi.ws1415.miniprojekt6_A1;
 
 public class Konto {
@@ -38,14 +36,11 @@ public class Konto {
     return false;
   }
 
-  public void tagesAbschluss() {
-  }
+  public void tagesAbschluss() {}
 
-  public void monatsAbschluss() {
-  }
+  public void monatsAbschluss() {}
 
-  public void jahresAbschluss() {
-  }
+  public void jahresAbschluss() {}
 
   public double getKontoStand() {
     return kontoStand;

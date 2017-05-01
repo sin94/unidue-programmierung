@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved by Daniel Kunze
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved by Daniel Kunze
  */
-
 package com.oppahansi.ws1415.miniprojekt5_A2;
 
 class Graph {
@@ -17,8 +15,7 @@ class Graph {
   public void fuegeEin(Knoten k) {
     if (kopf == null) {
       kopf = fuss = k;
-    }
-    else {
+    } else {
       fuss.nf = k;
       fuss = k;
     }
@@ -181,7 +178,6 @@ class Graph {
     }
 
     return false;
-
   }
 
   public boolean exKante(Knoten a, Knoten b) {
@@ -196,7 +192,6 @@ class Graph {
     }
 
     return false;
-
   }
 
   public boolean doppeltVerbunden(Knoten a, Knoten b) {
@@ -221,5 +216,4 @@ class Graph {
     // hier die L�sung eintragen...
     return Math.abs(this.anzahlAusKanten(k) - this.anzahlHinKanten(k));
   }
-
 }

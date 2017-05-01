@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.mp.mp3;
 
 public class Miniprojekt3 {
@@ -17,11 +14,10 @@ public class Miniprojekt3 {
 
     // Initialer Zug
 
-    System.out
-      .println(String
-        .format("Ein neuer Zug mit %d Waggon und %d von %d Passagieren.",
-          train.getSize(), train.getPassengerCount(),
-          train.getCapacity()));
+    System.out.println(
+        String.format(
+            "Ein neuer Zug mit %d Waggon und %d von %d Passagieren.",
+            train.getSize(), train.getPassengerCount(), train.getCapacity()));
     System.out.println(train.toString());
 
     Waggon waggon1 = new Waggon("Waggon-1", 40);
@@ -36,11 +32,10 @@ public class Miniprojekt3 {
     train.appendWaggon(waggon3);
     train.appendWaggon(waggon4);
 
-    System.out
-      .println(String
-        .format("Dem Zug wurden vier Waggons angehangen: %d Waggon und %d von %d Passagieren.",
-          train.getSize(), train.getPassengerCount(),
-          train.getCapacity()));
+    System.out.println(
+        String.format(
+            "Dem Zug wurden vier Waggons angehangen: %d Waggon und %d von %d Passagieren.",
+            train.getSize(), train.getPassengerCount(), train.getCapacity()));
 
     System.out.println(train.toString());
 
@@ -49,11 +44,10 @@ public class Miniprojekt3 {
     final int passengersDortmund = 35;
     train.boardPassengers(passengersDortmund);
 
-    System.out
-      .println(String
-        .format("In Dortmund steigen %d Personen ein (aktuelle Auslastung: %d / %d).",
-          passengersDortmund, train.getPassengerCount(),
-          train.getCapacity()));
+    System.out.println(
+        String.format(
+            "In Dortmund steigen %d Personen ein (aktuelle Auslastung: %d / %d).",
+            passengersDortmund, train.getPassengerCount(), train.getCapacity()));
 
     printWaggonDetails(train);
 
@@ -62,11 +56,10 @@ public class Miniprojekt3 {
     final int passengersBochum = 53;
     train.boardPassengers(passengersBochum);
 
-    System.out
-      .println(String
-        .format("In Bochum steigen %d Personen ein (aktuelle Auslastung: %d / %d).",
-          passengersBochum, train.getPassengerCount(),
-          train.getCapacity()));
+    System.out.println(
+        String.format(
+            "In Bochum steigen %d Personen ein (aktuelle Auslastung: %d / %d).",
+            passengersBochum, train.getPassengerCount(), train.getCapacity()));
 
     printWaggonDetails(train);
 
@@ -75,11 +68,10 @@ public class Miniprojekt3 {
     final int passengersEssen = 24;
     train.boardPassengers(passengersEssen);
 
-    System.out
-      .println(String
-        .format("In Essen steigen %d Personen ein (aktuelle Auslastung: %d / %d).",
-          passengersEssen, train.getPassengerCount(),
-          train.getCapacity()));
+    System.out.println(
+        String.format(
+            "In Essen steigen %d Personen ein (aktuelle Auslastung: %d / %d).",
+            passengersEssen, train.getPassengerCount(), train.getCapacity()));
 
     printWaggonDetails(train);
 
@@ -117,18 +109,16 @@ public class Miniprojekt3 {
     System.out.println(train2.toString());
   }
 
-  /**
-   * Hilfsmethode, die die Wagen mit Namen, aktueller Passagierzahl und
-   * Kapazität ausgibt
-   */
+  /* Hilfsmethode, die die Wagen mit Namen, aktueller Passagierzahl und Kapazität ausgibt */
   private static void printWaggonDetails(Train train) {
     StringBuilder str = new StringBuilder();
 
     str.append("Verteilung:");
     Waggon waggon = train.getWaggonAt(0);
     while (waggon != null) {
-      str.append(String.format(" %s [%d / %d]", waggon.getName(),
-        waggon.getPassengers(), waggon.getCapacity()));
+      str.append(
+          String.format(
+              " %s [%d / %d]", waggon.getName(), waggon.getPassengers(), waggon.getCapacity()));
 
       waggon = waggon.getNext();
     }

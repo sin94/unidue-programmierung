@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Offizielle moegliche Loesung
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Offizielle moegliche Loesung
  */
-
 package com.oppahansi.ws1415.uebungsblatt09;
 
 class Knoten {
@@ -45,33 +43,33 @@ class Suchbaeume {
 
     int[] array = {10, 15, 14, 8, 7, 9};
 
-		/*Aufgabe 2a:
+    /*Aufgabe 2a:
      * Diese Methode soll aus den Elementen eines Arrays einen Suchbaum erstellen
-		 * */
+     * */
     s.sortiereEin(array);
 
-		/*Debug ausgbae*/
+    /*Debug ausgbae*/
     s.printSearchTree(s.getRoot(), 0);
     /*
-		 *         10               10
-		 *     8       15      <=>   |-15
-		 *   7   9   14                 |-14
-		 *                           |-8
-		 *                              |-9
-		 *                              |-7
-		 * */
+     *         10               10
+     *     8       15      <=>   |-15
+     *   7   9   14                 |-14
+     *                           |-8
+     *                              |-9
+     *                              |-7
+     * */
 
     System.out.println("\n EinNachfolger:");
     s.einNachfolger();
     System.out.println("\n NofE:" + s.sum(s.getRoot()));
 
-    System.out.println("\n NumberOfNodes:" + s.suche(22));//
+    System.out.println("\n NumberOfNodes:" + s.suche(22)); //
   }
-	
-	/*Aufgabe 2: Schreiben Sie eine Methode, 
-	 * welche die Summe aller Elemente eines 
-	 * Suchbaumes zur�ckgibt.
-	 */
+
+  /*Aufgabe 2: Schreiben Sie eine Methode,
+   * welche die Summe aller Elemente eines
+   * Suchbaumes zur�ckgibt.
+   */
 
   public Knoten getRoot() {
     return wurzel;
@@ -87,7 +85,6 @@ class Suchbaeume {
     for (int i = 0; i < value.length; i++) {
       insertNode(value[i]);
     }
-
   }
 
   public void insertNode(int value) {
@@ -95,8 +92,7 @@ class Suchbaeume {
 
     if (temp1 == null) {
       this.setRoot(new Knoten(value));
-    }
-    else {
+    } else {
       Knoten lWurzelKnoten, teilbaum = temp1;
 
       do {
@@ -104,20 +100,16 @@ class Suchbaeume {
 
         if (lWurzelKnoten.getValue() > value) {
           teilbaum = teilbaum.links;
-        }
-        else if (lWurzelKnoten.getValue() < value) {
+        } else if (lWurzelKnoten.getValue() < value) {
           teilbaum = teilbaum.rechts;
-        }
-        else if (lWurzelKnoten.getValue() == value) {
+        } else if (lWurzelKnoten.getValue() == value) {
           teilbaum = null;
         }
-      }
-      while (teilbaum != null);
+      } while (teilbaum != null);
 
       if (lWurzelKnoten.getValue() > value) {
         lWurzelKnoten.links = new Knoten(value);
-      }
-      else if (lWurzelKnoten.getValue() < value) {
+      } else if (lWurzelKnoten.getValue() < value) {
         lWurzelKnoten.rechts = new Knoten(value);
       }
     }
@@ -138,15 +130,11 @@ class Suchbaeume {
     if (k.links != null && k.rechts != null) {
       einNachfolger(k.links);
       einNachfolger(k.rechts);
-    }
-    else if (k.links != null && k.rechts == null) {
-      System.out.println("Knoten mit value(" + k.getValue() +
-        ") hat genau einen Nachfolger.");
+    } else if (k.links != null && k.rechts == null) {
+      System.out.println("Knoten mit value(" + k.getValue() + ") hat genau einen Nachfolger.");
       einNachfolger(k.links);
-    }
-    else if (k.links == null && k.rechts != null) {
-      System.out.println("Knoten mit value(" + k.getValue() +
-        ") hat genau einen Nachfolger.");
+    } else if (k.links == null && k.rechts != null) {
+      System.out.println("Knoten mit value(" + k.getValue() + ") hat genau einen Nachfolger.");
       einNachfolger(k.rechts);
     }
   }
@@ -176,15 +164,12 @@ class Suchbaeume {
 
       if (temp1.getValue() > zahl) {
         temp1 = temp1.links;
-      }
-      else if (temp1.getValue() < zahl) {
+      } else if (temp1.getValue() < zahl) {
         temp1 = temp1.rechts;
-      }
-      else if (temp1.getValue() == zahl) {
+      } else if (temp1.getValue() == zahl) {
         find = true;
       }
-    }
-    while (temp1 != null && !find);
+    } while (temp1 != null && !find);
 
     if (!find) {
       cntBesuchteKnoten = -1;
@@ -201,8 +186,7 @@ class Suchbaeume {
     if (indent > 0) {
       System.out.print("|");
       System.out.println("-" + k.getValue());
-    }
-    else {
+    } else {
       System.out.println(k.getValue());
     }
 

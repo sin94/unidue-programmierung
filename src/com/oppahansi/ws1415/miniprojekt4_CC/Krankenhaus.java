@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Reformatted by oppahansi - Clean Code Version
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Reformatted by oppahansi - Clean Code Version
  */
-
 package com.oppahansi.ws1415.miniprojekt4_CC;
 
 public class Krankenhaus {
@@ -21,7 +19,8 @@ public class Krankenhaus {
     patienten = new Patient[maxBetten];
   }
 
-  public boolean nehmeNeuenPatientAuf(Patient patient) { /* wieos boolean? */
+  public boolean nehmeNeuenPatientAuf(Patient patient) {
+    /* wieos boolean? */
     return false;
   }
 

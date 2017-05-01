@@ -1,26 +1,19 @@
-/**
- * Created by:
- * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Implementation by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Implementation by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
 
-/**
- * Lösung in SS14 Woche3
- */
-
+/* Lösung in SS14 Woche3 */
 package com.oppahansi.ss16.uebungen.arrayloops;
 
-/**
- * In dieser Aufgabe soll das Zusammenspiel von Arrays und For-Schleifen geuebt
- * werden. In den meisten Methoden ist dem Parameter elements das Schluessel-
- * wort "final" vorgestellt. Das bedeutet, dass das Array in der Methode nur
- * gelesen, nicht aber beschrieben werden darf.
+/*
+ * In dieser Aufgabe soll das Zusammenspiel von Arrays und For-Schleifen geuebt werden. In den
+ * meisten Methoden ist dem Parameter elements das Schluessel- wort "final" vorgestellt. Das
+ * bedeutet, dass das Array in der Methode nur gelesen, nicht aber beschrieben werden darf.
  */
-
 public class ArraysAndLoops {
 
   // Diese Methode soll die Elemente des als Parameter (elements) uebergebenen
@@ -62,13 +55,8 @@ public class ArraysAndLoops {
   //           Rueckgabe = {18,  7, 12, 4}
   // ACHTUNG: Diese Methode hat keine Rueckgabe. Das Array Elements soll
   // nach Ausfuehrung der Methode das Ergebnis beinhalten.
-  public static void reverseArray(int[] elements) {
-
-  }
+  public static void reverseArray(int[] elements) {}
 
   // Hier koennt ihr eure Methoden testen
-  public static void main(String[] args) {
-
-  }
-
+  public static void main(String[] args) {}
 }

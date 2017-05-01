@@ -1,22 +1,20 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Offizielle moegliche Loesung
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Offizielle moegliche Loesung
  */
-
 package com.oppahansi.ws1415.uebungsblatt06;
 
 public class Aufgabe2 {
 
-  private int[] feld;     //feld-Array
-  private int links;      //linke Grenze des Suchbereichs
-  private int rechts;      //rechte Grenze des Suchbereichs
-  private int mitte;      //Mitte des Suchbereichs
-  private int gesucht;   //gesuchte Element
+  private int[] feld; //feld-Array
+  private int links; //linke Grenze des Suchbereichs
+  private int rechts; //rechte Grenze des Suchbereichs
+  private int mitte; //Mitte des Suchbereichs
+  private int gesucht; //gesuchte Element
 
   public static void main(String[] args) {
     int[] feld = {1, 14, 22, 3, 34, 55, 8, 9};
@@ -31,8 +29,7 @@ public class Aufgabe2 {
     int ergebnis = -1;
     if (feld == null) {
       System.out.println("Error: feld ist leer!");
-    }
-    else {
+    } else {
       this.feld = feld;
       links = 0;
       rechts = feld.length - 1;
@@ -92,4 +89,3 @@ public class Aufgabe2 {
     feld[b] = ablage;
   } // vertauschen von zwei Werten im feld-Array
 }
-

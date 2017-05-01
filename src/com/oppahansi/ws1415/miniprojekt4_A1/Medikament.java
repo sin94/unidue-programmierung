@@ -1,11 +1,9 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ws1415.miniprojekt4_A1;
 
 public class Medikament {
@@ -60,10 +58,13 @@ public class Medikament {
    * gibt Infos des Medikamentes aus
    */
   public void ausgabe() {
-    System.out.println("                                                      Medikamentname:       " + medName);
-    System.out.println("                                                      Hauptwirkstoff:       " + wirkstoff);
-    System.out.println("                                                      Darreichungsform:     " + getDarreichungsform());
+    System.out.println(
+        "                                                      Medikamentname:       " + medName);
+    System.out.println(
+        "                                                      Hauptwirkstoff:       " + wirkstoff);
+    System.out.println(
+        "                                                      Darreichungsform:     "
+            + getDarreichungsform());
     System.out.println("");
   }
-
 }

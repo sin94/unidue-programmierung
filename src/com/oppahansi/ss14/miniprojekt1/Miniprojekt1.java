@@ -32,8 +32,12 @@ public class Miniprojekt1 {
 
     System.out.println();
     System.out.println("Kreis C1:");
-    System.out.println("\tMittelpunkt: (" + circleC1.getLocation().getX()
-      + "|" + circleC1.getLocation().getY() + ")");
+    System.out.println(
+        "\tMittelpunkt: ("
+            + circleC1.getLocation().getX()
+            + "|"
+            + circleC1.getLocation().getY()
+            + ")");
     System.out.println("\tRadius: " + circleC1.getRadius());
     System.out.println("\tDurchmesser: " + circleC1.getDiameter());
     System.out.println("\tFl�cheninhalt: " + circleC1.getArea());
@@ -47,8 +51,12 @@ public class Miniprojekt1 {
 
     System.out.println();
     System.out.println("Kreis C2:");
-    System.out.println("\tMittelpunkt: (" + circleC2.getLocation().getX()
-      + "|" + circleC2.getLocation().getY() + ")");
+    System.out.println(
+        "\tMittelpunkt: ("
+            + circleC2.getLocation().getX()
+            + "|"
+            + circleC2.getLocation().getY()
+            + ")");
     System.out.println("\tRadius: " + circleC2.getRadius());
     System.out.println("\tDurchmesser: " + circleC2.getDiameter());
     System.out.println("\tFl�cheninhalt: " + circleC2.getArea());
@@ -59,7 +67,5 @@ public class Miniprojekt1 {
     System.out.println("\tEnth�lt C: " + circleC2.containsPoint(pointC));
     System.out.println("\tEnth�lt D: " + circleC2.containsPoint(pointD));
     System.out.println("\tEnth�lt E: " + circleC2.containsPoint(pointE));
-
   }
-
 }

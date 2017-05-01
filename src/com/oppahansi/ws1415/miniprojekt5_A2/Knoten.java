@@ -1,11 +1,9 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ws1415.miniprojekt5_A2;
 
 class Knoten {
@@ -24,11 +22,9 @@ class Knoten {
 
     if (kopf == null) {
       kopf = fuss = k;
-    }
-    else {
+    } else {
       fuss.nf = k;
       fuss = k;
     }
   }
-
 }

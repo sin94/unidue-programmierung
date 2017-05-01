@@ -1,14 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Alternative 3
- * 100/100 In JACK.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Alternative 3 100/100 In JACK.
  */
-
 package com.oppahansi.ws1415.miniprojekt2;
 
 public class Miniprojekt2_A3 {
@@ -24,42 +21,64 @@ public class Miniprojekt2_A3 {
     Miniprojekt2_A3 demo = new Miniprojekt2_A3(4, 7);
     System.out.println("Der leere Saal sieht so aus (- frei, B bezahlt, R reserviert):");
     demo.debugPrint();
-    System.out.println("Die Methode platzBelegt liefert f�r den existierenden Platz D 7: " + demo.platzBelegt('C', 7));
-    System.out.println("Die Methode platzBelegt liefert f�r den nicht existierenden Platz  Q 23: " + demo.platzBelegt('Q', 23));
-    System.out.println("Die Methode naechsteReservierungsnummer liefert: " + demo.naechsteReservierungsnummer());
-    System.out.println("Die Methode festePlaetzeReservieren liefert f�r Reihe C Pl�tze 3-7 die Reservierungsnummer: " + demo
-      .festePlaetzeReservieren('C', 3, 7));
+    System.out.println(
+        "Die Methode platzBelegt liefert f�r den existierenden Platz D 7: "
+            + demo.platzBelegt('C', 7));
+    System.out.println(
+        "Die Methode platzBelegt liefert f�r den nicht existierenden Platz  Q 23: "
+            + demo.platzBelegt('Q', 23));
+    System.out.println(
+        "Die Methode naechsteReservierungsnummer liefert: " + demo.naechsteReservierungsnummer());
+    System.out.println(
+        "Die Methode festePlaetzeReservieren liefert f�r Reihe C Pl�tze 3-7 die Reservierungsnummer: "
+            + demo.festePlaetzeReservieren('C', 3, 7));
     System.out.println("Nach der Reservierung der Pl�tze 3,4,5,6 und 7 in der Reihe C:");
     demo.debugPrint();
-    System.out.println("Die Methode platzBelegt liefert f�r den reservierten Platz C 7: " + demo.platzBelegt('C', 7));
-    System.out.println("Die Methode naechsteReservierungsnummer liefert: " + demo.naechsteReservierungsnummer());
-    System.out.println("Die Methode festePlaetzeReservieren liefert f�r Reihe C Pl�tze 1-3 die Reservierungsnummer: " + demo
-      .festePlaetzeReservieren('C', 1, 3));
-    System.out.println("Die Methode festePlaetzeReservieren liefert f�r Reihe D Pl�tze 7-5 die Reservierungsnummer: " + demo
-      .festePlaetzeReservieren('D', 7, 5));
-    demo.debugPrint();
-    System.out.println("Die Methode festePlaetzeReservieren liefert f�r Reihe D Pl�tze 1-2 die Reservierungsnummer: " + demo
-      .festePlaetzeReservieren('D', 1, 2));
-    demo.debugPrint();
-    System.out.println("Der Anteil der freien Pl�tze ist: " + demo.anteilFreiePlaetze() * 100 + "%");
-    System.out.println("Die Methode bezahleReservierung liefert f�r Reservierung 7: " + demo.bezahleReservierung(7));
-    System.out.println("Die Methode bezahleReservierung liefert f�r Reservierung 1: " + demo.bezahleReservierung(1));
-    demo.debugPrint();
-    System.out.println("Die Methode naechsteReservierungsnummer liefert: " + demo.naechsteReservierungsnummer());
     System.out.println(
-      "Die Methode effizienteReservierung liefert f�r 6 Leute die Reservierungsnummer: " + demo.effizienteReservierung(6));
+        "Die Methode platzBelegt liefert f�r den reservierten Platz C 7: "
+            + demo.platzBelegt('C', 7));
+    System.out.println(
+        "Die Methode naechsteReservierungsnummer liefert: " + demo.naechsteReservierungsnummer());
+    System.out.println(
+        "Die Methode festePlaetzeReservieren liefert f�r Reihe C Pl�tze 1-3 die Reservierungsnummer: "
+            + demo.festePlaetzeReservieren('C', 1, 3));
+    System.out.println(
+        "Die Methode festePlaetzeReservieren liefert f�r Reihe D Pl�tze 7-5 die Reservierungsnummer: "
+            + demo.festePlaetzeReservieren('D', 7, 5));
     demo.debugPrint();
     System.out.println(
-      "Die Methode effizienteReservierung liefert f�r 100 Leute die Reservierungsnummer: " + demo.effizienteReservierung(100));
+        "Die Methode festePlaetzeReservieren liefert f�r Reihe D Pl�tze 1-2 die Reservierungsnummer: "
+            + demo.festePlaetzeReservieren('D', 1, 2));
     demo.debugPrint();
-    System.out.println("Nach dem Aufruf der Methode neueVorstellungVorbereiten sieht der Kinosaal wieder so aus:");
+    System.out.println(
+        "Der Anteil der freien Pl�tze ist: " + demo.anteilFreiePlaetze() * 100 + "%");
+    System.out.println(
+        "Die Methode bezahleReservierung liefert f�r Reservierung 7: "
+            + demo.bezahleReservierung(7));
+    System.out.println(
+        "Die Methode bezahleReservierung liefert f�r Reservierung 1: "
+            + demo.bezahleReservierung(1));
+    demo.debugPrint();
+    System.out.println(
+        "Die Methode naechsteReservierungsnummer liefert: " + demo.naechsteReservierungsnummer());
+    System.out.println(
+        "Die Methode effizienteReservierung liefert f�r 6 Leute die Reservierungsnummer: "
+            + demo.effizienteReservierung(6));
+    demo.debugPrint();
+    System.out.println(
+        "Die Methode effizienteReservierung liefert f�r 100 Leute die Reservierungsnummer: "
+            + demo.effizienteReservierung(100));
+    demo.debugPrint();
+    System.out.println(
+        "Nach dem Aufruf der Methode neueVorstellungVorbereiten sieht der Kinosaal wieder so aus:");
     demo.neueVorstellungVorbereiten();
     System.out.println("Nach zwei Reservierungen:");
     demo.festePlaetzeReservieren('A', 1, 3);
     demo.festePlaetzeReservieren('D', 4, 7);
     demo.debugPrint();
     System.out.println(
-      "Die Methode knoblauchReservierung liefert f�r 3 Leute die Reservierungsnummer: " + demo.knoblauchReservierung(3));
+        "Die Methode knoblauchReservierung liefert f�r 3 Leute die Reservierungsnummer: "
+            + demo.knoblauchReservierung(3));
     demo.debugPrint();
     demo.knoblauchReservierung(2);
     demo.debugPrint();
@@ -87,11 +106,9 @@ public class Miniprojekt2_A3 {
       for (int j = 0; j < kinosaal[i].length; j++) {
         if (kinosaal[i][j] == 0) {
           System.out.print(" -");
-        }
-        else if (kinosaal[i][j] > 0 && kinosaal[i][j] < Integer.MAX_VALUE) {
+        } else if (kinosaal[i][j] > 0 && kinosaal[i][j] < Integer.MAX_VALUE) {
           System.out.print(" R");
-        }
-        else {
+        } else {
           System.out.print(" B");
         }
       }
@@ -181,8 +198,7 @@ public class Miniprojekt2_A3 {
       for (int p = kinosaal[0].length - 1; p > -1; p--) {
         if (kinosaal[r][p] == 0) {
           free++;
-        }
-        else {
+        } else {
           free = 0;
         }
 
@@ -199,10 +215,11 @@ public class Miniprojekt2_A3 {
     for (int r = 'A'; r < kinosaal.length + 'A'; r++) {
       int free = 0;
       for (int p = 0; p < kinosaal[0].length + 2; p++) {
-        if (platzBelegt((char) (r - 1), p) || platzBelegt((char) r, p) || platzBelegt((char) (r + 1), p)) {
+        if (platzBelegt((char) (r - 1), p)
+            || platzBelegt((char) r, p)
+            || platzBelegt((char) (r + 1), p)) {
           free = 0;
-        }
-        else {
+        } else {
           free++;
         }
 

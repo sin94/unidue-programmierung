@@ -1,20 +1,17 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
- * <p>
- * Lösung siehe ss14.woche3 - Package
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
+ *
+ * <p>Lösung siehe ss14.woche3 - Package
  */
-
-package com.oppahansi.ws1516.uebungen.uebung03;/*
- * In dieser Aufgabe geht es darum das erste mal mit Arrays zu arbeiten.
- * Implementieren Sie die Methoden addArrayElements und neighbourNumbers.
- * Die Verwendung einer Schleife ist in dieser Aufgabe NICHT notwendig.
- */
+package com.oppahansi.ws1516.uebungen.uebung03; /*
+                                                 * In dieser Aufgabe geht es darum das erste mal mit Arrays zu arbeiten.
+                                                 * Implementieren Sie die Methoden addArrayElements und neighbourNumbers.
+                                                 * Die Verwendung einer Schleife ist in dieser Aufgabe NICHT notwendig.
+                                                 */
 
 public class ArrayReadAndWrite {
 
@@ -23,13 +20,13 @@ public class ArrayReadAndWrite {
   public static int addElementsOfArray(int[] numbers) {
     int sum = 0;
 
-    for (int i = 0; i < numbers.length; i++) {   // fuer Anfaenger
+    for (int i = 0; i < numbers.length; i++) { // fuer Anfaenger
       sum += numbers[i];
     }
 
-//      for (Integer currentNumber : numbers) {    // for-Each Schleife
-//         sum += currentNumber;
-//      }
+    //      for (Integer currentNumber : numbers) {    // for-Each Schleife
+    //         sum += currentNumber;
+    //      }
 
     return sum;
 
@@ -52,15 +49,25 @@ public class ArrayReadAndWrite {
 
   // Testausgabe. Hier koennt ihr eure Methoden testen.
   public static void main(String[] args) {
-    int zahlenArray[] = new int[]{5, 17};
+    int zahlenArray[] = new int[] {5, 17};
 
-    System.out.println("Summe der Arrayelemente: " + addElementsOfArray(zahlenArray) + " (Richtig: 22)");
+    System.out.println(
+        "Summe der Arrayelemente: " + addElementsOfArray(zahlenArray) + " (Richtig: 22)");
 
     int zahl = 3;
 
     int ergebnisArray[] = neighbourNumbers(zahl);
 
-    System.out.println("Kleiner Nachbar der Zahl " + zahl + ": " + ergebnisArray[0] + " (Richtig: 2)"
-      + "\nGrosserNachbar der Zahl " + zahl + ": " + ergebnisArray[1] + " (Richtig: 4)");
+    System.out.println(
+        "Kleiner Nachbar der Zahl "
+            + zahl
+            + ": "
+            + ergebnisArray[0]
+            + " (Richtig: 2)"
+            + "\nGrosserNachbar der Zahl "
+            + zahl
+            + ": "
+            + ergebnisArray[1]
+            + " (Richtig: 4)");
   }
 }

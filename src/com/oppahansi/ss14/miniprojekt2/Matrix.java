@@ -11,9 +11,9 @@ public class Matrix {
 
   private int[][] values;
 
-	/*
-     * Aufgabe 2
-	 */
+  /*
+   * Aufgabe 2
+   */
 
   // a)
   public Matrix(int[][] initialValues) {
@@ -30,17 +30,10 @@ public class Matrix {
       }
     }
     return true;
-
   }
 
   public static void main(String[] args) {
-    Matrix m = new Matrix(new int[][]
-      {
-        {2, 4, 5},
-        {3, 7, 2},
-        {-2, 0, 1},
-        {5, 1, 1}
-      });
+    Matrix m = new Matrix(new int[][] {{2, 4, 5}, {3, 7, 2}, {-2, 0, 1}, {5, 1, 1}});
 
     System.out.println("Neue Matrix m erzeugt. Matrix m:");
     // Erwartete Ausgabe:
@@ -51,16 +44,9 @@ public class Matrix {
     // [ 5, 1, 1]
     m.print();
 
-    System.out
-      .println("------------------------------------------------------------------");
+    System.out.println("------------------------------------------------------------------");
 
-    Matrix n = new Matrix(new int[][]
-      {
-        {1, 0, -1},
-        {1, 3, 3},
-        {-2, -4, 1},
-        {0, 0, 1}
-      });
+    Matrix n = new Matrix(new int[][] {{1, 0, -1}, {1, 3, 3}, {-2, -4, 1}, {0, 0, 1}});
 
     System.out.println("Neue Matrix n erzeugt. Matrix n:");
     // Erwartete Ausgabe:
@@ -71,11 +57,9 @@ public class Matrix {
     // [ 0,  0,  1]
     n.print();
 
-    System.out
-      .println("------------------------------------------------------------------");
+    System.out.println("------------------------------------------------------------------");
 
-    System.out
-      .println("Skalarmultiplikation von Matrix n mit dem Wert -1. Matrix n:");
+    System.out.println("Skalarmultiplikation von Matrix n mit dem Wert -1. Matrix n:");
     n.scalarMultiplication(-1);
     // Erwartete Ausgabe:
     // 4x3:
@@ -85,8 +69,7 @@ public class Matrix {
     // [0, 0, -1]
     n.print();
 
-    System.out
-      .println("------------------------------------------------------------------");
+    System.out.println("------------------------------------------------------------------");
 
     System.out.println("Matrix n wird zu Matrix m addiert. Matrix m:");
     m.add(n);
@@ -98,8 +81,7 @@ public class Matrix {
     // [5, 1, 0]
     m.print();
 
-    System.out
-      .println("------------------------------------------------------------------");
+    System.out.println("------------------------------------------------------------------");
 
     System.out.println("Spaltenvektor mit Index 1 von Matrix m:");
     int[] columnVector = m.getColumnVector(1);
@@ -107,24 +89,16 @@ public class Matrix {
     // [4, 4, 4, 1]
     System.out.println(Arrays.toString(columnVector));
 
-    System.out
-      .println("------------------------------------------------------------------");
+    System.out.println("------------------------------------------------------------------");
 
     System.out.println("Vergleich von Matrix m mit Matrix n:");
     // Erwartete Ausgabe:
     // false
     System.out.println(m.isEqualTo(n));
 
-    System.out
-      .println("------------------------------------------------------------------");
+    System.out.println("------------------------------------------------------------------");
 
-    Matrix o = new Matrix(new int[][]
-      {
-        {1, 4, 6},
-        {2, 4, -1},
-        {0, 4, 0},
-        {5, 1, 0}
-      });
+    Matrix o = new Matrix(new int[][] {{1, 4, 6}, {2, 4, -1}, {0, 4, 0}, {5, 1, 0}});
 
     System.out.println("Neue Matrix o erzeugt. Matrix o:");
     // Erwartete Ausgabe:
@@ -135,16 +109,14 @@ public class Matrix {
     // [5, 1,  0]
     o.print();
 
-    System.out
-      .println("------------------------------------------------------------------");
+    System.out.println("------------------------------------------------------------------");
 
     System.out.println("Vergleich von Matrix o mit Matrix m:");
     // Erwartete Ausgabe:
     // true
     System.out.println(o.isEqualTo(m));
 
-    System.out
-      .println("------------------------------------------------------------------");
+    System.out.println("------------------------------------------------------------------");
 
     System.out.println("Transponieren von Matrix o. Matrix o:");
     o.transpose();
@@ -155,41 +127,17 @@ public class Matrix {
     // [6, -1, 0, 0]
     o.print();
 
-    Matrix test = new Matrix(new int[][]
-      {
-        {1, 4, 6},
-        {2, 4, -1},
-        {0, 4, 0}
-      });
+    Matrix test = new Matrix(new int[][] {{1, 4, 6}, {2, 4, -1}, {0, 4, 0}});
 
-    Matrix test1 = new Matrix(new int[][]
-      {
-        {1, 4, 6},
-        {0, 4, -1},
-        {0, 0, 0}
-      });
+    Matrix test1 = new Matrix(new int[][] {{1, 4, 6}, {0, 4, -1}, {0, 0, 0}});
 
-    Matrix test2 = new Matrix(new int[][]
-      {
-        {1, 4},
-        {0, 4}
-      });
+    Matrix test2 = new Matrix(new int[][] {{1, 4}, {0, 4}});
 
-    Matrix test3 = new Matrix(new int[][]
-      {
-        {1, 4, 6, 3},
-        {0, 4, -1, 5},
-        {0, 8, 0, 5},
-        {0, 0, 0, 8}
-      });
+    Matrix test3 =
+        new Matrix(new int[][] {{1, 4, 6, 3}, {0, 4, -1, 5}, {0, 8, 0, 5}, {0, 0, 0, 8}});
 
-    Matrix test4 = new Matrix(new int[][]
-      {
-        {1, 4, 6, 3},
-        {0, 4, -1, 5},
-        {0, 0, 0, 5},
-        {1, 0, 0, 8}
-      });
+    Matrix test4 =
+        new Matrix(new int[][] {{1, 4, 6, 3}, {0, 4, -1, 5}, {0, 0, 0, 5}, {1, 0, 0, 8}});
 
     System.out.println("Test " + dreieck(test.values));
     System.out.println("Test1 " + dreieck(test1.values));
@@ -252,8 +200,7 @@ public class Matrix {
     // Abfrage von den ersen zwei Bedingungen für Gleichheit von zwei Matrizen
     // Annzahl der Spalten und Anzahl der Zeilen müssen gleich sein
     // && wichtig, da alles true sein muss
-    if (this.values.length == m.values.length
-      && this.values[0].length == m.values[0].length) {
+    if (this.values.length == m.values.length && this.values[0].length == m.values[0].length) {
       // Hilfsvariable zum Zählen der gleichen Werte innerhalb der Matrizen
       int counter = 0;
 
@@ -279,30 +226,29 @@ public class Matrix {
       // Beispiel (Bedingung für true oder false) ? (Antwort für true) : (Antwort für false);
       return (counter == this.values.length * this.values[0].length) ? true : false;
       // Falls die Spalten und Zeilen nicht übereinstimmen, geben wir direct false aus
-    }
-    else {
+    } else {
       return false;
     }
-//		int valueszeilenanzahl = this.values.length;
-//		int mzeilenanzahl = m.values.length;
-//		int mSpalten = m.values[0].length;
-//		int valuesSpalten = this.values[0].length;
-//		if (valueszeilenanzahl == mzeilenanzahl && mSpalten == valuesSpalten)
-//		{
-//
-//			for (int i = 0 ; i <=m.values.length-1 ; i++)
-//			{
-//				for (int j = 0 ; j <=m.values[i].length-1; j++)
-//				{
-//					if (this.values[i][j] != m.values[i][j])
-//					{
-//						return false;
-//					}
-//				}
-//			}
-//		return true;
-//		}
-//		else return false;
+    //		int valueszeilenanzahl = this.values.length;
+    //		int mzeilenanzahl = m.values.length;
+    //		int mSpalten = m.values[0].length;
+    //		int valuesSpalten = this.values[0].length;
+    //		if (valueszeilenanzahl == mzeilenanzahl && mSpalten == valuesSpalten)
+    //		{
+    //
+    //			for (int i = 0 ; i <=m.values.length-1 ; i++)
+    //			{
+    //				for (int j = 0 ; j <=m.values[i].length-1; j++)
+    //				{
+    //					if (this.values[i][j] != m.values[i][j])
+    //					{
+    //						return false;
+    //					}
+    //				}
+    //			}
+    //		return true;
+    //		}
+    //		else return false;
   }
 
   // f)
@@ -327,8 +273,7 @@ public class Matrix {
   private void print() {
     if (values == null) {
       System.out.println("null");
-    }
-    else {
+    } else {
       System.out.printf("%dx%x:%n", values.length, values[0].length);
 
       for (int[] row : values) {

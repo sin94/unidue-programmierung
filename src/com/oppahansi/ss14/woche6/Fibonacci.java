@@ -15,19 +15,17 @@ package com.oppahansi.ss14.woche6;
 // f_{n} = f_{n-1} + f_{n-2} fuer n>=2
 //
 // In der Code-Vorlage befindet sich eine Klasse mit der Methode fibonacci,
-// welche die n-te Fibonacci-Zahl berechnet. 
-// Vervollstaendigen Sie die Methode mit Nutzung der Rekursion aus der obigen Definition! 
+// welche die n-te Fibonacci-Zahl berechnet.
+// Vervollstaendigen Sie die Methode mit Nutzung der Rekursion aus der obigen Definition!
 
 public class Fibonacci {
 
   public static int fibonacci(int n) {
     if (n == 0) {
       return 0;
-    }
-    else if (n == 1) {
+    } else if (n == 1) {
       return 1;
-    }
-    else {
+    } else {
       return (fibonacci(n - 1) + fibonacci(n - 2));
     }
   }

@@ -1,14 +1,10 @@
-/**
- * Created by:
- * Diaoliu
- * https://github.com/Diaoliu/Rekursive-Datenstrukturen
- * <p>
- * For learning purpose only.
- * <p>
- * Modified by oppahansi (refactored the code)
- * No code changes has been made.
+/*
+ * Created by: Diaoliu https://github.com/Diaoliu/Rekursive-Datenstrukturen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Modified by oppahansi (refactored the code) No code changes has been made.
  */
-
 package com.oppahansi.ws1415.klausuraufgaben.list;
 
 public class ZahlenMengen {
@@ -33,20 +29,15 @@ public class ZahlenMengen {
   Element p(Element x, Element y) {
     if (x == null && y == null) {
       return null;
-    }
-    else if (x == null) {
+    } else if (x == null) {
       return new Element(y.Zahl, p(null, y.Nf));
-    }
-    else if (y == null) {
+    } else if (y == null) {
       return new Element(x.Zahl, p(x.Nf, null));
-    }
-    else if (x.Zahl == y.Zahl) {
+    } else if (x.Zahl == y.Zahl) {
       return new Element(x.Zahl, p(x.Nf, y.Nf));
-    }
-    else if (x.Zahl < y.Zahl) {
+    } else if (x.Zahl < y.Zahl) {
       return new Element(x.Zahl, p(x.Nf, y));
-    }
-    else {
+    } else {
       return new Element(y.Zahl, p(x, y.Nf));
     }
   }
@@ -55,20 +46,15 @@ public class ZahlenMengen {
     //从链表X中减去链表Y，并单调递增
     if (x == null && y == null) {
       return null;
-    }
-    else if (x == null) {
+    } else if (x == null) {
       return new Element(y.Zahl, q(null, y.Nf));
-    }
-    else if (y == null) {
+    } else if (y == null) {
       return new Element(x.Zahl, q(x.Nf, null));
-    }
-    else if (x.Zahl < y.Zahl) {
+    } else if (x.Zahl < y.Zahl) {
       return new Element(x.Zahl, q(x.Nf, y));
-    }
-    else if (x.Zahl > y.Zahl) {
+    } else if (x.Zahl > y.Zahl) {
       return new Element(y.Zahl, q(x, y.Nf));
-    }
-    else {
+    } else {
       return q(x.Nf, y.Nf);
     }
   }
@@ -79,11 +65,9 @@ public class ZahlenMengen {
       Element e = new Element(element.Zahl, element.Nf);
       element.Zahl = zahl;
       element.Nf = e;
-    }
-    else if (element.Nf != null) {
+    } else if (element.Nf != null) {
       s(zahl, element.Nf);
-    }
-    else {
+    } else {
       element.Nf = new Element(zahl, null);
     }
   }
@@ -109,23 +93,19 @@ class ZahlenList {
             Element vorgeange = null;
             if (e == null) {
               this.Kopf = this.Fuss = new Element(zahl, null);
-            }
-            else {
+            } else {
               while (e != null) {
                 if (zahl < e.Zahl) {
                   if (vorgeange == null) {
                     this.Kopf = new Element(zahl, null);
                     Kopf.Nf = e;
-                  }
-                  else {
+                  } else {
                     vorgeange.Nf = new Element(zahl, e);
                   }
                   break;
-                }
-                else if (zahl == e.Zahl) {
+                } else if (zahl == e.Zahl) {
                   break;
-                }
-                else if (e == this.Fuss) {
+                } else if (e == this.Fuss) {
                   this.Fuss = this.Fuss.Nf = new Element(zahl, null);
                 }
                 vorgeange = e;
@@ -154,7 +134,6 @@ class ZahlenAusArray {
       System.out.println(e.Zahl);
       e = e.Nf;
     }
-
   }
 }
 

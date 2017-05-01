@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved by oppahansi.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved by oppahansi.
  */
-
 package com.oppahansi.ws1415.miniprojekt3;
 
 public class Speise_A1 {
@@ -28,8 +26,7 @@ public class Speise_A1 {
       this.kopf = neueZutat;
       this.kopf.nachfolger = fuss;
       this.fuss = kopf;
-    }
-    else {
+    } else {
       Zutat_A1 listenElement = this.kopf;
       boolean vorhanden = false;
       while (listenElement != null) {
@@ -51,8 +48,7 @@ public class Speise_A1 {
   public double getKcal() {
     if (this.kopf == null) {
       return 0;
-    }
-    else {
+    } else {
       double kcalSumme = 0;
       Zutat_A1 listenElement = this.kopf;
       while (listenElement != null) {
@@ -66,8 +62,7 @@ public class Speise_A1 {
   public double getKcalProtein() {
     if (this.kopf == null) {
       return 0;
-    }
-    else {
+    } else {
       double kcalSumme = 0;
       Zutat_A1 listenElement = this.kopf;
       while (listenElement != null) {
@@ -81,8 +76,7 @@ public class Speise_A1 {
   public double getKcalKohle() {
     if (this.kopf == null) {
       return 0;
-    }
-    else {
+    } else {
       double kcalSumme = 0;
       Zutat_A1 listenElement = this.kopf;
       while (listenElement != null) {
@@ -96,8 +90,7 @@ public class Speise_A1 {
   public double getKcalFett() {
     if (this.kopf == null) {
       return 0;
-    }
-    else {
+    } else {
       double kcalProteinSumme = 0;
       Zutat_A1 listenElement = this.kopf;
       while (listenElement != null) {
@@ -111,8 +104,7 @@ public class Speise_A1 {
   public boolean enthaeltZutat(Lebensmittel lebensmittel) {
     if (this.kopf == null) {
       return false;
-    }
-    else {
+    } else {
       Zutat_A1 listenElement = this.kopf;
       while (listenElement != null) {
         if (listenElement.getLebensmittel().equals(lebensmittel)) {
@@ -127,15 +119,14 @@ public class Speise_A1 {
   public boolean kannGekochtWerdenVon(Speise_A1 speise) {
     if (speise == null) {
       return false;
-    }
-    else {
+    } else {
       Zutat_A1 aktuelleSpeisenZutat = this.kopf;
       Zutat_A1 speisenElement;
       while (aktuelleSpeisenZutat != null) {
         speisenElement = speise.kopf;
         while (speisenElement != null) {
-          if (speisenElement.getLebensmittel() == aktuelleSpeisenZutat.getLebensmittel() && speisenElement
-            .getMenge() >= aktuelleSpeisenZutat.getMenge()) {
+          if (speisenElement.getLebensmittel() == aktuelleSpeisenZutat.getLebensmittel()
+              && speisenElement.getMenge() >= aktuelleSpeisenZutat.getMenge()) {
             break;
           }
           speisenElement = speisenElement.nachfolger;

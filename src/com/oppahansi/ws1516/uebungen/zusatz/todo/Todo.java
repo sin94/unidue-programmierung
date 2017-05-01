@@ -1,10 +1,8 @@
-/**
- * Created by:
- * Oppa Hansi
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Oppa Hansi
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ws1516.uebungen.zusatz.todo;
 
 public class Todo implements Comparable<Todo> {
@@ -27,22 +25,19 @@ public class Todo implements Comparable<Todo> {
 
     if (!topic.isEmpty()) {
       result += "Ueberscrift: " + topic;
-    }
-    else {
+    } else {
       result += "Ueberscrift: (nicht vorhanden)";
     }
 
     if (!description.isEmpty()) {
       result += "\nBeschreibung: " + description;
-    }
-    else {
+    } else {
       result += "\nBeschreibung: (nicht vorhanden)";
     }
 
     if (priority != 0) {
       result += "\nPrioritaet: " + priority;
-    }
-    else {
+    } else {
       result += "\nPrioritaet: (nicht vorhanden)";
     }
 
@@ -54,20 +49,16 @@ public class Todo implements Comparable<Todo> {
   public int compareTo(final Todo o) {
     if (this.getPriority() > o.getPriority()) {
       return 1;
-    }
-    else if (this.getPriority() < o.getPriority()) {
+    } else if (this.getPriority() < o.getPriority()) {
       return -1;
-    }
-    else {
+    } else {
       if (!this.getTopic().isEmpty() && !o.getTopic().isEmpty()) {
         if ((int) this.getTopic().charAt(0) > (int) o.getTopic().charAt(0)) {
           return 1;
-        }
-        else {
+        } else {
           return -1;
         }
-      }
-      else {
+      } else {
         return 0;
       }
     }
@@ -96,5 +87,4 @@ public class Todo implements Comparable<Todo> {
   public void setPriority(final int priority) {
     this.priority = priority;
   }
-
 }

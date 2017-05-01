@@ -1,10 +1,8 @@
-/**
- * Created by:
- * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ss16.mp.mp3;
 
 public class Person {
@@ -37,24 +35,30 @@ public class Person {
     return linkerNf;
   }
 
-  public Person getRechts() {
-    return rechterNf;
-  }
-
-  public boolean getIstMaennlich() {
-    return istmaennlich;
-  }
-
   public void setLinks(Person linkerNf) {
     this.linkerNf = linkerNf;
+  }
+
+  public Person getRechts() {
+    return rechterNf;
   }
 
   public void setRechts(Person rechterNf) {
     this.rechterNf = rechterNf;
   }
 
-  public void vorstellen() {
-    System.out.println("Mein Name ist " + name + ", ich habe den Rang " + rangname + " und bin " + (istmaennlich ? "ein Mann" : "eine Frau") + ".");
+  public boolean getIstMaennlich() {
+    return istmaennlich;
   }
 
+  public void vorstellen() {
+    System.out.println(
+        "Mein Name ist "
+            + name
+            + ", ich habe den Rang "
+            + rangname
+            + " und bin "
+            + (istmaennlich ? "ein Mann" : "eine Frau")
+            + ".");
+  }
 }

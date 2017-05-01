@@ -9,7 +9,7 @@ package com.oppahansi.ss14.woche4;
  * Werkstatt hat eine begrenzte Zahl Plaetze fuer Autos. Die Plaetze sind mit
  * dem Array cars gegeben.
  */
- 
+
 /*
  * ALLGEMEINE HINWEISE:
  * - Machen Sie Sich mit der Klasse Car vertraut, damit Sie diese Aufgabe loesen
@@ -21,7 +21,7 @@ package com.oppahansi.ss14.woche4;
  *   hinzuzufuegen, um die Aufgabe korrekt loesen zu koennen. Sie koennen dieser
  *   Klasse soviele Felder beliebigen Typs hinzufuegen, wie Sie wollen.
  */
- 
+
 /*
  * DESIGN:
  * Waehrend der Implementierung wird Ihnen moeglicherweise auffallen, dass das
@@ -134,7 +134,8 @@ public class Workshop {
 
     // Testen der repCosts[] für die Autos, die nach einem Tag repariert wurden.
 
-    System.out.println("Die Kosten für die Reparaturen von der ersten Werkstatt, deine Ergebnisse:");
+    System.out.println(
+        "Die Kosten für die Reparaturen von der ersten Werkstatt, deine Ergebnisse:");
     System.out.println("1. Stelle im ws.repCosts[0]: " + ws.repCosts[0]);
     System.out.println("2. Stelle im ws.repCosts[1]: " + ws.repCosts[1]);
     System.out.println("3. Stelle im ws.repCosts[2]: " + ws.repCosts[2]);
@@ -148,7 +149,8 @@ public class Workshop {
     System.out.println("4. Stelle im ws.repCosts[3]: 900");
     System.out.println("5. Stelle im ws.repCosts[4]: 0");
     System.out.println();
-    System.out.println("Die Kosten für die Reparaturen von der zweiten Werkstatt, deine Ergebnisse:");
+    System.out.println(
+        "Die Kosten für die Reparaturen von der zweiten Werkstatt, deine Ergebnisse:");
     System.out.println("1. Stelle im ws2.repCosts[0]: " + ws2.repCosts[0]);
     System.out.println("2. Stelle im ws2.repCosts[1]: " + ws2.repCosts[1]);
     System.out.println("3. Stelle im ws2.repCosts[2]: " + ws2.repCosts[2]);
@@ -201,7 +203,6 @@ public class Workshop {
     System.out.println();
     System.out.println("Erwaretes Geld der 2. Werkstatt:");
     System.out.println("ws2.getMoney(): 1210");
-
   }
 
   // Mittels dieser Methode sollen andere Objekte von aussen (zB Personen)
@@ -220,8 +221,7 @@ public class Workshop {
         accept = true;
         cars[i] = car;
         break;
-      }
-      else {
+      } else {
         accept = false;
       }
     }
@@ -247,7 +247,6 @@ public class Workshop {
         }
       }
     }
-
   }
 
   // Mittels dieser Methode soll ein in der Werkstatt untergebrachtes Auto
@@ -275,15 +274,13 @@ public class Workshop {
       if (cars[i] == null) {
         repairCosts = 0;
 
-      }
-      else {
+      } else {
         if (cars[i].equals(car) == true && !cars[i].isDamaged()) {
           money += repCosts[i] / 5;
           repairCosts = repCosts[i];
           cars[i] = null;
           break;
-        }
-        else {
+        } else {
           repairCosts = 0;
         }
       }
@@ -295,5 +292,4 @@ public class Workshop {
   public int getMoney() {
     return (int) money;
   }
-
 }

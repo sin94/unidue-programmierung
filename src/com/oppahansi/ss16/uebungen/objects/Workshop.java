@@ -1,55 +1,41 @@
-/**
- * Created by:
- * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Implementation by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Implementation by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ss16.uebungen.objects;
-/**
- * In dieser Aufgabe soll das Zusammenspiel von allen Ihnen bislang bekannten
- * Komponenten geuebt werden. Das umfasst Objekte, Kontrollstrukturen (if, for)
- * und Arrays.
- * Diese von Ihnen zu implementierende Klasse soll eine Werkstatt simulieren.
- * Die Ihnen bereits aus der Aufgabe FavouriteCar bekannte Klasse Car findet
- * hier ebenfalls Verwendung, soll aber nicht weiter bearbeitet werden. Die
- * Werkstatt hat eine begrenzte Zahl Plaetze fuer Autos. Die Plaetze sind mit
+/*
+ * In dieser Aufgabe soll das Zusammenspiel von allen Ihnen bislang bekannten Komponenten geuebt
+ * werden. Das umfasst Objekte, Kontrollstrukturen (if, for) und Arrays. Diese von Ihnen zu
+ * implementierende Klasse soll eine Werkstatt simulieren. Die Ihnen bereits aus der Aufgabe
+ * FavouriteCar bekannte Klasse Car findet hier ebenfalls Verwendung, soll aber nicht weiter
+ * bearbeitet werden. Die Werkstatt hat eine begrenzte Zahl Plaetze fuer Autos. Die Plaetze sind mit
  * dem Array cars gegeben.
- * <p>
- * ALLGEMEINE HINWEISE:
- * - Machen Sie Sich mit der Klasse Car vertraut, damit Sie diese Aufgabe loesen
- * koennen.
- * - Objektvariablen koennen auf null geprueft und gesetzt werden um festzu-
- * stellen, ob eine Variable tatsaechlich auf ein Objekt verweist, bzw. um
- * eine Objektvariable auf kein Objekt mehr zeigen zu lassen.
- * - Es ist moeglicherweise notwendig der Klasse Workshop weitere Felder
- * hinzuzufuegen, um die Aufgabe korrekt loesen zu koennen. Sie koennen dieser
- * Klasse soviele Felder beliebigen Typs hinzufuegen, wie Sie wollen.
+ *
+ * <p>ALLGEMEINE HINWEISE: - Machen Sie Sich mit der Klasse Car vertraut, damit Sie diese Aufgabe
+ * loesen koennen. - Objektvariablen koennen auf null geprueft und gesetzt werden um festzu-
+ * stellen, ob eine Variable tatsaechlich auf ein Objekt verweist, bzw. um eine Objektvariable auf
+ * kein Objekt mehr zeigen zu lassen. - Es ist moeglicherweise notwendig der Klasse Workshop weitere
+ * Felder hinzuzufuegen, um die Aufgabe korrekt loesen zu koennen. Sie koennen dieser Klasse soviele
+ * Felder beliebigen Typs hinzufuegen, wie Sie wollen.
  */
 
-/**
- * ALLGEMEINE HINWEISE:
- * - Machen Sie Sich mit der Klasse Car vertraut, damit Sie diese Aufgabe loesen
- *   koennen.
- * - Objektvariablen koennen auf null geprueft und gesetzt werden um festzu-
- *   stellen, ob eine Variable tatsaechlich auf ein Objekt verweist, bzw. um
- *   eine Objektvariable auf kein Objekt mehr zeigen zu lassen.
- * - Es ist moeglicherweise notwendig der Klasse Workshop weitere Felder
- *   hinzuzufuegen, um die Aufgabe korrekt loesen zu koennen. Sie koennen dieser
- *   Klasse soviele Felder beliebigen Typs hinzufuegen, wie Sie wollen.
+/*
+ * ALLGEMEINE HINWEISE: - Machen Sie Sich mit der Klasse Car vertraut, damit Sie diese Aufgabe
+ * loesen koennen. - Objektvariablen koennen auf null geprueft und gesetzt werden um festzu-
+ * stellen, ob eine Variable tatsaechlich auf ein Objekt verweist, bzw. um eine Objektvariable auf
+ * kein Objekt mehr zeigen zu lassen. - Es ist moeglicherweise notwendig der Klasse Workshop weitere
+ * Felder hinzuzufuegen, um die Aufgabe korrekt loesen zu koennen. Sie koennen dieser Klasse soviele
+ * Felder beliebigen Typs hinzufuegen, wie Sie wollen.
  */
 
-/**
- * DESIGN:
- * Waehrend der Implementierung wird Ihnen moeglicherweise auffallen, dass das
- * vorgegebene Design der Klassen Car und Workshop Probleme erzeugt. Ueberlegen
- * Sie, welche Schwaechen das Design hat und wie das Design verbessert werden
- * koennte.
+/*
+ * DESIGN: Waehrend der Implementierung wird Ihnen moeglicherweise auffallen, dass das vorgegebene
+ * Design der Klassen Car und Workshop Probleme erzeugt. Ueberlegen Sie, welche Schwaechen das
+ * Design hat und wie das Design verbessert werden koennte.
  */
-
 public class Workshop {
 
   public int money;
@@ -62,8 +48,10 @@ public class Workshop {
   // Der Parameter speed soll angeben, wieviele Autos am Tag die Werkstatt
   // reparieren kann (siehe repairedCarsPerDay).
   // Das Geld der Werkstatt soll zu Beginn 1000 betragen.
-  public Workshop(int capacity, int speed) {
+  public Workshop(int capacity, int speed) {}
 
+  public static void main(String[] args) {
+    // Hier kommt ihr Testcode hin
   }
 
   // Mittels dieser Methode sollen andere Objekte von aussen (zB Personen)
@@ -83,9 +71,7 @@ public class Workshop {
   // Anfrage isDamaged() false zurueckgeben. Beachten Sie, dass Sie sich die
   // Reparaturkosten, die Sie fuer die Methode retrieveCar(Car car)
   // benoetigen, irgendwie merken muessen.
-  public void nextDay() {
-
-  }
+  public void nextDay() {}
 
   // Mittels dieser Methode soll ein in der Werkstatt untergebrachtes Auto
   // vom Aufrufer der Methode wieder abgeholt werden. Wenn das Auto bereits
@@ -107,9 +93,4 @@ public class Workshop {
   public int getMoney() {
     return money;
   }
-
-  public static void main(String[] args) {
-    // Hier kommt ihr Testcode hin
-  }
-
 }

@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Offizielle moegliche Loesung
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Offizielle moegliche Loesung
  */
-
 package com.oppahansi.ws1415.uebungsblatt10;
 
 public class Graph {
@@ -18,8 +16,7 @@ public class Graph {
   public void fuegeEin(Knoten k) {
     if (kopf == null) {
       kopf = fuss = k;
-    }
-    else {
+    } else {
       fuss = fuss.nf = k;
     }
   }

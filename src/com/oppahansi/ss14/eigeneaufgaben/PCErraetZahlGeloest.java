@@ -50,8 +50,7 @@ public class PCErraetZahlGeloest {
         if (antwort.compareTo("g") == 0) {
           untergrenze = compZahl;
           zaehler++;
-        }
-        else if (antwort.compareTo("k") == 0) {
+        } else if (antwort.compareTo("k") == 0) {
           obergrenze = compZahl;
           zaehler++;
         }

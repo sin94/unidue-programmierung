@@ -99,5 +99,4 @@ public class LightShowBasicExample {
     controller.resetColors();
     controller.updateLedStripe();
   }
-
 }

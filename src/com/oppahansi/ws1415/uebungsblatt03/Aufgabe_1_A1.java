@@ -1,7 +1,4 @@
-/**
- * Created by oppahansi on 07.11.2014.
- */
-
+/* Created by oppahansi on 07.11.2014. */
 package com.oppahansi.ws1415.uebungsblatt03;
 
 public class Aufgabe_1_A1 {

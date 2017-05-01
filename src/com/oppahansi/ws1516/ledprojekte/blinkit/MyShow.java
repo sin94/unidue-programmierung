@@ -1,10 +1,8 @@
-/**
+/*
  * Blink It - Demenzbremse
- * <p>
- * Created by:
- * Jan-Hendrick H.
+ *
+ * <p>Created by: Jan-Hendrick H.
  */
-
 package com.oppahansi.ws1516.ledprojekte.blinkit;
 
 import ledControl.BoardController;
@@ -25,9 +23,9 @@ public class MyShow {
   private static Random rand = new Random();
   private static KeyEvent event;
   private static int l = 0;
-  private static int r = 0;    //red
-  private static int g = 0;    //green
-  private static int b = 0;    //blue
+  private static int r = 0; //red
+  private static int g = 0; //green
+  private static int b = 0; //blue
 
   //Mittels dieser Metode lässt sich ein Array vom Typ Integer verlängern
   private static int[] ArrayVerlaengern(int[] array) {
@@ -42,7 +40,7 @@ public class MyShow {
   //Die 1 steht für OBEN, die 2 für LINKS, die 3 für UNTEN und die 4 für RECHTS
   private static void turnOn(int side) {
     switch (side) {
-      //Oben
+        //Oben
       case 1:
         l = 0;
         r = 100;
@@ -50,12 +48,12 @@ public class MyShow {
         b = 0;
 
         for (int i = 3; i < 9; i++) {
-          controller.setColor(i, l, r, g, b);//RAND (Außen 6LEDs)
-          controller.setColor(i, l + 1, r, g, b);//RAND +1
-          controller.setColor(i, l + 2, r, g, b);//RAND +2
+          controller.setColor(i, l, r, g, b); //RAND (Außen 6LEDs)
+          controller.setColor(i, l + 1, r, g, b); //RAND +1
+          controller.setColor(i, l + 2, r, g, b); //RAND +2
         }
         for (int i = 4; i < 8; i++) {
-          controller.setColor(i, l + 3, r, g, b);//RAND+3	(nur 4LEDs)
+          controller.setColor(i, l + 3, r, g, b); //RAND+3	(nur 4LEDs)
         }
         //RAND +4   (nur 2LEDs)
         controller.setColor(5, l + 4, r, g, b);
@@ -63,7 +61,7 @@ public class MyShow {
         controller.updateLedStripe();
         break;
 
-      //Links
+        //Links
       case 2:
         l = 0;
         r = 0;
@@ -71,13 +69,13 @@ public class MyShow {
         b = 0;
 
         for (int i = 3; i < 9; i++) {
-          controller.setColor(l, i, r, g, b);//RAND (Außen 6LEDs)
-          controller.setColor(l + 1, i, r, g, b);//RAND +1
-          controller.setColor(l + 2, i, r, g, b);//RAND +2
+          controller.setColor(l, i, r, g, b); //RAND (Außen 6LEDs)
+          controller.setColor(l + 1, i, r, g, b); //RAND +1
+          controller.setColor(l + 2, i, r, g, b); //RAND +2
         }
         for (int i = 3; i < 7; i++) {
           controller.setColor(l + 3, i + 1, r, g, b);
-          ;//RAND+3	(nur 4LEDs)
+          ; //RAND+3	(nur 4LEDs)
         }
 
         //RAND +4   (nur 2LEDs)
@@ -86,7 +84,7 @@ public class MyShow {
         controller.updateLedStripe();
         break;
 
-      //Unten
+        //Unten
       case 3:
         l = 11;
         r = 0;
@@ -94,12 +92,12 @@ public class MyShow {
         b = 100;
 
         for (int i = 3; i < 9; i++) {
-          controller.setColor(i, l, r, g, b);//RAND (Außen 6LEDs)
-          controller.setColor(i, l - 1, r, g, b);//RAND +1
-          controller.setColor(i, l - 2, r, g, b);//RAND +2
+          controller.setColor(i, l, r, g, b); //RAND (Außen 6LEDs)
+          controller.setColor(i, l - 1, r, g, b); //RAND +1
+          controller.setColor(i, l - 2, r, g, b); //RAND +2
         }
         for (int i = 3; i < 7; i++) {
-          controller.setColor(i + 1, l - 3, r, g, b);//RAND+3	(nur 4LEDs)
+          controller.setColor(i + 1, l - 3, r, g, b); //RAND+3	(nur 4LEDs)
         }
 
         //RAND +4 (nur 2LEDs)
@@ -108,7 +106,7 @@ public class MyShow {
         controller.updateLedStripe();
         break;
 
-      //Rechts
+        //Rechts
       case 4:
         l = 11;
         r = 100;
@@ -116,12 +114,12 @@ public class MyShow {
         b = 100;
 
         for (int i = 3; i < 9; i++) {
-          controller.setColor(l, i, r, g, b);//RAND (Außen 6LEDs)
-          controller.setColor(l - 1, i, r, g, b);//RAND +1
-          controller.setColor(l - 2, i, r, g, b);//RAND +2
+          controller.setColor(l, i, r, g, b); //RAND (Außen 6LEDs)
+          controller.setColor(l - 1, i, r, g, b); //RAND +1
+          controller.setColor(l - 2, i, r, g, b); //RAND +2
         }
         for (int i = 3; i < 7; i++) {
-          controller.setColor(l - 3, i + 1, r, g, b);//RAND+3	(nur 4LEDs)
+          controller.setColor(l - 3, i + 1, r, g, b); //RAND+3	(nur 4LEDs)
         }
 
         //RAND +4 (nur 2LEDs)
@@ -129,82 +127,80 @@ public class MyShow {
         controller.setColor(l - 4, 6, r, g, b);
         controller.updateLedStripe();
         break;
-
     }
-
   }
 
   //Diese Methode setzt den Bildschirm auf den Standard-Bildschirm zurück, auf dem StandardBildschirm sieht man lediglich die 4 Blinker (nur schwach leuchtend)
   private static void turnOff() {
     controller.setBackgroundColor(10, 10, 10);
     controller.resetColors();
-/*******************OBEN***************************/
+    /* *****************OBEN************************** */
     l = 0;
     r = 30;
     g = 0;
     b = 0;
 
     for (int i = 3; i < 9; i++) {
-      controller.setColor(i, l, r, g, b);//RAND (Außen 6LEDs)
-      controller.setColor(i, l + 1, r, g, b);//RAND +1
-      controller.setColor(i, l + 2, r, g, b);//RAND +2
+      controller.setColor(i, l, r, g, b); //RAND (Außen 6LEDs)
+      controller.setColor(i, l + 1, r, g, b); //RAND +1
+      controller.setColor(i, l + 2, r, g, b); //RAND +2
     }
     for (int i = 4; i < 8; i++) {
-      controller.setColor(i, l + 3, r, g, b);//RAND+3	(nur 4LEDs)
+      controller.setColor(i, l + 3, r, g, b); //RAND+3	(nur 4LEDs)
     }
     //RAND +4   (nur 2LEDs)
     controller.setColor(5, l + 4, r, g, b);
     controller.setColor(6, l + 4, r, g, b);
-/*******************LINKS***************************/
+    /* *****************LINKS************************** */
     l = 0;
     r = 0;
     g = 30;
     b = 0;
 
     for (int i = 3; i < 9; i++) {
-      controller.setColor(l, i, r, g, b);//RAND (Außen 6LEDs)
-      controller.setColor(l + 1, i, r, g, b);//RAND +1
-      controller.setColor(l + 2, i, r, g, b);//RAND +2
+      controller.setColor(l, i, r, g, b); //RAND (Außen 6LEDs)
+      controller.setColor(l + 1, i, r, g, b); //RAND +1
+      controller.setColor(l + 2, i, r, g, b); //RAND +2
     }
     for (int i = 3; i < 7; i++) {
       controller.setColor(l + 3, i + 1, r, g, b);
-      ;//RAND+3	(nur 4LEDs)
+      ; //RAND+3	(nur 4LEDs)
     }
 
     //RAND +4   (nur 2LEDs)
     controller.setColor(l + 4, 5, r, g, b);
     controller.setColor(l + 4, 6, r, g, b);
-/*******************UNTEN***************************/
+    /* *****************UNTEN************************** */
     l = 11;
     r = 0;
     g = 0;
     b = 30;
 
     for (int i = 3; i < 9; i++) {
-      controller.setColor(i, l, r, g, b);//RAND (Außen 6LEDs)
-      controller.setColor(i, l - 1, r, g, b);//RAND +1
-      controller.setColor(i, l - 2, r, g, b);//RAND +2
+      controller.setColor(i, l, r, g, b); //RAND (Außen 6LEDs)
+      controller.setColor(i, l - 1, r, g, b); //RAND +1
+      controller.setColor(i, l - 2, r, g, b); //RAND +2
     }
     for (int i = 3; i < 7; i++) {
-      controller.setColor(i + 1, l - 3, r, g, b);//RAND+3	(nur 4LEDs)
+      controller.setColor(i + 1, l - 3, r, g, b); //RAND+3	(nur 4LEDs)
     }
 
     //RAND +4 (nur 2LEDs)
     controller.setColor(5, l - 4, r, g, b);
     controller.setColor(6, l - 4, r, g, b);
-/*******************RECHTS***************************/
+    /* *****************RECHTS************************** */
     l = 11;
     r = 30;
     g = 30;
     b = 30;
 
     for (int i = 3; i < 9; i++) {
-      controller.setColor(l, i, r, g, b);//RAND (Außen 6LEDs)
-      controller.setColor(l - 1, i, r, g, b);//RAND +1
-      controller.setColor(l - 2, i, r, g, b);//RAND +2
+      controller.setColor(l, i, r, g, b); //RAND (Außen 6LEDs)
+      controller.setColor(l - 1, i, r, g, b); //RAND +1
+      controller.setColor(l - 2, i, r, g, b); //RAND +2
     }
     for (int i = 3; i < 7; i++) {
-      controller.setColor(l - 3, i + 1, r, g, b);//RAND+3	(nur 4LEDs)
+      controller.setColor(l - 3, i + 1, r, g, b); //RAND+3	(nur 4LEDs)
     }
 
     //RAND +4 (nur 2LEDs)
@@ -221,19 +217,18 @@ public class MyShow {
     b = 0;
     if (win == true) {
       g = 100;
-    }
-    else {
+    } else {
       r = 100;
     }
     //OBEN
     controller.sleep(500);
     for (int i = 3; i < 9; i++) {
-      controller.setColor(i, l, r, g, b);//RAND (Außen 6LEDs)
-      controller.setColor(i, l + 1, r, g, b);//RAND +1
-      controller.setColor(i, l + 2, r, g, b);//RAND +2
+      controller.setColor(i, l, r, g, b); //RAND (Außen 6LEDs)
+      controller.setColor(i, l + 1, r, g, b); //RAND +1
+      controller.setColor(i, l + 2, r, g, b); //RAND +2
     }
     for (int i = 4; i < 8; i++) {
-      controller.setColor(i, l + 3, r, g, b);//RAND+3	(nur 4LEDs)
+      controller.setColor(i, l + 3, r, g, b); //RAND+3	(nur 4LEDs)
     }
     //RAND +4   (nur 2LEDs)
     controller.setColor(5, l + 4, r, g, b);
@@ -241,13 +236,13 @@ public class MyShow {
 
     //LINKS
     for (int i = 3; i < 9; i++) {
-      controller.setColor(l, i, r, g, b);//RAND (Außen 6LEDs)
-      controller.setColor(l + 1, i, r, g, b);//RAND +1
-      controller.setColor(l + 2, i, r, g, b);//RAND +2
+      controller.setColor(l, i, r, g, b); //RAND (Außen 6LEDs)
+      controller.setColor(l + 1, i, r, g, b); //RAND +1
+      controller.setColor(l + 2, i, r, g, b); //RAND +2
     }
     for (int i = 3; i < 7; i++) {
       controller.setColor(l + 3, i + 1, r, g, b);
-      ;//RAND+3	(nur 4LEDs)
+      ; //RAND+3	(nur 4LEDs)
     }
 
     //RAND +4   (nur 2LEDs)
@@ -257,12 +252,12 @@ public class MyShow {
     //UNTEN
     l = 11;
     for (int i = 3; i < 9; i++) {
-      controller.setColor(i, l, r, g, b);//RAND (Außen 6LEDs)
-      controller.setColor(i, l - 1, r, g, b);//RAND +1
-      controller.setColor(i, l - 2, r, g, b);//RAND +2
+      controller.setColor(i, l, r, g, b); //RAND (Außen 6LEDs)
+      controller.setColor(i, l - 1, r, g, b); //RAND +1
+      controller.setColor(i, l - 2, r, g, b); //RAND +2
     }
     for (int i = 3; i < 7; i++) {
-      controller.setColor(i + 1, l - 3, r, g, b);//RAND+3	(nur 4LEDs)
+      controller.setColor(i + 1, l - 3, r, g, b); //RAND+3	(nur 4LEDs)
     }
 
     //RAND +4 (nur 2LEDs)
@@ -271,12 +266,12 @@ public class MyShow {
 
     //RECHTS
     for (int i = 3; i < 9; i++) {
-      controller.setColor(l, i, r, g, b);//RAND (Außen 6LEDs)
-      controller.setColor(l - 1, i, r, g, b);//RAND +1
-      controller.setColor(l - 2, i, r, g, b);//RAND +2
+      controller.setColor(l, i, r, g, b); //RAND (Außen 6LEDs)
+      controller.setColor(l - 1, i, r, g, b); //RAND +1
+      controller.setColor(l - 2, i, r, g, b); //RAND +2
     }
     for (int i = 3; i < 7; i++) {
-      controller.setColor(l - 3, i + 1, r, g, b);//RAND+3	(nur 4LEDs)
+      controller.setColor(l - 3, i + 1, r, g, b); //RAND+3	(nur 4LEDs)
     }
 
     //RAND +4 (nur 2LEDs)
@@ -295,8 +290,7 @@ public class MyShow {
     ;
     if (choose == true) {
       e = 60;
-    }
-    else {
+    } else {
       p = 60;
     }
 
@@ -307,10 +301,10 @@ public class MyShow {
     //PLAY-ZEICHEN
     //Senkrechte Linien
     for (int i = 0; i < 6; i++) {
-      controller.setColor(0, i, 100 - p, g, b);//P
-      controller.setColor(3, i, r, 100 - p, b);//L
-      controller.setColor(6, i, r, g, 100 - p);//A
-      controller.setColor(8, i, r, g, 100 - p);//A
+      controller.setColor(0, i, 100 - p, g, b); //P
+      controller.setColor(3, i, r, 100 - p, b); //L
+      controller.setColor(6, i, r, g, 100 - p); //A
+      controller.setColor(8, i, r, g, 100 - p); //A
     }
     //Buchstabe P
     controller.setColor(1, 0, 100 - p, g, b);
@@ -339,9 +333,9 @@ public class MyShow {
     //EXIT-ZEICHEN
     //Senkrechte Linien
     for (int i = 6; i < 12; i++) {
-      controller.setColor(0, i, 100 - e, 100 - e, b);//E
-      controller.setColor(7, i, r, 100 - e, b);//I
-      controller.setColor(10, i, 100 - e, g, b);//T
+      controller.setColor(0, i, 100 - e, 100 - e, b); //E
+      controller.setColor(7, i, r, 100 - e, b); //I
+      controller.setColor(10, i, 100 - e, g, b); //T
     }
     //Buchstabe E
     for (int i = 6; i < 10; i = i + 2) {
@@ -371,39 +365,39 @@ public class MyShow {
 
   //Das Startmenü
   private static boolean menu() {
-    controller.setBackgroundColor(0, 0, 0);                              //Der Hintergrund wird zurückgesetzt
+    controller.setBackgroundColor(0, 0, 0); //Der Hintergrund wird zurückgesetzt
     controller.resetColors();
-    boolean choose = true;                                      //choose speichert, ob das Feld Play oder Exit angezeigt wird
-    menu(true);                                            //Es wird das Feld PLAY angezeigt
-    while (true) {                                          //Endlosschleife
-      event = buffer.pop();                                      //
-      if (event != null) {                                      //Es wird geprüft, ob eine Eingabe vorliegt
-        if (event.getID() == KeyEvent.KEY_RELEASED) {                //Dann wird geprüft, ob der Eingabetyp ein KEY_RELEASED ist
-          buffer.clear();                                    //Der Buffer wird geleert, um Doppelklicks oder Mehrfachklicks zu verhindern
-          switch (event.getKeyCode()) {                              //Die Switch Anweisung überprüft nun, ob die richtige Taste gedrückt wurde
+    boolean choose = true; //choose speichert, ob das Feld Play oder Exit angezeigt wird
+    menu(true); //Es wird das Feld PLAY angezeigt
+    while (true) { //Endlosschleife
+      event = buffer.pop(); //
+      if (event != null) { //Es wird geprüft, ob eine Eingabe vorliegt
+        if (event.getID()
+            == KeyEvent.KEY_RELEASED) { //Dann wird geprüft, ob der Eingabetyp ein KEY_RELEASED ist
+          buffer
+              .clear(); //Der Buffer wird geleert, um Doppelklicks oder Mehrfachklicks zu verhindern
+          switch (event
+              .getKeyCode()) { //Die Switch Anweisung überprüft nun, ob die richtige Taste gedrückt wurde
             case KeyEvent.VK_UP:
-            case KeyEvent.VK_W:        //Wenn Pfeil hoch ODER W gedrückt wird
-              choose = true;                                  //choose wird true
-              menu(true);                                    //Play wird angezeigt ( -Optisch hervorgehoben)
+            case KeyEvent.VK_W: //Wenn Pfeil hoch ODER W gedrückt wird
+              choose = true; //choose wird true
+              menu(true); //Play wird angezeigt ( -Optisch hervorgehoben)
               break;
             case KeyEvent.VK_DOWN:
-            case KeyEvent.VK_S:      //Wenn Pfeil runter oder S gedrückt wird
-              choose = false;                                  //Choose wird false
-              menu(false);                                  //Exit wird hervorgehoben
+            case KeyEvent.VK_S: //Wenn Pfeil runter oder S gedrückt wird
+              choose = false; //Choose wird false
+              menu(false); //Exit wird hervorgehoben
               break;
-            case KeyEvent.VK_ENTER:                        //Wenn Enter
-              if (choose == true) {                                //Wenn choose= true (Play ist hervorgehoben)
-                return true;                                //Gib true zurück
+            case KeyEvent.VK_ENTER: //Wenn Enter
+              if (choose == true) { //Wenn choose= true (Play ist hervorgehoben)
+                return true; //Gib true zurück
+              } else { //Wenn choose==false (Exit ist hervorgehoben)
+                return false; //Gib false zurück
               }
-              else {                                      //Wenn choose==false (Exit ist hervorgehoben)
-                return false;                                //Gib false zurück
-              }
-
           }
         }
       }
     }
-
   }
 
   //Endlosschleife (Das Hauptprogramm)
@@ -449,15 +443,13 @@ public class MyShow {
             buffer.clear();
             //Die Switch Anweisung überprüft nun, ob die richtige Taste gedrückt wurde
             switch (event.getKeyCode()) {
-
               case KeyEvent.VK_UP:
                 if (moves[count] != 1) {
                   result(false);
                   score = moves.length - 1;
                   System.out.println("Sie haben " + score + " Züge erreicht!");
                   return;
-                }
-                else {
+                } else {
                   turnOff();
                   turnOn(moves[count]);
                   controller.sleep(600);
@@ -470,8 +462,7 @@ public class MyShow {
                   score = moves.length - 1;
                   System.out.println("Sie haben " + score + " Züge erreicht!");
                   return;
-                }
-                else {
+                } else {
                   turnOff();
                   turnOn(moves[count]);
                   controller.sleep(600);
@@ -484,8 +475,7 @@ public class MyShow {
                   score = moves.length - 1;
                   System.out.println("Sie haben " + score + " Züge erreicht!");
                   return;
-                }
-                else {
+                } else {
                   turnOff();
                   turnOn(moves[count]);
                   controller.sleep(600);
@@ -498,8 +488,7 @@ public class MyShow {
                   score = moves.length - 1;
                   System.out.println("Sie haben " + score + " Züge erreicht!");
                   return;
-                }
-                else {
+                } else {
                   turnOff();
                   turnOn(moves[count]);
                   controller.sleep(600);
@@ -513,8 +502,7 @@ public class MyShow {
           else {
             count--;
           }
-        }
-        else {
+        } else {
           count--;
         }
         if (count == moves.length - 1) {
@@ -533,25 +521,9 @@ public class MyShow {
     while (true) {
       if (menu() == true) {
         game();
-      }
-      else {
+      } else {
         System.exit(0);
       }
     }
   }
 }
-
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-
-
-

@@ -1,18 +1,15 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.mp.mp1;
 
-/**
- * Definiert einen Kreis ueber einen Radius und einem Mittelpunkt in einem
- * zweidimensionalen Koordinatensystem
+/*
+ * Definiert einen Kreis ueber einen Radius und einem Mittelpunkt in einem zweidimensionalen
+ * Koordinatensystem
  */
 public class Circle {
 
@@ -20,8 +17,7 @@ public class Circle {
   private Point location;
   private double radius;
 
-  public Circle() {
-  }
+  public Circle() {}
 
   public Circle(Point initLocation, double initRadius) {
     this.location = initLocation;

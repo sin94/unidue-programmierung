@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.uebungen.uebung01;
 
 // Rechteck
@@ -17,7 +14,7 @@ package com.oppahansi.ws1516.uebungen.uebung01;
 // F = a * b
 // und der Umfang aus
 // A = 2 * (a + b)
-// 
+//
 // Vervollstaendigen Sie die beiden Methoden getArea (Berechnung des
 // Flaecheninhalts) und getPerimeter (Berechnung des Umfangs)!
 
@@ -46,8 +43,15 @@ public class Rectangle {
     int area = getArea(w, h);
     int perimeter = getPerimeter(w, h);
 
-    System.out.println("Ein Rechteck mit der Breite " + w
-      + " und der Hoehe " + h + " hat einen Flaecheninhalt von " + area
-      + " und einen Umfang von " + perimeter + ". (50 Flaecheninhalt und 30 Umfang ist korrekt)");
+    System.out.println(
+        "Ein Rechteck mit der Breite "
+            + w
+            + " und der Hoehe "
+            + h
+            + " hat einen Flaecheninhalt von "
+            + area
+            + " und einen Umfang von "
+            + perimeter
+            + ". (50 Flaecheninhalt und 30 Umfang ist korrekt)");
   }
 }

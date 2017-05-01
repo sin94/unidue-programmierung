@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved by Tthe K.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved by Tthe K.
  */
-
 package com.oppahansi.ws1415.miniprojekt4_A2;
 
 public class Krankenhaus {
@@ -25,8 +23,8 @@ public class Krankenhaus {
   }
 
   /*
-  * Aufnahme eines neuen Patienten im Krankenhaus
-  */
+   * Aufnahme eines neuen Patienten im Krankenhaus
+   */
   public boolean neuerPatient(Patient p) {
     //Aufgabe 6
     if (p != null) {
@@ -40,7 +38,7 @@ public class Krankenhaus {
         }
       }
 
-      patienten[i] = p;                        //Reihenfolge wichtig
+      patienten[i] = p; //Reihenfolge wichtig
       patienten[i].setID(i + 1);
 
       return true;
@@ -49,8 +47,8 @@ public class Krankenhaus {
   }
 
   /*
-  * Gibt s�mtliche Patientendat aus
-  */
+   * Gibt s�mtliche Patientendat aus
+   */
   public void ausgabe() {
     int counter = 0;
     while (patienten[counter] != null) {
@@ -60,8 +58,8 @@ public class Krankenhaus {
   }
 
   /*
-  * Liefert die Auslastung der Station s zur�ck
-  */
+   * Liefert die Auslastung der Station s zur�ck
+   */
   public double stationsauslastung(Station s) {
     //Aufgabe 7
 
@@ -70,13 +68,12 @@ public class Krankenhaus {
     double gesamtBel = gesamtKap - gesamtFrei;
 
     return (gesamtBel / gesamtKap) * 100;
-
   }
 
   /*
-  * Liefert den Namen und Vornamen des Patienten
-  * zur�ck, der die l�ngste Aufenthalt aufweist
-  */
+   * Liefert den Namen und Vornamen des Patienten
+   * zur�ck, der die l�ngste Aufenthalt aufweist
+   */
   public String laengste_Aufenthalt() {
     //Aufgabe 8
 
@@ -86,7 +83,6 @@ public class Krankenhaus {
       if (patienten[i] != null) {
         if (dauer <= patienten[i].aufDauer) {
           dauer = patienten[i].aufDauer;
-
         }
       }
     }
@@ -95,15 +91,13 @@ public class Krankenhaus {
 
         return patienten[i].name + " " + patienten[i].vorname;
       }
-
     }
     return "";
-
   }
 
   /*
-  * Liefert die Kosten des �bergebenen Patienten zur�ck
-  */
+   * Liefert die Kosten des �bergebenen Patienten zur�ck
+   */
   public double berechnekosten(int ID) {
     //Aufgabe 9
 
@@ -113,8 +107,7 @@ public class Krankenhaus {
 
         if (p == null) {
           return 0;
-        }
-        else {
+        } else {
           double kosten = p.aufDauer * 120;
           for (int j = 0; j < p.getDiagnosen().length; j++) {
             if (p.getDiagnosen()[j] != null) {
@@ -135,6 +128,3 @@ public class Krankenhaus {
     return 0.0;
   }
 }
-    
-        
-    

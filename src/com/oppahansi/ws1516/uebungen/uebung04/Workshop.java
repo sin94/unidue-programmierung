@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.uebungen.uebung04;
 /*
  * In dieser Aufgabe soll das Zusammenspiel von allen Ihnen bislang bekannten
@@ -61,7 +58,7 @@ public class Workshop {
   }
 
   public static void main(String[] args) {
-// Main-Methode geschrieben von Oppa Hansi.
+    // Main-Methode geschrieben von Oppa Hansi.
 
     //Hilfsvariablen für die Übersicht
     int capacityWs = 5;
@@ -141,7 +138,8 @@ public class Workshop {
     ws2.nextDay();
 
     // Testen der repCosts[] für die Autos, die nach einem Tag repariert wurden.
-    System.out.println("Die Kosten für die Reparaturen von der ersten Werkstatt, deine Ergebnisse:");
+    System.out.println(
+        "Die Kosten für die Reparaturen von der ersten Werkstatt, deine Ergebnisse:");
     System.out.println("1. Stelle im ws.repCosts[0]: " + ws.getRepCosts()[0]);
     System.out.println("2. Stelle im ws.repCosts[1]: " + ws.getRepCosts()[1]);
     System.out.println("3. Stelle im ws.repCosts[2]: " + ws.getRepCosts()[2]);
@@ -155,7 +153,8 @@ public class Workshop {
     System.out.println("4. Stelle im ws.repCosts[3]: 900");
     System.out.println("5. Stelle im ws.repCosts[4]: 0");
     System.out.println();
-    System.out.println("Die Kosten für die Reparaturen von der zweiten Werkstatt, deine Ergebnisse:");
+    System.out.println(
+        "Die Kosten für die Reparaturen von der zweiten Werkstatt, deine Ergebnisse:");
     System.out.println("1. Stelle im ws2.repCosts[0]: " + ws2.getRepCosts()[0]);
     System.out.println("2. Stelle im ws2.repCosts[1]: " + ws2.getRepCosts()[1]);
     System.out.println("3. Stelle im ws2.repCosts[2]: " + ws2.getRepCosts()[2]);
@@ -221,8 +220,7 @@ public class Workshop {
     if (isAcceptableCar(car)) {
       checkInCar(car);
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }
@@ -294,15 +292,13 @@ public class Workshop {
 
     if ((customerCar == null) || (customerCar.isDamaged())) {
       return 0;
-    }
-    else {
+    } else {
       int carSlot = getCarSlot(car);
       if (carSlot != -1) {
         setMoney(getMoney() + repCosts[carSlot] / 5);
         removeCarFromWorkshop(car);
         return repCosts[carSlot];
-      }
-      else {
+      } else {
         return 0;
       }
     }
@@ -346,5 +342,4 @@ public class Workshop {
   public double[] getRepCosts() {
     return repCosts;
   }
-
 }

@@ -1,21 +1,16 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Alternative 1 - Live
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Alternative 1 - Live
  */
-
 package com.oppahansi.ws1415.uebungsblatt04;
 
 public class Aufgabe2_A1 {
 
-  public static void main(String[] args) {
-
-  }
-
+  public static void main(String[] args) {}
 }
 
 class Element {
@@ -45,8 +40,7 @@ class Liste {
     Element neu = new Element(zahl);
     if (Kopf == null) {
       Kopf = Fuss = neu;
-    }
-    else {
+    } else {
       Fuss.Nf = neu;
       Fuss = Fuss.Nf;
     }
@@ -61,8 +55,7 @@ class Liste {
     if (Kopf == null) {
       Kopf = neu;
       Fuss = neu;
-    }
-    else {
+    } else {
       // Fall: Liste nicht leer
       neu.Nf = Kopf;
       Element vorgaengerVonNeu = null;
@@ -79,31 +72,25 @@ class Liste {
         neu.Nf = neu.Nf.Nf;
       }
 
+      /*
 
+      if (position == 0) {
+      	neu.Nf = Kopf; // Kopf ist A
+      	Kopf = neu;
+      } else if (position == 1) {
+      	neu.Nf = Kopf.Nf; // Kopf.Nf ist B
+      	Kopf.Nf = neu;
+      } else if (position == 2) {
+      	neu.Nf = Kopf.Nf.Nf; // Kopf.Nf ist B
+      	Kopf.Nf.Nf = neu;
 
-
-
-
-
-			/*
-
-			if (position == 0) {
-				neu.Nf = Kopf; // Kopf ist A
-				Kopf = neu;
-			} else if (position == 1) {
-				neu.Nf = Kopf.Nf; // Kopf.Nf ist B
-				Kopf.Nf = neu;
-			} else if (position == 2) {
-				neu.Nf = Kopf.Nf.Nf; // Kopf.Nf ist B
-				Kopf.Nf.Nf = neu;
-
-			}
-			/// ...
-			/// Das Grundprinzip w�rde gehen, ist aber eine Dumme Idee:
-			 *  Es m�sste ein Fall (if-Verzweigung) pro Position
-			 *  geben und Listen k�nnen sehr sehr sehr lang sein
-			 *  Daher die Verallgemeinerung weiter oben
-			 */
+      }
+      /// ...
+      /// Das Grundprinzip w�rde gehen, ist aber eine Dumme Idee:
+       *  Es m�sste ein Fall (if-Verzweigung) pro Position
+       *  geben und Listen k�nnen sehr sehr sehr lang sein
+       *  Daher die Verallgemeinerung weiter oben
+       */
     }
   }
 
@@ -111,4 +98,3 @@ class Liste {
     return null;
   }
 }
-

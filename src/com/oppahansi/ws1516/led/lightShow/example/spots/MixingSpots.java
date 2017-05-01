@@ -1,8 +1,7 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
 
 /*
@@ -68,9 +67,12 @@ public class MixingSpots {
           double dist = spots[spot].getDistance(x, y);
           double factor = (dist > 2.5) ? 0 : (1 - dist / 2.5);
           factor = factor * factor;
-          controller.addColor(x, y, (int) (factor * spots[spot].color[0]),
-            (int) (factor * spots[spot].color[1]),
-            (int) (factor * spots[spot].color[2]));
+          controller.addColor(
+              x,
+              y,
+              (int) (factor * spots[spot].color[0]),
+              (int) (factor * spots[spot].color[1]),
+              (int) (factor * spots[spot].color[2]));
         }
       }
     }
@@ -78,5 +80,4 @@ public class MixingSpots {
     // Update des Bildes
     controller.updateLedStripe();
   }
-
 }

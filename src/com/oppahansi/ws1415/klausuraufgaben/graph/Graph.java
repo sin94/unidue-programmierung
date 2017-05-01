@@ -1,14 +1,10 @@
-/**
- * Created by:
- * Diaoliu
- * https://github.com/Diaoliu/Rekursive-Datenstrukturen
- * <p>
- * For learning purpose only.
- * <p>
- * Modified by oppahansi (refactored the code)
- * No code changes has been made.
+/*
+ * Created by: Diaoliu https://github.com/Diaoliu/Rekursive-Datenstrukturen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Modified by oppahansi (refactored the code) No code changes has been made.
  */
-
 package com.oppahansi.ws1415.klausuraufgaben.graph;
 
 class Graph {
@@ -20,8 +16,7 @@ class Graph {
     int index = 0;
     if (kopf == null) {
       kopf = fuss = k;
-    }
-    else {
+    } else {
       fuss.nf = k;
       fuss = k;
       index++;
@@ -126,12 +121,11 @@ class Graph {
       return false;
     }
     Kante kante = k.kopf;
-    while (kante != null) {  //while循环实现队列处理,检查一个节点的所有边是否有指向节点e.hinKnote
+    while (kante != null) { //while循环实现队列处理,检查一个节点的所有边是否有指向节点e.hinKnote
       //否则检查每个边的下一层所有节点是否通向节点e.hinKnote
       if (kante.hinKnote == e.hinKnote) {
         return true;
-      }
-      else if (Abk(start, kante.hinKnote, e)) {
+      } else if (Abk(start, kante.hinKnote, e)) {
         return true;
       }
       kante = kante.nf;
@@ -148,17 +142,14 @@ class Graph {
         if (Abk(knoten, kante)) {
           if (kante == knoten.kopf) {
             knoten.kopf = kante.nf;
-          }
-          else if (kante == knoten.fuss) {
+          } else if (kante == knoten.fuss) {
             knoten.fuss = vorgaenger;
             fuss.nf = null;
-          }
-          else {
+          } else {
             vorgaenger.nf = kante.nf;
           }
           kante = vorgaenger.nf;
-        }
-        else {
+        } else {
           vorgaenger = kante;
           kante = kante.nf;
         }
@@ -243,9 +234,9 @@ class Graph {
 
 class Kante {
 
-  int Wert;           // Kante Wert = Hin-Knote.Index
-  Kante nf;          // Nachfolger-Kante.
-  Knoten hinKnote;   // Knoten, zu dem die Kante hinfuehrt.
+  int Wert; // Kante Wert = Hin-Knote.Index
+  Kante nf; // Nachfolger-Kante.
+  Knoten hinKnote; // Knoten, zu dem die Kante hinfuehrt.
 
   public Kante(Knoten knote) {
     this.Wert = knote.Index;
@@ -268,8 +259,7 @@ class Knoten {
   public void fuegeEin(Kante k) {
     if (kopf == null) {
       kopf = fuss = k;
-    }
-    else {
+    } else {
       fuss.nf = k;
       fuss = k;
     }

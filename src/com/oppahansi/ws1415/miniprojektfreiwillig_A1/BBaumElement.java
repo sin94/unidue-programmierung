@@ -1,11 +1,9 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ws1415.miniprojektfreiwillig_A1;
 
 public class BBaumElement {
@@ -13,8 +11,7 @@ public class BBaumElement {
   private BBaumElement kleiner, groesserGleich;
   private Beschreibung eintrag;
 
-  public BBaumElement(BBaumElement kleiner, BBaumElement groesserGleich,
-    Beschreibung eintrag) {
+  public BBaumElement(BBaumElement kleiner, BBaumElement groesserGleich, Beschreibung eintrag) {
     super();
     this.kleiner = kleiner;
     this.groesserGleich = groesserGleich;
@@ -45,5 +42,4 @@ public class BBaumElement {
   public Beschreibung getEintrag() {
     return eintrag;
   }
-
 }

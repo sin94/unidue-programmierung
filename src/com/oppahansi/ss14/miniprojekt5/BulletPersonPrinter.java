@@ -8,5 +8,4 @@ public class BulletPersonPrinter extends PersonPrinter {
       System.out.println("* " + items[i].getName());
     }
   }
-
 }

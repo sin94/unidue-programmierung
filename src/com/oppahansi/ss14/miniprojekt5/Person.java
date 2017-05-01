@@ -23,5 +23,4 @@ public class Person {
   public void setYearOfBirth(int yearOfBirth) {
     this.yearOfBirth = yearOfBirth;
   }
-
 }

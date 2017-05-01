@@ -1,18 +1,17 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
 
 /*
  * Dieses Programm demonstriert die Verwendung des InputBuffers fuer das
  * LEDBoard. Der BoardController stellt zu diesem Zweck ein Objekt des Typs
  * KeyBuffer zur Verfuegung.
- * 
+ *
  * Die im KeyBuffer abgelegten Objekte sind sogenannte KeyEvents:
  * http://docs.oracle.com/javase/6/docs/api/java/awt/event/KeyEvent.html
- * 
+ *
  * Es gibt drei verschiedene Arten von KeyEvents:
  * Die ersten beiden sind KEY_PRESSED und KEY_RELEASED. Diese beiden Events
  * werden generiert, wenn eine Taste gedrueckt wird (Halten einer Taste bewirkt
@@ -22,7 +21,7 @@
  * anzeigt, welche Taste das Ereignis ausgeloest hat. VK_A zB markiert die
  * Taste a, VK_ENTER markiert die Eingabetaste. Eine vollstaendige Auflistung
  * ist unter dem obigen Link zu finden.
- * 
+ *
  * Der dritte und letzte Ereignistyp ist KEY_TYPED.
  * Dieses Event wird generiert, wenn ein wiedergebbares Zeichen registriert
  * wurde. Das Halten von Shift und das waehrenddessen erfolgende Druecken der
@@ -32,8 +31,8 @@
  * mittels KeyEvent.getKeyChar() abgerufen werden. Die Rueckgabe ist vom Typ
  * char. Dieser Eventtyp ist nuetzlich, wenn ihr zB eine dynamisch erzeugte
  * Laufschrift programmieren wollt.
- * 
- * 
+ *
+ *
  * In diesem Programm werden die Pfeiltasten verwendet um einen roten Punkt
  * ueber das Board zu bewegen.
  */
@@ -128,5 +127,4 @@ public class TutorialInput00_MovingDot {
       controller.updateLedStripe();
     }
   }
-
 }

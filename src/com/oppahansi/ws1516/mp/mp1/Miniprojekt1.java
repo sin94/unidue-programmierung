@@ -1,10 +1,8 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ws1516.mp.mp1;
 
 public class Miniprojekt1 {
@@ -39,8 +37,12 @@ public class Miniprojekt1 {
 
     System.out.println();
     System.out.println("Kreis C1:");
-    System.out.println("\tMittelpunkt: (" + circleC1.getLocation().getX()
-      + "|" + circleC1.getLocation().getY() + ")");
+    System.out.println(
+        "\tMittelpunkt: ("
+            + circleC1.getLocation().getX()
+            + "|"
+            + circleC1.getLocation().getY()
+            + ")");
     System.out.println("\tRadius: " + circleC1.getRadius());
     System.out.println("\tDurchmesser: " + circleC1.getDiameter());
     System.out.println("\tFl�cheninhalt: " + circleC1.getArea());
@@ -54,8 +56,12 @@ public class Miniprojekt1 {
 
     System.out.println();
     System.out.println("Kreis C2:");
-    System.out.println("\tMittelpunkt: (" + circleC2.getLocation().getX()
-      + "|" + circleC2.getLocation().getY() + ")");
+    System.out.println(
+        "\tMittelpunkt: ("
+            + circleC2.getLocation().getX()
+            + "|"
+            + circleC2.getLocation().getY()
+            + ")");
     System.out.println("\tRadius: " + circleC2.getRadius());
     System.out.println("\tDurchmesser: " + circleC2.getDiameter());
     System.out.println("\tFlaecheninhalt: " + circleC2.getArea());
@@ -66,7 +72,5 @@ public class Miniprojekt1 {
     System.out.println("\tEnthaelt C: " + circleC2.containsPoint(pointC));
     System.out.println("\tEnthaelt D: " + circleC2.containsPoint(pointD));
     System.out.println("\tEnthaelt E: " + circleC2.containsPoint(pointE));
-
   }
-
 }

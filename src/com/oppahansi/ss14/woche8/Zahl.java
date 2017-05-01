@@ -74,13 +74,10 @@ public class Zahl implements Comparable {
   public int compareTo(Object o) {
     if (this.zahl < ((Zahl) o).getZahl()) {
       return -1;
-    }
-    else if (this.zahl > ((Zahl) o).getZahl()) {
+    } else if (this.zahl > ((Zahl) o).getZahl()) {
       return 1;
-    }
-    else {
+    } else {
       return 0;
     }
   }
-
 }

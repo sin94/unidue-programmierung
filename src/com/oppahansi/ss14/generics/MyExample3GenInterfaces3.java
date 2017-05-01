@@ -18,5 +18,5 @@ public class MyExample3GenInterfaces3<T extends Collection> {
 /*
  * - Platzhalter speziefizieren -> Einschr�nkungen hinzuf�gen
  * - MyExample3GenInterfaces3 muss eine Kindklasse von Collection sein
- * - 
+ * -
  */

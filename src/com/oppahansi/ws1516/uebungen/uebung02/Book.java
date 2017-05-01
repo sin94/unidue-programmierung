@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.uebungen.uebung02;
 
 /*
@@ -39,7 +36,8 @@ public class Book {
     System.out.println("Author den das Buch haben sollte: " + author);
     System.out.println("Author den das Buch hat:          " + book.getAuthor());
     System.out.println("Erscheinungsjahr das das Buch haben sollte: " + year);
-    System.out.println("Erscheinungsdatum das das Buch hat:         " + book.getYearOfPublication());
+    System.out.println(
+        "Erscheinungsdatum das das Buch hat:         " + book.getYearOfPublication());
   }
 
   public String getTitle() {
@@ -71,5 +69,4 @@ public class Book {
     // Diese Methode muss von euch veraendert werden.
     this.yearOfPublication = year;
   }
-
 }

@@ -66,9 +66,12 @@ public class LightShowSpot {
           double dist = spots[spot].getDistance(x, y);
           double factor = (dist > 2.5) ? 0 : (1 - dist / 2.5);
           factor = factor * factor;
-          controller.addColor(x, y, (int) (factor * spots[spot].color[0]),
-            (int) (factor * spots[spot].color[1]),
-            (int) (factor * spots[spot].color[2]));
+          controller.addColor(
+              x,
+              y,
+              (int) (factor * spots[spot].color[0]),
+              (int) (factor * spots[spot].color[1]),
+              (int) (factor * spots[spot].color[2]));
         }
       }
     }
@@ -76,5 +79,4 @@ public class LightShowSpot {
     // Update des Bildes
     controller.updateLedStripe();
   }
-
 }

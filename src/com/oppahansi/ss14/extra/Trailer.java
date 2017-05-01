@@ -48,8 +48,7 @@ public class Trailer {
 
   @Override
   public String toString() {
-    String information = String.format("%s [%d / %d Geschenke]", name,
-      gifts, capacity);
+    String information = String.format("%s [%d / %d Geschenke]", name, gifts, capacity);
 
     if (next != null) {
       information += " <--> " + next.toString();

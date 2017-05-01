@@ -1,8 +1,6 @@
 package com.oppahansi.ss14.miniprojekt6;
 
-/**
- * Veranstaltung mit Name und Turnus (Sommer-/Wintersemester)
- */
+/* Veranstaltung mit Name und Turnus (Sommer-/Wintersemester) */
 public class Course {
 
   private String name;
@@ -33,5 +31,4 @@ public class Course {
   public String toString() {
     return String.format("'%s' (%s)", name, term);
   }
-
 }

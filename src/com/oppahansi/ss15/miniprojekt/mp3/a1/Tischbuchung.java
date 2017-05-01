@@ -1,10 +1,8 @@
-/**
- * Created by:
- * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ss15.miniprojekt.mp3.a1;
 
 public class Tischbuchung {
@@ -33,5 +31,4 @@ public class Tischbuchung {
   public int getEnde() {
     return belegtEnde;
   }
-
 }

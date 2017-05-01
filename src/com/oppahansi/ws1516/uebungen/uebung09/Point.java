@@ -1,20 +1,15 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.uebungen.uebung09;
 
 import java.util.Arrays;
 
-/**
- * Punkt im zweidimensionalen Raum
- */
+/* Punkt im zweidimensionalen Raum */
 public class Point implements Comparable<Point> {
 
   // Nullpunkt
@@ -28,19 +23,22 @@ public class Point implements Comparable<Point> {
   }
 
   public static void main(String[] args) {
-    Point[] points = new Point[]{
-      new Point(5, 3),
-      new Point(-2, 1),
-      new Point(0, 0),
-      new Point(-3, -3),
-      new Point(4, 2),
-      new Point(9, -10),
-      new Point(2, 4)
-    };
+    Point[] points =
+        new Point[] {
+          new Point(5, 3),
+          new Point(-2, 1),
+          new Point(0, 0),
+          new Point(-3, -3),
+          new Point(4, 2),
+          new Point(9, -10),
+          new Point(2, 4)
+        };
 
     System.out.println("Unsortiert:");
     for (Point p : points) {
-      System.out.println(String.format("\t(%3d|%3d), Abstand vom Nullpunkt: %7.3f", p.x, p.y, p.getDistance(ZERO)));
+      System.out.println(
+          String.format(
+              "\t(%3d|%3d), Abstand vom Nullpunkt: %7.3f", p.x, p.y, p.getDistance(ZERO)));
     }
 
     // Sortiermethode aus java.util
@@ -48,7 +46,9 @@ public class Point implements Comparable<Point> {
 
     System.out.println("Sortiert:");
     for (Point p : points) {
-      System.out.println(String.format("\t(%3d|%3d), Abstand vom Nullpunkt: %7.3f", p.x, p.y, p.getDistance(ZERO)));
+      System.out.println(
+          String.format(
+              "\t(%3d|%3d), Abstand vom Nullpunkt: %7.3f", p.x, p.y, p.getDistance(ZERO)));
     }
   }
 
@@ -60,9 +60,7 @@ public class Point implements Comparable<Point> {
     return y;
   }
 
-  /**
-   * Berechnet den Abstand zu Punkt p
-   */
+  /* Berechnet den Abstand zu Punkt p */
   public double getDistance(Point p) {
     int dx = x - p.x;
     int dy = y - p.y;
@@ -74,13 +72,10 @@ public class Point implements Comparable<Point> {
   public int compareTo(Point point) {
     if (this.getDistance(ZERO) < point.getDistance(ZERO)) {
       return -1;
-    }
-    else if (this.getDistance(ZERO) > point.getDistance(ZERO)) {
+    } else if (this.getDistance(ZERO) > point.getDistance(ZERO)) {
       return 1;
-    }
-    else {
+    } else {
       return 0;
     }
   }
-
 }

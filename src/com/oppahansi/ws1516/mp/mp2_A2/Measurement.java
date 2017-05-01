@@ -9,7 +9,7 @@ public class Measurement {
   private int[] data;
 
   public Measurement() {
-//Aufgabe 1a: Konstruktor
+    //Aufgabe 1a: Konstruktor
     data = new int[0];
   }
 
@@ -30,7 +30,7 @@ public class Measurement {
 
     System.out.println("------------------------------------------------------------------");
 
-    m.addValues(new int[]{58, 78, 61, 72, 93, 81, 79, 78, 75, 81, 93});
+    m.addValues(new int[] {58, 78, 61, 72, 93, 81, 79, 78, 75, 81, 93});
     System.out.println("Hinzuzfügen einer Menge von Werten. m:");
     // Erwartete Ausgabe:
     // [85, 58, 78, 61, 72, 93, 81, 79, 78, 75, 81, 93]
@@ -61,18 +61,17 @@ public class Measurement {
   }
 
   public void addValue(int value) {
-//Aufgabe 1b: Messwert hinzufügen
+    //Aufgabe 1b: Messwert hinzufügen
     int[] neu = new int[data.length + 1];
     for (int index = 0; index < data.length; index++) {
       neu[index] = data[index];
-
     }
     neu[neu.length - 1] = value;
     data = neu;
   }
 
   public void addValues(int[] values) {
-//Aufgabe 1c: Mehrere Messwerte hinzufügen
+    //Aufgabe 1c: Mehrere Messwerte hinzufügen
     int[] neu = new int[data.length + values.length];
     for (int index = 0; index < data.length; index++) {
       neu[index] = data[index];
@@ -84,12 +83,11 @@ public class Measurement {
   }
 
   public int getMinimumValue() {
-//Aufgabe 1d: Kleinster Wert
+    //Aufgabe 1d: Kleinster Wert
     int min = Integer.MAX_VALUE;
     for (int i = 0; i < data.length; i++) {
       if (data[i] < min) {
         min = data[i];
-
       }
     }
     return min;
@@ -98,13 +96,12 @@ public class Measurement {
   // --------------------------------------------------------------
 
   public int[] getValuesAboveThreshold(int threshold) {
-//Aufgabe 1e: Werte über dem Schwellenwert threshold
+    //Aufgabe 1e: Werte über dem Schwellenwert threshold
     int groesse = 0;
     for (int i = 0; i < data.length; i++) {
       if (data[i] > threshold) {
         groesse++;
       }
-
     }
 
     int[] neu = new int[groesse];
@@ -120,5 +117,4 @@ public class Measurement {
   public void printData() {
     System.out.println(Arrays.toString(data));
   }
-
 }

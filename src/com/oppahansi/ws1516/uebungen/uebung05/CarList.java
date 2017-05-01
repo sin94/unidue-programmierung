@@ -1,13 +1,10 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to
- * solve these tasks.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
  */
-
 package com.oppahansi.ws1516.uebungen.uebung05;
 /*
  * In dieser Uebung werden weitere Konzepte in Verbindung mit Listen
@@ -16,11 +13,11 @@ package com.oppahansi.ws1516.uebungen.uebung05;
  * entfernt. Im Gegensatz zur Queue sollen ausserdem Elemente an beliebigen
  * Positionen der Liste zurueckgegeben werden, ohne das die Elemente dabei
  * entfernt werden.
- * 
+ *
  * Autos sollen nicht direkt in die Liste eingefuegt werden, sondern mit Hilfe
  * der Klasse CarNode. Diese Klasse stellt ein Listenelement mit Vorgaenger,
  * Nachfolger und einem Objekt der Klasse Car dar.
- * 
+ *
  * Im Vergleich zu den Aufgaben Queue und Schlumpfliste verfuegt die Klasse
  * CarList zusaetzlich ueber zwei feste CarNodes start und end. Diese Elemente
  * werden nie geloescht und sind auch in einer leeren Liste vorhanden. Objekte
@@ -30,13 +27,13 @@ package com.oppahansi.ws1516.uebungen.uebung05;
  * Listenelemente soll die Programmierung vereinfachen, da fuer die
  * Implementierung der Listenoperationen die Sonderfaelle (Leere Listen, Listen
  * mit nur einem Element) vereinfacht werden.
- * 
+ *
  * Ausserdem soll diese Liste doppelt verkettet sein, d.h. die CarNode-Elemente
  * verfuegen nicht nur ueber Nachfolger, sondern auch ueber Vorgaenger.
- * 
+ *
  * Eine leere CarList hat folgende Struktur:
  * start <--> end
- * 
+ *
  * Eine CarList mit zwei Element sollte so aussehen:
  * start <--> CarNode(1) <--> CarNode(2) <--> end
  */
@@ -60,10 +57,9 @@ public class CarList {
     end.previous = start;
   }
 
-	
-	/*
-    * BEGINN des zu bearbeitenden Codes
-	 */
+  /*
+   * BEGINN des zu bearbeitenden Codes
+   */
 
   /*
    * Verwenden Sie diese Methode um den Inhalt einer Autoliste auf der Konsole
@@ -75,8 +71,8 @@ public class CarList {
     while (iter.next != list.end) {
       iter = iter.next;
       pos++;
-      System.out.print("[" + pos + ": " + iter.car.getManufacturer() + " "
-        + iter.car.getModel() + "]");
+      System.out.print(
+          "[" + pos + ": " + iter.car.getManufacturer() + " " + iter.car.getModel() + "]");
       if (iter.next != list.end) {
         System.out.print(" <--> ");
       }
@@ -176,8 +172,7 @@ public class CarList {
       newCarNode.setPrevious(start);
       newCarNode.setNext(end);
       end.setPrevious(newCarNode);
-    }
-    else {
+    } else {
       CarNode newCarNode = new CarNode(newCar, end.getPrevious(), end);
       CarNode previous = end.getPrevious();
 
@@ -202,16 +197,14 @@ public class CarList {
   public Car removeFirstCar() {
     if (this.getSize() == 0) {
       return null;
-    }
-    else if (getSize() == 1) {
+    } else if (getSize() == 1) {
       CarNode newNode = start.getNext();
 
       start.setNext(end);
       end.setPrevious(start);
 
       return newNode.getCar();
-    }
-    else {
+    } else {
       CarNode newNode = start.getNext();
       CarNode next = newNode.getNext();
 
@@ -225,8 +218,7 @@ public class CarList {
   public int getSize() {
     if (start.equals(end)) {
       return 0;
-    }
-    else {
+    } else {
       CarNode newNode = start.getNext();
       int size = 0;
 
@@ -253,8 +245,7 @@ public class CarList {
   public Car getCar(int position) {
     if (position <= 0 || position > getSize()) {
       return null;
-    }
-    else {
+    } else {
       CarNode newNode = start.getNext();
       int counter = 1;
 
@@ -272,8 +263,7 @@ public class CarList {
   public CarNode getCarNode(int position) {
     if (position <= 0 || position > getSize()) {
       return null;
-    }
-    else {
+    } else {
       CarNode newNode = start.getNext();
       int counter = 1;
 
@@ -305,8 +295,7 @@ public class CarList {
   public void prioritizeCar(int position) {
     if (position <= 1 || position > getSize()) {
 
-    }
-    else if (position == 2) {
+    } else if (position == 2) {
       CarNode node = start.getNext().getNext();
       CarNode previous = start.getNext();
       CarNode next = node.getNext();
@@ -317,8 +306,7 @@ public class CarList {
       previous.setNext(next);
       next.setPrevious(previous);
 
-    }
-    else {
+    } else {
       CarNode node = start.getNext();
 
       for (int i = 1; i < position; i++) {
@@ -338,9 +326,9 @@ public class CarList {
     }
   }
 
-	/*
-    * ENDE des zu bearbeitenden Codes
-	 */
+  /*
+   * ENDE des zu bearbeitenden Codes
+   */
 
   /*
    * Mit dieser Methode sollen alle Autos einer Liste in der gleichen Reihen-
@@ -380,13 +368,11 @@ public class CarList {
       if (node.getPrevious().equals(start) && !node.getCar().isDamaged()) {
         start.setNext(node.getNext());
         node.getNext().setPrevious(start);
-      }
-      else if (!node.getCar().isDamaged() && node.getNext().equals(end)) {
+      } else if (!node.getCar().isDamaged() && node.getNext().equals(end)) {
         CarNode previous = node.getPrevious();
         previous.setNext(end);
         end.setPrevious(previous);
-      }
-      else if (!node.getCar().isDamaged()) {
+      } else if (!node.getCar().isDamaged()) {
         CarNode previous = node.getPrevious();
         CarNode next = node.getNext();
         previous.setNext(next);
@@ -395,5 +381,4 @@ public class CarList {
       node = node.getNext();
     }
   }
-
 }

@@ -1,11 +1,9 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ws1415.miniprojektfreiwillig_A1;
 
 public class ListenElement {
@@ -13,8 +11,7 @@ public class ListenElement {
   private ListenElement vorgaenger, nachfolger;
   private Beschreibung eintrag;
 
-  public ListenElement(ListenElement vorgaenger, ListenElement nachfolger,
-    Beschreibung eintrag) {
+  public ListenElement(ListenElement vorgaenger, ListenElement nachfolger, Beschreibung eintrag) {
     super();
     this.vorgaenger = vorgaenger;
     this.nachfolger = nachfolger;
@@ -44,5 +41,4 @@ public class ListenElement {
   public void setEintrag(Beschreibung eintrag) {
     this.eintrag = eintrag;
   }
-
 }

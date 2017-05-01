@@ -3,9 +3,7 @@ package com.oppahansi.ss14.testat6;
 import java.util.Calendar;
 import java.util.List;
 
-/**
- * Datenbank zur Verwaltung von Studenten (Student) und Veranstaltungen (Course)
- */
+/* Datenbank zur Verwaltung von Studenten (Student) und Veranstaltungen (Course) */
 public interface Database {
 
   void insertStudent(Student student, int matriculationNumber);
@@ -15,5 +13,4 @@ public interface Database {
   int countStudentsWithFirstName(String firstName);
 
   List<Student> getStudentsBornAfter(Calendar date);
-
 }

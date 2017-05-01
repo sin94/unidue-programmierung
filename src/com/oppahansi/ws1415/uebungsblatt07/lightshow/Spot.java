@@ -7,7 +7,6 @@ package com.oppahansi.ws1415.uebungsblatt07.lightshow;
 public class Spot {
 
   final double X_MAX, Y_MAX;
-
   double xPos, yPos;
   double dx, dy;
   int[] color;
@@ -43,5 +42,4 @@ public class Spot {
       dy = -dy;
     }
   }
-
 }

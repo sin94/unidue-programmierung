@@ -5,7 +5,7 @@ package com.oppahansi.ss14.woche1;
 // Die Methode greeting soll eine Begr��ung abh�ngig vom als Parameter
 // �bergebenen Namen zur�ckgeben. Vervollst�ndigen Sie die Methode
 // greeting so, dass sie folgenden Aufrufbeispielen gen�gt:
-// 
+//
 // greeting("Anton") --> "Hallo, Anton!"
 // greeting("Barbara") --> "Hallo, Barbara!"
 // greeting("Christoph") --> "Hallo, Christoph!"
@@ -35,5 +35,4 @@ public class Greeting {
     String name = getName();
     System.out.println(greeting(name));
   }
-
 }

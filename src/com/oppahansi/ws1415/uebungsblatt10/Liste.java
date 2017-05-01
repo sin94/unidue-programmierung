@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Offizielle moegliche Loesung
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Offizielle moegliche Loesung
  */
-
 package com.oppahansi.ws1415.uebungsblatt10;
 
 public class Liste {
@@ -27,8 +25,7 @@ public class Liste {
     }
     if (kopf == null) {
       kopf = fuss = new Element(bez, 1);
-    }
-    else {
+    } else {
       //der nachfolger des letzten elements in der liste speichert das
       //neue objekt vom typ element
       fuss = fuss.nf = new Element(bez, 1);

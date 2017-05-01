@@ -32,5 +32,4 @@ public class Coach {
   public void setPassengers(int passengers) {
     this.passengers = passengers;
   }
-
 }

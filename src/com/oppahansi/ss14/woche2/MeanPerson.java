@@ -13,7 +13,7 @@ package com.oppahansi.ss14.woche2;
  * ein H�ckchen davor und bestaetigen Sie den Dialog.
  */
 
-/* 
+/*
  * In dieser Aufgabe geht es darum mit verschachtelten Objekten zu arbeiten.
  * Die markierten Methoden der Klasse MeanPerson sollen von Ihnen implementiert
  * werden.
@@ -21,21 +21,21 @@ package com.oppahansi.ss14.woche2;
  * Klasse Car. Die Klasse Car soll jedoch NICHT bearbeitet werden.
  * Die Implementierungen der Klasse Car geben Ihnen vielleicht auch Ideen zur
  * Implementierung der Klasse MeanPerson.
- * 
+ *
  * Hinweis: Beruecksichtigen Sie Faelle in denen eine Person keinen Freund
  * oder kein Auto hat.
  */
 
 public class MeanPerson {
 
-  private Car favouriteCar;    // Lieblingsauto der Person
-  private Car ownedCar;        // Eigenes Auto der Person
-  private MeanPerson friend;            // "Freund" der Person
-  private int money;            // Kontostand der Person in Euro
+  private Car favouriteCar; // Lieblingsauto der Person
+  private Car ownedCar; // Eigenes Auto der Person
+  private MeanPerson friend; // "Freund" der Person
+  private int money; // Kontostand der Person in Euro
 
-	/*
-     * Hier BEGINNT der zu bearbeitende Bereich
-	 */
+  /*
+   * Hier BEGINNT der zu bearbeitende Bereich
+   */
 
   /*
    * Ergaenzen Sie den Konstruktor so, dass eine neue Person 10.000 Euro
@@ -91,8 +91,7 @@ public class MeanPerson {
   public boolean isHappy() {
     if ((ownedCar.equals(favouriteCar)) && (ownedCar.isDamaged() == false)) {
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }
@@ -109,11 +108,9 @@ public class MeanPerson {
   public boolean isEnvious() {
     if (isHappy()) {
       return false;
-    }
-    else if (ownedCar.getValue() < friend.ownedCar.getValue()) {
+    } else if (ownedCar.getValue() < friend.ownedCar.getValue()) {
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }
@@ -129,10 +126,10 @@ public class MeanPerson {
    * "java string compareto", falls Sie die Methode nicht schon kennen
    */
   public boolean secretlyLaughsOverFriendsCar() {
-    if ((friend.ownedCar.isDamaged() == true) || ((friend.ownedCar.getManufacturer().compareTo("Ludolf")) == 0)) {
+    if ((friend.ownedCar.isDamaged() == true)
+        || ((friend.ownedCar.getManufacturer().compareTo("Ludolf")) == 0)) {
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }
@@ -143,12 +140,11 @@ public class MeanPerson {
    */
   public void repairCar() {
     money -= ownedCar.repair();
-
   }
 
-	/*
-	 * Hier ENDET der zu bearbeitende Bereich
-	 */
+  /*
+   * Hier ENDET der zu bearbeitende Bereich
+   */
 
   // Getter und Setter fuer die Klasse Person.
   // Die Getter und Setter sind bereits vollstaendig implementiert
@@ -165,8 +161,7 @@ public class MeanPerson {
   public void buyNewCar(Car newCar) {
     if ((money + ownedCar.getValue()) < newCar.getValue()) {
       return;
-    }
-    else {
+    } else {
       money = money + ownedCar.getValue() - newCar.getValue();
       ownedCar = newCar;
     }
@@ -203,5 +198,4 @@ public class MeanPerson {
   public void setMoney(int newMoney) {
     money = newMoney;
   }
-
 }

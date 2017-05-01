@@ -12,7 +12,7 @@ package com.oppahansi.ss14.woche5;
  * Groesse den durch SCHLUMPF_MAXIMAL_GROESSE gegebenen Wert nicht
  * ueberschreitet, bzw. nicht unter dem durch SCHLUMPF_MINIMAL_GROESSE gegebenen
  * Wert liegt.
- * 
+ *
  * Sie benoetigen zusaetzlich die beiden weiteren Klassen Schlumpf und
  * SchlumpfNode. Die beiden Klassen bestehen nur aus Gettern und Settern und
  * sollen nicht weiter modifiziert werden.
@@ -46,8 +46,7 @@ public class SchlumpfListe {
     while (iterator != null) {
       if (iterator.schlumpf != null) {
         System.out.print(iterator.getSchlumpf().getName() + ", ");
-      }
-      else {
+      } else {
         System.out.print("NULL, ");
       }
       iterator = iterator.getNext();
@@ -55,9 +54,9 @@ public class SchlumpfListe {
     System.out.println();
   }
 
-	/*
-     * BEGINN des zu bearbeitenden Codes
-	 */
+  /*
+   * BEGINN des zu bearbeitenden Codes
+   */
 
   /*
    * Hier kommt ihr Testcode hin
@@ -140,9 +139,17 @@ public class SchlumpfListe {
     // Ausgabe der Schlumpfgroessen nach dem Schrumpfen, beachte
     // dass die Groesse gleich bleibt, wenn die minimale Groesse unterschritten wurde
     System.out.println("Groessen der Schluempfe nach Schrumpfen: ");
-    System.out.println("s1: " + s1.getGroesse() + " s2: " + s2.getGroesse() + " s3: "
-      + s3.getGroesse() + " s4: " + s4.getGroesse() + " s5: "
-      + s5.getGroesse());
+    System.out.println(
+        "s1: "
+            + s1.getGroesse()
+            + " s2: "
+            + s2.getGroesse()
+            + " s3: "
+            + s3.getGroesse()
+            + " s4: "
+            + s4.getGroesse()
+            + " s5: "
+            + s5.getGroesse());
 
     // Abfrage ob einer der zu kleinen Schlumpfe (s1) noch in der Liste ist.
     System.out.println("Schlumpf s1 in der Liste?: " + list.schlumpfInListe(s1));
@@ -160,9 +167,17 @@ public class SchlumpfListe {
     // Ausgabe der Schlumpfgroessen nach dem Dehnen, beachte
     // dass die Groesse gleich bleibt, wenn die maximale Groesse ueberschritten wurde
     System.out.println("Groessen der Schluempfe nach Dehnen: ");
-    System.out.println("s7: " + s7.getGroesse() + " s8: " + s8.getGroesse() + " s9: "
-      + s9.getGroesse() + " s10: " + s10.getGroesse() + " s11: "
-      + s11.getGroesse());
+    System.out.println(
+        "s7: "
+            + s7.getGroesse()
+            + " s8: "
+            + s8.getGroesse()
+            + " s9: "
+            + s9.getGroesse()
+            + " s10: "
+            + s10.getGroesse()
+            + " s11: "
+            + s11.getGroesse());
 
     // Pruefen, ob einer der zu großen Schlumpfe noch in der Liste ist.
     System.out.println("Schlumpf s11 in der Liste?: " + list2.schlumpfInListe(s11));
@@ -178,19 +193,19 @@ public class SchlumpfListe {
   // Schluempfe vor ihm kleiner oder gleich gross sind und alle nachfolgenden
   // Schluempfe mindestens so gross wie der einzusortierende Schlumpf.
   public void schlumpfEinreihen(Schlumpf schlumpf) {
-    if (schlumpf.getGroesse() >= SCHLUMPF_MINIMAL_GROESSE && schlumpf.getGroesse() <= SCHLUMPF_MAXIMAL_GROESSE) {
+    if (schlumpf.getGroesse() >= SCHLUMPF_MINIMAL_GROESSE
+        && schlumpf.getGroesse() <= SCHLUMPF_MAXIMAL_GROESSE) {
       if (this.head == null) {
         this.head = new SchlumpfNode(schlumpf, null);
-      }
-      else {
+      } else {
         SchlumpfNode newNode = this.getHead();
         while (newNode != null) {
 
-          if (schlumpf.getGroesse() > newNode.getSchlumpf().getGroesse() && newNode.getNext() == null) {
+          if (schlumpf.getGroesse() > newNode.getSchlumpf().getGroesse()
+              && newNode.getNext() == null) {
             newNode.setNext(new SchlumpfNode(schlumpf, null));
             break;
-          }
-          else if (schlumpf.getGroesse() <= newNode.getSchlumpf().getGroesse()) {
+          } else if (schlumpf.getGroesse() <= newNode.getSchlumpf().getGroesse()) {
 
             newNode.setNext(new SchlumpfNode(newNode.getSchlumpf(), newNode.getNext()));
             newNode.setSchlumpf(schlumpf);
@@ -272,9 +287,9 @@ public class SchlumpfListe {
     return -1;
   }
 
-	/*
-	 * ENDE des zu bearbeitenden Codes
-	 */
+  /*
+   * ENDE des zu bearbeitenden Codes
+   */
 
   // Mittels dieser Methode sollen alle Schluempfe in der Liste um den durch
   // cm gegebenen Wert verkleinert werden. Sinkt dabei die Groesse einzelner
@@ -295,13 +310,11 @@ public class SchlumpfListe {
         newNode = this.head;
         prevNode = newNode;
         continue;
-      }
-      else if (newSize < SCHLUMPF_MINIMAL_GROESSE) {
+      } else if (newSize < SCHLUMPF_MINIMAL_GROESSE) {
         nextNode = newNode.getNext();
         prevNode.setNext(nextNode);
         prevNode = newNode;
-      }
-      else {
+      } else {
         newNode.getSchlumpf().setGroesse(newSize);
         prevNode = newNode;
       }
@@ -328,24 +341,20 @@ public class SchlumpfListe {
         currentPos = null;
         this.head = newHead;
         currentPos = this.head;
-      }
-      else if (newSize > SCHLUMPF_MAXIMAL_GROESSE && currentPos.getNext() == null) {
+      } else if (newSize > SCHLUMPF_MAXIMAL_GROESSE && currentPos.getNext() == null) {
         currentPos = prevNode;
         currentPos.setNext(null);
         break;
-      }
-      else if (newSize > SCHLUMPF_MAXIMAL_GROESSE) {
+      } else if (newSize > SCHLUMPF_MAXIMAL_GROESSE) {
         nextNode = currentPos.getNext();
         prevNode.setNext(nextNode);
         currentPos = nextNode;
         continue;
-      }
-      else {
+      } else {
         currentPos.getSchlumpf().setGroesse(newSize);
       }
       prevNode = currentPos;
       currentPos = currentPos.getNext();
     }
   }
-
 }

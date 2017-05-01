@@ -3,13 +3,13 @@ package com.oppahansi.ss14.woche3;
 /*
  * In dieser Klasse soll eine erste einfache Verwendung der for-Schleife
  * geuebt werden. Der Kopf der for-Schleife besteht und dem Schluesselwort for,
- * sowie der Initialisierung, der Abbruchbedingung und dem Inkrement, gefolgt 
+ * sowie der Initialisierung, der Abbruchbedingung und dem Inkrement, gefolgt
  * von einem Befehlsblock:
- * 
+ *
  *   for(Initialisierung; Abbruchbedingung; Inkrement){
  *   	// durch die Schleife wiederholt auszufuehrender Code
  *   }
- *   
+ *
  *   Die einzelnen zu implementierenden Methoden gehen auf die oben genannten
  *   verschiedenen Bestandteile des Schleifenkopfes ein.
  */
@@ -29,7 +29,6 @@ public class ForLoop {
     }
 
     return sum;
-
   }
 
   // In dieser Methode sollen die geraden Zahlen bis einschliesslich  N
@@ -43,8 +42,7 @@ public class ForLoop {
     // Hier kommt ihre Schleife hin
     if (number == 0 || number < 0) {
       return sum;
-    }
-    else {
+    } else {
       for (int i = 1; i <= number; i++) {
         if (i % 2 == 0) {
           sum += i;
@@ -53,7 +51,6 @@ public class ForLoop {
 
       return sum;
     }
-
   }
 
   // Diese Methode soll aehnlich wie sumUpToN funktionieren, jedoch ist das
@@ -69,15 +66,13 @@ public class ForLoop {
     // Hier kommt ihre Schleife hin
     if (numberA == 0 || numberB == 0 || numberA < 0 || numberB < 0) {
       return sum;
-    }
-    else {
+    } else {
       for (int i = numberA; i <= numberB; i++) {
         sum += i;
       }
 
       return sum;
     }
-
   }
 
   // Diese Methode soll wieder die Zahlen von 1 bis N (Parameter number)
@@ -101,7 +96,6 @@ public class ForLoop {
     }
 
     return sum;
-
   }
 
   // Diese Methode soll Potenzen ganzer Zahlen bilden. Als Parameter werden
@@ -112,8 +106,7 @@ public class ForLoop {
     // Hier kommt ihr Code hin
     if (exponent == 0) {
       return 1;
-    }
-    else {
+    } else {
       int prod = 1;
       for (int i = 1; i <= exponent; i++) {
         prod *= base;
@@ -125,29 +118,24 @@ public class ForLoop {
 
   public static void main(String[] args) {
     // Testen Sie hier Ihre Methoden
-    System.out.println("Rueckgabe des Aufrufs sumUpToN(4): " +
-      sumUpToN(4));
+    System.out.println("Rueckgabe des Aufrufs sumUpToN(4): " + sumUpToN(4));
     System.out.println("Erwartete Rueckgabe              : 10");
     System.out.println("");
 
-    System.out.println("Rueckgabe des Aufrufs sumOfEvenNumbersUpToN(7): " +
-      sumOfEvenNumbersUpToN(7));
+    System.out.println(
+        "Rueckgabe des Aufrufs sumOfEvenNumbersUpToN(7): " + sumOfEvenNumbersUpToN(7));
     System.out.println("Erwartete Rueckgabe                          : 12");
     System.out.println("");
 
-    System.out.println("Rueckgabe des Aufrufs sumFromAtoB(4, 6): " +
-      sumFromAtoB(4, 6));
+    System.out.println("Rueckgabe des Aufrufs sumFromAtoB(4, 6): " + sumFromAtoB(4, 6));
     System.out.println("Erwartete Rueckgabe                    : 15");
     System.out.println("");
 
-    System.out.println("Rueckgabe des Aufrufs sumUpToNWithMax(5, 9): " +
-      sumUpToNWithMax(5, 9));
+    System.out.println("Rueckgabe des Aufrufs sumUpToNWithMax(5, 9): " + sumUpToNWithMax(5, 9));
     System.out.println("Erwartete Rueckgabe                        : 6");
     System.out.println("");
 
-    System.out.println("Rueckgabe des Aufrufs power(2, 5): " +
-      power(2, 5));
+    System.out.println("Rueckgabe des Aufrufs power(2, 5): " + power(2, 5));
     System.out.println("Erwartete Rueckgabe              : 32");
   }
-
 }

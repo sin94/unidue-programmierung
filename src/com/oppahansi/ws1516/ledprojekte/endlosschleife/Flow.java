@@ -1,10 +1,8 @@
-/**
+/*
  * Sunrise
- * <p>
- * Created by:
- * Endlosschleife (Gruppe
+ *
+ * <p>Created by: Endlosschleife (Gruppe
  */
-
 package com.oppahansi.ws1516.ledprojekte.endlosschleife;
 
 import ledControl.BoardController;
@@ -17,8 +15,7 @@ public class Flow {
 
     if (s.yPos >= 8) {
       bg.night(bc);
-    }
-    else {
+    } else {
       bg.day(bc, (int) s.yPos);
     }
 
@@ -29,9 +26,12 @@ public class Flow {
           double dist = s.getDistance(x, y);
           double factor = (dist > 2.5) ? 0 : (1 - dist / 2.5);
           factor *= factor;
-          bc.addColor(x, y, (int) (factor * s.color[0]),
-            (int) (factor * s.color[1]),
-            (int) (factor * s.color[2]));
+          bc.addColor(
+              x,
+              y,
+              (int) (factor * s.color[0]),
+              (int) (factor * s.color[1]),
+              (int) (factor * s.color[2]));
         }
       }
     }

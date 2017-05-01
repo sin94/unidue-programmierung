@@ -25,7 +25,7 @@ package com.oppahansi.ss14.eigeneaufgaben;
  *
  * Sie haben die gesuchte Zahl gefunden!                        // Gesuchte Zahl gefunden
  * Sie haben die 41 in 7 Versuchen gefunden.            // Gesuchte Zahl ausgeben und die Anzahl an Versuchen anzeigen
- *                                                                                             
+ *
  * (Weiter spielen? (j = Ja. | n = Nein.)                       // (Optional: Implementierung der Abfrage f�r ein Neues Spiel))
  *
  *
@@ -35,7 +35,7 @@ package com.oppahansi.ss14.eigeneaufgaben;
  *
  * Random zufall = new Random();
  * zufallZahl = 0 + zufall.nextInt(100 - 0 + 1);        // 0 ist die Untergrenze , 100 ist die Obergrenze
- * man kann es auch so schreiben:                                                              
+ * man kann es auch so schreiben:
  * zufallsZahl = untergrenze + zufall.nextInt(obergrenze - untergrenze + korrektur);
  *
  * Usereingaben entgegen nehmen mit:
@@ -53,10 +53,7 @@ package com.oppahansi.ss14.eigeneaufgaben;
 public class ZahlenRatenUngeloest {
 
   /*
-  * Hier das Minispiel implementieren.
-  */
-  public static void main(String[] args) {
-
-  }
-
+   * Hier das Minispiel implementieren.
+   */
+  public static void main(String[] args) {}
 }

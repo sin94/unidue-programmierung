@@ -1,10 +1,8 @@
-/**
- * Created by:
- * Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institut f�r Informatik und Wirtschaftsinformatik, Universit�t Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
-
 package com.oppahansi.ss15.miniprojekt.mp3.a1;
 
 public class Tisch {
@@ -30,12 +28,11 @@ public class Tisch {
    * Hinzufuegen einer neuen Speise fuer den Tisch.
    */
   public void hinzufuegenSpeise(Speise neueSpeise) {
-    Speise neu = new Speise(neueSpeise.artNr, neueSpeise.name,
-      neueSpeise.preis, neueSpeise.zutaten.clone());
+    Speise neu =
+        new Speise(neueSpeise.artNr, neueSpeise.name, neueSpeise.preis, neueSpeise.zutaten.clone());
     if (speisen == null) {
       speisen = neu;
-    }
-    else {
+    } else {
       Speise temp = speisen;
       while (temp.getNachfolger() != null) {
         temp = temp.getNachfolger();
@@ -52,12 +49,12 @@ public class Tisch {
    * Hinzufuegen eines neuen Getraenk fuer den Tisch.
    */
   public void hinzufuegenGetraenk(Getraenk neuesGetraenk) {
-    Getraenk neu = new Getraenk(neuesGetraenk.artNr, neuesGetraenk.name,
-      neuesGetraenk.groesse, neuesGetraenk.preis);
+    Getraenk neu =
+        new Getraenk(
+            neuesGetraenk.artNr, neuesGetraenk.name, neuesGetraenk.groesse, neuesGetraenk.preis);
     if (getraenke == null) {
       getraenke = neu;
-    }
-    else {
+    } else {
       Getraenk temp = getraenke;
       while (temp.getNachfolger() != null) {
         temp = temp.getNachfolger();
@@ -93,8 +90,7 @@ public class Tisch {
     Tischbuchung neu = new Tischbuchung(startZeit, endZeit);
     if (tischbuchungen == null) {
       tischbuchungen = neu;
-    }
-    else {
+    } else {
       Tischbuchung temp = tischbuchungen;
       while (temp.getNachfolger() != null) {
         temp = temp.getNachfolger();

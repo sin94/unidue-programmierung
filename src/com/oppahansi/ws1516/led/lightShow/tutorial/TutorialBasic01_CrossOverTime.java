@@ -1,8 +1,7 @@
-/**
- * Created by:
- * Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
- * <p>
- * For learning purpose only.
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
  */
 
 /*
@@ -101,5 +100,4 @@ public class TutorialBasic01_CrossOverTime {
     controller.resetColors();
     controller.updateLedStripe();
   }
-
 }

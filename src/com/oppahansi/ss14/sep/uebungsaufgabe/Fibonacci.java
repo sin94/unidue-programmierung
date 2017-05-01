@@ -2,9 +2,8 @@ package com.oppahansi.ss14.sep.uebungsaufgabe;
 
 public class Fibonacci {
 
-
-   /*
-    * Fibonacci-Zahlen, Aufgabe 3e
+  /*
+   * Fibonacci-Zahlen, Aufgabe 3e
    */
 
   public static void main(String args[]) {
@@ -23,7 +22,6 @@ public class Fibonacci {
     System.out.println("fib(40) = " + f.fibonaccirek(40) + " (rekursiv)");
     System.out.println("Richtig ist fib(40) = 102334155");
     System.out.println("Warum ist der rekurisve Algo nur so langsam...?");
-
   }
 
   // Fibonacci rekursiv
@@ -47,5 +45,4 @@ public class Fibonacci {
 
     return ergebnis;
   }
-
 }

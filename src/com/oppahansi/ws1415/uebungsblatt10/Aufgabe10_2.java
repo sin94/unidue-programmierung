@@ -1,13 +1,11 @@
-/**
- * Created by:
- * Institute for Computer Science and Business Information Systems
- * University Duisburg-Essen
- * <p>
- * For learning purpose only.
- * <p>
- * Offizielle moegliche Loesung
+/*
+ * Created by: Institute for Computer Science and Business Information Systems University
+ * Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ * <p>Offizielle moegliche Loesung
  */
-
 package com.oppahansi.ws1415.uebungsblatt10;
 
 class Person {
@@ -19,18 +17,12 @@ class Person {
 
   public static void main(String args[]) {
     Person[] personen = new Person[6];
-    personen[0] = new Arzt("Muster", "Hans",
-      "Duesseldorf", 37, "Chirurgie", 308);
-    personen[1] = new Arzt("Meier", "Michael",
-      "Muenchen", 34, "Kardiologie", 534);
-    personen[2] = new Patient("Schulze", "Markus",
-      "Hamburg", 31, "Beinbruch", 803);
-    personen[3] = new Patient("Wagner", "Egon",
-      "Dresden", 38, "Reisekrankheit", 23);
-    personen[4] = new Arzt("Mueller", "Alexander",
-      "Essen", 35, "HNO", 409);
-    personen[5] = new Patient("Mertens", "Oliver",
-      "Kassel", 40, "Heuschnupfen", 129);
+    personen[0] = new Arzt("Muster", "Hans", "Duesseldorf", 37, "Chirurgie", 308);
+    personen[1] = new Arzt("Meier", "Michael", "Muenchen", 34, "Kardiologie", 534);
+    personen[2] = new Patient("Schulze", "Markus", "Hamburg", 31, "Beinbruch", 803);
+    personen[3] = new Patient("Wagner", "Egon", "Dresden", 38, "Reisekrankheit", 23);
+    personen[4] = new Arzt("Mueller", "Alexander", "Essen", 35, "HNO", 409);
+    personen[5] = new Patient("Mertens", "Oliver", "Kassel", 40, "Heuschnupfen", 129);
     for (int i = 0; i < personen.length; i++) {
       personen[i].print();
     }

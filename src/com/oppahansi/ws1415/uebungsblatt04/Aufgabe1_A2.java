@@ -1,13 +1,10 @@
-/**
- * Created by oppahansi on 24.11.2014.
- */
-
+/* Created by oppahansi on 24.11.2014. */
 package com.oppahansi.ws1415.uebungsblatt04;
 
 public class Aufgabe1_A2 {
 
-  private static final int[] ARRAYA = new int[]{1, 3, 5, 7, 9};
-  private static final int[] ARRAYB = new int[]{0, 2, 4, 6, 8, 10, 12, 14};
+  private static final int[] ARRAYA = new int[] {1, 3, 5, 7, 9};
+  private static final int[] ARRAYB = new int[] {0, 2, 4, 6, 8, 10, 12, 14};
   private static int counter;
 
   public static void main(String[] args) {
@@ -33,8 +30,7 @@ public class Aufgabe1_A2 {
       if (arrayA[indexA] <= arrayB[indexB]) {
         arrayC[indexC] = arrayA[indexA];
         indexA++;
-      }
-      else {
+      } else {
         arrayC[indexC] = arrayB[indexB];
         indexB++;
       }
@@ -44,8 +40,7 @@ public class Aufgabe1_A2 {
       for (int i = indexA; i < lengthA; i++, indexC++) {
         arrayC[indexC] = arrayA[i];
       }
-    }
-    else {
+    } else {
       for (int i = indexB; i < lengthB; i++, indexC++) {
         arrayC[indexC] = arrayB[i];
       }
