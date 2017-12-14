@@ -6,14 +6,12 @@ public class Koenigreich {
 
     //Aufgabe 1
     public Koenigreich(String koenig) {
-        spitze = new Person("koenig", Rang.KOENIG, null, null, true);
+        
     }
 
     //Aufgabe 2
     public void geburt(Person person) {
-        if (person.getRang().ordinal() != Rang.KOENIG.ordinal()) {
-
-        }
+        
     }
 
     //Aufgabe 3
