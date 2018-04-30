@@ -1,3 +1,7 @@
+/*
+ * Created by: Network Embedded Systems, Universität Duisburg-Essen
+ */
+
 package com.oppahansi.ss18.mp1;
 
 /**

@@ -1,3 +1,8 @@
+/*
+ * Created by: Network Embedded Systems, Universität Duisburg-Essen
+ * Solved/Edited by Oppa Hansi. Possible solution - there are other ways to solve these tasks.
+ */
+
 package com.oppahansi.ss18.mp1;
 
 /**

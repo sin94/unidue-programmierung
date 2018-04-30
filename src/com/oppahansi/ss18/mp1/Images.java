@@ -1,3 +1,8 @@
+/*
+ * Created by: Network Embedded Systems, Universität Duisburg-Essen
+ * Modified by Oppa Hansi
+ */
+
 package com.oppahansi.ss18.mp1;
 
 import java.awt.image.BufferedImage;
