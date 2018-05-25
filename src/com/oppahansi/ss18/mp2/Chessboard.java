@@ -165,12 +165,12 @@ public class Chessboard {
             } else {
                 for (int X = x - 2; X <= x + 2; X += 4) {
                     for (int Y = y - 1; Y <= y + 1; Y += 2) {
-                        if (hasField(X, Y)) markKnightMoves(X, Y, n - 1);
+                        markKnightMoves(X, Y, n - 1);
                     }
                 }
                 for (int Y = y - 2; Y <= y + 2; Y += 4) {
                     for (int X = x - 1; X <= x + 1; X += 2) {
-                        if (hasField(X, Y)) markKnightMoves(X, Y, n - 1);
+                        markKnightMoves(X, Y, n - 1);
                     }
                 }
             }
