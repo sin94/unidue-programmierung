@@ -52,16 +52,21 @@ public class ArrayStringList implements StringList {
 	@Override
 	public void insertStringAt(int i, String text) {
 	    if (isIndexValid(i)) {
-	        items = getNewItemsArrayWithNewItem(i, text);
+	        items = getItemsWithNewItem(i, text);
         } else { // dieser Fall wurde nicht in der Aufgabenstellung definiert, ergibt sich aber aus den Main-Methode Testfaällen ?
-	        appendString(text);
+	        if (i > 0) {
+	            appendString(text);
+            }
+	        else {
+	            insertStringAt(0, text);
+            }
         }
 	}
 
     @Override
 	public void insertStringListAt(int i, StringList list) {
 	    if (isIndexValid(i)) {
-	        items = getNewItemsArrayWithNewItems(i, list);
+	        items = getItemsWithList(i, list);
         }
 	}
 
@@ -81,7 +86,7 @@ public class ArrayStringList implements StringList {
 	    String oldValue = getStringAt(i);
 
 	    if (oldValue != null) {
-	        items = getNewItemsArray(i);
+	        items = getItemsWithout(i);
         }
 
 	    return oldValue;
@@ -123,21 +128,13 @@ public class ArrayStringList implements StringList {
 
 	@Override
 	public int countElements() {
-		int elementsCounter = 0;
-
-		for (String element : items) {
-		    if (element != null) {
-		        elementsCounter++;
-            }
-        }
-
-        return elementsCounter;
+        return items.length;
 	}
 
 	@Override
 	public String[] toStringArray() { return items; }
 
-    private String[] getNewItemsArrayWithNewItem(int index, String text) {
+    private String[] getItemsWithNewItem(int index, String text) {
 	    String[] extendedItems = new String[items.length + 1];
 
 	    for (int i = 0; i < items.length; i++) {
@@ -153,28 +150,24 @@ public class ArrayStringList implements StringList {
 	    return extendedItems;
     }
 
-    private String[] getNewItemsArrayWithNewItems(int index, StringList list) {
+    private String[] getItemsWithList(int index, StringList list) {
         String[] extendedItems = new String[items.length + list.countElements()];
 
-        for (int i = 0; i < index; i++) {
-            extendedItems[i] = items[i];
-        }
-
-        // Alternative zur oberen for-Schleife:
-        // System.arraycopy(items, 0, extendedItems, 0, index);
-
-        for (int i = index, j = 0; j < list.countElements(); i++, j++) {
-            extendedItems[i] = list.getStringAt(j);
-        }
-
-        for (int i = index + list.countElements(), j = index; j < items.length; i++, j++) {
-            extendedItems[i] = items[j];
+        for (int i = 0, j = 0; i < extendedItems.length; i++) {
+            if (i < index) {
+                extendedItems[i] = items[i];
+            } else if (i >= index && i < index + list.countElements()) {
+                extendedItems[i] = list.getStringAt(j);
+                j++;
+            } else if (i >= index + list.countElements()) {
+                extendedItems[i] = items[i - list.countElements()];
+            }
         }
 
         return extendedItems;
     }
 
-    private String[] getNewItemsArray(int index) {
+    private String[] getItemsWithout(int index) {
         String[] shortenedItems = new String[items.length - 1];
 
         for (int i = 0; i < shortenedItems.length; i++) {

@@ -97,7 +97,9 @@ public class LinkedStringList implements StringList {
         } else {
             Item item = getItemAt(countElements() - 1);
 
-            if (item != null) item.setNext(new Item(text));
+            if (item != null) {
+                item.setNext(new Item(text));
+            }
         }
     }
 
@@ -108,8 +110,11 @@ public class LinkedStringList implements StringList {
         } else {
             Item item = getItemAt(i);
 
-            if (item == null) return null;
-            else return item.getString();
+            if (item == null) {
+                return null;
+            } else {
+                return item.getString();
+            }
         }
     }
 
@@ -166,7 +171,9 @@ public class LinkedStringList implements StringList {
                     newItem.setNext(itemToReplace.getNext());
                 }
 
-                if (prev != null) prev.setNext(newItem);
+                if (prev != null) {
+                    prev.setNext(newItem);
+                }
             }
         }
 
@@ -188,7 +195,9 @@ public class LinkedStringList implements StringList {
                 if (itemToRemove != null) {
                     oldValue = itemToRemove.getString();
 
-                    if (prev != null) prev.setNext(itemToRemove.getNext());
+                    if (prev != null) {
+                        prev.setNext(itemToRemove.getNext());
+                    }
                 }
             }
         }
@@ -201,7 +210,9 @@ public class LinkedStringList implements StringList {
         if (head != null) {
             Item lastItem = getItemAt(countElements() - 1);
 
-            if (lastItem != null) return lastItem.getString();
+            if (lastItem != null) {
+                return lastItem.getString();
+            }
         }
 
         return null;
@@ -214,13 +225,16 @@ public class LinkedStringList implements StringList {
         for (int i = countElements() - 1, j = 0; i >= 0; i--, j++) {
             Item currentItem = getItemAt(i);
 
-            if (currentItem != null) reversedItemsArray[j] = currentItem.getString();
+            if (currentItem != null) {
+                reversedItemsArray[j] = currentItem.getString();
+            }
         }
 
         StringList reversedStringList = new LinkedStringList();
 
-        for (String currentString : reversedItemsArray)
+        for (String currentString : reversedItemsArray) {
             reversedStringList.appendString(currentString);
+        }
 
         return reversedStringList;
     }
@@ -232,7 +246,9 @@ public class LinkedStringList implements StringList {
             int index = from;
 
             while (currentElement != null) {
-                if (currentElement.getString().compareTo(text) == 0) return index;
+                if (currentElement.getString().compareTo(text) == 0) {
+                    return index;
+                }
 
                 index++;
                 currentElement = currentElement.getNext();
