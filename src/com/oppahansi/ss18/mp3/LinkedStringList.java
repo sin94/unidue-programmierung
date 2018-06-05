@@ -220,20 +220,14 @@ public class LinkedStringList implements StringList {
 
     @Override
     public StringList reverseStringList() {
-        String[] reversedItemsArray = new String[countElements()];
-
-        for (int i = countElements() - 1, j = 0; i >= 0; i--, j++) {
-            Item currentItem = getItemAt(i);
-
-            if (currentItem != null) {
-                reversedItemsArray[j] = currentItem.getString();
-            }
-        }
-
         StringList reversedStringList = new LinkedStringList();
 
-        for (String currentString : reversedItemsArray) {
-            reversedStringList.appendString(currentString);
+        for (int i = countElements() - 1; i >= 0; i--) {
+            String currentString = getStringAt(i);
+
+            if (currentString != null) {
+                reversedStringList.appendString(currentString);
+            }
         }
 
         return reversedStringList;
