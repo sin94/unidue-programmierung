@@ -85,10 +85,16 @@ public class BinaryIntTree {
 	 * @return True if it is contained, false otherwise.
 	 */
 	public boolean containsValue(int value) {
-		// TODO: implement
-		return false;
+		return contains(root, value);
 	}
-	
+
+	private boolean contains(Node root, int value) {
+	    if (root == null) return false;
+        if (value == root.value) return true;
+
+        return value < root.value ? contains(root.leftChild, value) : contains(root.rightChild, value);
+    }
+
 	/**
 	 * Inserts a value into the tree, if it does not
 	 * exist already.
@@ -98,19 +104,36 @@ public class BinaryIntTree {
 	 * 	otherwise.
 	 */
 	public boolean insertValue(int value) {
-		// TODO: implement
-		return false;
+        if (containsValue(value)) return false;
+        else {
+            root = insert(root, value);
+            return true;
+        }
 	}
-	
+
+	private Node insert(Node root, int value) {
+	    if (root == null) return new Node(value);
+
+        if (value < root.value) root.leftChild =  insert(root.leftChild, value);
+        else if (value > root.value) root.rightChild = insert(root.rightChild, value);
+
+        return root;
+    }
+
 	/**
 	 * Computes the number of nodes in the tree.
 	 * 
 	 * @return The number of nodes in the tree.
 	 */
 	public int getNodeCount() {
-		// TODO: implement
-		return 0;
+		return countNodes(root);
 	}
+
+	private int countNodes(Node root) {
+	    if (root == null) return 0;
+	    else if (root.leftChild == null && root.rightChild == null) return 1;
+	    else return countNodes(root.leftChild) + countNodes(root.rightChild) + 1;
+    }
 	
 	/**
 	 * Determines whether all nodes have either 0 or 2
@@ -119,10 +142,17 @@ public class BinaryIntTree {
 	 * @return True if all nodes have zero or two children.
 	 */
 	public boolean isFull() {
-		// TODO: implement
-		return false;
+		if (root == null) return false;
+		return checkFull(root);
 	}
-	
+
+	private boolean checkFull(Node root) {
+	    if (root.leftChild == null && root.rightChild == null) return true;
+	    else if (root.leftChild != null && root.rightChild == null) return false;
+	    else if (root.leftChild == null) return false;
+	    else return checkFull(root.leftChild) && checkFull(root.rightChild);
+    }
+
 	/**
 	 * Determines whether the tree is perfect. That is
 	 * all intermediate nodes have 2 children and all leafs
@@ -131,7 +161,6 @@ public class BinaryIntTree {
 	 * @return True if the tree is perfect.
 	 */
 	public boolean isPerfect() {
-		// TODO: implement
 		return false;
 	}
 
