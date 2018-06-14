@@ -17,7 +17,7 @@ import java.util.Set;
  * @param <V> The value of the key.
  */
 public interface MultiMap<K, V> {
-	
+
 	/**
 	 * Returns the keys stored in the map.
 	 * 
@@ -76,7 +76,5 @@ public interface MultiMap<K, V> {
 	 * @throws NullPointerException Thrown if the key or the value is null.
 	 */
 	void addValue(K key, V value) throws NullPointerException;
-	
-	
-	
+
 }

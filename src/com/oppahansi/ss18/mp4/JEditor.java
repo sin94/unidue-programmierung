@@ -9,19 +9,9 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.io.File;
+import java.io.*;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JScrollPane;
-import javax.swing.JSeparator;
-import javax.swing.JTable;
-import javax.swing.JToolBar;
-import javax.swing.ListSelectionModel;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 
 /**
@@ -48,12 +38,19 @@ public class JEditor extends JFrame {
 	/**
 	 * The add button in the toolbar.
 	 */
-	private JButton add = new JButton(" + ");
+	private JButton add = new JButton(" + ");       // can be local variable :/
 	/**
 	 * The remove button in the toolbar.
 	 */
 	private JButton remove = new JButton(" - ");
-	
+
+    // ---------------------------------------------------- Task 3.
+    /**
+     * Current file indicator.
+     */
+    private JLabel currentFile = new JLabel("");
+    // ----------------------------------------------------
+
 	/**
 	 * Creates a new editor.
 	 */
@@ -66,11 +63,20 @@ public class JEditor extends JFrame {
 		// setup mnemonic to be able to use ALT+F to open the file menu
 		file.setMnemonic(KeyEvent.VK_F); 
 		menubar.add(file);
+
+        // ---------------------------------------------------- Task 3.
+        // add a new action
+        JMenuItem  newMenuItem = new JMenuItem("New ...", KeyEvent.VK_N);
+        newMenuItem.setToolTipText("Create new key-value pairs");
+        newMenuItem.addActionListener(this::onNew);             // using method reference instead of lambda
+        file.add(newMenuItem);
+        // ----------------------------------------------------
+
 		// add a load action
 		JMenuItem load = new JMenuItem("Load ...", KeyEvent.VK_L);
-		file.setToolTipText("Load from file");
-		file.add(load);
+        load.setToolTipText("Load from file");                           // fixed :)
 		load.addActionListener(event->onLoad(event));
+        file.add(load);
 		// add a save action
 		JMenuItem save = new JMenuItem("Save ...", KeyEvent.VK_S);
 		save.setToolTipText("Save to file");
@@ -96,14 +102,27 @@ public class JEditor extends JFrame {
 		toolbar.add(add);
 		// add the - button to the toolbar
 		remove.setMnemonic(KeyEvent.VK_MINUS);
-		add.setToolTipText("Remove selected key-value pair.");
+        remove.setToolTipText("Remove selected key-value pair.");           // fixed - :)
 		remove.addActionListener(event->onRemove(event));
 		remove.setEnabled(false);
 		toolbar.add(remove);
+
+        // ---------------------------------------------------- Task 3
+		// add the .. button to the toolbar
+        JButton edit = new JButton(" .. ");
+        edit.setMnemonic(KeyEvent.VK_ENTER);
+        edit.setToolTipText("Edit selected key-value pair.");
+        edit.addActionListener(this::onEdit);                   // using method reference instead of lambda
+        toolbar.add(edit);
+        // ----------------------------------------------------
+
 		// hook up a selection listener to enable/disable the - button
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.getSelectionModel().addListSelectionListener(e->onSelectionChanged(e));
-		
+
+        // ---------------------------------------------------- Task 3
+        getContentPane().add(currentFile, BorderLayout.SOUTH);
+        // ----------------------------------------------------
 	}
 	
 	/**
@@ -131,6 +150,19 @@ public class JEditor extends JFrame {
 		}
 	}
 
+    // ---------------------------------------------------- Task 3
+    /**
+     * Called when the *new* menu item is pressed.
+     * Resets everything.
+     *
+     * @param event The event, ignored.
+     */
+    private void onNew(ActionEvent event) {
+        model.setData(new MultiHashMap<>());
+        currentFile.setText("");
+    }
+    // ----------------------------------------------------
+
 	/**
 	 * Called when the load menu item is pressed. This should load
 	 * the data from the file and set the local variable as well
@@ -142,8 +174,26 @@ public class JEditor extends JFrame {
 		JEditorDialog.FileResult result = JEditorDialog.showOpenFileDialog();
 		if (result.ok) {
 			model.setData(loadFromFile(result.file));
+
+            // ---------------------------------------------------- Task 3
+			currentFile.setText(result.file.getAbsolutePath());
+            // ----------------------------------------------------
 		}
 	}
+
+    // ---------------------------------------------------- Task 3
+    /**
+     * Called when the edit button has been pressed.
+     *
+     * @param event The event.
+     */
+    private void onEdit(ActionEvent event) {
+        if (table.getSelectedRow() != -1) {
+            onRemove(event);
+            onAdd(event);
+        }
+    }
+    // ----------------------------------------------------
 	
 	/**
 	 * Loads a configuration file. If not successful, this method
@@ -154,8 +204,13 @@ public class JEditor extends JFrame {
 	 * 	a new map, if an IOException occurs during loading.
 	 */
 	private MultiMap<String, String> loadFromFile(File inputFile) {
-		// TODO: implement
-		return null;
+        StringMapIO stringMapIO = new StringMapIO();
+
+        try {
+            return stringMapIO.read(new BufferedReader(new FileReader(inputFile)));
+        } catch (IOException e) {
+            return new MultiHashMap<>();
+        }
 	}
 	
 	
@@ -168,6 +223,10 @@ public class JEditor extends JFrame {
 		JEditorDialog.FileResult result = JEditorDialog.showSaveFileDialog();
 		if (result.ok) {
 			saveToFile(result.file, model.getData());
+
+            // ---------------------------------------------------- Task 3
+            currentFile.setText(result.file.getAbsolutePath());
+            // ----------------------------------------------------
 		}
 	}
 	
@@ -178,8 +237,14 @@ public class JEditor extends JFrame {
 	 * @param outputFile The file to write to.
 	 */
 	private void saveToFile(File outputFile, MultiMap<String, String> data) {
-		// TODO: implement
-	}
+        StringMapIO stringMapIO = new StringMapIO();
+
+        try {
+            stringMapIO.write(new BufferedWriter(new FileWriter(outputFile)), data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 	
 	
 	/**
@@ -214,6 +279,4 @@ public class JEditor extends JFrame {
 		editor.setSize(new Dimension(600, 400));
 		editor.setVisible(true);
 	}
-	
-	
 }
