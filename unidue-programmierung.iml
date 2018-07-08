@@ -7,16 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/res/led/LEDControl_v2_r5e.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$MODULE_DIR$/res/led/LEDControl_v2_r5e.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="LEDControl_v2_r5e1" level="project" />
+    <orderEntry type="library" name="LEDControl_v2_r5e" level="project" />
+    <orderEntry type="library" name="LEDControl_v2_r5e2" level="project" />
   </component>
 </module>
