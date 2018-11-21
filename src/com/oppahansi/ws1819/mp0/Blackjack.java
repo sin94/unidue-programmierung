@@ -1,4 +1,10 @@
-package com.oppahansi.ws1819;
+/*
+ * Created by: University of Duisburg-Essen, paluno -The Ruhr Institute for Software Technology
+ *
+ * <p>For learning purpose only.
+ *
+ */
+package com.oppahansi.ws1819.mp0;
 
 public class Blackjack {
 	//Die Methode main koennen Sie verwenden um die Methode blackjack zu testen.

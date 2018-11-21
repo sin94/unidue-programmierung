@@ -1,3 +1,9 @@
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ */
 package com.oppahansi.ws1718.mp.mp0;
 /*
  * In dieser Klasse Buch sollen die Getter und Setter fuer die Felder

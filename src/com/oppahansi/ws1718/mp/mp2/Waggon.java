@@ -1,3 +1,9 @@
+/*
+ * Created by: Institut für Informatik und Wirtschaftsinformatik, Universität Duisburg-Essen
+ *
+ * <p>For learning purpose only.
+ *
+ */
 package com.oppahansi.ws1718.mp.mp2;
 
 public class Waggon {
